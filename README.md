@@ -9,18 +9,18 @@
 
 ## ● 목록
 
-* [X] 01.Fixed Element
-* [X] 02.Fixed Element V2
-* [X] 03.Scroll Action Animation
-* [X] 04.System Time Counter
-* [X] 05.Hight Chart API
-* [X] 06.GooGle Charts API
-* [X] 07.Youtube-API
-* [X] 08.Calculator
-* [X] 09.Lucky Test
-* [X] 10.Car Number Apply
+* [] 01.Fixed Element
+* [] 02.Fixed Element V2
+* [] 03.Scroll Action Animation
+* [] 04.System Time Counter
+* [] 05.Hight Chart API
+* [] 06.GooGle Charts API
+* [] 07.Youtube-API
+* [] 08.Calculator
+* [] 09.Lucky Test
+* [] 10.Car Number Apply
 * [X] 11.Step By Step
-* [X] 12.Step By Content
+* [] 12.Step By Content
 
 <br>
 <br>
