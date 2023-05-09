@@ -7,20 +7,20 @@
 
 <br />
 
-## ● 목록
+## ● 작성 중 목록
 
-* [] 01.Fixed Element
-* [] 02.Fixed Element V2
-* [] 03.Scroll Action Animation
-* [] 04.System Time Counter
-* [] 05.Hight Chart API
-* [] 06.GooGle Charts API
-* [] 07.Youtube-API
-* [] 08.Calculator
-* [] 09.Lucky Test
-* [] 10.Car Number Apply
+* [ ] 01.Fixed Element
+* [ ] 02.Fixed Element V2
+* [ ] 03.Scroll Action Animation
+* [ ] 04.System Time Counter
+* [ ] 05.Hight Chart API
+* [ ] 06.GooGle Charts API
+* [ ] 07.Youtube-API
+* [ ] 08.Calculator
+* [ ] 09.Lucky Test
+* [ ] 10.Car Number Apply
 * [X] 11.Step By Step
-* [] 12.Step By Content
+* [ ] 12.Step By Content
 
 <br>
 <br>
