@@ -401,6 +401,28 @@
             return val;
         }
 
+        // # 컨텐츠 헤더 fixed
+        function userSellHead(){
+            if($('.apEasySell').length){
+                
+                $(window).on('scroll', function(){
+                    var pgHaed = $('.apEasySell .pageTitle')
+                    ,	pgHeadTop = $('.apEasySell')[0].offsetTop;
+                    
+                    var winTop = $(window).scrollTop()
+                    ,	pgHaedHeight = pgHaed.outerHeight();
+                    
+                    if(winTop >= pgHeadTop){
+                        pgHaed.addClass('fixed');
+                        $('.apEasySell').addClass('fixBody');
+                    }else{
+                        pgHaed.removeClass('fixed');
+                        $('.apEasySell').removeClass('fixBody');
+                    }
+                });
+            }
+        }
+
         // # 추가 금액
         function numCnt(){
             var plus = 0;

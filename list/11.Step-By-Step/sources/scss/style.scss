@@ -102,17 +102,19 @@
         display: block;
         font-weight: 700;
     }
-    &:after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: px(-25);
-        width: 100%;
-        height: px(25);
-        border-radius: 0 0 px(25) px(25);
-        box-shadow: 0 px(-3) px(10) rgba(80, 104, 172, .05);
-        background-color: #fff;
-        overflow: hidden;
+    &.fixed {
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: px(-25);
+            width: 100%;
+            height: px(25);
+            border-radius: px(25) px(25) 0 0;
+            box-shadow: 0 px(-3) px(10) rgba(80, 104, 172, .05);
+            background-color: #fff;
+            overflow: hidden;
+        }
     }
 }
 .apEasySell {
@@ -1448,7 +1450,7 @@
                     }
                 }
                 &.grid3 label {
-                    width: calc((100% - 24px) / 3);
+                    width: calc((100% - px(20)) / 3);
                     [class*='Btn'] {
                         height: px(80);
                     }
