@@ -180,6 +180,8 @@ function luck(state){
     }
 }
 
-(function(){
+$(function(){
+    console.log('Lucky Test');
+    
     luck(true)         // 사용여부 :: true or false
-})();
+});

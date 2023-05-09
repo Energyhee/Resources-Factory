@@ -1,140 +1,36 @@
-*, *:after, *:before {
-  box-sizing: border-box;
-  text-size-adjust: none;
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-  -webkit-font-smoothing: antialiased;
-}
-
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  word-break: keep-all;
-  word-wrap: break-word;
-  white-space: normal;
-  line-height: 1;
-}
-
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-ol, ul {
-  list-style: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  table-layout: fixed;
-}
-
-audio, embed, iframe, img, object, video {
-  max-width: 100%;
-}
-
-img {
-  height: auto;
-  vertical-align: top;
-}
-
-address, i {
-  font-style: normal;
-}
-
-em {
-  font-style: inherit;
-}
-
-a, s {
-  text-decoration: none;
-  color: inherit;
-}
-
-b, h1, h2, h3, h4, h5, strong, th {
-  font-weight: 400;
-}
-
-:focus {
-  outline: 0;
-}
-
-button, select {
-  text-transform: none;
-}
-
-button {
-  cursor: pointer;
-  box-sizing: border-box;
-}
-
-form button, input, optgroup, select, textarea {
-  appearance: none;
-  -moz-appearance: none;
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
-  border-radius: 0;
-  border: 0;
-  font-family: inherit;
-  font-size: inherit;
-  letter-spacing: inherit;
-  line-height: inherit;
-}
-
-input::-ms-clear {
-  display: none;
-}
-
-select::-ms-expand {
-  display: none;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-body, html {
-  font-family: "Noto Sans KR", Dotum, Gulim, Sans-serif;
-  font-weight: 400;
-  line-height: 1.4;
-  letter-spacing: -0.5px;
-  color: #333;
-  -webkit-overflow-scrolling: touch;
-}
-
 #container {
-  padding: 10rem 2rem;
+  padding: 6.25rem 1.25rem;
 }
 #container .luckyEl {
   width: 100%;
-  max-width: 30rem;
+  max-width: 18.75rem;
   margin: 0 auto;
   text-align: center;
 }
 #container .luckyEl h3 ~ h3 {
-  margin-top: 0.5rem;
+  margin-top: 0.3125rem;
 }
 #container .luckyEl h3 span {
   display: inline-block;
-  min-width: 5rem;
+  min-width: 3.125rem;
   text-align: right;
 }
 #container .luckyEl h3 span.com1 {
   min-width: unset;
 }
 #container .luckyEl h4 {
-  margin-top: 2rem;
-  font-size: 1.4rem;
+  margin-top: 1.25rem;
+  font-size: 0.875rem;
 }
 #container .luckyEl h4 .me {
-  margin-right: 2rem;
+  margin-right: 1.25rem;
 }
 #container .luckyEl h4.info p ~ p {
   display: none;
 }
 #container .luckyEl > p {
-  margin-top: 1rem;
-  font-size: 2rem;
+  margin-top: 0.625rem;
+  font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.2;
   color: #000;
@@ -145,17 +41,17 @@ body, html {
 }
 #container .luckyEl strong {
   display: block;
-  margin-top: 1rem;
-  font-size: 1.4rem;
+  margin-top: 0.625rem;
+  font-size: 0.875rem;
   font-weight: 700;
   line-height: 1.2;
   color: #000;
 }
 #container .luckyEl strong .result {
   display: block;
-  min-height: 2.6rem;
-  margin-top: 2rem;
-  font-size: 2.6rem;
+  min-height: 1.625rem;
+  margin-top: 1.25rem;
+  font-size: 1.625rem;
   font-weight: 700;
   background-image: linear-gradient(to right, #00FF8C, #242CBF);
   background-clip: text;
@@ -167,16 +63,16 @@ body, html {
   background-image: linear-gradient(to right, #eb0000, #242CBF);
 }
 #container .luckyEl strong.restore {
-  margin-top: 2rem;
+  margin-top: 1.25rem;
   line-height: 1.4;
   word-break: keep-all;
 }
 #container .luckyEl strong.restore b {
   display: block;
-  margin-bottom: 1rem;
+  margin-bottom: 0.625rem;
   line-height: 1.2;
   font-family: "IMPACT";
-  font-size: 2rem;
+  font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.2;
   color: #000;
@@ -187,7 +83,7 @@ body, html {
   color: transparent;
 }
 #container .luckyEl .chk_wrap {
-  margin-bottom: 3rem;
+  margin-bottom: 1.875rem;
   text-align: center;
 }
 #container .luckyEl .chk {
@@ -198,8 +94,8 @@ body, html {
   position: absolute;
   left: 0;
   top: 0;
-  width: 0.1rem;
-  height: 0.1rem;
+  width: 0.0625rem;
+  height: 0.0625rem;
   background-color: transparent;
 }
 #container .luckyEl .chk input:checked + label {
@@ -212,12 +108,12 @@ body, html {
 #container .luckyEl .chk label {
   position: relative;
   display: block;
-  width: 6rem;
-  height: 3.6rem;
-  margin: 1rem auto 0;
-  border: 0.2rem solid #ddd;
+  width: 3.75rem;
+  height: 2.25rem;
+  margin: 0.625rem auto 0;
+  border: 0.125rem solid #ddd;
   box-sizing: border-box;
-  border-radius: 2rem;
+  border-radius: 1.25rem;
   background-color: #eee;
   cursor: pointer;
   font-size: 0;
@@ -231,8 +127,8 @@ body, html {
   position: absolute;
   left: 0;
   top: 0;
-  width: 3.2rem;
-  height: 3.2rem;
+  width: 2rem;
+  height: 2rem;
   border-radius: 100%;
   background-color: #fff;
   transition-duration: 0.4s;
@@ -247,21 +143,21 @@ body, html {
 #container .luckyEl .inner .sel select {
   display: block;
   width: 100%;
-  height: 4rem;
-  border: 0.1rem solid #ddd;
-  padding: 0 2rem;
-  font-size: 1.4rem;
+  height: 2.5rem;
+  border: 0.0625rem solid #ddd;
+  padding: 0 1.25rem;
+  font-size: 0.875rem;
   font-weight: 400;
   line-height: 1;
   color: #333;
 }
 #container .luckyEl .inner .sel .arr {
   position: absolute;
-  right: 1rem;
+  right: 0.625rem;
   top: 50%;
-  width: 2rem;
-  height: 2rem;
-  margin-top: -1rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: -0.625rem;
   pointer-events: none;
   transition-duration: 0.4s;
 }
@@ -269,20 +165,20 @@ body, html {
   content: "";
   position: absolute;
   top: 50%;
-  width: 0.8rem;
-  height: 0.2rem;
-  margin-top: -0.1rem;
-  border-radius: 0.2rem;
+  width: 0.5rem;
+  height: 0.125rem;
+  margin-top: -0.0625rem;
+  border-radius: 0.125rem;
   background-color: #555;
 }
 #container .luckyEl .inner .sel .arr:before {
   left: 50%;
-  margin-left: -0.6rem;
+  margin-left: -0.375rem;
   transform: rotate(45deg);
 }
 #container .luckyEl .inner .sel .arr:after {
   right: 50%;
-  margin-right: -0.7rem;
+  margin-right: -0.4375rem;
   transform: rotate(-45deg);
 }
 #container .luckyEl .inner .sel .arr.open {
@@ -290,12 +186,12 @@ body, html {
 }
 #container .luckyEl .inner button {
   width: 100%;
-  height: 4.4rem;
-  margin-top: 2rem;
-  border: 0.1rem solid #aaa;
+  height: 2.75rem;
+  margin-top: 1.25rem;
+  border: 0.0625rem solid #aaa;
   border-radius: 5px;
   background-color: #fff;
-  font-size: 1.8rem;
+  font-size: 1.125rem;
   font-weight: 700;
   line-height: 1;
   color: #333;
@@ -318,18 +214,18 @@ body, html {
   z-index: 1;
   width: calc(100% - 4rem);
   height: auto;
-  max-width: 34rem;
+  max-width: 21.25rem;
   max-height: calc(100% - 4rem);
-  border-radius: 1rem;
-  padding: 2rem;
-  box-shadow: 0 0.4rem 0.6rem rgba(0, 0, 0, 0.3);
+  border-radius: 0.625rem;
+  padding: 1.25rem;
+  box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.3);
   background-color: #fff;
   transform: translate(-50%, -50%);
 }
 #container .luckyEl .result_pop .result_inner .result_pop_close {
   width: auto;
-  padding: 1rem 2rem;
-  margin: 2rem auto 0;
+  padding: 0.625rem 1.25rem;
+  margin: 1.25rem auto 0;
   background-color: #000;
   color: #fff;
 }

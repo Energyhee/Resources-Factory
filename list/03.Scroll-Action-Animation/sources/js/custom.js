@@ -170,6 +170,8 @@ function navLinkCheck(scope, idx){
 }
 
 (function(){
+    console.log('My Animation');
+
     allMenu(true);
     navScope(true);
     var WindowSectionScroll = new scrollSmooth({
@@ -181,4 +183,4 @@ function navLinkCheck(scope, idx){
         state : true,
         obj : 'motion'
     });
-})();
+});

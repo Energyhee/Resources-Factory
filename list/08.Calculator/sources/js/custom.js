@@ -136,6 +136,7 @@ function calculator(opt){
 
 
 (function(){
+    console.log('My Calculator');
     var cal = new calculator({
         state : true,          // 사용여부 :: true or false
     });

@@ -1,24 +1,11 @@
-// # textarea 높이값 유동(최대 4줄까지 이후 스크롤)
-$('.write-box > textarea').on('input', function(){
-    $(this).css('height', '60px');
-    if ( $(this).outerHeight() <= 130 ){
-        $(this).css('height', '60px');
-        $(this).css('height', $(this).prop('scrollHeight') + 2 + 'px');
-    }else{
-        $(this).css('height', '132px');
-    }
-});
-
-// # 유튜브 API
+// # 퍼블 화면을 위한 함수
 function makeYoutube(id, pip){
     var videoId = id;
     
-    var wrapper = $('.yt-wrapper');
-    var videoEl = $('.yt-video'); // 영상 붙여 넣을 곳
-    var chatEl = $('.yt-chat'); // 채팅 붙여 넣을 곳
-    var infoEl = $('.yt-infomation'); // 정보 붙여 넣을 곳
-    
-    var videoTit;
+    var wrapper = $('.yt-wrapper') // wrapper
+    ,   videoEl = $('.yt-video') // 영상 붙여 넣을 곳
+    ,   chatEl = $('.yt-chat') // 채팅 붙여 넣을 곳
+    ,   infoEl = $('.yt-infomation'); // 정보 붙여 넣을 곳
     
     // # 영상 생성 
     if ( videoEl.length > 0 ){
@@ -26,11 +13,9 @@ function makeYoutube(id, pip){
         ,	muteState = 1
         ,	autoPlay = 1
         ,	mVideo;
-    
-        mVideo = '<div class="i-inner"><iframe src="' + videoSrc + '?autoplay=' + autoPlay + '&mute=' + muteState + '&playsinline=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>';
-        videoEl.append(mVideo);
-        
-        if (pip) videoEl.parent('.top').prepend('<div class="dummy"></div>');
+
+        mVideo = '<iframe src="' + videoSrc + '?autoplay=' + autoPlay + '&mute=' + muteState + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+        videoEl.append(mVideo);	
     }
     
     // # 채팅 생성
@@ -43,10 +28,11 @@ function makeYoutube(id, pip){
         cFrame = '<iframe frameborder="0" referrerpolicy="origin" src=' + cSrc + '&embed_domain=' + cDomain + '&theme=' + cTheme +'></iframe>';
         chatEl.append(cFrame);
     }
-    
+     
     // # 정보 생성
     if( infoEl.length > 0 ){
-        $.get("https://www.googleapis.com/youtube/v3/videos", {
+        $.get(
+            "https://www.googleapis.com/youtube/v3/videos", {
                 part: 'snippet',
                 maxResults: 1,
                 id: videoId,
@@ -62,31 +48,58 @@ function makeYoutube(id, pip){
                         dFrame += '</div>';
                         
                         infoEl.append(dFrame);
-                        
-                        if (pip){
-                            videoEl.append('<div class="pip-info">' + infoEl.find('.live-state')[0].outerHTML + '<p>' + item.snippet.title + '</p></div>');	
-                        }
-                    });
+                    });	   						
                 }
             }
         );	
     }
+
     // pip 및 dummy 영역 추가
     if (pip){
+		// pip 기능 상태
+		var _pipState = true;
+		// pip 닫기 추가
+		videoEl.append('<div class="pip-close-btn"><a href="javascript: void(0);"><span class="ft-none">영상 닫기</span></a></div>');
+		$('.pip-close-btn a').on('click', function(){
+			var _pipWrap = $(this).parents('.rb-yt-video');
+
+			if(_pipWrap.hasClass('pip')){
+				_pipState = false;
+				_pipWrap.removeClass('pip');
+				$('.rb-yt-wrap .left .dummy').remove();
+			};
+		});
+
         $(window).on('scroll', function(){
             var winScr = $(window).scrollTop();
-            var videoWrap = videoEl.parent('.left');
-            var viewTop = videoWrap.offset().top;
+            var vTop = wrapper.offset().top;
             
-            if (winScr > viewTop){
+            if (winScr > vTop){
                 videoEl.addClass('pip');
-                videoWrap.find('.dummy').show();
+                if (wrapper.find('.left .dummy').length < 1) wrapper.find('.left').prepend('<div class="dummy"></div>');
             }else{
                 videoEl.removeClass('pip');
-                videoWrap.find('.dummy').hide();
+                wrapper.find('.left .dummy').remove();
             }
-        }).trigger('scroll');
+        });
     }
+
+
+}
+
+$(function(){
+    console.log('Youtube API');
+
+    // # textarea 높이값 유동(최대 4줄까지 이후 스크롤)
+    $('.write-box > textarea').on('input', function(){
+        $(this).css('height', '60px');
+        if ( $(this).outerHeight() <= 130 ){
+            $(this).css('height', '60px');
+            $(this).css('height', $(this).prop('scrollHeight') + 2 + 'px');
+        }else{
+            $(this).css('height', '132px');
+        }
+    });
 
     // # 설명 더보기
     $('.dec-more').on('click', function(){
@@ -100,4 +113,4 @@ function makeYoutube(id, pip){
         ( $(this).hasClass('active') ) ? $(this).find('span').text('닫기') : $(this).find('span').text('열기');
         wrapper.find('.yt-inner').toggleClass('chat-active');
     });
-}
+});

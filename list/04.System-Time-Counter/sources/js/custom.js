@@ -244,6 +244,8 @@ function timeCountOption(opt) {
 }
 
 $(function(){
+	console.log('My Time Counter');
+
 	var TimeCount = new timeCountOption({
 		state : true,
 		type: 'D-H-M-S',
