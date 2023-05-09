@@ -16,11 +16,11 @@
 * [X] 05.Hight Chart API
 * [X] 06.GooGle Charts API
 * [X] 07.Youtube-API
-* [ ] 08.Calculator
-* [ ] 09.Lucky Test
-* [ ] 10.Car Number Apply
-* [X] 11.Step By Step
-* [ ] 12.Step By Content
+* [X] 08.Calculator
+* [X] 09.Lucky Test
+* [X] 10.Car Number Apply
+* [ ] 11.Step By Step
+* [X] 12.Step By Content
 
 <br>
 <br>

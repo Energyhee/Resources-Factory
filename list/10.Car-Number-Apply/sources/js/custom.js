@@ -122,6 +122,8 @@ const _Fn = {
 };
 
 document.addEventListener('DOMContentLoaded', function(){
+    console.log('My Car Number Apply');
+
     const datePicker = document.querySelector('#datepicker')
     ,     dateTimePicker = document.querySelector('#datetimepicker')
     ,     toggleCont = document.querySelector('.toggle-wrap');
