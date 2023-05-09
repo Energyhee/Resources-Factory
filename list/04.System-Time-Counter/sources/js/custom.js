@@ -242,3 +242,13 @@ function timeCountOption(opt) {
 		}
 	}
 }
+
+$(function(){
+	var TimeCount = new timeCountOption({
+		state : true,
+		type: 'D-H-M-S',
+		start : '2023/05/05/00:00',
+		end : '2023/09/01/00:00',
+		el : '.counter'
+	});
+});

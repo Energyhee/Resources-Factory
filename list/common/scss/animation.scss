@@ -1,0 +1,48 @@
+@import 'var';
+@import 'mixin';
+
+/* animation set */
+[data-motion='slide-up'] { 
+	transform: translateY(px(40));
+	-webkit-transform: translateY(px(40));
+	opacity: 0;
+}
+[data-motion='slide-down'] { 
+	transform: translateY(px(-40));
+	-webkit-transform: translateY(px(-40));
+	opacity: 0;
+}
+[data-motion='slide-left'] { 
+	transform: translateX(px(-40));
+	-webkit-transform: translateX(px(-40));
+	opacity: 0;
+}
+[data-motion='slide-right'] { 
+	transform: translateX(px(40));
+	-webkit-transform: translateX(px(40));
+	opacity: 0;
+}
+[data-motion='scale-up'] {
+    text-align: center; 
+	transform: scale(.8);
+	-webkit-transform: scale(.8);
+	opacity: 0.9;
+}
+[data-motion='scale-down'] { 
+    text-align: center; 
+	transform: scale(1.2);
+	-webkit-transform: scale(1.2);
+	opacity: 0.9;
+}
+[data-motion='text-up'] .txt {
+	display: inline-block;
+	transform: translateY(px(20)) scale(.85);
+	-webkit-transform: translateY(px(20)) scale(.85);
+	opacity: 0;
+}
+[data-motion='text-down'] .txt {
+	display: inline-block;
+	transform: translateY(px(-20)) scale(.85);
+	-webkit-transform: translateY(px(-20)) scale(.85);
+	opacity: 0;
+}

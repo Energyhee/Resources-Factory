@@ -178,7 +178,7 @@ function navLinkCheck(scope, idx){
         el : '#container .text'
     });
     var aniBasic = new animationAction({
-        state : true,           // 사용여부 :: true or false
-        obj : 'motion'          // 사용여부 :: true or false
+        state : true,
+        obj : 'motion'
     });
 })();
