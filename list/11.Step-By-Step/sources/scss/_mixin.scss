@@ -1,0 +1,5 @@
+$path: '../images/';
+
+@function px($pixels) {
+    @return calc(($pixels) / 16) + rem;
+}
