@@ -50,6 +50,37 @@
     }
 }
 
+.box {
+    position: relative;
+    padding-left: px(50);
+}
+
+.side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: px(50);
+    height: px(150);
+    background-color: #aaa;
+    &:before {
+        content: 'SIDE';
+        writing-mode: vertical-rl;
+        color: #fff;
+    }
+    &.fixed {
+        position: fixed;
+    }
+    &.absolBot {
+        position: absolute;
+        top: auto;
+        bottom: 0; 
+    }
+}
+
 .dummy {
     position: relative;
     display: flex;

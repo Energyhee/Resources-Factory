@@ -57,13 +57,50 @@ function ElementFix(opt){
     }
 }
 
+function ElementSectionFix(opt){
+    try{
+        if( $(opt.obj).length > 0 ){
+            var fixObj = $(opt.obj)
+            ,   wrapper = $(opt.wrap)
+            ,   wrapOriTop = wrapper.offset().top
+            ,   wrapOriBot = wrapOriTop + wrapper.outerHeight();
+
+            $(window).scroll(function(){
+                var winPos = $(window).scrollTop();
+                if(winPos > wrapOriTop){
+                    if(winPos > wrapOriBot - fixObj.outerHeight()){
+                        fixObj.removeClass('fixed');
+                        fixObj.addClass('absolBot');
+                    }else{
+                        fixObj.addClass('fixed');
+                        fixObj.removeClass('absolBot');
+                    }
+                }else{
+                    fixObj.removeClass('fixed');
+                }
+            }).trigger('scroll');
+        }
+    }catch(e){
+        console.log('%c[ERROR]%c Find Element Error search for "ElementSectionFix"', 'bold; color: red;", "color: beige');
+    }   
+}
+
 $(function(){
     console.log('Element Fixed Ver2');
 
+    // 기본 fixed
     var fixedBasic = new ElementFix({
         state : true,
         moving : true,
         obj : '#header',
         sub : '.subHead'
+    });
+
+    // 특정 영역 안에서 fixed
+    var fixedSection = new ElementSectionFix({
+        state : true,
+        section : true,
+        obj : '.side',
+        wrap : '.box'
     });
 });

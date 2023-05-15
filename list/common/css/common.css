@@ -79,6 +79,37 @@
   content: "FOOTER";
 }
 
+.box {
+  position: relative;
+  padding-left: 3.125rem;
+}
+
+.side {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.125rem;
+  height: 9.375rem;
+  background-color: #aaa;
+}
+.side:before {
+  content: "SIDE";
+  writing-mode: vertical-rl;
+  color: #fff;
+}
+.side.fixed {
+  position: fixed;
+}
+.side.absolBot {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+}
+
 .dummy {
   position: relative;
   display: flex;
