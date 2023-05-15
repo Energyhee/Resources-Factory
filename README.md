@@ -9,7 +9,7 @@
 
 ## ● 작성 중 목록
 
-* [ ] 01.Fixed Element
+* [X] 01.Fixed Element
 * [X] 02.Fixed Element V2
 * [X] 03.Scroll Action Animation
 * [X] 04.System Time Counter
@@ -19,8 +19,10 @@
 * [X] 08.Calculator
 * [X] 09.Lucky Test
 * [X] 10.Car Number Apply
-* [X] 11.Step By Step
-* [X] 12.Step By Content
+* [ ] 11.Step By Step
+* [ ] 12.Step By Content
+* [X] 13.Circle Counter
+* [X] 14.Circle Loading
 
 <br>
 <br>

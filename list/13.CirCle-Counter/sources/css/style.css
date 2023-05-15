@@ -7,6 +7,14 @@
     stroke-dashoffset: 0;
   }
 }
+.chartWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 18.75rem;
+}
+
 .chart {
   position: relative;
   display: flex;
