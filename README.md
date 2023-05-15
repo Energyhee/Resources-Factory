@@ -10,7 +10,7 @@
 ## ● 작성 중 목록
 
 * [ ] 01.Fixed Element
-* [ ] 02.Fixed Element V2
+* [X] 02.Fixed Element V2
 * [X] 03.Scroll Action Animation
 * [X] 04.System Time Counter
 * [X] 05.Hight Chart API

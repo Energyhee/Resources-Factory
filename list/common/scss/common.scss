@@ -7,7 +7,7 @@
     justify-content: center;
     width: 100%;
     height: px(50);
-    background-color: #ddd;
+    background-color: #ccc;
     transition-duration: .4s;
     &:before {
         content: 'HEADER';
@@ -15,6 +15,9 @@
     &.fixed {
         position: fixed;
         z-index: 1;
+    }
+    &.hide {
+        transform: translateY(px(-50));
     }
 }
 
@@ -24,11 +27,14 @@
     justify-content: center;
     width: 100%;
     height: px(50);
-    background-color: #eee;
+    background-color: #ddd;
     transition-duration: .4s;
     &.fixed {
         position: fixed;
         z-index: 1;
+    }
+    &.hide {
+        transform: translateY(px(-50));
     }
 }
 
@@ -38,22 +44,21 @@
     justify-content: center;
     width: 100%;
     height: px(50);
-    background-color: #ddd;
+    background-color: #ccc;
     &:before {
         content: 'FOOTER';
     }
 }
 
 .dummy {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: px(200);
-    border: px(1) solid #ddd;
-    p {
-        font-size: px(30);
-        font-weight: 700;
-        color: #fff;
+    background-color: #eee;
+    &:before {
+        content: 'Dummy';
     }
 }

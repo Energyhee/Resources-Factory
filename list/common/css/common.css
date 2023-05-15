@@ -36,7 +36,7 @@
   justify-content: center;
   width: 100%;
   height: 3.125rem;
-  background-color: #ddd;
+  background-color: #ccc;
   transition-duration: 0.4s;
 }
 #header:before {
@@ -46,6 +46,9 @@
   position: fixed;
   z-index: 1;
 }
+#header.hide {
+  transform: translateY(-3.125rem);
+}
 
 .subHead {
   display: flex;
@@ -53,12 +56,15 @@
   justify-content: center;
   width: 100%;
   height: 3.125rem;
-  background-color: #eee;
+  background-color: #ddd;
   transition-duration: 0.4s;
 }
 .subHead.fixed {
   position: fixed;
   z-index: 1;
+}
+.subHead.hide {
+  transform: translateY(-3.125rem);
 }
 
 #footer {
@@ -67,22 +73,21 @@
   justify-content: center;
   width: 100%;
   height: 3.125rem;
-  background-color: #ddd;
+  background-color: #ccc;
 }
 #footer:before {
   content: "FOOTER";
 }
 
 .dummy {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 12.5rem;
-  border: 0.0625rem solid #ddd;
+  background-color: #eee;
 }
-.dummy p {
-  font-size: 1.875rem;
-  font-weight: 700;
-  color: #fff;
+.dummy:before {
+  content: "Dummy";
 }
