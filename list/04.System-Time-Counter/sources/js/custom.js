@@ -245,11 +245,18 @@ function timeCountOption(opt) {
 
 $(function(){
 	console.log('My Time Counter');
-
+	
+	var date = new Date()
+	,	year = date.getFullYear()
+	,	mont = date.getMonth() + 1
+	,	days = date.getDate()
+	,	hour = date.getHours()
+	,	minu = date.getMinutes();
+	
 	var TimeCount = new timeCountOption({
 		state : true,
 		type: 'D-H-M-S',
-		start : '2023/05/05/00:00',
+		start : `${year}/${mont}/${days}/${hour}:${minu}`,
 		end : '2023/09/01/00:00',
 		el : '.counter'
 	});
