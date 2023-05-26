@@ -169,7 +169,7 @@ function navLinkCheck(scope, idx){
     }, 700);
 }
 
-(function(){
+$(function(){
     console.log('My Animation');
 
     allMenu(true);
