@@ -243,4 +243,7 @@ $(function(){
 		end : '2023/09/01/00:00',
 		el : '.counter'
 	});
+
+	var test = '2023/09/01/00:00';
+	console.log(new Date(test.replace(/-/g, "/")));
 });
