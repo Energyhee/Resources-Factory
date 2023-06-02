@@ -30,44 +30,6 @@ function pricePercent(state, time){
                     var custom = target.find('.custom-price')
 					,	base = target.find('.base-price')
 					,	sale = target.find('.sale-price');
-
-					/*
-                    if ( onlyPrice(_sale_price) > 0 && parseInt(onlyPrice(_sale_price)) < parseInt(onlyPrice(_basic_price)) ){
-                        _custom_price.hide();
-                        _basic_price.addClass('line');
-                        be_price = onlyPrice(_basic_price);
-                        af_price = onlyPrice(_sale_price);
-                    }else if( onlyPrice(_sale_price) > 0 && parseInt(onlyPrice(_sale_price)) === parseInt(onlyPrice(_basic_price)) && parseInt(onlyPrice(_custom_price)) != parseInt(onlyPrice(_basic_price)) ){
-                        _sale_price.hide();
-                        _custom_price.addClass('line');
-                        _basic_price.removeClass('line');
-                        be_price = onlyPrice(_custom_price);
-                        af_price = onlyPrice(_basic_price);
-                    }else if( onlyPrice(_sale_price) > 0 && parseInt(onlyPrice(_sale_price)) === parseInt(onlyPrice(_basic_price)) && parseInt(onlyPrice(_custom_price)) === parseInt(onlyPrice(_basic_price)) ){
-                        _custom_price.hide();
-                        _sale_price.hide();
-                    }else{
-                        if ( onlyPrice(_custom_price).length < 1 )_custom_price.hide();
-                        if ( onlyPrice(_basic_price).length < 1 ) return false;
-                        target.find('.sale_price').hide();
-                        _custom_price.addClass('line');
-                        _basic_price.removeClass('line');
-                        be_price = onlyPrice(_custom_price);
-                        af_price = onlyPrice(_basic_price);
-                    }
-                    
-                    if ( be_price != af_price || be_price > af_price ){
-                        var priceNum = 100-(af_price*100/be_price),
-                            percentNum = Math.round(priceNum),
-                            elAddHtml = '';
-                        elAddHtml += ' <p class="sale_percent">';
-                            elAddHtml += percentNum + '<span data-time=" ' + percentNum  + ' ">%</span>';
-                        elAddHtml += '</p>';
-                        if ( percentNum != '-Infinity' ){
-                            target.find('.priceWrap').append(elAddHtml);
-						}
-                    }
-					*/
                 })
             },500);
         }
