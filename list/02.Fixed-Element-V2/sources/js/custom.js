@@ -88,7 +88,6 @@ function ElementSectionFix(opt){
 $(function(){
     console.log('Element Fixed Ver2');
 
-    // 기본 fixed
     var fixedBasic = new ElementFix({
         state : true,
         moving : true,
@@ -96,7 +95,6 @@ $(function(){
         sub : '.subHead'
     });
 
-    // 특정 영역 안에서 fixed
     var fixedSection = new ElementSectionFix({
         state : true,
         section : true,
