@@ -7,7 +7,7 @@
 
 <br />
 
-## ● 작성 중 목록
+## ● 목록
 
 * [X] 01.Fixed Element
 * [X] 02.Fixed Element V2
@@ -19,10 +19,11 @@
 * [X] 08.Calculator
 * [X] 09.Lucky Test
 * [X] 10.Car Number Apply
-* [ ] 11.Step By Step
+* [X] 11.Step By Step (*1phase)
 * [ ] 12.Step By Content
 * [X] 13.Circle Counter
 * [X] 14.Circle Loading
+* [X] 15.Service Area List Maker
 
 <br>
 <br>
