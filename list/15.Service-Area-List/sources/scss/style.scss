@@ -1,0 +1,132 @@
+@charset "utf-8";
+@import '../../../common/scss/mixin';
+
+.area-list-wrapper {
+    margin: px(10);
+    padding: px(10);
+    border: px(1) solid var(--color-base2);
+    border-radius: px(4);
+    text-align: center;
+    .area-btn {
+        display: grid; 
+        grid-template-columns: repeat(4,calc(25% - px(3))); 
+        grid-gap: px(4);
+        li {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            height: px(48);
+            padding: 0 px(2);
+            border-radius: px(4);
+            background-color: #f6f6f6;
+            cursor: pointer;
+            &.active {
+                border: px(1) solid var(--color-point01);
+                box-shadow: 0 px(2) px(4) var(--shadow-base01);
+                background-color: var(--color-white);
+                color: var(--color-point01);
+                &:before {
+                    content: '';
+                    @include pos($p: absolute, $r: px(3), $t: px(3), $z: 1);
+                    @include bgImg($n: 'icon_service_minus.png', $r: no-repeat, $p: center, $s: auto 100%);
+                    width: 9px;
+                    height: 9px;
+                    border-radius: 100%;
+                }
+                p {
+                    font-weight: 700;
+                    color: var(--color-point01);
+                }
+            }
+            p {
+                @include font($a: center, $s: px(14), $l: 1.2, $c: var(--color-dark3), $t: px(-.2));
+                width: 100%;
+                pointer-events: none;
+            }
+        }
+    }
+    .area-list {
+        margin-top: px(10);
+        li {
+            display: none;
+            padding: px(20) 0;
+            text-align: left;
+            &:first-child {
+                border-top: px(1) solid var(--color-base2);
+            }
+            &.show {
+                display: block;
+            }
+            & ~ li {
+                border-top: px(1) solid var(--color-base2);
+            }
+            .area-tit {
+                display: block; @include font($s: px(16), $w: 700, $l: px(20), $c: var(--color-dark3));
+                br {
+                    display: none;
+                }
+            }
+            .box {
+                margin-top: px(10);
+                .row {
+                    display: flex; 
+                    flex-wrap: wrap;
+                    & ~ .row {
+                        margin-top: px(10);
+                        .col {
+                            color: var(--color-dark9);
+                            &:first-child:before {
+                                content: '';
+                                @include bgImg($n: 'icon_service_impos.png');
+                            }
+                        }
+                    }
+                    .col {
+                        position: relative;
+                        flex: 1;
+                        padding-left: px(16);
+                        @include font($s: px(14), $w: 500, $l: px(20), $c: var(--color-point01));
+                        &:first-child {
+                            flex: 0 px(70);
+                            &:before {
+                                content: '';
+                                @include pos($p: absolute, $l: 0, $t: px(4));
+                                @include bgImg($n: 'icon_service_pos.png', $r: no-repeat, $p: center, $s: 100% auto);
+                                width: px(13);
+                                height: px(13);
+                            }
+                        }
+                        & + .col {
+                            margin-left: px(8);
+                            padding-left: 0;
+                            color: var(--color-dark3);
+                            word-break: keep-all;
+                        }
+                    }
+                }
+                .empty {
+                    display: none;
+                }
+            }
+        }
+    }
+    #seviceReset {
+        @include font($s: px(14), $w: 700, $c: var(--color-white));
+        display: none;
+        width: px(165);
+        height: px(40);
+        margin: px(30) auto 0; 
+        border-radius: px(30);
+        background-color: var(--color-dark6);
+        &:before {
+            content: '';
+            display: inline-block;
+            width: px(14);
+            height: px(12);
+            margin-right: px(2);
+            @include bgImg($n: 'icon_service_reset.png', $r: no-repeat, $p: center, $s: auto 100%);
+        }
+    }
+}
