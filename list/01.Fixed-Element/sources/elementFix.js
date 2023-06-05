@@ -49,7 +49,7 @@ function elementFix(opt){
             }).trigger('scroll');
         }
     }catch(e){
-        console.log("%c[ERROR]%c Find Element Error search for 'elementFix'", "bold; color: red;", "color: beige");
+        console.log(e, "%c[ERROR]%c Find Element Error search for 'elementFix'", "bold; color: red;", "color: beige");
     }
 }
 

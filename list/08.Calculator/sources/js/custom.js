@@ -1,23 +1,24 @@
-// 입력 항목 삭제
+// object delete
 function del(obj){
     $(obj).parent().parent('tr').remove();
 }
 
-// 입력 항목 삭제
+// value delete
 function delInp(obj){
     $(obj).siblings('input').val('');
 }
 
-// 문자열 숫자로 리턴
+// string to number
 function comma(num){
     return num.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 };
 
-// 숫자만
+// only
 function action(num){
     return parseInt(num.replace(/[^0-9]/g, ""));
 };
 
+// 
 function calculator(opt){
     try{
         if( opt.state ){
@@ -26,7 +27,7 @@ function calculator(opt){
                 ,   _tbm = _elm.find('table')
                 ,   _btn = _elm.find('.resultBtn');
 
-                // 입력 항목 추가
+                // add wirte
                 function add(){
                     var _add = _tbm.find('.addCon')
                     ,   _addBtn = _add.find('.add')
@@ -60,7 +61,7 @@ function calculator(opt){
                     });
                 }
 
-                // 지출 계산
+                // calculate
                 function result(){
                     var _pay = action(_tbm.find('tr.result .data input').val())
                     ,   _etc = _tbm.find('tr.etc .data')
@@ -85,7 +86,7 @@ function calculator(opt){
                     _etc.text(comma((_addPrice + _pay) - _totalNum));
                 };
 
-                // 콤마
+                // comma
                 function write(obj){
                     var _inpChk;
 
@@ -117,9 +118,10 @@ function calculator(opt){
                 add();      // 입력 항목 추가
                 write();    // 작성중 콤마
 
+                // action
                 _btn.on('click', function(){
                     if ( _tbm.find('.result input').val().length > 0 ){
-                        result(); // 지출 계산
+                        result(); // result
                     }else{
                         alert('급여를 입력해주세요.');
                         _tbm.find('.result input').focus();
@@ -130,7 +132,7 @@ function calculator(opt){
             word();
         }
     }catch(e){
-        console.log("%c[ERROR]%c Find Element Error search for 'calculator'", "bold; color: red;", "color: beige");
+        console.log(e, "%c[ERROR]%c Find Element Error search for 'calculator'", "bold; color: red;", "color: beige");
     }
 }
 

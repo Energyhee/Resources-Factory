@@ -183,7 +183,7 @@ function timeCountOption(opt) {
             
             
 		}catch(e){
-			console.log('time count error');
+			console.log(e, "%c[ERROR]%c Find Element Error search for 'timeCountOption'", "bold; color: red;", "color: beige");
 		}
 	}
 }
