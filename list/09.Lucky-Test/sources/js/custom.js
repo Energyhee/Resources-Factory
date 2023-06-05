@@ -99,13 +99,13 @@ function luck(state){
 
             function compare(num, me){
                 var _failArr = [
-                    //              1강      2강     3강      4강     5강
+                    //              1강           2강         3강          4강        5강
                     /* 2 => 3 */ ['1~100'],
-                    /* 3 => 4 */ ['36~100', '1~35'],
-                    /* 4 => 5 */ ['46~100', '1~45'],
-                    /* 5 => 6 */ ['26~60', '61~100', '1~25'],
-                    /* 6 => 7 */ ['1~10', '33~63', '64~100', '11~32'],
-                    /* 7 => 8 */ ['1~4', '5~14', '37~67', '68~100', '15~36']
+                    /* 3 => 4 */ ['36~100',     '1~35'],
+                    /* 4 => 5 */ ['46~100',     '1~45'],
+                    /* 5 => 6 */ ['26~60',      '61~100',   '1~25'],
+                    /* 6 => 7 */ ['1~10',       '33~63',    '64~100',   '11~32'],
+                    /* 7 => 8 */ ['1~4',        '5~14',     '37~67',    '68~100',   '15~36']
                 ]
                 ,   _pop = $('.result_pop')
                 ,   _dep = _failArr[_val - 3]
@@ -176,7 +176,7 @@ function luck(state){
             });
         }
     }catch(e){
-        console.log("%c[ERROR]%c Find Element Error search for 'luck'", "bold; color: red;", "color: beige");
+        console.log(e, "%c[ERROR]%c Find Element Error search for 'luck'", "bold; color: red;", "color: beige");
     }
 }
 
