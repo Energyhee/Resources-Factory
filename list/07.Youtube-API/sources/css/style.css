@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* animation set */
 @keyframes signalEf {
   0% {
@@ -155,12 +154,18 @@
   top: 1.875rem;
   transition-duration: 0.4s;
 }
-.yt-wrapper .yt-inner .yt-infomation .controll button.chat-act:after {
-  content: "열기";
-  margin-left: 0.3125rem;
-}
-.yt-wrapper .yt-inner .yt-infomation .controll button.chat-act.active:after {
-  content: "닫기";
+.yt-wrapper .yt-inner .yt-infomation .controll button {
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.875rem;
+  color: #333;
+  letter-spacing: -0.03125rem;
+  text-align: center;
+  display: block;
+  width: 120px;
+  height: 30px;
+  border: 1px solid #F2F2F2;
+  border-radius: 50px;
 }
 .yt-wrapper .yt-inner .yt-infomation .dec-more {
   position: absolute;

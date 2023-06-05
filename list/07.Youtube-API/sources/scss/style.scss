@@ -143,8 +143,14 @@
 				@include pos($p: absolute, $r: 0, $t: px(30));
 				transition-duration: .4s;
 				button {
-					&.chat-act:after { content: '열기'; margin-left: px(5); } 
-					&.chat-act.active:after { content: '닫기'; }
+					// &.chat-act:after { content: '열기'; margin-left: px(5); } 
+					// &.chat-act.active:after { content: '닫기'; }
+					@include font($a: center, $s: px(14), $w: 700, $l: px(30), $t: px(-.5), $c: #333);
+					display: block;
+					width: 120px;
+					height: 30px;
+					border: 1px solid #F2F2F2;
+					border-radius: 50px;
 				} 
 			}
 			.dec-more {

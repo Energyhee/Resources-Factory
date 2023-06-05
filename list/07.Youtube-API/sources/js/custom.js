@@ -21,10 +21,11 @@ function makeYoutube(id, pip){
     // # 채팅 생성
     if ( chatEl.length > 0 ){
         var cSrc = 'https://www.youtube.com/live_chat?v=' + videoId
-        ,	cDomain = window.location.hostname
+        ,	cDomain = (window.location.hostname < 1)? 'localhost' : window.location.hostname
         ,	cTheme = 'light'
         ,	cFrame;	
 
+        console.log(cDomain);
         cFrame = '<iframe frameborder="0" referrerpolicy="origin" src=' + cSrc + '&embed_domain=' + cDomain + '&theme=' + cTheme +'></iframe>';
         chatEl.append(cFrame);
     }
@@ -84,7 +85,18 @@ function makeYoutube(id, pip){
         });
     }
 
+    // # 설명 더보기
+    $('.dec-more').on('click', function(){
+        infoEl.toggleClass('more');
+        ( infoEl.hasClass('more') ) ? $(this).text('간략히') : $(this).text('더보기');
+    });
 
+    // # 채팅창 열기, 닫기 버튼
+    $('.chat-act').on('click', function(){
+        $(this).toggleClass('active');
+        ( $(this).hasClass('active') ) ? $(this).find('span').text('닫기') : $(this).find('span').text('열기');
+        wrapper.find('.yt-inner').toggleClass('chat-active');
+    });
 }
 
 $(function(){
@@ -99,18 +111,5 @@ $(function(){
         }else{
             $(this).css('height', '132px');
         }
-    });
-
-    // # 설명 더보기
-    $('.dec-more').on('click', function(){
-        infoEl.toggleClass('more');
-        ( infoEl.hasClass('more') ) ? $(this).text('간략히') : $(this).text('더보기');
-    });
-
-    // # 채팅창 열기, 닫기 버튼
-    $('.chat-act').on('click', function(){
-        $(this).toggleClass('active');
-        ( $(this).hasClass('active') ) ? $(this).find('span').text('닫기') : $(this).find('span').text('열기');
-        wrapper.find('.yt-inner').toggleClass('chat-active');
     });
 });
