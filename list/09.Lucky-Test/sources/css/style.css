@@ -103,7 +103,7 @@
   background-color: #555;
 }
 #container .luckyEl .chk input:checked + label:before {
-  transform: translateX(2.4rem);
+  transform: translateX(1.5rem);
 }
 #container .luckyEl .chk label {
   position: relative;

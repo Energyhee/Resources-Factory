@@ -1,9 +1,10 @@
-# ✍️ 과거 소스 목록
+# 📝 과거 소스 목록
 
 <br />
 
-> * 실무에서 작업하면서 직접 짯던 _**소스 목록**_ 을 만들어보자
-> * 소스를 보고 _**복기**_ 도 해보고, _**고도화**_ 도 진행해본다.
+> * 심심 _**소스 목록**_
+> * _**복기**_ 도 해보고, _**고도화**_도 진행
+> * 각 항목 클릭 시 테스트 링크 이동
 
 <br />
 
@@ -20,7 +21,7 @@
 * [X] [09.Lucky Test](http://nergyhee.dothome.co.kr/myList/list/09.Lucky-Test/sources)
 * [X] [10.Car Number Apply](http://nergyhee.dothome.co.kr/myList/list/10.Car-Number-Apply/sources)
 * [X] [11.Step By Step (*1phase)](http://nergyhee.dothome.co.kr/myList/list/11.Step-By-Step/sources/intro.html)
-* [ ] [12.Step By Content](http://nergyhee.dothome.co.kr/myList/list/12.Step-By-Content/sources)
+* [X] [12.Step By Content](http://nergyhee.dothome.co.kr/myList/list/12.Step-By-Content/sources)
 * [X] [13.Circle Counter](http://nergyhee.dothome.co.kr/myList/list/13.CirCle-Counter/sources)
 * [X] [14.Circle Loading](http://nergyhee.dothome.co.kr/myList/list/14.CirCle-Loading/sources)
 * [X] [15.Service Area List Maker](http://nergyhee.dothome.co.kr/myList/list/15.Service-Area-List/sources)
