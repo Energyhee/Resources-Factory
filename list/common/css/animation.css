@@ -14,6 +14,7 @@
   --color-point03: #aaa;
   --color-point04: #aaa;
   --shadow-base01: rgba(0, 0, 0, .16);
+  --shadow-base02: rgba(0, 0, 0, .4);
   --trans-duration: .4s;
   --trans-duration-long: 2s;
   --ease-in-quad: cubic-bezier(0.55,0.085,0.68,0.53);
