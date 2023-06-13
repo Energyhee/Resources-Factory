@@ -5,7 +5,6 @@ body {
 
 .intro-virtual-wrap {
   position: relative;
-  max-width: 768px;
   width: 100vw;
   height: 100vh;
   margin: 0 auto;
@@ -16,12 +15,33 @@ body {
 }
 .intro-virtual-wrap.closeUp {
   transform: translateX(-2.5rem) scale(1.3);
-  -webkit-transform: translateX(-2.5rem) scale(1.3);
 }
 .intro-virtual-wrap .intro-virtual-inner {
   position: relative;
+  display: flex;
+  align-items: center;
   width: 100%;
   height: 100%;
+  padding: 6.25rem;
+}
+.intro-virtual-wrap .intro-virtual-inner .banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 62.5rem;
+  height: 37.5rem;
+  border: 0.0625rem solid #ddd;
+  box-shadow: 0 0.1875rem 0.625rem var(--shadow-base01);
+  background-color: #eee;
+}
+.intro-virtual-wrap .intro-virtual-inner .banner:before {
+  content: "DIM";
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 2.25rem;
+  color: var(--color-black);
+  letter-spacing: -0.03125rem;
+  text-align: center;
 }
 .intro-virtual-wrap .intro-virtual-inner .open {
   font-size: 1rem;
@@ -33,7 +53,6 @@ body {
   display: block;
   width: 7.5rem;
   height: 2.5rem;
-  margin: 12.5rem auto 0;
   border-radius: 0.3125rem;
   background-color: var(--color-white);
 }
