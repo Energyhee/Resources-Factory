@@ -1,7 +1,7 @@
 let log = console.log;
 
 function print(num1, num2, call){
-    calcul(num1 + num2);
+    call(num1 + num2);
 }
 
 function calcul(val){
