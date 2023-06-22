@@ -1,5 +1,13 @@
 let log = console.log;
 
+function print(num1, num2, call){
+    calcul(num1 + num2);
+}
+
+function calcul(val){
+    console.log(val);
+}
+
 document.addEventListener('DOMContentLoaded', function(){
     console.log('virtual gallery');
 
@@ -18,4 +26,5 @@ document.addEventListener('DOMContentLoaded', function(){
             // location.href = href;
         }, 2000);
     });
+    print(1, 2, calcul);
 });
