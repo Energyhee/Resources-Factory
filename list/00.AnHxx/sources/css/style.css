@@ -1,0 +1,11 @@
+.thumbnail {
+  position: relative;
+  z-index: 1;
+  width: 12.5rem;
+  height: 12.5rem;
+  margin-bottom: 1.25rem;
+  border: 0.25rem solid var(--color-base4);
+  border-right-color: var(--color-base3);
+  border-bottom-color: var(--color-base3);
+  background-color: var(--color-base4);
+}

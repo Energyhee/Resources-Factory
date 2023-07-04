@@ -1,0 +1,14 @@
+@charset "utf-8";
+@import './mixin';
+
+.thumbnail {
+    position: relative;
+    z-index: 1;
+    width: px(200);
+    height: px(200);
+    margin-bottom: px(20);
+    border: px(4) solid var(--color-base4);
+    border-right-color: var(--color-base3);
+    border-bottom-color: var(--color-base3);
+    background-color: var(--color-base4);
+}
