@@ -1,14 +1,23 @@
 @charset "UTF-8";
 body {
   overflow: hidden;
+  background-color: var(--color-dark3);
 }
 
+@keyframes textWrapper {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
 .intro-virtual-wrap {
   position: relative;
-  width: 100vw;
+  max-width: 550px;
   height: 100vh;
   margin: 0 auto;
-  background-color: var(--color-dark3);
+  background-color: var(--color-black);
   transition-timing-function: var(--ease-in-out-quart);
   transition-duration: var(--trans-duration-long);
   overflow: hidden;
@@ -22,26 +31,44 @@ body {
   align-items: center;
   width: 100%;
   height: 100%;
-  padding: 6.25rem;
+  padding: 1.25rem;
 }
 .intro-virtual-wrap .intro-virtual-inner .banner {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 62.5rem;
-  height: 37.5rem;
+  width: 12.5rem;
+  height: 18.75rem;
   border: 0.0625rem solid #ddd;
   box-shadow: 0 0.1875rem 0.625rem var(--shadow-base01);
   background-color: #eee;
-}
-.intro-virtual-wrap .intro-virtual-inner .banner:before {
-  content: "DIM";
   font-size: 1.25rem;
   font-weight: 700;
-  line-height: 2.25rem;
-  color: var(--color-black);
-  letter-spacing: -0.03125rem;
-  text-align: center;
+  /*
+  &:before {
+      content: 'DIM';
+      @include font($a: center, $s: px(20), $w: 700, $l: px(36), $t: px(-.5), $c: var(--color-black));
+  }
+  */
+}
+.intro-virtual-wrap .intro-virtual-inner .banner span {
+  position: relative;
+  -webkit-text-stroke: 1px #333;
+  color: #fff;
+}
+.intro-virtual-wrap .intro-virtual-inner .banner span:before {
+  content: "HAN CHANG HEE";
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 0;
+  height: 100%;
+  white-space: nowrap;
+  color: #000;
+  -webkit-text-stroke: 1px transparent;
+  overflow: hidden;
+  animation: textWrapper 4s infinite;
 }
 .intro-virtual-wrap .intro-virtual-inner .open {
   font-size: 1rem;
@@ -51,6 +78,7 @@ body {
   letter-spacing: -0.03125rem;
   text-align: center;
   display: block;
+  margin: 1.25rem auto 0;
   width: 7.5rem;
   height: 2.5rem;
   border-radius: 0.3125rem;
@@ -58,7 +86,7 @@ body {
 }
 .intro-virtual-wrap .inside-wrap {
   position: absolute;
-  right: 1.5625rem;
+  right: 1.25rem;
   top: 50%;
   z-index: 1;
   width: 12.5rem;
