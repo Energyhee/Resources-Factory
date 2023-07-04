@@ -4,7 +4,7 @@ $path: '../images/';
     @return calc(($pixels) / 16) + rem;
 }
 
-@mixin font-hide(){
+@mixin fontHide(){
 	font-size: 0; 
 	line-height: 0;
 	letter-spacing: px(-999);
