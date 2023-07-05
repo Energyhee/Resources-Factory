@@ -43,9 +43,6 @@
                 <div class="modern-list">
                     <div class="modern-item">
                         <div class="inner">
-                            <div class="thumbnail" data-motion="slide-left" data-duration="1"></div>
-                            <div class="thumbnail" data-motion="slide-right" data-duration="1" data-delay="1"></div>
-                            <div class="thumbnail" data-motion="slide-down" data-duration="1" data-delay="2"></div>
                             <div class="overlay-txt left top" data-text="HELLO" data-duration="1" data-delay="0"></div>
                             <div class="overlay-txt left top" data-text="MY" data-duration="1" data-delay="1"></div>
                             <div class="overlay-txt left top" data-text="CHANG HEE" data-duration="1" data-delay="2"></div>
@@ -55,24 +52,30 @@
                     <div class="modern-item">
                         <div class="inner">
                             <div class="overlay-txt" data-text="STEP 1"></div>
+                            <svg viewBox="0 0 425 300">
+                                <path id="curve" d="M6,150C49.63,93,105.79,36.65,156.2,47.55,207.89,58.74,213,131.91,264,150c40.67,14.43,108.57-6.91,229-145" />
+                                <text x="25">
+                                    <textPath xlink:href="#curve">Dangerous Curves Ahead</textPath>
+                                </text>
+                            </svg>
                         </div>
                     </div>
                     <div class="modern-item">
                         <div class="inner">
                             <div class="overlay-txt" data-text="STEP 2"></div>
+                            <div class="thumbnail" data-motion="slide-right" data-duration="1" data-delay="1"></div>
                         </div>
                     </div>
                     <div class="modern-item">
                         <div class="inner">
                             <div class="overlay-txt" data-text="STEP 3"></div>
+                            <div class="thumbnail" data-motion="slide-down" data-duration="1" data-delay="2"></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!--
             <button class="modern-button prev"></button>
             <button class="modern-button next"></button>
-            -->
             <div class="modern-pagination"></div>
         </div>
     </div>
