@@ -2,10 +2,16 @@
   position: relative;
   z-index: 1;
   width: 12.5rem;
-  height: 12.5rem;
-  margin-bottom: 1.25rem;
+  height: 9.375rem;
+  margin-bottom: 0.625rem;
   border: 0.25rem solid var(--color-base4);
   border-right-color: var(--color-base3);
   border-bottom-color: var(--color-base3);
   background-color: var(--color-base4);
+}
+.thumbnail:nth-child(2) {
+  margin: 0 0 0.625rem auto;
+}
+.thumbnail:nth-child(3) {
+  margin: 0 auto 0.625rem;
 }

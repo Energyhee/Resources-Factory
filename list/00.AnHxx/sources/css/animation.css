@@ -23,6 +23,10 @@
   opacity: 0;
 }
 
+[data-motion=fade-in] {
+  opacity: 0;
+}
+
 [data-motion=scale-up] {
   text-align: center;
   transform: scale(0.8);
