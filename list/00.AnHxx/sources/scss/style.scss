@@ -1,20 +1,25 @@
 @charset "utf-8";
 @import './mixin';
 
-.thumbnail {
-    position: relative;
-    z-index: 1;
-    width: px(200);
-    height: px(150);
-    margin-bottom: px(10);
-    border: px(4) solid var(--color-base4);
-    border-right-color: var(--color-base3);
-    border-bottom-color: var(--color-base3);
-    background-color: var(--color-base4);
-    &:nth-child(2) {
-        margin: 0 0 px(10) auto;
+.intro {
+    .inner {
+        width: calc(100% - px(10));        
     }
-    &:nth-child(3) {
-        margin: 0 auto px(10);
+    .thumbnail {
+        position: relative;
+        z-index: 1;
+        width: px(200);
+        height: px(150);
+        margin-bottom: px(10);
+        border: px(4) solid var(--color-base4);
+        border-right-color: var(--color-base3);
+        border-bottom-color: var(--color-base3);
+        background-color: var(--color-base4);
+        &:nth-child(2) {
+            margin: 0 0 px(10) auto;
+        }
+        &:nth-child(3) {
+            margin: 0 auto px(10);
+        }
     }
 }

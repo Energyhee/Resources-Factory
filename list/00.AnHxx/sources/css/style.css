@@ -1,4 +1,7 @@
-.thumbnail {
+.intro .inner {
+  width: calc(100% - 0.625rem);
+}
+.intro .thumbnail {
   position: relative;
   z-index: 1;
   width: 12.5rem;
@@ -9,9 +12,9 @@
   border-bottom-color: var(--color-base3);
   background-color: var(--color-base4);
 }
-.thumbnail:nth-child(2) {
+.intro .thumbnail:nth-child(2) {
   margin: 0 0 0.625rem auto;
 }
-.thumbnail:nth-child(3) {
+.intro .thumbnail:nth-child(3) {
   margin: 0 auto 0.625rem;
 }

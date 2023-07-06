@@ -1,6 +1,8 @@
 @charset "utf-8";
 @import './var';
 @import './mixin';
+@import './animation';
+
 body {
     position: relative;
     // background-color: var(--color-white);
@@ -8,7 +10,7 @@ body {
 }
 #container {
     padding-top: px(64);
-    transition: transform .2s var(--ease-in-out-quad);
+    transition: transform var(--trans-duration) var(--ease-in-out-quad);
 }
 .guide-line {
     @include pos($p: absolute, $l: 0, $t: px(64));
@@ -16,7 +18,7 @@ body {
     height: calc(100% - px(64));
     overflow: hidden;
     pointer-events: none;
-    transition: transform .2s var(--ease-in-out-quad);
+    transition: transform var(--trans-duration) var(--ease-in-out-quad);
     .line {
         position: absolute;
         // background-color: var(--color-base0);
@@ -36,7 +38,12 @@ body {
                     left: $i * 16.66vw;
                 }
             }
-            &:first-child{
+            &:nth-child(1) {
+                width: px(12);
+                z-index: -1;
+            }
+            &:nth-child(2) {
+                width: px(8);
                 z-index: -1;
             }
         }
@@ -50,7 +57,9 @@ body {
         @include font($s: px(50), $w: 900, $l: 1.2, $a: left, $t: px(-.5), $c: var(--color-white));
         position: relative;
         display: inline-block;
+        padding-right: px(5);
         -webkit-text-stroke: px(1) var(--color-base3);
+        -webkit-text-fill-color: transparent;
     }
     .cover {
         @include pos($p: absolute, $l: 0, $t: 0, $z: 1);
@@ -58,13 +67,23 @@ body {
         width: 0;
         white-space: nowrap;
         overflow: hidden;
+        text-shadow: rgba(118, 118, 118, .2) px(1) px(1), 
+                    rgba(118, 118, 118, .2) px(2) px(2), 
+                    rgba(118, 118, 118, .2) px(3) px(3), 
+                    rgba(118, 118, 118, .2) px(4) px(4), 
+                    rgba(118, 118, 118, .2) px(5) px(5), 
+                    rgba(118, 118, 118, .2) px(6) px(6);
         -webkit-text-stroke: px(1) var(--color-black);
+        -webkit-text-fill-color: var(--color-black);
         &.neon {
             background-image: linear-gradient(to right, #9c00b3, #00caff);
             -webkit-background-clip: text;
             -moz-background-clip: text;
             background-clip: text;
             color: transparent;
+        }
+        &.skew {
+            transform: rotateY(-20deg) skew(0, -5deg);
         }
     }
     &.left .cover {
@@ -78,6 +97,52 @@ body {
     }
     &.bottom .cover {
         top: px(-4);
+    }
+}
+.typo-txt {
+    @include centerElm();
+    position: relative;
+    z-index: 2;    
+    width: px(298);
+    margin: 0 auto;
+    padding: px(20) px(40);
+    overflow: hidden;
+    > div {
+        flex: 1;
+        overflow: hidden;
+        .moving {
+            display: inline-block;            
+            .overlay-txt p {
+                padding: 0;
+            }
+        }
+    }
+    .left {
+        transform: skew(0deg, -15deg);
+        .overlay-txt p {
+            -webkit-text-stroke: px(1) var(--color-point01);
+            -webkit-text-fill-color: transparent;
+            .cover {
+                color: var(--color-point01);
+                -webkit-text-stroke: px(1) var(--color-point01);
+                -webkit-text-fill-color: var(--color-point01);
+            }
+        }
+    }
+    .right {
+        transform: skew(0deg, 15deg);
+        .overlay-txt p {
+            -webkit-text-stroke: px(1) var(--color-black);
+            -webkit-text-fill-color: transparent;
+            .cover {
+                color: var(--color-black);
+                -webkit-text-stroke: px(1) var(--color-black);
+                -webkit-text-fill-color: var(--color-black);
+            }
+        }
+        .box {
+            transform: translate(-100%);
+        }
     }
 }
 #header {
@@ -120,7 +185,7 @@ body {
             height: px(3);
             border-radius: 2px;
             background-color: var(--color-black);
-            transition: transform .2s var(--ease-in-out-quad);
+            transition: transform var(--trans-duration) var(--ease-in-out-quad);
         }
     }
     &:has(#nav-chk:checked) + .nav-wrap {
@@ -139,7 +204,7 @@ body {
     box-shadow: 0 px(3) px(20) var(--shadow-base02);
     background-color: var(--color-base1);
     transform: translateX(-100%);
-    transition: transform .2s var(--ease-in-out-quad);
+    transition: transform var(--trans-duration) var(--ease-in-out-quad);
     ul {
         li {
             @include font($s: px(20), $l: px(24), $w: 700, $t: px(-.5), $c: #000);
@@ -164,8 +229,6 @@ body {
         margin: 0 auto;
         overflow: hidden;
         .modern-list {
-            display: flex;
-            align-items: center;
             width: 100%;
             height: 100%;
             transition-timing-function: var(--ease-in-out-quad);
@@ -177,6 +240,7 @@ body {
                 flex-shrink: 0;
                 width: 100%;
                 height: 100%;
+                border: px(6) solid var(--color-white);
                 font-size: px(20);
             }
         }
@@ -245,7 +309,7 @@ body {
                 @include pos($p: absolute, $l: 0, $t: 0, $z: 1);
                 width: 100%;
                 height: 100%;
-                background-image: linear-gradient(to bottom, var(--color-black), var(--color-base3));
+                background-image: linear-gradient(to bottom, var(--color-dark3), var(--color-dark9));
                 -webkit-background-clip: border-box;
                 -moz-background-clip: border-box;
                 background-clip: border-box;
@@ -268,14 +332,14 @@ body {
     }
     &[class*='prev'] {
         @include bgImg('ico_arr_left.png', no-repeat, center, auto px(14), var(--color-base2));
-        left: calc((100% - px(300)) / 2 - px(40 / 2));
+        left: calc((100% - px(300)) / 2 - px(20));
         &:before {
             content: 'prev';
         }
     }
     &[class*='next'] {
         @include bgImg('ico_arr_right.png', no-repeat, center, auto px(14), var(--color-base2));
-        right: calc((100% - px(300)) / 2 - px(40 / 2));
+        right: calc((100% - px(300)) / 2 - px(20));
         &:before {
             content: 'next';
         }
