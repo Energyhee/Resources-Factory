@@ -17,11 +17,12 @@ function ModernView(target, opt){
         duration, 
         direction,
         pagination, 
-        button
+        button,
+        onEvent
     } = opt;
 
     let typeState = false;
-    
+
     if(direction === 'vertical'){
         typeState = true;
         view.classList.add('vertical');
@@ -48,7 +49,7 @@ function ModernView(target, opt){
             }else if(sta === 'next' && num < total){
                 num = num + 1;
             }else{
-                log('End Modern', num);
+                log('End Modern');
             }
             return num;
         }
@@ -66,11 +67,21 @@ function ModernView(target, opt){
             return mHtml;
         }
 
-        function modernAction(idx){
+        function modernAction(idx, render){
             wrap.setAttribute('style', `transform: translate${typeState ? 'Y' : 'X'}(-${idx * 100}%); transition-duration: ${duration}s; transition-timing-function: var(--${timing});`);
             item.forEach((elm, i) => {
-                elm.classList.remove('active');
-                if(i === idx) elm.classList.add('active');
+                if(render){
+                    if(i === idx) elm.classList.add('active');
+                }
+                if(onEvent.end){
+                    setTimeout(function(){
+                        elm.classList.remove('active');
+                        if(i === idx) elm.classList.add('active');
+                    }, duration * 1000);
+                }else{
+                    elm.classList.remove('active');
+                    if(i === idx) elm.classList.add('active');
+                }
             });
 
             if(pageSta){
@@ -93,10 +104,10 @@ function ModernView(target, opt){
 
         function modernTouch(start, end){
             if(start < end){
-                log('touch prev');
+                // log('touch prev');
                 modernAction(getIndex('prev'));
             }else if(start > end){
-                log('touch next');
+                // log('touch next');
                 modernAction(getIndex('next'));
             }
         }
@@ -169,182 +180,132 @@ function ModernView(target, opt){
             });
         }
 
-        modernAction(num);
+        modernAction(num, true);
     }else{
         view.style.display = 'none';
     }
 }
 
-function AnimationAction(opt){
+function AnimationSet(opt){
     const {
         state,
-        modern,
+        type,
         target
     } = opt;
 
     if(state){
-        const obj = document.querySelectorAll(`[data-${target}]`);
+        const obj = document.querySelectorAll(`[data-${target}-motion]`);
+
+        function scrollChk(elm){
+            let obTop = elm.offsetTop;
+            let srTop = window.scrollY;
+            let chkState = false;
+        
+            (srTop > obTop - (window.innerHeight * .7)) ? chkState = true : chkState = false;
+            
+            return chkState
+        }
+
+        function typeAct(e, obj, speed){
+            let win = window.innerWidth
+            ,   pos = (e.pageX / (win / 2)) - 1
+            ,   spd = (speed * 100) * pos;
+
+            obj.forEach((el) => {
+                el.style.transform = `translateX(${spd}px)`;
+            });
+        }
 
         obj.forEach((elm, idx) => {
-            const motion = elm.dataset.motion;
-            const duration = elm.dataset.duration;
-            const delay = elm.dataset.delay;
-            // const objTop = elm.offsetTop;
-
+            const motion = elm.dataset.actionMotion.split('-')[0];
+            const timing = elm.dataset.actionTiming;
+            const duration = elm.dataset.actionDuration;
+            const delay = elm.dataset.actionDelay;
             let set;
 
-            // log(motion, duration, delay, objTop);
-
             switch (motion){
-                case 'slide-up':
-                case 'slide-down':
-                    set = 'translateY(0)';
-                break;
-                case 'slide-left':
-                case 'slide-right':
-                    set = 'translateX(0)';
-                break;
-                case 'scale-up':
-                case 'scale-down':
-                    set = 'scale(0)';
-                break;
+                case 'slide':
+                    set = 'translate(0, 0)';
+                    break;
+                case 'scale':
+                    set = 'scale(1)';
+                    break;
+                case 'overlay':
+                    let overText = elm.dataset.actionText;
+                    let overSkew = elm.dataset.actionSkew;
+                    let overStyle = `<p>${overText}<span class="cover ${overSkew ? 'skew' : ''}" style="animation-duration: ${duration ? `${duration}`: '.6'}s; ${delay ? `animation-delay: ${delay}s;`: ''} animation-timing-function: ${timing ? `${timing}` : 'var(--ease-in-out-quad)'}; animation-fill-mode: forwards;">${overText}</span></p>`;
+
+                    elm.innerHTML = overStyle;
+                    break;
+                case 'typography':
+                    if(isDevice() === 'desktop'){
+                        let typoText = elm.dataset.actionText;
+                        let typoHtml;
+
+                        typoHtml = `<div class="left"><div class="box"><div class="moving"><p class="txt">${typoText}</p></div></div></div>
+                                    <div class="right"><div class="box"><div class="moving"><p class="txt">${typoText}</p></div></div></div>`;
+                        elm.innerHTML = typoHtml;
+
+                        let typoBox = elm.querySelectorAll('.moving');
+                        window.addEventListener('mousemove', (e) => typeAct(e, typoBox, duration));
+                    }
+                    break;
                 default :
                     set = '';
-                break;
+                    break;
             }
 
-            if(modern){
-                log('Animation Modern');
-            }else{
+            if(type === 'base'){
                 log('Animation Scroll');
-                // if(opt.state && $('[data-' + opt.obj + ']').length){
-                //     $('[data-' + opt.obj + ']').each(function(){
-                //         var obj = $(this)
-                //         ,   type = obj.data('motion')
-                //         ,   duration = obj.data('duration')
-                //         ,   delay = obj.data('delay')
-                //         ,   objTop = obj.offset().top
-                //         ,   objSet;
-                
-                //         if(type === 'slide-up' || type === 'slide-down'){
-                //             objSet = 'translateY(0px)';
-                //         }else if(type === 'slide-left' || type === 'slide-right'){
-                //             objSet = 'translateX(0px)';
-                //         }else if(type === 'scale-up' || type === 'scale-down'){
-                //             objSet = 'scale(1)';
-                //         }else if(type === 'fade-in' || type === 'all'){
-                //             objSet = '';
-                //         }
-                //         $(window).on('scroll', function(){
-                //             var winScroll = $(document).scrollTop() || window.pageYOffset;
-                //             if(winScroll > objTop - ($(window).height() * .7)){
-                //                 if(obj.hasClass('action')) return false;
-                //                 if(type === 'counter'){
-                //                     obj.prop('Counter', 0).stop().animate({
-                //                         Counter: parseInt(obj.data('num'))
-                //                     }, {
-                //                         duration: duration * 1000,
-                //                         step : (now) => {
-                //                             obj.text(Math.ceil(now));
-                //                         }
-                //                     });
-                //                 }else{
-                //                     obj.css({
-                //                         'transition-duration' : duration + 's',
-                //                         'transition-delay' : delay + 's',
-                //                         'transform' : objSet,
-                //                         'opacity' : '1'
-                //                     });
-                //                 }
-                //                 obj.addClass('action');
-                //             }
-                //         }).trigger('scroll');
-                //     });
-                // }
+                window.addEventListener('scroll', (e) => {
+                    e.preventDefault();
+                    
+                    if(scrollChk(elm)){
+                        if(elm.querySelector('.cover')){
+                            elm.querySelector('.cover').classList.add('overlay');
+                        }else{
+                            elm.setAttribute('style', `transform: ${set}; transition-duration: ${duration ? `${duration}`: '.4'}s; transition-delay: ${delay ? `${delay}`: '0'}s; opacity: 1;`);
+                        }
+                    }else{
+                        if(elm.querySelector('.cover')){
+                            elm.querySelector('.cover').classList.remove('overlay');
+                        }else{
+                            elm.setAttribute('style', `transition-duration: ${duration}s; transition-delay: 0s;`);
+                        }
+                    }
+                });
+            }else{
+                log('Animation Modern');
             }
         });
     }
 }
 
-function overlayText(){
-    const obj = document.querySelectorAll('.overlay-txt');
-
-    obj.forEach(elm => {
-        const text = elm.dataset.text;
-        const duration = elm.dataset.duration;
-        const delay = elm.dataset.delay;
-        const skew = elm.dataset.skew;
-
-        log(skew);
-
-        elm.innerHTML = `<p>${text}<span class="cover ${skew === 'skew' ? skew : ''}" style="animation: overlay ${duration ? `${duration}`: '.6'}s ${delay ? `${delay}s`: ''} var(--ease-in-out-quad) forwards;">${text}</span></p>`;
-    });
-}
-
-function Typography(target, opt){
-    const view = document.getElementById(target);
-    const { 
-        state, 
-        speed
-    } = opt;
-
-    if(isDevice() === 'desktop'){
-        const ltTxt = view.dataset.left;
-        const rtTxt = view.dataset.right;
-
-        let width = window.innerWidth
-        ,   mHtml;
-
-        if(view && state){
-            mHtml = `<div class="left"><div class="box"><div class="moving"><div class="overlay-txt" data-text="${ltTxt}"></div></div></div></div>
-                    <div class="right"><div class="box"><div class="moving"><div class="overlay-txt" data-text="${rtTxt}"></div></div></div></div>`;
-
-            view.innerHTML = mHtml;
-            overlayText();
-
-            const transBox = document.querySelectorAll('.moving');
-            window.addEventListener('mousemove', typeAct);
-
-            function typeAct(e){
-                let pos = (e.pageX / (width / 2)) - 1
-                ,   spd = speed * pos;
-
-                transBox.forEach((el) => {
-                    el.style.transform = `translateX(${spd}px)`;
-                });
-            }
-        }
-    }
-};
-
 document.addEventListener('DOMContentLoaded', function(){
-    overlayText();
-
-    const typo01 = new Typography('typo01', {
-        state: true, 
-        speed: 100
-    });
-
     const modern = new ModernView('modernType', {
         state : true,
         setIdx : 0,
         timing: 'ease-in-out-quad',
-        duration: 2,
+        duration: 1,
         direction: 'vertical',
         pagination: {
             page: '.modern-pagination', 
-            type: 'progress'
+            type: 'progress',
+            disp: false
         },
         button: {
             prevEl: '.modern-button.prev',
             nextEl: '.modern-button.next',
             disp: true
+        },
+        onEvent: {
+            end: true
         }
     });
 
-    const animation = new AnimationAction({
+    const animation = new AnimationSet({
         state : true,
-        modern : true,
-        target : 'motion'
+        type : 'modern',
+        target : 'action'
     });
 });

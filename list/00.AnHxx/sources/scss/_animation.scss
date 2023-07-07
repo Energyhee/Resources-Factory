@@ -2,55 +2,138 @@
 @import './mixin';
 
 /* animation set */
-[data-motion='slide-up'] { 
+@keyframes overlay {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+[data-action-motion="slide-up"] { 
 	transform: translateY(px(40));
 	-webkit-transform: translateY(px(40));
 	opacity: 0;
 }
-[data-motion='slide-down'] { 
+[data-action-motion="slide-down"] { 
 	transform: translateY(px(-40));
 	-webkit-transform: translateY(px(-40));
 	opacity: 0;
 }
-[data-motion='slide-left'] { 
+[data-action-motion="slide-left"] {
 	transform: translateX(px(-40));
 	-webkit-transform: translateX(px(-40));
 	opacity: 0;
 }
-[data-motion='slide-right'] { 
+[data-action-motion="slide-right"] {
 	transform: translateX(px(40));
 	-webkit-transform: translateX(px(40));
 	opacity: 0;
 }
-[data-motion='fade-in'] { 
-	opacity: 0;
-}
-[data-motion='scale-up'] {
+[data-action-motion="scale-up"] {
     text-align: center; 
 	transform: scale(.8);
 	-webkit-transform: scale(.8);
-	opacity: 0.9;
+	opacity: 0;
 }
-[data-motion='scale-down'] { 
+[data-action-motion="scale-down"] {
     text-align: center; 
 	transform: scale(1.2);
 	-webkit-transform: scale(1.2);
-	opacity: 0.9;
-}
-[data-motion='text-up'] .txt {
-	display: inline-block;
-	transform: translateY(px(20)) scale(.85);
-	-webkit-transform: translateY(px(20)) scale(.85);
 	opacity: 0;
 }
-[data-motion='text-down'] .txt {
-	display: inline-block;
-	transform: translateY(px(-20)) scale(.85);
-	-webkit-transform: translateY(px(-20)) scale(.85);
-	opacity: 0;
+[data-action-motion="overlay-txt"] {
+	position: relative;
+    z-index: 1;
+    pointer-events: none;
+	p {
+        @include font($s: px(80), $w: 900, $l: 1.2, $a: left, $t: px(-.5), $c: var(--color-white));
+        position: relative;
+        display: inline-block;
+        padding-right: px(5);
+        -webkit-text-stroke: px(1) var(--color-base3);
+        -webkit-text-fill-color: var(--color-white);
+    }
+    .cover {
+        @include pos($p: absolute, $l: 0, $t: 0, $z: 1);
+        @include font($s: inherit, $w: inherit, $l: inherit, $a: inherit, $t: inherit, $c: var(--color-black));
+        width: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-shadow: px(1) px(1) rgba(118, 118, 118, .2),
+                 	px(2) px(2) rgba(118, 118, 118, .2),
+                 	px(3) px(3) rgba(118, 118, 118, .2),
+                 	px(4) px(4) rgba(118, 118, 118, .2),
+                 	px(5) px(5) rgba(118, 118, 118, .2),
+                 	px(6) px(6) rgba(118, 118, 118, .2);
+        -webkit-text-stroke: px(1) var(--color-black);
+        -webkit-text-fill-color: var(--color-black);
+        &.neon {
+            background-image: linear-gradient(to right, #9c00b3, #00caff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        &.skew {
+            transform: rotateY(-20deg) skew(0, -5deg);
+        }
+		&.overlay {
+			animation-name: overlay;
+		}
+    }
+    &.left .cover {
+        left: px(4);
+    }
+    &.right .cover {
+        left: px(-4);
+    }
+    &.top .cover {
+        top: px(4);
+    }
+    &.bottom .cover {
+        top: px(-4);
+    }
 }
-
-@keyframes overlay {
-    0% { width: 0; }
-    100% { width: 100%; }
+[data-action-motion="typography-txt"] {
+	@include centerElm();
+    position: relative;
+    z-index: 2;    
+    width: px(598);
+	margin: 0 auto;
+    padding: px(40) 0;
+    overflow: hidden;
+    > div {
+        flex: 1;
+        overflow: hidden;
+        .moving {
+            display: inline-block;
+            .txt {
+				@include font($s: px(100), $w: 900, $l: 1.2, $a: left, $t: px(-.5), $c: var(--color-white));
+				white-space: nowrap;
+				overflow: hidden;
+				-webkit-text-stroke: px(1) var(--color-point01);
+				-webkit-text-fill-color: var(--color-white);
+            }
+        }
+		&.left {
+			transform: skew(0deg, -15deg);
+			.txt {
+				color: var(--color-point01);
+				-webkit-text-stroke: px(1) var(--color-point01);
+				-webkit-text-fill-color: var(--color-point01);
+				text-shadow: px(-10) px(-10) rgba(70, 100, 255, 1),
+							px(-9) px(-9) rgba(70, 100, 255, 1),
+							px(-8) px(-8) rgba(70, 100, 255, 1),
+							px(-7) px(-7) rgba(70, 100, 255, 1),
+							px(-6) px(-6) rgba(70, 100, 255, 1),
+							px(-5) px(-5) rgba(70, 100, 255, 1),
+							px(-4) px(-4) rgba(70, 100, 255, 1),
+							px(-3) px(-3) rgba(70, 100, 255, 1),
+							px(-2) px(-2) rgba(70, 100, 255, 1),
+							px(-1) px(-1) rgba(70, 100, 255, 1),
+			}
+		}
+		&.right {
+			transform: skew(0deg, 15deg);
+			.box {
+				transform: translate(-100%);
+			}
+		}
+    }
 }
