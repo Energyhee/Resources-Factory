@@ -43,7 +43,7 @@
     z-index: 1;
     pointer-events: none;
 	p {
-        @include font($s: px(80), $w: 900, $l: 1.2, $a: left, $t: px(-.5), $c: var(--color-white));
+        @include font($s: px(40), $w: 900, $l: 1.2, $a: left, $t: px(-.5), $c: var(--color-white));
         position: relative;
         display: inline-block;
         padding-right: px(5);
@@ -104,7 +104,7 @@
         .moving {
             display: inline-block;
             .txt {
-				@include font($s: px(100), $w: 900, $l: 1.2, $a: left, $t: px(-.5), $c: var(--color-white));
+				@include font($s: px(60), $w: 900, $l: 1.2, $a: left, $t: px(-.5), $c: var(--color-white));
 				white-space: nowrap;
 				overflow: hidden;
 				-webkit-text-stroke: px(1) var(--color-point01);

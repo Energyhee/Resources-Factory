@@ -130,6 +130,15 @@ function ModernView(target, opt){
                     modernTouch(toutStart, toutEnd);
                     // log('mouse up');
                 });
+                eventWrap.addEventListener('wheel', (e) => {
+                    if(Math.sign(e.deltaY) > 0){
+                        modernAction(getIndex('next'));
+                        // log('wheel down');
+                    }else{
+                        modernAction(getIndex('prev'));
+                        // log('wheel up');
+                    }
+                });
             }else{
                 baseEvent = 'touch';
                 eventWrap.addEventListener(`${baseEvent}start`, (e) => {
