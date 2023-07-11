@@ -72,6 +72,10 @@
   opacity: 0;
 }
 
+[data-action-motion=fade-in] {
+  opacity: 0;
+}
+
 [data-action-motion=scale-up] {
   text-align: center;
   transform: scale(0.8);
@@ -425,6 +429,12 @@ body {
   opacity: 1;
 }
 .modern-wrapper .modern-container .modern-list .modern-item.active [data-action-motion*=scale] {
+  transform: scale(1);
+  transition-duration: 1.5s;
+  transition-delay: 0s;
+  opacity: 1;
+}
+.modern-wrapper .modern-container .modern-list .modern-item.active [data-action-motion*=fade] {
   transform: scale(1);
   transition-duration: 1.5s;
   transition-delay: 0s;

@@ -7,194 +7,203 @@ const isDevice = () => {
         return 'desktop';
     }
 }
+/* **************
+ * Base
+ * Test Modern
+ * Start
+ ************** */
+// function ModernView(target, opt){
+//     const view = document.getElementById(target);
+//     const { 
+//         state, 
+//         setIdx, 
+//         timing, 
+//         duration, 
+//         direction,
+//         pagination, 
+//         button,
+//         onEvent
+//     } = opt;
 
-function ModernView(target, opt){
-    const view = document.getElementById(target);
-    const { 
-        state, 
-        setIdx, 
-        timing, 
-        duration, 
-        direction,
-        pagination, 
-        button,
-        onEvent
-    } = opt;
+//     let typeState = false;
 
-    let typeState = false;
+//     if(view && state){
+//         if(direction === 'vertical'){
+//             typeState = true;
+//             view.classList.add('vertical');
+//         }
+//         const pageType = (pagination.type) ? pagination.type : null;
+//         const pageElm = (pagination.page) ? view.querySelector(pagination.page) : null;
+//         const pageSta = (pageElm != null) ? true : false;
+//         const prevBtn = (button) ? view.querySelector(button.prevEl) : null;
+//         const nextBtn = (button) ? view.querySelector(button.nextEl) : null;
+//         const btnSta = (prevBtn != null && nextBtn != null) ? true : false;
 
-    if(direction === 'vertical'){
-        typeState = true;
-        view.classList.add('vertical');
-    }
+//         const eventWrap = view.querySelector('.modern-container');
+//         const wrap = view.querySelector('.modern-list');
+//         const item = view.querySelectorAll('.modern-item');
+//         const total = item.length - 1;
 
-    if(view && state){
-        const pageType = (pagination.type) ? pagination.type : null;
-        const pageElm = (pagination.page) ? view.querySelector(pagination.page) : null;
-        const pageSta = (pageElm != null) ? true : false;
-        const prevBtn = (button) ? view.querySelector(button.prevEl) : null;
-        const nextBtn = (button) ? view.querySelector(button.nextEl) : null;
-        const btnSta = (prevBtn != null && nextBtn != null) ? true : false;
+//         let num = (setIdx > -1 && setIdx <= total) ? setIdx : 0;
 
-        const eventWrap = view.querySelector('.modern-container');
-        const wrap = view.querySelector('.modern-list');
-        const item = view.querySelectorAll('.modern-item');
-        const total = item.length - 1;
+//         function getIndex(sta){
+//             if(sta === 'prev' && num > 0){
+//                 num = num - 1;
+//             }else if(sta === 'next' && num < total){
+//                 num = num + 1;
+//             }else{
+//                 log('End Modern');
+//             }
+//             return num;
+//         }
 
-        let num = (setIdx > -1 && setIdx <= total) ? setIdx : 0;
+//         function paginationMake(){
+//             let mHtml = '';
 
-        function getIndex(sta){
-            if(sta === 'prev' && num > 0){
-                num = num - 1;
-            }else if(sta === 'next' && num < total){
-                num = num + 1;
-            }else{
-                log('End Modern');
-            }
-            return num;
-        }
+//             if(pageType === 'progress'){
+//                 pageElm.classList.add('progress');
+//                 mHtml += `<span class="progress" style="height: ${(100 / (total + 1)) * (1)}%; transition: var(--${timing}) ${duration}s;"</span>`;
+//             }else{
+//                 for(var i = 0; i <= total; i++) mHtml += `<span class="pagin ${(i === num) ? 'active' : ''}"></span>`;
+//             }
 
-        function paginationMake(){
-            let mHtml = '';
+//             return mHtml;
+//         }
 
-            if(pageType === 'progress'){
-                pageElm.classList.add('progress');
-                mHtml += `<span class="progress" style="height: ${(100 / (total + 1)) * (1)}%; transition: var(--${timing}) ${duration}s;"</span>`;
-            }else{
-                for(var i = 0; i <= total; i++) mHtml += `<span class="pagin ${(i === num) ? 'active' : ''}"></span>`;
-            }
+//         function modernAction(idx, render){
+//             wrap.setAttribute('style', `transform: translate${typeState ? 'Y' : 'X'}(-${idx * 100}%); transition-duration: ${duration}s; transition-timing-function: var(--${timing});`);
+//             item.forEach((elm, i) => {
+//                 if(render){
+//                     if(i === idx) elm.classList.add('active');
+//                 }
+//                 if(onEvent.end){
+//                     setTimeout(function(){
+//                         elm.classList.remove('active');
+//                         if(i === idx) elm.classList.add('active');
+//                     }, duration * 1000);
+//                 }else{
+//                     elm.classList.remove('active');
+//                     if(i === idx) elm.classList.add('active');
+//                 }
+//             });
 
-            return mHtml;
-        }
+//             if(pageSta){
+//                 if(pageType === 'progress'){
+//                     pageElm.querySelector('span').setAttribute('style', `height: ${(100 / (total + 1)) * (idx + 1)}%; transition: var(--${timing}) ${duration}s;`);
+//                 }else{
+//                     view.querySelector(pagination.page).querySelectorAll('span').forEach((elm, i) => {
+//                         elm.classList.remove('active');
+//                         if(i === idx) elm.classList.add('active');
+//                     });
+//                 }
+//             }
 
-        function modernAction(idx, render){
-            wrap.setAttribute('style', `transform: translate${typeState ? 'Y' : 'X'}(-${idx * 100}%); transition-duration: ${duration}s; transition-timing-function: var(--${timing});`);
-            item.forEach((elm, i) => {
-                if(render){
-                    if(i === idx) elm.classList.add('active');
-                }
-                if(onEvent.end){
-                    setTimeout(function(){
-                        elm.classList.remove('active');
-                        if(i === idx) elm.classList.add('active');
-                    }, duration * 1000);
-                }else{
-                    elm.classList.remove('active');
-                    if(i === idx) elm.classList.add('active');
-                }
-            });
+//             if(btnSta){
+//                 (idx === 0) ? prevBtn.classList.add('none') : prevBtn.classList.remove('none');
+//                 (idx === total) ? nextBtn.classList.add('none') : nextBtn.classList.remove('none');
+//             }
+//             num = idx;
+//         }
 
-            if(pageSta){
-                if(pageType === 'progress'){
-                    pageElm.querySelector('span').setAttribute('style', `height: ${(100 / (total + 1)) * (idx + 1)}%; transition: var(--${timing}) ${duration}s;`);
-                }else{
-                    view.querySelector(pagination.page).querySelectorAll('span').forEach((elm, i) => {
-                        elm.classList.remove('active');
-                        if(i === idx) elm.classList.add('active');
-                    });
-                }
-            }
+//         function modernTouch(start, end){
+//             if(start < end){
+//                 // log('touch prev');
+//                 modernAction(getIndex('prev'));
+//             }else if(start > end){
+//                 // log('touch next');
+//                 modernAction(getIndex('next'));
+//             }
+//         }
 
-            if(btnSta){
-                (idx === 0) ? prevBtn.classList.add('none') : prevBtn.classList.remove('none');
-                (idx === total) ? nextBtn.classList.add('none') : nextBtn.classList.remove('none');
-            }
-            num = idx;
-        }
+//         if(wrap){
+//             let baseEvent
+//             ,   toutStart = 0
+//             ,   toutEnd = 0;
 
-        function modernTouch(start, end){
-            if(start < end){
-                // log('touch prev');
-                modernAction(getIndex('prev'));
-            }else if(start > end){
-                // log('touch next');
-                modernAction(getIndex('next'));
-            }
-        }
+//             if(isDevice() === 'desktop'){
+//                 baseEvent = 'mouse';
+//                 eventWrap.addEventListener(`${baseEvent}down`, (e) => {
+//                     e.preventDefault();
+//                     toutStart = typeState ? e.pageY : e.pageX;
+//                     // log('mouse down');
+//                 });
+//                 eventWrap.addEventListener(`${baseEvent}up`, (e) => {
+//                     e.preventDefault();
+//                     toutEnd = typeState ? e.pageY : e.pageX;
+//                     modernTouch(toutStart, toutEnd);
+//                     // log('mouse up');
+//                 });
+//                 eventWrap.addEventListener('wheel', (e) => {
+//                     if(Math.sign(e.deltaY) > 0){
+//                         modernAction(getIndex('next'));
+//                         // log('wheel down');
+//                     }else{
+//                         modernAction(getIndex('prev'));
+//                         // log('wheel up');
+//                     }
+//                 });
+//             }else{
+//                 baseEvent = 'touch';
+//                 eventWrap.addEventListener(`${baseEvent}start`, (e) => {
+//                     e.preventDefault();
+//                     toutStart = typeState ? e.changedTouches[0].clientY : e.changedTouches[0].clientX;
+//                     // log('touch start');
+//                 });
+//                 eventWrap.addEventListener(`${baseEvent}end`, (e) => {
+//                     e.preventDefault();
+//                     toutEnd = typeState ? e.changedTouches[0].clientY : e.changedTouches[0].clientX;
+//                     modernTouch(toutStart, toutEnd);
+//                     // log('touch end');
+//                 });
+//             }
+//         }
 
-        if(wrap){
-            let baseEvent
-            ,   toutStart = 0
-            ,   toutEnd = 0;
+//         if(pageSta){
+//             if(pagination.disp){
+//                 pageElm.style.display = 'none';
+//             }
+//             pageElm.innerHTML = paginationMake();
 
-            if(isDevice() === 'desktop'){
-                baseEvent = 'mouse';
-                eventWrap.addEventListener(`${baseEvent}down`, (e) => {
-                    e.preventDefault();
-                    toutStart = typeState ? e.pageY : e.pageX;
-                    // log('mouse down');
-                });
-                eventWrap.addEventListener(`${baseEvent}up`, (e) => {
-                    e.preventDefault();
-                    toutEnd = typeState ? e.pageY : e.pageX;
-                    modernTouch(toutStart, toutEnd);
-                    // log('mouse up');
-                });
-                eventWrap.addEventListener('wheel', (e) => {
-                    if(Math.sign(e.deltaY) > 0){
-                        modernAction(getIndex('next'));
-                        // log('wheel down');
-                    }else{
-                        modernAction(getIndex('prev'));
-                        // log('wheel up');
-                    }
-                });
-            }else{
-                baseEvent = 'touch';
-                eventWrap.addEventListener(`${baseEvent}start`, (e) => {
-                    e.preventDefault();
-                    toutStart = typeState ? e.changedTouches[0].clientY : e.changedTouches[0].clientX;
-                    // log('touch start');
-                });
-                eventWrap.addEventListener(`${baseEvent}end`, (e) => {
-                    e.preventDefault();
-                    toutEnd = typeState ? e.changedTouches[0].clientY : e.changedTouches[0].clientX;
-                    modernTouch(toutStart, toutEnd);
-                    // log('touch end');
-                });
-            }
-        }
+//             if(pageType != 'progress'){
+//                 pageElm.querySelectorAll('span').forEach((el, num) => {
+//                     el.addEventListener('click', (e) => {
+//                         e.preventDefault();
+//                         let idx = num;
+//                         modernAction(idx);
+//                     });
+//                 });
+//             }
+//         }
 
-        if(pageSta){
-            if(pagination.disp){
-                pageElm.style.display = 'none';
-            }
-            pageElm.innerHTML = paginationMake();
+//         if(btnSta){
+//             if(button.disp){
+//                 prevBtn.style.display = 'none';
+//                 nextBtn.style.display = 'none';
+//             }
+//             prevBtn.addEventListener('click', (e) => {
+//                 e.preventDefault();
+//                 let idx = getIndex('prev');
+//                 modernAction(idx);
+//             });
+//             nextBtn.addEventListener('click', (e) => {
+//                 e.preventDefault();
+//                 let idx = getIndex('next');
+//                 modernAction(idx);
+//             });
+//         }
 
-            if(pageType != 'progress'){
-                pageElm.querySelectorAll('span').forEach((el, num) => {
-                    el.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        let idx = num;
-                        modernAction(idx);
-                    });
-                });
-            }
-        }
+//         modernAction(num, true);
+//     }else if(view){
+//         view.style.display = 'none';
+//     }
+// }
+/* End */
 
-        if(btnSta){
-            if(button.disp){
-                prevBtn.style.display = 'none';
-                nextBtn.style.display = 'none';
-            }
-            prevBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                let idx = getIndex('prev');
-                modernAction(idx);
-            });
-            nextBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                let idx = getIndex('next');
-                modernAction(idx);
-            });
-        }
-
-        modernAction(num, true);
-    }else{
-        view.style.display = 'none';
-    }
-}
-
+/* **************
+ * Animation
+ * Test Set
+ * Start
+ ************** */
 function AnimationSet(opt){
     const {
         state,
@@ -210,12 +219,12 @@ function AnimationSet(opt){
             let srTop = window.scrollY;
             let chkState = false;
         
-            (srTop > obTop - (window.innerHeight * .7)) ? chkState = true : chkState = false;
+            (srTop > obTop - (window.innerHeight * .6)) ? chkState = true : chkState = false;
             
             return chkState
         }
 
-        function typeAct(e, obj, speed){
+        function typoAct(e, obj, speed){
             let win = window.innerWidth
             ,   pos = (e.pageX / (win / 2)) - 1
             ,   spd = (speed * 100) * pos;
@@ -242,7 +251,7 @@ function AnimationSet(opt){
                 case 'overlay':
                     let overText = elm.dataset.actionText;
                     let overSkew = elm.dataset.actionSkew;
-                    let overStyle = `<p>${overText}<span class="cover ${overSkew ? 'skew' : ''}" style="animation-duration: ${duration ? `${duration}`: '.6'}s; ${delay ? `animation-delay: ${delay}s;`: ''} animation-timing-function: ${timing ? `${timing}` : 'var(--ease-in-out-quad)'}; animation-fill-mode: forwards;">${overText}</span></p>`;
+                    let overStyle = `<p>${overText}<span class="cover ${overSkew ? 'skew' : ''}" style="animation-duration: ${duration ? `${duration}`: '.6'}s; animation-delay: ${delay ? `${delay}`: '0'}s; animation-timing-function: ${timing ? `${timing}` : 'var(--ease-in-out-quad)'}; animation-fill-mode: forwards;">${overText}</span></p>`;
 
                     elm.innerHTML = overStyle;
                     break;
@@ -253,22 +262,23 @@ function AnimationSet(opt){
 
                         typoHtml = `<div class="left"><div class="box"><div class="moving"><p class="txt">${typoText}</p></div></div></div>
                                     <div class="right"><div class="box"><div class="moving"><p class="txt">${typoText}</p></div></div></div>`;
+
                         elm.innerHTML = typoHtml;
 
                         let typoBox = elm.querySelectorAll('.moving');
-                        window.addEventListener('mousemove', (e) => typeAct(e, typoBox, duration));
+                        window.addEventListener('mousemove', (e) => typoAct(e, typoBox, duration));
                     }
                     break;
                 default :
-                    set = '';
+                    set = 'none';
                     break;
             }
 
-            if(type === 'base'){
+            if(type === 'base'){ 
                 log('Animation Scroll');
                 window.addEventListener('scroll', (e) => {
                     e.preventDefault();
-                    
+
                     if(scrollChk(elm)){
                         if(elm.querySelector('.cover')){
                             elm.querySelector('.cover').classList.add('overlay');
@@ -279,27 +289,223 @@ function AnimationSet(opt){
                         if(elm.querySelector('.cover')){
                             elm.querySelector('.cover').classList.remove('overlay');
                         }else{
-                            elm.setAttribute('style', `transition-duration: ${duration}s; transition-delay: 0s;`);
+                            elm.setAttribute('style', `transition-duration: ${duration ? `${duration}`: '.4'}s;; transition-delay: 0s; opacity: 0;`);
                         }
                     }
                 });
             }else{
                 log('Animation Modern');
+                // log(motion, elm.closest('.modern-item').classList.contains('active'));
             }
         });
     }
 }
+/* End */
+
+/* **************
+ * Prototype
+ * Test Modern
+ * Start
+ ************** */
+class MakeModern {
+    constructor (target, opt){
+        log(opt.setIdx + 1 < 1);
+        this.view = document.getElementById(target);
+        this.state = opt.state;
+        this.setIdx = (opt.setIdx + 1 < 1) ? 0 : opt.setIdx;
+        this.timing = (!opt.timing) ? 'ease-in-out-quad' : opt.timing;
+        this.duration = (!opt.duration) ? '1' : opt.duration;
+        this.direction = opt.direction;
+        this.pagination = opt.pagination;
+        this.button = opt.button;
+        this.onEvent = opt.onEvent;
+        this.typeState = (this.direction === 'vertical') ? true : false;
+
+        this.pageType = (this.pagination.type) ? this.pagination.type : null;
+        this.pageElm = (this.pagination.page) ? this.view.querySelector(this.pagination.page) : null;
+        this.pageSta = (this.pageElm != null) ? true : false;
+        this.prevBtn = (this.button) ? this.view.querySelector(this.button.prevEl) : null;
+        this.nextBtn = (this.button) ? this.view.querySelector(this.button.nextEl) : null;
+        this.btnSta = (this.prevBtn != null && this.nextBtn != null) ? true : false;
+
+        this.eventWrap = this.view.querySelector('.modern-container');
+        this.wrap = this.view.querySelector('.modern-list');
+        this.item = this.view.querySelectorAll('.modern-item');
+
+        this.total = this.item.length - 1;
+        this.num = (this.setIdx > -1 && this.setIdx <= this.total) ? this.setIdx : 0;
+    }
+    getIndex(sta){
+        if(sta === 'prev' && this.num > 0){
+            this.num = this.num - 1;
+        }else if(sta === 'next' && this.num < this.total){
+            this.num = this.num + 1;
+        }else{
+            log('End Modern');
+        }
+        return this.num;
+    }
+    paginationMake(){
+        let mHtml = '';
+
+        if(this.pageType === 'progress'){
+            this.pageElm.classList.add('progress');
+            mHtml += `<span class="progress" style="height: ${(100 / (this.total + 1)) * (1)}%; transition: var(--${this.timing}) ${this.duration}s;"</span>`;
+        }else{
+            for(var i = 0; i <= this.total; i++) mHtml += `<span class="pagin ${(i === this.num) ? 'active' : ''}"></span>`;
+        }
+
+        return mHtml;
+    }
+    modernAction(idx, render){
+        this.wrap.setAttribute('style', `transform: translate${this.typeState ? 'Y' : 'X'}(-${idx * 100}%); transition-duration: ${this.duration}s; transition-timing-function: var(--${this.timing});`);
+        this.item.forEach((elm, i) => {
+            if(render){
+                if(i === idx) elm.classList.add('active');
+            }
+            if(this.onEvent.end){
+                setTimeout(function(){
+                    elm.classList.remove('active');
+                    if(i === idx) elm.classList.add('active');
+                }, this.duration * 1000);
+            }else{
+                elm.classList.remove('active');
+                if(i === idx) elm.classList.add('active');
+            }
+        });
+
+        if(this.pageSta){
+            if(this.pageType === 'progress'){
+                this.pageElm.querySelector('span').setAttribute('style', `height: ${(100 / (this.total + 1)) * (idx + 1)}%; transition: var(--${this.timing}) ${this.duration}s;`);
+            }else{
+                this.view.querySelector(this.pagination.page).querySelectorAll('span').forEach((elm, i) => {
+                    elm.classList.remove('active');
+                    if(i === idx) elm.classList.add('active');
+                });
+            }
+        }
+
+        if(this.btnSta){
+            (idx === 0) ? this.prevBtn.classList.add('none') : this.prevBtn.classList.remove('none');
+            (idx === this.total) ? this.nextBtn.classList.add('none') : this.nextBtn.classList.remove('none');
+        }
+        this.num = idx;
+    }
+    modernTouch(start, end){
+        if(start < end){
+            this.modernAction(this.getIndex('prev'));
+        }else if(start > end){
+            this.modernAction(this.getIndex('next'));
+        }
+    }
+    startModern(){
+        if(this.state){
+            if(this.typeState) this.view.classList.add('vertical');
+            if(this.wrap){
+                let baseEvent
+                ,   toutStart = 0
+                ,   toutEnd = 0;
+        
+                if(isDevice() === 'desktop'){
+                    baseEvent = 'mouse';
+                    this.eventWrap.addEventListener(`${baseEvent}down`, (e) => {
+                        e.preventDefault();
+                        toutStart = this.typeState ? e.pageY : e.pageX;
+                    });
+                    this.eventWrap.addEventListener(`${baseEvent}up`, (e) => {
+                        e.preventDefault();
+                        toutEnd = this.typeState ? e.pageY : e.pageX;
+                        this.modernTouch(toutStart, toutEnd);
+                    });
+                    this.eventWrap.addEventListener('wheel', (e) => {
+                        if(Math.sign(e.deltaY) > 0){
+                            this.modernAction(getIndex('next'));
+                        }else{
+                            this.modernAction(getIndex('prev'));
+                        }
+                    });
+                }else{
+                    baseEvent = 'touch';
+                    this.eventWrap.addEventListener(`${baseEvent}start`, (e) => {
+                        e.preventDefault();
+                        toutStart = this.typeState ? e.changedTouches[0].clientY : e.changedTouches[0].clientX;
+                    });
+                    this.eventWrap.addEventListener(`${baseEvent}end`, (e) => {
+                        e.preventDefault();
+                        toutEnd = this.typeState ? e.changedTouches[0].clientY : e.changedTouches[0].clientX;
+                        this.modernTouch(toutStart, toutEnd);
+                    });
+                }
+            }
+            if(this.pageSta){
+                if(this.pagination.disp){
+                    this.pageElm.style.display = 'none';
+                }
+                this.pageElm.innerHTML = this.paginationMake();
+        
+                if(this.pageType != 'progress'){
+                    this.pageElm.querySelectorAll('span').forEach((el, num) => {
+                        el.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            let idx = num;
+                            this.modernAction(idx);
+                        });
+                    });
+                }
+            }
+            if(this.btnSta){
+                if(this.button.disp){
+                    this.prevBtn.style.display = 'none';
+                    this.nextBtn.style.display = 'none';
+                }
+                this.prevBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    let idx = this.getIndex('prev');
+                    this.modernAction(idx);
+                });
+                this.nextBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    let idx = this.getIndex('next');
+                    this.modernAction(idx);
+                });
+            }
+            this.modernAction(this.num, true);
+        }else{
+            this.view.style.display = 'none';
+        }
+    }
+}
+/* End */
 
 document.addEventListener('DOMContentLoaded', function(){
-    const modern = new ModernView('modernType', {
+    // const modern = new ModernView('modernType', {
+    //     state : true,
+    //     setIdx : 0,
+    //     timing: 'ease-in-out-quad',
+    //     duration: 1,
+    //     direction: 'vertical',
+    //     pagination: {
+    //         page: '.modern-pagination', 
+    //         type: 'progress',
+    //         disp: false
+    //     },
+    //     button: {
+    //         prevEl: '.modern-button.prev',
+    //         nextEl: '.modern-button.next',
+    //         disp: true
+    //     },
+    //     onEvent: {
+    //         end: true
+    //     }
+    // });
+    const modern = new MakeModern('modernType', {
         state : true,
         setIdx : 0,
         timing: 'ease-in-out-quad',
-        duration: 1,
         direction: 'vertical',
+        duration: 1,
         pagination: {
-            page: '.modern-pagination', 
-            type: 'progress',
+            page: '.modern-pagination',
             disp: false
         },
         button: {
@@ -310,6 +516,13 @@ document.addEventListener('DOMContentLoaded', function(){
         onEvent: {
             end: true
         }
+    });
+    modern.startModern();
+    document.querySelectorAll('.nav-wrap li').forEach((elm, idx) => {
+        elm.addEventListener('click', (e) => {
+            e.preventDefault();
+            modern.modernAction(idx, true); 
+        });
     });
 
     const animation = new AnimationSet({

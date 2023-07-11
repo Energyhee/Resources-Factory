@@ -5,6 +5,12 @@
     .inner {
         width: calc(100% - px(10));        
     }
+    .img-cover {
+        position: relative;
+        width: px(300);
+        margin: px(20) auto 0;
+        box-shadow: var(--shadow-base01);
+    }
     .thumbnail {
         position: relative;
         z-index: 1;

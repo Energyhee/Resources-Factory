@@ -190,6 +190,12 @@ body {
                         transition-delay: 0s; 
                         opacity: 1;
                     }
+                    [data-action-motion*="fade"] {
+                        transform: scale(1); 
+                        transition-duration: 1.5s; 
+                        transition-delay: 0s; 
+                        opacity: 1;
+                    }
                 }
             }
         }

@@ -26,6 +26,9 @@
 	-webkit-transform: translateX(px(40));
 	opacity: 0;
 }
+[data-action-motion="fade-in"] {
+	opacity: 0;
+}
 [data-action-motion="scale-up"] {
     text-align: center; 
 	transform: scale(.8);
