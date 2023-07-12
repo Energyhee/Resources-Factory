@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Footer({cName}){
-    console.log('on footer - 대기');
+    console.log('on footer');
 
     return (
         <footer className={cName}></footer>

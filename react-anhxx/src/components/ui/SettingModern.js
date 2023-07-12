@@ -1,7 +1,7 @@
 import React, {useRef, useEffect} from 'react';
 
 function SettingModern({cName}){
-    console.log('on setting modern');
+    // console.log('on setting modern');
     
     const modernElm = useRef(null);
     const isDevice = () => {
@@ -26,7 +26,6 @@ function SettingModern({cName}){
                 this.onEvent = opt.onEvent;
                 this.typeState = (this.direction === 'vertical') ? true : false;
         
-                console.log(this.view.children);
                 this.pageType = (this.pagination.type) ? this.pagination.type : null;
                 this.pageElm = (this.pagination.page) ? this.view.children[3] : null;
                 this.pageSta = (this.pageElm !== null) ? true : false;

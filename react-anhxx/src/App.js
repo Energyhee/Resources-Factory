@@ -4,6 +4,7 @@ import './assets/css/common.css';
 import './assets/css/modern.css';
 import './assets/css/motion.css';
 import './assets/css/style.css';
+
 import Header from './components/Header';
 import Footer from './components/Footer';
 import SideNav from './components/SideNav';

@@ -1,7 +1,7 @@
 import React from 'react';
 
 function GuideLine(){
-    console.log('on guide line');
+    // console.log('on guide line');
 
     return (
         <div className="guide-line">
