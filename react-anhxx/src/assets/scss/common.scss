@@ -1,7 +1,6 @@
 @charset "utf-8";
 @import './var';
 @import './mixin';
-@import './animation';
 
 body {
     position: relative;
@@ -14,9 +13,10 @@ body {
     -webkit-font-smoothing: antialiased;
     text-shadow: rgba(0, 0, 0, .1) 0 0 1px;
 }
-#container {
+.page-wrapper {
     position: relative;
     z-index: 1;
+    height: 100vh;
     padding-top: px(64);
     transition: transform var(--trans-duration) var(--ease-in-out-quad);
     &::after {
@@ -67,7 +67,7 @@ body {
         }
     }
 }
-#header {
+.header {
     @include pos($p: fixed, $l: 0, $t: 0, $z: 10);
     @include centerElm();
     width: 100%;
@@ -117,13 +117,21 @@ body {
     &:has(#nav-chk:checked) + .nav-wrap {
         transform: translateX(0);
     }
-    &:has(#nav-chk:checked) ~ #container, 
+    &:has(#nav-chk:checked) ~ .page-wrapper, 
     &:has(#nav-chk:checked) ~ .guide-line {
         transform: translateX(px(300));
     }
-    &:has(#nav-chk:checked) ~ #container::after {
+    &:has(#nav-chk:checked) ~ .page-wrapper::after {
         pointer-events: auto;
     }
+}
+.main-title {
+    @include font($s: px(36), $w: 700, $l: px(42), $c: var(--color-black));
+    display: block;
+}
+.sub-title {
+    @include font($s: px(28), $w: 700, $l: px(36), $c: var(--color-dark6));
+    display: block;
 }
 .nav-wrap {
     @include pos($p: fixed, $l: 0, $t: 0, $z: 9);
@@ -138,169 +146,5 @@ body {
         li {
             @include font($s: px(20), $l: px(24), $w: 700, $t: px(-.5), $c: #000);
         }
-    }
-}
-.main-title {
-    @include font($s: px(36), $w: 700, $l: px(42), $c: var(--color-black));
-    display: block;
-}
-.sub-title {
-    @include font($s: px(28), $w: 700, $l: px(36), $c: var(--color-dark6));
-    display: block;
-}
-.modern-wrapper {
-    position: relative;
-    margin: 0;
-    width: auto;
-    height: auto;
-    .modern-container {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        margin: 0 auto;
-        overflow: hidden;
-        .modern-list {
-            display: flex;
-            width: 100%;
-            height: 100%;
-            transition-timing-function: var(--ease-in-out-quad);
-            transform: translateX(0);
-            .modern-item {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-shrink: 0;
-                width: 100%;
-                height: 100%;
-                border: px(6) solid var(--color-white);
-                font-size: px(20);
-                &.active {
-                    [data-action-motion="overlay-txt"] .cover {
-                        animation-name: overlay;
-                    }
-                    [data-action-motion*="slide"] {
-                        transform: translate(0, 0); 
-                        transition-duration: 1.5s; 
-                        transition-delay: 0s; 
-                        opacity: 1;
-                    }
-                    [data-action-motion*="scale"] {
-                        transform: scale(1); 
-                        transition-duration: 1.5s; 
-                        transition-delay: 0s; 
-                        opacity: 1;
-                    }
-                    [data-action-motion*="fade"] {
-                        transform: scale(1); 
-                        transition-duration: 1.5s; 
-                        transition-delay: 0s; 
-                        opacity: 1;
-                    }
-                }
-            }
-        }
-    }
-    &.vertical {
-        width: 100%;
-        height: calc(100vh - px(64));
-        .modern-container {
-            width: 100%;
-            height: 100%;
-            .modern-list {
-                flex-direction: column;
-                transform: translateY(0);
-                .modern-item {
-                    padding: px(20);
-                }
-            }
-        }
-    }
-}
-.modern-pagination {
-    counter-reset: count;
-    display: block;
-    margin: px(10) auto 0;
-    text-align: center;
-    span {
-        display: inline-block;
-        vertical-align: middle;
-        width: px(16);
-        height: px(16);
-        line-height: 0;
-        border-radius: 100%;
-        background-color: #eee;
-        cursor: pointer;
-        &:before {
-            counter-increment: count; 
-            content: counter(count);
-            @include font($s: px(12), $w: 500, $l: px(16), $c: var(--color-gray9));
-            display: inline-block;
-        }
-        &.active {
-            background-color: var(--color-black);
-            &:before {
-                color: var(--color-white);
-            }
-        }
-        ~ span {
-            margin-left: px(6);
-        }
-    }
-    &.progress {
-        @include pos($p: absolute, $r: 0, $t: 0);
-        width: px(4);
-        height: 100%;
-        margin: 0;
-        background-color: var(--color-base3);
-        span {
-            position: relative;
-            width: 100%;
-            height: 0;
-            border-radius: 0;
-            background-color: var(--color-base4);
-            overflow: hidden;
-            &:before {
-                content: '';
-                @include pos($p: absolute, $l: 0, $t: 0, $z: 1);
-                width: 100%;
-                height: 100%;
-                background-image: linear-gradient(to bottom, var(--color-dark3), var(--color-dark9));
-                -webkit-background-clip: border-box;
-                -moz-background-clip: border-box;
-                background-clip: border-box;
-                color: transparent;
-            }
-        }
-    }
-}
-.modern-button {
-    @include pos($p: absolute, $t: 50%, $z: 1);
-    width: px(40);
-    height: px(40);
-    border-radius: 100%;
-    border: px(1) solid var(--color-base3);
-    transform: translateY(-50%);
-    transition-duration: .2s;
-    cursor: pointer;
-    &:before {
-        @include font($s: 0, $l: 0, $c: transparent);
-    }
-    &[class*="prev"] {
-        @include bgImg('ico_arr_left.png', no-repeat, center, auto px(14), var(--color-base2));
-        left: calc((100% - px(300)) / 2 - px(20));
-        &:before {
-            content: 'prev';
-        }
-    }
-    &[class*="next"] {
-        @include bgImg('ico_arr_right.png', no-repeat, center, auto px(14), var(--color-base2));
-        right: calc((100% - px(300)) / 2 - px(20));
-        &:before {
-            content: 'next';
-        }
-    }
-    &.none {
-        pointer-events: none;
-        opacity: .2;
     }
 }

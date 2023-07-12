@@ -1,7 +1,7 @@
-.intro .inner {
+.page-wrapper .inner {
   width: calc(100% - 0.625rem);
 }
-.intro .img-cover {
+.page-wrapper .img-cover {
   position: relative;
   width: 18.75rem;
   margin: 1.25rem auto 0;
@@ -10,7 +10,7 @@
   overflow: hidden;
   text-align: center;
 }
-.intro .thumbnail {
+.page-wrapper .thumbnail {
   position: relative;
   z-index: 1;
   width: 12.5rem;

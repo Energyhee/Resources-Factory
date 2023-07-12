@@ -1,9 +1,9 @@
 @charset "utf-8";
 @import './mixin';
 
-.intro {
+.page-wrapper {
     .inner {
-        width: calc(100% - px(10));        
+        width: calc(100% - px(10));
     }
     .img-cover {
         position: relative;
