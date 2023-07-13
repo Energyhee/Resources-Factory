@@ -1,203 +1,35 @@
 let log = console.log;
-
-const isDevice = () => {
-    if(navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
-        return 'mobile';
-    }else{
-        return 'desktop';
+const _Fn = {
+    setClass : (scope, name, type) => {
+        try{
+            let target = (typeof scope == 'string') ? document.querySelectorAll(scope)[0] : scope;
+            switch (type) {
+                case 'add' : 
+                    if(target.classList.contains(name) != true) target.classList.add(name);
+                    break;
+                case 'remove' : 
+                    if(target.classList.contains(name) === true) target.classList.remove(name);
+                    break;
+                default : 
+                    (target.classList.contains(name) != true) ? target.classList.add(name) : target.classList.remove(name);
+                    break;
+            }
+        }catch(error){
+            console.log('※ _Fn.setClass Error \n\n', error);
+        }
+    },
+    chkDevice : () => {
+        try{
+            if(navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
+                return 'mobile';
+            }else{
+                return 'desktop';
+            }    
+        }catch(error){
+            console.log('※ _Fn.chkDevice Error \n\n', error);
+        }
     }
 }
-/* **************
- * Base
- * Test Modern
- * Start
- ************** */
-// function ModernView(target, opt){
-//     const view = document.getElementById(target);
-//     const { 
-//         state, 
-//         setIdx, 
-//         timing, 
-//         duration, 
-//         direction,
-//         pagination, 
-//         button,
-//         onEvent
-//     } = opt;
-
-//     let typeState = false;
-
-//     if(view && state){
-//         if(direction === 'vertical'){
-//             typeState = true;
-//             view.classList.add('vertical');
-//         }
-//         const pageType = (pagination.type) ? pagination.type : null;
-//         const pageElm = (pagination.page) ? view.querySelector(pagination.page) : null;
-//         const pageSta = (pageElm != null) ? true : false;
-//         const prevBtn = (button) ? view.querySelector(button.prevEl) : null;
-//         const nextBtn = (button) ? view.querySelector(button.nextEl) : null;
-//         const btnSta = (prevBtn != null && nextBtn != null) ? true : false;
-
-//         const eventWrap = view.querySelector('.modern-container');
-//         const wrap = view.querySelector('.modern-list');
-//         const item = view.querySelectorAll('.modern-item');
-//         const total = item.length - 1;
-
-//         let num = (setIdx > -1 && setIdx <= total) ? setIdx : 0;
-
-//         function getIndex(sta){
-//             if(sta === 'prev' && num > 0){
-//                 num = num - 1;
-//             }else if(sta === 'next' && num < total){
-//                 num = num + 1;
-//             }else{
-//                 log('End Modern');
-//             }
-//             return num;
-//         }
-
-//         function paginationMake(){
-//             let mHtml = '';
-
-//             if(pageType === 'progress'){
-//                 pageElm.classList.add('progress');
-//                 mHtml += `<span class="progress" style="height: ${(100 / (total + 1)) * (1)}%; transition: var(--${timing}) ${duration}s;"</span>`;
-//             }else{
-//                 for(var i = 0; i <= total; i++) mHtml += `<span class="pagin ${(i === num) ? 'active' : ''}"></span>`;
-//             }
-
-//             return mHtml;
-//         }
-
-//         function modernAction(idx, render){
-//             wrap.setAttribute('style', `transform: translate${typeState ? 'Y' : 'X'}(-${idx * 100}%); transition-duration: ${duration}s; transition-timing-function: var(--${timing});`);
-//             item.forEach((elm, i) => {
-//                 if(render){
-//                     if(i === idx) elm.classList.add('active');
-//                 }
-//                 if(onEvent.end){
-//                     setTimeout(function(){
-//                         elm.classList.remove('active');
-//                         if(i === idx) elm.classList.add('active');
-//                     }, duration * 1000);
-//                 }else{
-//                     elm.classList.remove('active');
-//                     if(i === idx) elm.classList.add('active');
-//                 }
-//             });
-
-//             if(pageSta){
-//                 if(pageType === 'progress'){
-//                     pageElm.querySelector('span').setAttribute('style', `height: ${(100 / (total + 1)) * (idx + 1)}%; transition: var(--${timing}) ${duration}s;`);
-//                 }else{
-//                     view.querySelector(pagination.page).querySelectorAll('span').forEach((elm, i) => {
-//                         elm.classList.remove('active');
-//                         if(i === idx) elm.classList.add('active');
-//                     });
-//                 }
-//             }
-
-//             if(btnSta){
-//                 (idx === 0) ? prevBtn.classList.add('none') : prevBtn.classList.remove('none');
-//                 (idx === total) ? nextBtn.classList.add('none') : nextBtn.classList.remove('none');
-//             }
-//             num = idx;
-//         }
-
-//         function modernTouch(start, end){
-//             if(start < end){
-//                 // log('touch prev');
-//                 modernAction(getIndex('prev'));
-//             }else if(start > end){
-//                 // log('touch next');
-//                 modernAction(getIndex('next'));
-//             }
-//         }
-
-//         if(wrap){
-//             let baseEvent
-//             ,   toutStart = 0
-//             ,   toutEnd = 0;
-
-//             if(isDevice() === 'desktop'){
-//                 baseEvent = 'mouse';
-//                 eventWrap.addEventListener(`${baseEvent}down`, (e) => {
-//                     e.preventDefault();
-//                     toutStart = typeState ? e.pageY : e.pageX;
-//                     // log('mouse down');
-//                 });
-//                 eventWrap.addEventListener(`${baseEvent}up`, (e) => {
-//                     e.preventDefault();
-//                     toutEnd = typeState ? e.pageY : e.pageX;
-//                     modernTouch(toutStart, toutEnd);
-//                     // log('mouse up');
-//                 });
-//                 eventWrap.addEventListener('wheel', (e) => {
-//                     if(Math.sign(e.deltaY) > 0){
-//                         modernAction(getIndex('next'));
-//                         // log('wheel down');
-//                     }else{
-//                         modernAction(getIndex('prev'));
-//                         // log('wheel up');
-//                     }
-//                 });
-//             }else{
-//                 baseEvent = 'touch';
-//                 eventWrap.addEventListener(`${baseEvent}start`, (e) => {
-//                     e.preventDefault();
-//                     toutStart = typeState ? e.changedTouches[0].clientY : e.changedTouches[0].clientX;
-//                     // log('touch start');
-//                 });
-//                 eventWrap.addEventListener(`${baseEvent}end`, (e) => {
-//                     e.preventDefault();
-//                     toutEnd = typeState ? e.changedTouches[0].clientY : e.changedTouches[0].clientX;
-//                     modernTouch(toutStart, toutEnd);
-//                     // log('touch end');
-//                 });
-//             }
-//         }
-
-//         if(pageSta){
-//             if(pagination.disp){
-//                 pageElm.style.display = 'none';
-//             }
-//             pageElm.innerHTML = paginationMake();
-
-//             if(pageType != 'progress'){
-//                 pageElm.querySelectorAll('span').forEach((el, num) => {
-//                     el.addEventListener('click', (e) => {
-//                         e.preventDefault();
-//                         let idx = num;
-//                         modernAction(idx);
-//                     });
-//                 });
-//             }
-//         }
-
-//         if(btnSta){
-//             if(button.disp){
-//                 prevBtn.style.display = 'none';
-//                 nextBtn.style.display = 'none';
-//             }
-//             prevBtn.addEventListener('click', (e) => {
-//                 e.preventDefault();
-//                 let idx = getIndex('prev');
-//                 modernAction(idx);
-//             });
-//             nextBtn.addEventListener('click', (e) => {
-//                 e.preventDefault();
-//                 let idx = getIndex('next');
-//                 modernAction(idx);
-//             });
-//         }
-
-//         modernAction(num, true);
-//     }else if(view){
-//         view.style.display = 'none';
-//     }
-// }
-/* End */
 
 /* **************
  * Animation
@@ -214,7 +46,7 @@ function AnimationSet(opt){
     if(state){
         const obj = document.querySelectorAll(`[data-${target}-motion]`);
 
-        function scrollChk(elm){
+        const scrollChk = (elm) => {
             let obTop = elm.offsetTop;
             let srTop = window.scrollY;
             let chkState = false;
@@ -224,7 +56,7 @@ function AnimationSet(opt){
             return chkState
         }
 
-        function typoAct(e, obj, speed){
+        const typoAct = () => {
             let win = window.innerWidth
             ,   pos = (e.pageX / (win / 2)) - 1
             ,   spd = (speed * 100) * pos;
@@ -234,7 +66,7 @@ function AnimationSet(opt){
             });
         }
 
-        obj.forEach((elm, idx) => {
+        obj.forEach((elm) => {
             const motion = elm.dataset.actionMotion.split('-')[0];
             const timing = elm.dataset.actionTiming;
             const duration = elm.dataset.actionDuration;
@@ -256,7 +88,7 @@ function AnimationSet(opt){
                     elm.innerHTML = overStyle;
                     break;
                 case 'typography':
-                    if(isDevice() === 'desktop'){
+                    if(_Fn.chkDevice() === 'desktop'){
                         let typoText = elm.dataset.actionText;
                         let typoHtml;
 
@@ -281,13 +113,15 @@ function AnimationSet(opt){
 
                     if(scrollChk(elm)){
                         if(elm.querySelector('.cover')){
-                            elm.querySelector('.cover').classList.add('overlay');
+                            // elm.querySelector('.cover').classList.add('overlay');
+                            _Fn.setClass(elm.querySelector('.cover'), 'overlay', 'add');
                         }else{
                             elm.setAttribute('style', `transform: ${set}; transition-duration: ${duration ? `${duration}`: '.4'}s; transition-delay: ${delay ? `${delay}`: '0'}s; opacity: 1;`);
                         }
                     }else{
                         if(elm.querySelector('.cover')){
-                            elm.querySelector('.cover').classList.remove('overlay');
+                            // elm.querySelector('.cover').classList.remove('overlay');
+                            _Fn.setClass(elm.querySelector('.cover'), 'overlay', 'remove');
                         }else{
                             elm.setAttribute('style', `transition-duration: ${duration ? `${duration}`: '.4'}s;; transition-delay: 0s; opacity: 0;`);
                         }
@@ -309,7 +143,6 @@ function AnimationSet(opt){
  ************** */
 class MakeModern {
     constructor (target, opt){
-        log(opt.setIdx + 1 < 1);
         this.view = document.getElementById(target);
         this.state = opt.state;
         this.setIdx = (opt.setIdx + 1 < 1) ? 0 : opt.setIdx;
@@ -319,13 +152,14 @@ class MakeModern {
         this.pagination = opt.pagination;
         this.button = opt.button;
         this.onEvent = opt.onEvent;
-        this.typeState = (this.direction === 'vertical') ? true : false;
+        this.typeState = (opt.direction === 'vertical') ? true : false;
 
-        this.pageType = (this.pagination.type) ? this.pagination.type : null;
-        this.pageElm = (this.pagination.page) ? this.view.querySelector(this.pagination.page) : null;
+        this.pageType = (opt.pagination.type) ? opt.pagination.type : null;
+        this.pageElm = (opt.pagination.page) ? this.view.querySelector(opt.pagination.page) : null;
         this.pageSta = (this.pageElm != null) ? true : false;
-        this.prevBtn = (this.button) ? this.view.querySelector(this.button.prevEl) : null;
-        this.nextBtn = (this.button) ? this.view.querySelector(this.button.nextEl) : null;
+
+        this.prevBtn = (opt.button.prevEl) ? this.view.querySelector(opt.button.prevEl) : null;
+        this.nextBtn = (opt.button.nextEl) ? this.view.querySelector(opt.button.nextEl) : null;
         this.btnSta = (this.prevBtn != null && this.nextBtn != null) ? true : false;
 
         this.eventWrap = this.view.querySelector('.modern-container');
@@ -406,7 +240,7 @@ class MakeModern {
                 ,   toutStart = 0
                 ,   toutEnd = 0;
         
-                if(isDevice() === 'desktop'){
+                if(_Fn.chkDevice() === 'desktop'){
                     baseEvent = 'mouse';
                     this.eventWrap.addEventListener(`${baseEvent}down`, (e) => {
                         e.preventDefault();
@@ -429,19 +263,19 @@ class MakeModern {
                     this.eventWrap.addEventListener(`${baseEvent}start`, (e) => {
                         e.preventDefault();
                         toutStart = this.typeState ? e.changedTouches[0].clientY : e.changedTouches[0].clientX;
-                    });
+                    }, {passive: true});
                     this.eventWrap.addEventListener(`${baseEvent}end`, (e) => {
                         e.preventDefault();
                         toutEnd = this.typeState ? e.changedTouches[0].clientY : e.changedTouches[0].clientX;
                         this.modernTouch(toutStart, toutEnd);
-                    });
+                    }, {passive: true});
                 }
             }
             if(this.pageSta){
                 if(this.pagination.disp){
                     this.pageElm.style.display = 'none';
                 }
-                this.pageElm.innerHTML = this.paginationMake();
+                this.pageElm.innerHTML = this.paginationMake(1);
         
                 if(this.pageType != 'progress'){
                     this.pageElm.querySelectorAll('span').forEach((el, num) => {
@@ -478,26 +312,6 @@ class MakeModern {
 /* End */
 
 document.addEventListener('DOMContentLoaded', function(){
-    // const modern = new ModernView('modernType', {
-    //     state : true,
-    //     setIdx : 0,
-    //     timing: 'ease-in-out-quad',
-    //     duration: 1,
-    //     direction: 'vertical',
-    //     pagination: {
-    //         page: '.modern-pagination', 
-    //         type: 'progress',
-    //         disp: false
-    //     },
-    //     button: {
-    //         prevEl: '.modern-button.prev',
-    //         nextEl: '.modern-button.next',
-    //         disp: true
-    //     },
-    //     onEvent: {
-    //         end: true
-    //     }
-    // });
     const modern = new MakeModern('modernType', {
         state : true,
         setIdx : 0,
@@ -506,6 +320,7 @@ document.addEventListener('DOMContentLoaded', function(){
         duration: 1,
         pagination: {
             page: '.modern-pagination',
+            type: 'progress',
             disp: false
         },
         button: {
@@ -515,7 +330,7 @@ document.addEventListener('DOMContentLoaded', function(){
         },
         onEvent: {
             end: true
-        }
+        },
     });
     modern.startModern();
     document.querySelectorAll('.nav-wrap li').forEach((elm, idx) => {
