@@ -107,7 +107,7 @@ function AnimationSet(opt){
             }
 
             if(type === 'base'){ 
-                log('Animation Scroll');
+                // log('Animation Scroll');
                 window.addEventListener('scroll', (e) => {
                     e.preventDefault();
 
@@ -128,7 +128,7 @@ function AnimationSet(opt){
                     }
                 });
             }else{
-                log('Animation Modern');
+                // log('Animation Modern');
                 // log(motion, elm.closest('.modern-item').classList.contains('active'));
             }
         });
