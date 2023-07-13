@@ -56,7 +56,7 @@ function AnimationSet(opt){
             return chkState
         }
 
-        const typoAct = () => {
+        const typoAct = (e, obj, speed) => {
             let win = window.innerWidth
             ,   pos = (e.pageX / (win / 2)) - 1
             ,   spd = (speed * 100) * pos;
@@ -134,7 +134,9 @@ function AnimationSet(opt){
         });
     }
 }
-/* End */
+/* **************
+ * End
+ ************** */
 
 /* **************
  * Prototype
@@ -175,7 +177,7 @@ class MakeModern {
         }else if(sta === 'next' && this.num < this.total){
             this.num = this.num + 1;
         }else{
-            log('End Modern');
+            // log('End Modern');
         }
         return this.num;
     }
@@ -253,19 +255,17 @@ class MakeModern {
                     });
                     this.eventWrap.addEventListener('wheel', (e) => {
                         if(Math.sign(e.deltaY) > 0){
-                            this.modernAction(getIndex('next'));
+                            this.modernAction(this.getIndex('next'));
                         }else{
-                            this.modernAction(getIndex('prev'));
+                            this.modernAction(this.getIndex('prev'));
                         }
-                    });
+                    }, {passive: true});
                 }else{
                     baseEvent = 'touch';
                     this.eventWrap.addEventListener(`${baseEvent}start`, (e) => {
-                        e.preventDefault();
                         toutStart = this.typeState ? e.changedTouches[0].clientY : e.changedTouches[0].clientX;
                     }, {passive: true});
                     this.eventWrap.addEventListener(`${baseEvent}end`, (e) => {
-                        e.preventDefault();
                         toutEnd = this.typeState ? e.changedTouches[0].clientY : e.changedTouches[0].clientX;
                         this.modernTouch(toutStart, toutEnd);
                     }, {passive: true});
@@ -309,7 +309,9 @@ class MakeModern {
         }
     }
 }
-/* End */
+/* **************
+ * End
+ ************** */
 
 document.addEventListener('DOMContentLoaded', function(){
     const modern = new MakeModern('modernType', {
