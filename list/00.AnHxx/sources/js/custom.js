@@ -32,113 +32,6 @@ const _Fn = {
 }
 
 /* **************
- * Animation
- * Test Set
- * Start
- ************** */
-function AnimationSet(opt){
-    const {
-        state,
-        type,
-        target
-    } = opt;
-
-    if(state){
-        const obj = document.querySelectorAll(`[data-${target}-motion]`);
-
-        const scrollChk = (elm) => {
-            let obTop = elm.offsetTop;
-            let srTop = window.scrollY;
-            let chkState = false;
-        
-            (srTop > obTop - (window.innerHeight * .6)) ? chkState = true : chkState = false;
-            
-            return chkState
-        }
-
-        const typoAct = (e, obj, speed) => {
-            let win = window.innerWidth
-            ,   pos = (e.pageX / (win / 2)) - 1
-            ,   spd = (speed * 100) * pos;
-
-            obj.forEach((el) => {
-                el.style.transform = `translateX(${spd}px)`;
-            });
-        }
-
-        obj.forEach((elm) => {
-            const motion = elm.dataset.actionMotion.split('-')[0];
-            const timing = elm.dataset.actionTiming;
-            const duration = elm.dataset.actionDuration;
-            const delay = elm.dataset.actionDelay;
-            let set;
-
-            switch (motion){
-                case 'slide':
-                    set = 'translate(0, 0)';
-                    break;
-                case 'scale':
-                    set = 'scale(1)';
-                    break;
-                case 'overlay':
-                    let overText = elm.dataset.actionText;
-                    let overSkew = elm.dataset.actionSkew;
-                    let overStyle = `<p>${overText}<span class="cover ${overSkew ? 'skew' : ''}" style="animation-duration: ${duration ? `${duration}`: '.6'}s; animation-delay: ${delay ? `${delay}`: '0'}s; animation-timing-function: ${timing ? `${timing}` : 'var(--ease-in-out-quad)'}; animation-fill-mode: forwards;">${overText}</span></p>`;
-
-                    elm.innerHTML = overStyle;
-                    break;
-                case 'typography':
-                    if(_Fn.chkDevice() === 'desktop'){
-                        let typoText = elm.dataset.actionText;
-                        let typoHtml;
-
-                        typoHtml = `<div class="left"><div class="box"><div class="moving"><p class="txt">${typoText}</p></div></div></div>
-                                    <div class="right"><div class="box"><div class="moving"><p class="txt">${typoText}</p></div></div></div>`;
-
-                        elm.innerHTML = typoHtml;
-
-                        let typoBox = elm.querySelectorAll('.moving');
-                        window.addEventListener('mousemove', (e) => typoAct(e, typoBox, duration));
-                    }
-                    break;
-                default :
-                    set = 'none';
-                    break;
-            }
-
-            if(type === 'base'){ 
-                // log('Animation Scroll');
-                window.addEventListener('scroll', (e) => {
-                    e.preventDefault();
-
-                    if(scrollChk(elm)){
-                        if(elm.querySelector('.cover')){
-                            // elm.querySelector('.cover').classList.add('overlay');
-                            _Fn.setClass(elm.querySelector('.cover'), 'overlay', 'add');
-                        }else{
-                            elm.setAttribute('style', `transform: ${set}; transition-duration: ${duration ? `${duration}`: '.4'}s; transition-delay: ${delay ? `${delay}`: '0'}s; opacity: 1;`);
-                        }
-                    }else{
-                        if(elm.querySelector('.cover')){
-                            // elm.querySelector('.cover').classList.remove('overlay');
-                            _Fn.setClass(elm.querySelector('.cover'), 'overlay', 'remove');
-                        }else{
-                            elm.setAttribute('style', `transition-duration: ${duration ? `${duration}`: '.4'}s;; transition-delay: 0s; opacity: 0;`);
-                        }
-                    }
-                });
-            }else{
-                // log('Animation Modern');
-                // log(motion, elm.closest('.modern-item').classList.contains('active'));
-            }
-        });
-    }
-}
-/* **************
- * End
- ************** */
-
-/* **************
  * Prototype
  * Test Modern
  * Start
@@ -188,7 +81,7 @@ class MakeModern {
             this.pageElm.classList.add('progress');
             mHtml += `<span class="progress" style="height: ${(100 / (this.total + 1)) * (1)}%; transition: var(--${this.timing}) ${this.duration}s;"</span>`;
         }else{
-            for(var i = 0; i <= this.total; i++) mHtml += `<span class="pagin ${(i === this.num) ? 'active' : ''}"></span>`;
+            for(let i = 0; i <= this.total; i++) mHtml += `<span class="pagin ${(i === this.num) ? 'active' : ''}"></span>`;
         }
 
         return mHtml;
@@ -313,10 +206,148 @@ class MakeModern {
  * End
  ************** */
 
-document.addEventListener('DOMContentLoaded', function(){
+/* **************
+ * Animation
+ * Test Set
+ * Start
+ ************** */
+function AnimationSet (opt){
+    const {
+        state,
+        type,
+        target
+    } = opt;
+
+    if(state){
+        const obj = document.querySelectorAll(`[data-${target}-motion]`);
+
+        const scrollChk = (elm) => {
+            let obTop = elm.offsetTop;
+            let srTop = window.scrollY;
+            let chkState = false;
+        
+            (srTop > obTop - (window.innerHeight * .6)) ? chkState = true : chkState = false;
+            
+            return chkState
+        }
+
+        const typoAct = (e, obj, speed) => {
+            let win = window.innerWidth
+            ,   pos = (e.pageX / (win / 2)) - 1
+            ,   spd = (speed * 100) * pos;
+
+            obj.forEach((el) => {
+                el.style.transform = `translateX(${spd}px)`;
+            });
+        }
+
+        obj.forEach((elm) => {
+            const motion = elm.dataset.actionMotion.split('-')[0];
+            const timing = elm.dataset.actionTiming;
+            const duration = elm.dataset.actionDuration;
+            const delay = elm.dataset.actionDelay;
+            let set;
+
+            switch (motion){
+                case 'slide':
+                    set = 'translate(0, 0)';
+                    break;
+                case 'scale':
+                    set = 'scale(1)';
+                    break;
+                case 'overlay':
+                    let overText = elm.dataset.actionText;
+                    let overSkew = elm.dataset.actionSkew;
+                    let overStyle = `<p>${overText}<span class="cover ${overSkew ? 'skew' : ''}" style="animation-duration: ${duration ? `${duration}`: '.6'}s; animation-delay: ${delay ? `${delay}`: '0'}s; animation-timing-function: ${timing ? `${timing}` : 'var(--ease-in-out-quad)'}; animation-fill-mode: forwards;">${overText}</span></p>`;
+
+                    elm.innerHTML = overStyle;
+                    break;
+                case 'typography':
+                    if(_Fn.chkDevice() === 'desktop'){
+                        let typoText = elm.dataset.actionText;
+                        let typoHtml;
+
+                        typoHtml = `<div class="left"><div class="box"><div class="moving"><p class="txt">${typoText}</p></div></div></div>
+                                    <div class="right"><div class="box"><div class="moving"><p class="txt">${typoText}</p></div></div></div>`;
+
+                        elm.innerHTML = typoHtml;
+
+                        let typoBox = elm.querySelectorAll('.moving');
+                        window.addEventListener('mousemove', (e) => typoAct(e, typoBox, duration));
+                    }
+                    break;
+                default :
+                    set = 'none';
+                    break;
+            }
+
+            if(type === 'base'){ 
+                // log('Animation Scroll');
+                window.addEventListener('scroll', (e) => {
+                    e.preventDefault();
+
+                    if(scrollChk(elm)){
+                        if(elm.querySelector('.cover')){
+                            // elm.querySelector('.cover').classList.add('overlay');
+                            _Fn.setClass(elm.querySelector('.cover'), 'overlay', 'add');
+                        }else{
+                            elm.setAttribute('style', `transform: ${set}; transition-duration: ${duration ? `${duration}`: '.4'}s; transition-delay: ${delay ? `${delay}`: '0'}s; opacity: 1;`);
+                        }
+                    }else{
+                        if(elm.querySelector('.cover')){
+                            // elm.querySelector('.cover').classList.remove('overlay');
+                            _Fn.setClass(elm.querySelector('.cover'), 'overlay', 'remove');
+                        }else{
+                            elm.setAttribute('style', `transition-duration: ${duration ? `${duration}`: '.4'}s;; transition-delay: 0s; opacity: 0;`);
+                        }
+                    }
+                });
+            }else{
+                // log('Animation Modern');
+                // log(motion, elm.closest('.modern-item').classList.contains('active'));
+            }
+        });
+    }
+}
+/* **************
+ * End
+ ************** */
+
+/* **************
+ * Effect
+ * Show Animation
+ * Start
+ ************** */
+function SnowMaker(opt){
+    const {
+        state,
+        target
+    } = opt;
+
+    if(state){
+        const elm = document.querySelector(target);
+        const dur = elm.dataset.snowDuration; 
+        const cor = elm.dataset.snowColor;
+        const min = Number.parseInt(elm.dataset.snowMin);
+        const max = Number.parseInt(elm.dataset.snowMax);
+        const len = elm.dataset.snowLength;
+        
+        let sha = [];
+
+        for(let i = 0; i < len; i++){
+            sha.push(` ${Number.parseInt(Math.random() * (max - min) + min)}px ${Number.parseInt(Math.random() * (max - min) + min)}px var(${cor})`);
+        }
+
+        elm.setAttribute('style', `animation-duration: ${dur}s; box-shadow: ${sha}`);
+    }
+}
+/* **************
+ * End
+ ************** */
+document.addEventListener('DOMContentLoaded', () => {
     const modern = new MakeModern('modernType', {
-        state : true,
-        setIdx : 0,
+        state: true,
+        setIdx: 0,
         timing: 'ease-in-out-quad',
         direction: 'vertical',
         duration: 1,
@@ -343,8 +374,23 @@ document.addEventListener('DOMContentLoaded', function(){
     });
 
     const animation = new AnimationSet({
-        state : true,
-        type : 'modern',
-        target : 'action'
+        state: true,
+        type: 'modern',
+        target: 'action'
+    });
+
+    const snow01 = new SnowMaker({
+        state: true,
+        target: '.snow01'
+    });
+
+    const snow02 = new SnowMaker({
+        state: true,
+        target: '.snow02'
+    });
+
+    const snow03 = new SnowMaker({
+        state: true,
+        target: '.snow03'
     });
 });

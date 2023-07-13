@@ -11,9 +11,9 @@
   --color-base3: #ccc;
   --color-base4: #aaa;
   --color-point01: #2944cc;
-  --color-point02: #aaa;
-  --color-point03: #aaa;
-  --color-point04: #aaa;
+  --color-point02: red;
+  --color-point03: green;
+  --color-point04: yellow;
   --shadow-base01: rgba(0, 0, 0, .16);
   --shadow-base02: rgba(0, 0, 0, .4);
   --shadow-text01: rgba(118, 118, 118, 0.2) 0.0625rem 0.0625rem, rgba(118, 118, 118, 0.2) 0.125rem 0.125rem, rgba(118, 118, 118, 0.2) 0.1875rem 0.1875rem, rgba(118, 118, 118, 0.2) 0.25rem 0.25rem, rgba(118, 118, 118, 0.2) 0.3125rem 0.3125rem, rgba(118, 118, 118, 0.2) 0.375rem 0.375rem;
@@ -40,6 +40,14 @@
 }
 
 /* animation set */
+@keyframes animStar {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-62.5rem);
+  }
+}
 @keyframes overlay {
   0% {
     width: 0;
@@ -200,13 +208,33 @@
 
 body {
   position: relative;
-  background-color: #f1f1f1;
+  background-color: var(--color-base1);
   overflow-x: hidden;
   -webkit-font-variant-ligatures: none;
   font-variant-ligatures: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   text-shadow: rgba(0, 0, 0, 0.1) 0 0 1px;
+}
+body > [class*=snow-] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 100%;
+  background: transparent;
+  animation: animStar 100s linear infinite;
+}
+body > [class*=snow-][class*=small] {
+  width: 0.125rem;
+  height: 0.125rem;
+}
+body > [class*=snow-][class*=medium] {
+  width: 0.1875rem;
+  height: 0.1875rem;
+}
+body > [class*=snow-][class*=large] {
+  width: 0.25rem;
+  height: 0.25rem;
 }
 
 #container {

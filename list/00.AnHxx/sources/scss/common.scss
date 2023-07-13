@@ -5,14 +5,31 @@
 
 body {
     position: relative;
-    // background-color: var(--color-white);
-    background-color: #f1f1f1;
+    background-color: var(--color-base1);
     overflow-x: hidden;
     -webkit-font-variant-ligatures: none;
     font-variant-ligatures: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     text-shadow: rgba(0, 0, 0, .1) 0 0 1px;
+    > [class*="snow-"] {
+        @include pos($p: absolute, $t: 0, $l: 0);
+        border-radius: 100%;
+        background: transparent;
+        animation: animStar 100s linear infinite;
+        &[class*="small"] {
+            width: px(2);
+            height: px(2);
+        }
+        &[class*="medium"] {
+            width: px(3);
+            height: px(3);
+        }
+        &[class*="large"] {
+            width: px(4);
+            height: px(4);
+        }
+    }
 }
 #container {
     position: relative;
