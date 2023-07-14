@@ -54,24 +54,23 @@
 
 ## list
 
-* [ ] 00.TypeScript - 참고 : [5분안에 보는 TypeScript](https://typescript-kr.github.io/pages/tutorials/typescript-in-5-minutes.html)
-* [ ] [00.AnHxx](http://nergyhee.dothome.co.kr/myList/list/00.AnHxx/sources)
+* [X] [00.AnHxx](http://nergyhee.dothome.co.kr/myList/list/00.AnHxx)
 * [X] 01.Fixed Element
-* [X] [02.Fixed Element V2](http://nergyhee.dothome.co.kr/myList/list/02.Fixed-Element-V2/sources)
-* [X] [03.Scroll Action Animation](http://nergyhee.dothome.co.kr/myList/list/03.Scroll-Action-Animation/sources)
-* [X] [04.System Time Counter](http://nergyhee.dothome.co.kr/myList/list/04.System-Time-Counter/sources)
-* [X] [05.Hight Chart API](http://nergyhee.dothome.co.kr/myList/list/05.High-Charts-API/sources)
-* [X] [06.GooGle Charts API](http://nergyhee.dothome.co.kr/myList/list/06.Google-Charts-API/sources)
-* [X] [07.Youtube-API](http://nergyhee.dothome.co.kr/myList/list/07.Youtube-API/sources)
-* [X] [08.Calculator](http://nergyhee.dothome.co.kr/myList/list/08.Calculator/sources)
-* [X] [09.Lucky Test](http://nergyhee.dothome.co.kr/myList/list/09.Lucky-Test/sources)
-* [X] [10.Car Number Apply](http://nergyhee.dothome.co.kr/myList/list/10.Car-Number-Apply/sources)
+* [X] [02.Fixed Element V2](http://nergyhee.dothome.co.kr/myList/list/02.Fixed-Element-V2)
+* [X] [03.Scroll Action Animation](http://nergyhee.dothome.co.kr/myList/list/03.Scroll-Action-Animation)
+* [X] [04.System Time Counter](http://nergyhee.dothome.co.kr/myList/list/04.System-Time-Counter)
+* [X] [05.Hight Chart API](http://nergyhee.dothome.co.kr/myList/list/05.High-Charts-API)
+* [X] [06.GooGle Charts API](http://nergyhee.dothome.co.kr/myList/list/06.Google-Charts-API)
+* [X] [07.Youtube-API](http://nergyhee.dothome.co.kr/myList/list/07.Youtube-API)
+* [X] [08.Calculator](http://nergyhee.dothome.co.kr/myList/list/08.Calculator)
+* [X] [09.Lucky Test](http://nergyhee.dothome.co.kr/myList/list/09.Lucky-Test)
+* [X] [10.Car Number Apply](http://nergyhee.dothome.co.kr/myList/list/10.Car-Number-Apply)
 * [X] [11.Step By Step (*1phase)](http://nergyhee.dothome.co.kr/myList/list/11.Step-By-Step/sources/intro.html)
-* [X] [12.Step By Content](http://nergyhee.dothome.co.kr/myList/list/12.Step-By-Content/sources)
-* [X] [13.Circle Counter](http://nergyhee.dothome.co.kr/myList/list/13.CirCle-Counter/sources)
-* [X] [14.Circle Loading](http://nergyhee.dothome.co.kr/myList/list/14.CirCle-Loading/sources)
-* [X] [15.Service Area List Maker](http://nergyhee.dothome.co.kr/myList/list/15.Service-Area-List/sources)
-* [ ] [16.Virtual Gallery](http://nergyhee.dothome.co.kr/myList/list/16.Virtual-Gallery/sources)
+* [X] [12.Step By Content](http://nergyhee.dothome.co.kr/myList/list/12.Step-By-Content)
+* [X] [13.Circle Counter](http://nergyhee.dothome.co.kr/myList/list/13.CirCle-Counter)
+* [X] [14.Circle Loading](http://nergyhee.dothome.co.kr/myList/list/14.CirCle-Loading)
+* [X] [15.Service Area List Maker](http://nergyhee.dothome.co.kr/myList/list/15.Service-Area-List)
+* [X] [16.Virtual Gallery](http://nergyhee.dothome.co.kr/myList/list/16.Virtual-Gallery)
 
 <br>
 <br>
