@@ -11,6 +11,7 @@
 ## git commit rule (23.06.21)
 * rule
 
+        set (setting) : 새로운 프로젝트 생성 했을 때
         feat (feature) : 새로운 기능을 추가 했을 때
         fix (bug fix) : 버그를 수정한 경우
         test (when adding missing tests) : 테스트 추가, 테스트 리팩토링(프로덕션 코드 변경 x)
@@ -53,6 +54,8 @@
 
 ## list
 
+* [ ] 00.TypeScript - 참고 : [5분안에 보는 TypeScript](https://typescript-kr.github.io/pages/tutorials/typescript-in-5-minutes.html)
+* [ ] [00.AnHxx](http://nergyhee.dothome.co.kr/myList/list/00.AnHxx/sources)
 * [X] 01.Fixed Element
 * [X] [02.Fixed Element V2](http://nergyhee.dothome.co.kr/myList/list/02.Fixed-Element-V2/sources)
 * [X] [03.Scroll Action Animation](http://nergyhee.dothome.co.kr/myList/list/03.Scroll-Action-Animation/sources)
