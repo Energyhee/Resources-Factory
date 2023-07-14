@@ -1,0 +1,26 @@
+/* high charts */
+.chart-wrapper {
+  max-width: 62.5rem;
+  margin: 0 auto;
+}
+.chart-wrapper .gird-box {
+  width: 100%;
+  margin: 0 auto;
+}
+.chart-wrapper .gird-box .items {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ccc;
+}
+.chart-wrapper .gird-box .items.grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, 2fr);
+}
+.chart-wrapper .gird-box .items > div {
+  width: 100%;
+  border: 1px solid green;
+}
+.chart-wrapper .gird-box .items ~ .items {
+  margin-top: 1.25rem;
+}

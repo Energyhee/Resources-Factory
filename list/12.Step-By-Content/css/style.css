@@ -1,0 +1,129 @@
+/* media */
+@media screen and (max-width: 320px) {
+  html {
+    font-size: 12px;
+  }
+}
+/* modern */
+.modern-wrapper {
+  position: relative;
+  margin: 2.5rem auto;
+}
+
+.modern-container {
+  position: relative;
+  width: 18.75rem;
+  height: 37.5rem;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.modern-list {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transition-timing-function: var(--ease-in-quad);
+  transform: translateX(0);
+}
+
+.modern-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 1.25rem;
+}
+.modern-item:nth-child(1) {
+  background-color: var(--color-base1);
+}
+.modern-item:nth-child(2) {
+  background-color: var(--color-base2);
+}
+.modern-item:nth-child(3) {
+  background-color: var(--color-base3);
+}
+.modern-item:nth-child(4) {
+  background-color: var(--color-base4);
+}
+
+.modern-pagination {
+  counter-reset: count;
+  display: block;
+  margin: 0.625rem auto 0;
+  text-align: center;
+}
+.modern-pagination span {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1rem;
+  height: 1rem;
+  line-height: 0;
+  border-radius: 100%;
+  background-color: #eee;
+  cursor: pointer;
+}
+.modern-pagination span:before {
+  counter-increment: count;
+  content: counter(count);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1rem;
+  color: var(--color-gray9);
+  display: inline-block;
+}
+.modern-pagination span.active {
+  background-color: var(--color-black);
+}
+.modern-pagination span.active:before {
+  color: var(--color-white);
+}
+.modern-pagination span ~ span {
+  margin-left: 0.375rem;
+}
+
+.modern-button {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 100%;
+  border: 0.0625rem solid var(--color-base3);
+  transform: translateY(-50%);
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+.modern-button:before {
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+}
+.modern-button[class*=prev] {
+  background-image: url("../images/ico_arr_left.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 0.875rem;
+  background-color: var(--color-base2);
+  left: calc((100% - 18.75rem) / 2 - 1.25rem);
+}
+.modern-button[class*=prev]:before {
+  content: "prev";
+}
+.modern-button[class*=next] {
+  background-image: url("../images/ico_arr_right.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 0.875rem;
+  background-color: var(--color-base2);
+  right: calc((100% - 18.75rem) / 2 - 1.25rem);
+}
+.modern-button[class*=next]:before {
+  content: "next";
+}
+.modern-button.none {
+  pointer-events: none;
+  opacity: 0.2;
+}

@@ -1,0 +1,25 @@
+@charset "utf-8";
+@import '../../../common/scss/mixin';
+
+/* google charts */
+.chart-wrapper {
+	.gird-box {
+		display: grid; 
+		gap: 20px; 
+		grid-template-columns: repeat(2, 2fr);
+		width: 1000px;
+		height: 1000px;
+		margin: 0 auto;
+		.items {
+			display: flex;
+			align-items: center;
+			height: 100%;
+			border: 1px solid #ccc;
+			&.grid {
+				display: grid; 
+				gap: 10px; 
+				grid-template-columns: repeat(2, 2fr);
+			}
+		}
+	}
+}
