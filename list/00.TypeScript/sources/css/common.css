@@ -1,0 +1,143 @@
+:root {
+  --color-transparent: transparent;
+  --color-black: #000;
+  --color-white: #fff;
+  --color-dark3: #333;
+  --color-dark6: #666;
+  --color-dark9: #999;
+  --color-base0: #f5f5f5;
+  --color-base1: #eee;
+  --color-base2: #ddd;
+  --color-base3: #ccc;
+  --color-base4: #aaa;
+  --color-point01: #2944cc;
+  --color-point02: red;
+  --color-point03: green;
+  --color-point04: yellow;
+  --shadow-base01: rgba(0, 0, 0, .16);
+  --shadow-base02: rgba(0, 0, 0, .4);
+  --shadow-text01: rgba(118, 118, 118, 0.2) 0.0625rem 0.0625rem, rgba(118, 118, 118, 0.2) 0.125rem 0.125rem, rgba(118, 118, 118, 0.2) 0.1875rem 0.1875rem, rgba(118, 118, 118, 0.2) 0.25rem 0.25rem, rgba(118, 118, 118, 0.2) 0.3125rem 0.3125rem, rgba(118, 118, 118, 0.2) 0.375rem 0.375rem;
+  --trans-duration: .4s;
+  --trans-duration-long: 2s;
+  --ease-in-quad: cubic-bezier(0.55,0.085,0.68,0.53);
+  --ease-in-cubic: cubic-bezier(0.55,0.055,0.675,0.19);
+  --ease-in-quart: cubic-bezier(0.895,0.03,0.685,0.22);
+  --ease-in-quint: cubic-bezier(0.755,0.05,0.855,0.06);
+  --ease-in-expo: cubic-bezier(0.95,0.05,0.795,0.035);
+  --ease-in-circ: cubic-bezier(0.6,0.04,0.98,0.335);
+  --ease-out-quad: cubic-bezier(0.25,0.46,0.45,0.94);
+  --ease-out-cubic: cubic-bezier(0.215,0.61,0.355,1);
+  --ease-out-quart: cubic-bezier(0.165,0.84,0.44,1);
+  --ease-out-quint: cubic-bezier(0.23,1,0.32,1);
+  --ease-out-expo: cubic-bezier(0.19,1,0.22,1);
+  --ease-out-circ: cubic-bezier(0.075,0.82,0.165,1);
+  --ease-in-out-quad: cubic-bezier(0.455,0.03,0.515,0.955);
+  --ease-in-out-cubic: cubic-bezier(0.645,0.045,0.355,1);
+  --ease-in-out-quart: cubic-bezier(0.77,0,0.175,1);
+  --ease-in-out-quint: cubic-bezier(0.86,0,0.07,1);
+  --ease-in-out-expo: cubic-bezier(1,0,0,1);
+  --ease-in-out-circ: cubic-bezier(0.785,0.135,0.15,0.86);
+}
+
+body {
+  position: relative;
+  background-color: var(--color-base1);
+  overflow-x: hidden;
+  -webkit-font-variant-ligatures: none;
+  font-variant-ligatures: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: rgba(0, 0, 0, 0.1) 0 0 1px;
+}
+
+#container {
+  position: relative;
+  z-index: 1;
+  padding-top: 4rem;
+  transition: transform var(--trans-duration) var(--ease-in-out-quad);
+}
+#container::after {
+  content: "";
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: var(--shadow-base01);
+  background: rgb(0, 0, 0);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
+}
+
+#header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  padding: 1.25rem;
+  background-color: #fff;
+  box-shadow: 0 0.1875rem 0.25rem var(--shadow-base01);
+}
+#header h1 {
+  font-size: 1.25rem;
+  font-weight: 900;
+  line-height: 1.2;
+  color: var(--color-black);
+  letter-spacing: -0.03125rem;
+  text-align: center;
+}
+#header #nav-chk {
+  display: none;
+}
+#header #nav-chk:checked + .nav-btn span:nth-child(1) {
+  transform: translate(0.3125rem, 0.0625rem) rotateZ(45deg);
+}
+#header #nav-chk:checked + .nav-btn span:nth-child(2) {
+  transform: translateX(-2rem);
+}
+#header #nav-chk:checked + .nav-btn span:nth-child(3) {
+  transform: translateX(0.3125rem) rotate(-45deg);
+}
+#header .nav-btn {
+  position: absolute;
+  left: 1.25rem;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 2rem;
+  height: 1.5rem;
+  padding: 0.125rem 0;
+  margin-top: -0.75rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+#header .nav-btn span {
+  width: 1.5rem;
+  height: 0.1875rem;
+  border-radius: 2px;
+  background-color: var(--color-black);
+  transition: transform var(--trans-duration) var(--ease-in-out-quad);
+}
+#header .nav-btn span:nth-child(1) {
+  transform-origin: 0 0;
+}
+#header .nav-btn span:nth-child(3) {
+  transform-origin: 0 100%;
+}
+#header:has(#nav-chk:checked) + .nav-wrap {
+  transform: translateX(0);
+}
+#header:has(#nav-chk:checked) ~ #container, #header:has(#nav-chk:checked) ~ .guide-line {
+  transform: translateX(18.75rem);
+}
+#header:has(#nav-chk:checked) ~ #container::after {
+  pointer-events: auto;
+}
