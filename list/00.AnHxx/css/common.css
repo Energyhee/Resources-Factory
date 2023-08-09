@@ -394,11 +394,34 @@ body > [class*=snow-][class*=large] {
   transition: transform var(--trans-duration) var(--ease-in-out-quad);
 }
 .nav-wrap ul li {
+  position: relative;
+}
+.nav-wrap ul li a {
+  display: block;
+  padding: 0.625rem 0.3125rem;
+  transition-duration: var(--trans-duration);
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.5rem;
   color: #000;
   letter-spacing: -0.03125rem;
+}
+.nav-wrap ul li:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 0;
+  height: 0.125rem;
+  background-color: var(--color-point01);
+  transition-duration: var(--trans-duration);
+}
+.nav-wrap ul li.active a {
+  color: var(--color-point01);
+}
+.nav-wrap ul li.active:after {
+  width: 100%;
 }
 
 .main-title {

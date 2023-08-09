@@ -1,4 +1,5 @@
 let log = console.log;
+
 const _Fn = {
     setClass : (scope, name, type) => {
         try{
@@ -56,6 +57,8 @@ class MakeModern {
         this.prevBtn = (opt.button.prevEl) ? this.view.querySelector(opt.button.prevEl) : null;
         this.nextBtn = (opt.button.nextEl) ? this.view.querySelector(opt.button.nextEl) : null;
         this.btnSta = (this.prevBtn != null && this.nextBtn != null) ? true : false;
+
+        this.nav = document.querySelectorAll(opt.nav);
 
         this.eventWrap = this.view.querySelector('.modern-container');
         this.wrap = this.view.querySelector('.modern-list');
@@ -199,6 +202,24 @@ class MakeModern {
             this.modernAction(this.num, true);
         }else{
             this.view.style.display = 'none';
+        }
+        
+        if(this.nav){
+            const li = this.nav;
+            li.forEach((elm, idx, els) => {
+                if(idx === this.num) elm.classList.add('active');
+                elm.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    els.forEach((eld) => {
+                        if(eld !== e.currentTarget){
+                            eld.classList.remove('active');
+                            this.modernAction(idx, true);
+                        }else{
+                            eld.classList.add('active');
+                        } 
+                    }, e.currentTarget);
+                });
+            });
         }
     }
 }
@@ -364,14 +385,9 @@ document.addEventListener('DOMContentLoaded', () => {
         onEvent: {
             end: true
         },
+        nav: '.nav-wrap li'
     });
     modern.startModern();
-    document.querySelectorAll('.nav-wrap li').forEach((elm, idx) => {
-        elm.addEventListener('click', (e) => {
-            e.preventDefault();
-            modern.modernAction(idx, true); 
-        });
-    });
 
     const animation = new AnimationSet({
         state: true,

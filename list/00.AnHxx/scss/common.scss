@@ -153,7 +153,29 @@ body {
     transition: transform var(--trans-duration) var(--ease-in-out-quad);
     ul {
         li {
-            @include font($s: px(20), $l: px(24), $w: 700, $t: px(-.5), $c: #000);
+            position: relative;
+            a {
+                display: block;
+                padding: px(10) px(5);
+                transition-duration: var(--trans-duration);
+                @include font($s: px(20), $l: px(24), $w: 700, $t: px(-.5), $c: #000);
+            }
+            &:after {
+                content: '';
+                @include pos($p: absolute, $l: 0, $b: 0, $z: 1);
+                width: 0;
+                height: px(2);
+                background-color: var(--color-point01);
+                transition-duration: var(--trans-duration);
+            }
+            &.active {
+                a {
+                    color: var(--color-point01);
+                }
+                &:after {
+                    width: 100%;
+                }
+            }
         }
     }
 }
