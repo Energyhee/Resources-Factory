@@ -393,11 +393,9 @@ body > [class*=snow-][class*=large] {
   transform: translateX(-100%);
   transition: transform var(--trans-duration) var(--ease-in-out-quad);
 }
-.nav-wrap ul li {
-  position: relative;
-}
 .nav-wrap ul li a {
-  display: block;
+  position: relative;
+  display: inline-block;
   padding: 0.625rem 0.3125rem;
   transition-duration: var(--trans-duration);
   font-size: 1.25rem;
@@ -406,7 +404,7 @@ body > [class*=snow-][class*=large] {
   color: #000;
   letter-spacing: -0.03125rem;
 }
-.nav-wrap ul li:after {
+.nav-wrap ul li a:after {
   content: "";
   position: absolute;
   left: 0;
@@ -420,7 +418,7 @@ body > [class*=snow-][class*=large] {
 .nav-wrap ul li.active a {
   color: var(--color-point01);
 }
-.nav-wrap ul li.active:after {
+.nav-wrap ul li.active a:after {
   width: 100%;
 }
 
@@ -505,6 +503,19 @@ body > [class*=snow-][class*=large] {
 }
 .modern-wrapper.vertical .modern-container .modern-list .modern-item {
   padding: 1.25rem;
+}
+.modern-wrapper.eventStop {
+  pointer-events: none;
+}
+.modern-wrapper.eventStop:before {
+  content: "";
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
 .modern-pagination {

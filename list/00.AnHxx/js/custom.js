@@ -135,6 +135,7 @@ class MakeModern {
             if(this.typeState) this.view.classList.add('vertical');
             if(this.wrap){
                 let baseEvent
+                ,   wheeling
                 ,   toutStart = 0
                 ,   toutEnd = 0;
         
@@ -152,6 +153,18 @@ class MakeModern {
                     this.eventWrap.addEventListener('wheel', (e) => {
                         if(Math.sign(e.deltaY) > 0){
                             this.modernAction(this.getIndex('next'));
+                            
+                            if (!wheeling) {
+                                console.log('start wheeling!');
+                                this.view.classList.add('eventStop');
+                            }
+
+                            clearTimeout(wheeling);
+                            wheeling = setTimeout(() => {
+                                console.log('stop wheeling!');
+                                this.view.classList.remove('eventStop');
+                                wheeling = undefined;
+                            }, this.duration * 1000);
                         }else{
                             this.modernAction(this.getIndex('prev'));
                         }

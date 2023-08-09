@@ -153,27 +153,27 @@ body {
     transition: transform var(--trans-duration) var(--ease-in-out-quad);
     ul {
         li {
-            position: relative;
             a {
-                display: block;
+                position: relative;
+                display: inline-block;
                 padding: px(10) px(5);
                 transition-duration: var(--trans-duration);
                 @include font($s: px(20), $l: px(24), $w: 700, $t: px(-.5), $c: #000);
-            }
-            &:after {
-                content: '';
-                @include pos($p: absolute, $l: 0, $b: 0, $z: 1);
-                width: 0;
-                height: px(2);
-                background-color: var(--color-point01);
-                transition-duration: var(--trans-duration);
+                &:after {
+                    content: '';
+                    @include pos($p: absolute, $l: 0, $b: 0, $z: 1);
+                    width: 0;
+                    height: px(2);
+                    background-color: var(--color-point01);
+                    transition-duration: var(--trans-duration);
+                }
             }
             &.active {
                 a {
                     color: var(--color-point01);
-                }
-                &:after {
-                    width: 100%;
+                    &:after {
+                        width: 100%;
+                    }
                 }
             }
         }
@@ -254,6 +254,16 @@ body {
             }
         }
     }
+    &.eventStop {
+        pointer-events: none;
+        &:before {
+            content: '';
+            @include pos($p: fixed, $l: 0, $t: 0, $z: 9999);
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+    } 
 }
 .modern-pagination {
     counter-reset: count;
