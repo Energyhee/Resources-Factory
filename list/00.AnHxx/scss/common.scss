@@ -237,6 +237,16 @@ body {
                     }
                 }
             }
+            &.eventStop {
+                pointer-events: none;
+                &:before {
+                    content: '';
+                    @include pos($p: fixed, $l: 0, $t: 0, $z: 9999);
+                    width: 100%;
+                    height: 100%;
+                    pointer-events: none;
+                }
+            } 
         }
     }
     &.vertical {
@@ -254,16 +264,6 @@ body {
             }
         }
     }
-    &.eventStop {
-        pointer-events: none;
-        &:before {
-            content: '';
-            @include pos($p: fixed, $l: 0, $t: 0, $z: 9999);
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-    } 
 }
 .modern-pagination {
     counter-reset: count;

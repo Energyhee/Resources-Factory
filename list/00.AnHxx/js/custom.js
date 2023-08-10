@@ -89,17 +89,30 @@ class MakeModern {
 
         return mHtml;
     }
+    modernWheeling(o, n, m){
+        let wheeling;
+
+        if (!wheeling) {
+            // log('Start Wheeling!');
+            this.wrap.classList.add('wheeling');
+        }
+
+        clearTimeout(wheeling);
+        
+        wheeling = setTimeout(() => {
+            // log('End Wheeling!');
+            this.wrap.classList.remove('wheeling');
+            o.classList.remove('active');
+            if(n === m) o.classList.add('active');
+            wheeling = undefined;
+        }, this.duration * 1000);
+    }
     modernAction(idx, render){
         this.wrap.setAttribute('style', `transform: translate${this.typeState ? 'Y' : 'X'}(-${idx * 100}%); transition-duration: ${this.duration}s; transition-timing-function: var(--${this.timing});`);
         this.item.forEach((elm, i) => {
-            if(render){
-                if(i === idx) elm.classList.add('active');
-            }
+            if(render) if(i === idx) elm.classList.add('active');
             if(this.onEvent.end){
-                setTimeout(function(){
-                    elm.classList.remove('active');
-                    if(i === idx) elm.classList.add('active');
-                }, this.duration * 1000);
+                this.modernWheeling(elm, i, idx);
             }else{
                 elm.classList.remove('active');
                 if(i === idx) elm.classList.add('active');
@@ -142,7 +155,6 @@ class MakeModern {
             if(this.typeState) this.view.classList.add('vertical');
             if(this.wrap){
                 let baseEvent
-                ,   wheeling
                 ,   toutStart = 0
                 ,   toutEnd = 0;
         
@@ -158,19 +170,8 @@ class MakeModern {
                         this.modernTouch(toutStart, toutEnd);
                     });
                     this.eventWrap.addEventListener('wheel', (e) => {
-                        if(Math.sign(e.deltaY) > 0){
+                        if(Math.sign(e.deltaY) > 0){ 
                             this.modernAction(this.getIndex('next'));
-                            
-                            if (!wheeling) {
-                                log('start wheeling!');
-                                this.view.classList.add('eventStop');
-                            }
-                            clearTimeout(wheeling);
-                            wheeling = setTimeout(() => {
-                                log('stop wheeling!');
-                                this.view.classList.remove('eventStop');
-                                wheeling = undefined;
-                            }, this.duration * 1000);
                         }else{
                             this.modernAction(this.getIndex('prev'));
                         }
@@ -374,7 +375,36 @@ function SnowMaker(opt){
     }
 }
 
+function modernSlide(target, opt){
+    const {state, setIdx, timing, direction, duration, pagination, button, onEvent, nav} = opt;
+
+    console.log(state);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+    /* test */
+    const test = new modernSlide('modernType', {
+        state: true,
+        setIdx: 0,
+        timing: 'ease-in-out-quad',
+        direction: 'vertical',
+        duration: 1,
+        pagination: {
+            page: '.modern-pagination',
+            type: 'progress',
+            disp: false
+        },
+        button: {
+            prevEl: '.modern-button.prev',
+            nextEl: '.modern-button.next',
+            disp: true
+        },
+        onEvent: {
+            end: true
+        },
+        nav: '.nav-wrap li'
+    });
+
     const modern = new MakeModern('modernType', {
         state: true,
         setIdx: 0,
