@@ -33,10 +33,9 @@ const _Fn = {
 }
 
 /* **************
- * Prototype
- * Test Modern
- * Start
- ************** */
+** @ name : HCH
+** @ work : Modern
+*************** */
 class MakeModern {
     constructor (target, opt){
         this.view = document.getElementById(target);
@@ -66,6 +65,7 @@ class MakeModern {
 
         this.total = this.item.length - 1;
         this.num = (this.setIdx > -1 && this.setIdx <= this.total) ? this.setIdx : 0;
+
     }
     getIndex(sta){
         if(sta === 'prev' && this.num > 0){
@@ -121,6 +121,13 @@ class MakeModern {
             (idx === 0) ? this.prevBtn.classList.add('none') : this.prevBtn.classList.remove('none');
             (idx === this.total) ? this.nextBtn.classList.add('none') : this.nextBtn.classList.remove('none');
         }
+
+        if(this.nav){
+            this.nav.forEach((li, i) => {
+                li.classList.remove('active');
+                if(i === idx) li.classList.add('active');
+            });
+        }
         this.num = idx;
     }
     modernTouch(start, end){
@@ -155,13 +162,12 @@ class MakeModern {
                             this.modernAction(this.getIndex('next'));
                             
                             if (!wheeling) {
-                                console.log('start wheeling!');
+                                log('start wheeling!');
                                 this.view.classList.add('eventStop');
                             }
-
                             clearTimeout(wheeling);
                             wheeling = setTimeout(() => {
-                                console.log('stop wheeling!');
+                                log('stop wheeling!');
                                 this.view.classList.remove('eventStop');
                                 wheeling = undefined;
                             }, this.duration * 1000);
@@ -236,15 +242,11 @@ class MakeModern {
         }
     }
 }
-/* **************
- * End
- ************** */
 
 /* **************
- * Animation
- * Test Set
- * Start
- ************** */
+** @ name : HCH
+** @ work : Animation
+*************** */
 function AnimationSet (opt){
     const {
         state,
@@ -343,15 +345,11 @@ function AnimationSet (opt){
         });
     }
 }
-/* **************
- * End
- ************** */
 
 /* **************
- * Effect
- * Show Animation
- * Start
- ************** */
+** @ name : HCH
+** @ work : Effect Show Animation
+************** */
 function SnowMaker(opt){
     const {
         state,
@@ -375,9 +373,7 @@ function SnowMaker(opt){
         elm.setAttribute('style', `animation-duration: ${dur}s; box-shadow: ${sha}`);
     }
 }
-/* **************
- * End
- ************** */
+
 document.addEventListener('DOMContentLoaded', () => {
     const modern = new MakeModern('modernType', {
         state: true,
