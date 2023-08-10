@@ -325,14 +325,12 @@ function AnimationSet (opt){
 
                     if(scrollChk(elm)){
                         if(elm.querySelector('.cover')){
-                            // elm.querySelector('.cover').classList.add('overlay');
                             _Fn.setClass(elm.querySelector('.cover'), 'overlay', 'add');
                         }else{
                             elm.setAttribute('style', `transform: ${set}; transition-duration: ${duration ? `${duration}`: '.4'}s; transition-delay: ${delay ? `${delay}`: '0'}s; opacity: 1;`);
                         }
                     }else{
                         if(elm.querySelector('.cover')){
-                            // elm.querySelector('.cover').classList.remove('overlay');
                             _Fn.setClass(elm.querySelector('.cover'), 'overlay', 'remove');
                         }else{
                             elm.setAttribute('style', `transition-duration: ${duration ? `${duration}`: '.4'}s;; transition-delay: 0s; opacity: 0;`);
