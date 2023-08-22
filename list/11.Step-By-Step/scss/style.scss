@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import '../../../common/scss/mixin';
+@import '../../common/scss/mixin';
 
 /* media */
 @media screen and (max-width: 320px) {
@@ -1052,6 +1052,31 @@
                 }
             }
         }
+        &.save {
+            .completeTxt {
+                margin-top: px(30);
+                border-color: #FFE0E0;
+                background-color: #FFFAFA;
+                p {
+                    color: #E63D3D;
+                    &::before {
+                        width: px(27);
+                        height: px(24);
+                        background-image: url('../images/easySell/emo_warning.png');
+                        background-size: auto 100%;
+                    }        
+                }
+            }
+            .etcTxt {
+                margin-top: px(8);
+                text-align: right;
+                font-size: px(13);
+                font-weight: 400;
+                line-height: px(16);
+                letter-spacing: px(-.3);
+                color: #000;
+            }
+        }
     }
     .carWrite li ~ li{
         margin-top: px(45);
@@ -1204,6 +1229,28 @@
                 letter-spacing: px(-.2);
                 color: #000;
             }
+        }
+    }
+    .picGuideTxt {
+        margin: px(30) auto 0;
+        padding: px(12);
+        border: px(1) solid #0096FF;
+        border-radius: px(5);
+        text-align: center;
+        strong {
+            display: block;
+            font-size: px(13);
+            font-weight: 700;
+            line-height: px(20);
+            color: #0096FF;
+        }
+        p {
+            margin-top: px(5);
+            font-size: px(13);
+            font-weight: 500;
+            line-height: px(18);
+            color: #0096FF;
+            word-break: keep-all;
         }
     }
     .attatchPic {

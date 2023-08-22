@@ -1022,6 +1022,29 @@
 .apEasySell.complete .section > .review .reviewWrap {
   padding-top: 1.875rem;
 }
+.apEasySell.complete.save .completeTxt {
+  margin-top: 1.875rem;
+  border-color: #FFE0E0;
+  background-color: #FFFAFA;
+}
+.apEasySell.complete.save .completeTxt p {
+  color: #E63D3D;
+}
+.apEasySell.complete.save .completeTxt p::before {
+  width: 1.6875rem;
+  height: 1.5rem;
+  background-image: url("../images/easySell/emo_warning.png");
+  background-size: auto 100%;
+}
+.apEasySell.complete.save .etcTxt {
+  margin-top: 0.5rem;
+  text-align: right;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1rem;
+  letter-spacing: -0.01875rem;
+  color: #000;
+}
 .apEasySell .carWrite li ~ li {
   margin-top: 2.8125rem;
 }
@@ -1172,6 +1195,28 @@
   line-height: 1.25rem;
   letter-spacing: -0.0125rem;
   color: #000;
+}
+.apEasySell .picGuideTxt {
+  margin: 1.875rem auto 0;
+  padding: 0.75rem;
+  border: 0.0625rem solid #0096FF;
+  border-radius: 0.3125rem;
+  text-align: center;
+}
+.apEasySell .picGuideTxt strong {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+  color: #0096FF;
+}
+.apEasySell .picGuideTxt p {
+  margin-top: 0.3125rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.125rem;
+  color: #0096FF;
+  word-break: keep-all;
 }
 .apEasySell .attatchPic {
   margin-top: 3.125rem;
