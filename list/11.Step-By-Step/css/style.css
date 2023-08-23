@@ -1192,7 +1192,7 @@
   text-align: center;
   font-size: 0.75rem;
   font-weight: 500;
-  line-height: 1.25rem;
+  line-height: 1.125rem;
   letter-spacing: -0.0125rem;
   color: #000;
 }
@@ -1967,4 +1967,32 @@
   top: 0;
   width: 100%;
   margin: 2.8125rem auto 0;
+}
+
+.easySell.info-save .recom-box .txt {
+  border: 0;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.375rem;
+}
+.easySell.info-save .recom-box .btn-area {
+  display: flex;
+  align-items: center;
+  gap: 0 0.625rem;
+}
+.easySell.info-save .recom-box .btn-area button {
+  flex: 1;
+  height: 2.5rem;
+  border: 0.0625rem solid #bbb;
+  font-size: 0.875rem;
+  line-height: 2.375rem;
+}
+.easySell.info-save .recom-box .btn-area .btn-apply {
+  border-color: #00affa;
+  background-color: #00affa;
+  color: #fff;
+}
+.easySell.info-save .recom-box .btn-area .btn-close {
+  background-color: #fff;
+  color: #000;
 }
