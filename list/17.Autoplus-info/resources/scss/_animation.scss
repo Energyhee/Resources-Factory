@@ -1,0 +1,32 @@
+@charset "utf-8";
+@import './mixin';
+
+[data-motion="slide-up"] { 
+	@include ProprtySetPrefix(transform, translateY(px(40)));
+	opacity: 0;
+}
+[data-motion="slide-down"] { 
+	@include ProprtySetPrefix(transform, translateY(px(-40)));
+	opacity: 0;
+}
+[data-motion="slide-left"] {
+	@include ProprtySetPrefix(transform, translateX(px(-40)));
+	opacity: 0;
+}
+[data-motion="slide-right"] {
+	@include ProprtySetPrefix(transform, translateX(px(40)));
+	opacity: 0;
+}
+[data-motion="fade-in"] {
+	opacity: 0;
+}
+[data-motion="scale-up"] {
+    text-align: center; 
+	@include ProprtySetPrefix(transform, scale(.8));
+	opacity: 0;
+}
+[data-motion="scale-down"] {
+    text-align: center; 
+	@include ProprtySetPrefix(transform, scale(1.2));
+	opacity: 0;
+}
