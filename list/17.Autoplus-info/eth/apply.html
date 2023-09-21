@@ -400,32 +400,41 @@
             ,   formRowEmail = $('.form-email')
             ,   formRowPhone = $('.form-phone');
 
-            var nonameFalse = (sta) => {
-                if(sta) nonameRadio.prop('checked', false);
+            var nonameFalse = (radio, input) => {
+                if(radio) nonameRadio.prop('checked', false);
+                if(input){
+                    nonameInp.prop('disabled', false);
+                }else{
+                    nonameInp.prop('disabled', false).val('');
+                }
                 nonameChk.prop('checked', false);
                 nonameInp.prop('disabled', false);
                 nonameTxt.hide();
             };
 
-            var nonameTrue = (sta) => {
-                if(sta) nonameRadio.prop('checked', true);
+            var nonameTrue = (radio, input) => {
+                if(radio) nonameRadio.prop('checked', true);
+                if (input){
+                    nonameInp.prop('disabled', true);
+                }else{
+                    nonameInp.prop('disabled', true).val('');
+                }
                 nonameChk.prop('checked', true);
-                nonameInp.prop('disabled', true).val('');
                 nonameTxt.show();
             };
 
             $(document).on('change', '.apply-form-cont', function(e){
                 if($(e.target).attr('id') === 'reply-email'){
-                    nonameFalse();
+                    nonameFalse(false, true);
 
                     formRowEmail.show();
                     formRowPhone.hide().find('.inpbox').val('');
                 }else if($(e.target).attr('id') === 'reply-phone'){
-                    nonameFalse();
+                    nonameFalse(false, true);
 
                     formRowPhone.show();
                     formRowEmail.hide().find('.inpbox').val('');
-                }else if($(e.target).attr('id') === 'reply-empty' || $(e.target).attr('id') === 'noname-type'){
+                }else if($(e.target).attr('id') === 'reply-empty'){
                     if($(e.target).prop('checked')){
                         nonameTrue(true);
 
@@ -433,6 +442,12 @@
                         formRowPhone.hide().find('.inpbox').val('');
                     }else{
                         nonameFalse(true);
+                    }
+                }else if($(e.target).attr('id') === 'noname-type'){
+                    if($(e.target).prop('checked')){
+                        nonameInp.prop('disabled', true).val('');
+                    }else{
+                        nonameInp.prop('disabled', false);
                     }
                 }
             });

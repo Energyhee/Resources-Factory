@@ -515,7 +515,7 @@
   /* content */
   /* Vision */
   .vision-wrap {
-    padding-bottom: 5rem;
+    padding-bottom: 3.75rem;
   }
   .vision-video-wrap .inner {
     position: relative;
@@ -651,7 +651,7 @@
   }
   /* Business */
   .business-wrap {
-    padding: 5rem 0;
+    padding: 3.75rem 0;
   }
   .business-wrap .base-sub-tit {
     width: 100%;
@@ -701,7 +701,7 @@
   }
   /* History */
   .history-wrap {
-    padding: 5rem 0;
+    padding: 3.75rem 0;
     background-color: #f8f8f8;
   }
   .history-wrap .base-sub-tit {
@@ -804,7 +804,7 @@
   }
   /* Contact */
   .contact-wrap {
-    padding: 5rem 0;
+    padding: 3.75rem 0;
   }
   .contact-cont-map {
     display: block;
@@ -854,7 +854,7 @@
   }
   /* News Room */
   .newsroom-wrap {
-    padding: 5rem 0;
+    padding: 3.75rem 0;
   }
   .newsroom-cont-video {
     position: relative;
@@ -915,7 +915,7 @@
   }
   /* 리본카 TV */
   .reborntv-wrap {
-    padding: 5rem 0;
+    padding: 3.75rem 0;
   }
   .reborntv-cont-menu {
     flex-wrap: wrap;
@@ -986,7 +986,7 @@
   }
   /* 채용정보 */
   .recruit-wrap {
-    padding: 5rem 0;
+    padding: 3.75rem 0;
   }
   .recruit-cont-inner {
     margin-top: 2.5rem;
@@ -1072,17 +1072,17 @@
   }
   /* 기업 윤리 규범, 상담센터, 신고완료 */
   .rule-wrap {
-    padding: 0 0 5rem;
+    padding: 0 0 3.75rem;
     overflow: hidden;
   }
   .rule-wrap .rule-cont-wrap .text-list-cont {
     max-width: 30rem;
-    margin: 5rem auto 0;
+    margin: 3.75rem auto 0;
   }
   .consult-wrap,
   .consult-apply-wrap,
   .consult-comple-wrap {
-    padding: 0 0 7.5rem;
+    padding: 0 0 3.75rem;
   }
   .cons-tab-wrap {
     margin-top: 5rem;
@@ -1102,7 +1102,7 @@
     margin-top: 2.5rem;
   }
   .text-list-cont {
-    margin: 5rem auto 0;
+    margin: 3.75rem auto 0;
   }
   .text-list-cont .flex-row ~ .flex-row {
     margin-top: 2.5rem;

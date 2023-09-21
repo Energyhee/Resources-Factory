@@ -92,7 +92,6 @@ function moAllMenu(){
         var allBtn = $(e.currentTarget)
         ,   allMenu = $('.gnb-wrapper');
 
-        console.log(123, allBtn);
         allBtn.toggleClass('on');
         moScrollDisable();
 
@@ -113,9 +112,9 @@ function moScrollDisable(){
     }
 }
 
-$(document).ready(function(){
+(function(){
     console.log(mediaCheck());
-    
+
     if (mediaCheck() === 'desktop' ){
         // 헤더
         $(document).on({
@@ -130,5 +129,4 @@ $(document).ready(function(){
         // 모바일 전체메뉴
         moAllMenu();
     }
-});
-
+})();
