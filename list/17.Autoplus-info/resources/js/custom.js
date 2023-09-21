@@ -47,6 +47,10 @@ function TabContent(sel, opt){
 // 애니메이션
 function animationAction(opt){
     if(opt.state && $('[data-' + opt.obj + ']').length){
+        var viewHeight = .7;
+
+        if(mediaCheck() === 'mobile') viewHeight = .9;
+        
         $('[data-' + opt.obj + ']').each(function(){
             var obj = $(this)
             ,   type = obj.data('motion')
@@ -67,7 +71,7 @@ function animationAction(opt){
 
             $(window).on('scroll', function(){
                 var winScroll = $(document).scrollTop() || window.pageYOffset;
-                if(winScroll > objTop - ($(window).height() * .7)){
+                if(winScroll > objTop - ($(window).height() * viewHeight)){
                     if(obj.hasClass('action')) return false;
                     obj.css({
                         'transition-duration' : duration + 's',
