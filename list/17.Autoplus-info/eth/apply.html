@@ -247,7 +247,8 @@
                                                             <div class="attch">
                                                                 <p>최대 30MB까지 첨부 가능하며, 1개의 파일만 첨부할 수 있습니다.</p>
                                                                 <ul class="paste">
-                                                                    <li>상담 신고 접수 파일.pdf<a href="javascript:void(0);" class="del">삭제</a></li>
+                                                                    <li>상담 신고 접수 파일.pdf<a href="javascript: void(0);" onclick="fileAttchDel(this);" class="del">삭제</a></li>
+                                                                    <li>상담 신고 접수 파일22.pdf<a href="javascript: void(0);" onclick="fileAttchDel(this);" class="del">삭제</a></li>
                                                                 </ul>
                                                             </div>
                                                         </div>
@@ -333,6 +334,11 @@
                             </ul>
                         </div>
                     </div>
+                    <div class="flex-row">
+                        <div class="flex-col cont">
+                            <p class="copyright">Copyrightⓒ2018 By AutoPlus.Co.Ltd. All right reserved.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="footer-right">
@@ -394,7 +400,6 @@
             ,   formRowEmail = $('.form-email')
             ,   formRowPhone = $('.form-phone');
 
-            console.log(nonameTxt);
             var nonameFalse = (sta) => {
                 if(sta) nonameRadio.prop('checked', false);
                 nonameChk.prop('checked', false);
@@ -432,6 +437,13 @@
                 }
             });
         };
+
+        // 파일 삭제
+        function fileAttchDel(obj){
+            if($(obj).parents('.paste').length){
+                $(obj).parent('li').remove();
+            }
+        }
         
         $(document).ready(function(){
             // 입력

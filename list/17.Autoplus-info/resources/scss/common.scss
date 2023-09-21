@@ -13,6 +13,7 @@ body,html{
 }
 
 #container {
+    position: relative;
     overflow: hidden;
 }
 
@@ -232,9 +233,7 @@ section {
     &:disabled {
         background-color: #eee;
     }
-    &::placeholder {
-        color: transparent;
-    }
+    @include placeSetPrefix(color, transparent);
 }
 
 .txtArea {
@@ -320,9 +319,6 @@ section {
         width: 100%;
         height: px(90);
         margin: 0 auto;
-        .header-logo {
-            
-        }
         .reborn-move {
             @include pos($p: absolute, $r: 0, $t: 50%, $z: 1);
             flex: none;
@@ -342,11 +338,11 @@ section {
             }
         }
         .gnb-wrap {
-            ul {
+            > ul {
                 display: flex;
                 align-items: center;
                 gap: 0 px(70);
-                li {
+                > li {
                     position: relative;
                     padding: px(20) 0;
                     > a {
@@ -366,14 +362,15 @@ section {
                         box-shadow: 0 px(3) px(8) rgba(0,0,0,.2);
                         background-color: #fff;
                         ul {
+                            display: flex;
                             flex-direction: column;
-                            gap: px(10) 0;
+                            gap: px(10);
                             li {
                                 width: 100%;
                                 padding: 0;
                                 text-align: left;
                                 a {
-                                    height: auto;
+                                    display: block;
                                     padding: 0;
                                     transition-duration: unset;
                                     @include font($s: px(14), $w: 400, $l: px(16), $c: #000);
@@ -391,9 +388,6 @@ section {
                         }
                         .depth2 {
                             display: block;
-                            li {
-                                
-                            }
                         }
                     }
                 }
@@ -403,7 +397,7 @@ section {
 }
 
 #footer {
-    padding: px(30) 0 px(80);
+    padding: px(30) 0 px(60);
     background-color: #101010;
     overflow: hidden;
     * {
@@ -426,7 +420,6 @@ section {
                 }
                 &:last-child {
                     padding-bottom: px(20);
-                    border-bottom: 1px solid #333;
                 }
                 .tit {
                     max-width: px(160);
@@ -464,7 +457,6 @@ section {
                 }
             }
             .copyright {
-                margin-top: px(10);
                 @include font($s: px(14), $w: 400, $l: px(24), $t: 0, $c: #aaa);
             }
         }

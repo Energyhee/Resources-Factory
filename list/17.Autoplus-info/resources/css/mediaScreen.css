@@ -64,6 +64,7 @@
     position: absolute;
     left: 1.25rem;
     top: 50%;
+    z-index: 10;
     width: 2rem;
     height: 2rem;
     margin-top: -1rem;
@@ -78,6 +79,7 @@
     height: 2px;
     background-color: #000;
     transition: transform 0.4s ease-in-out;
+    pointer-events: none;
   }
   #header .inner .m-all-btn span:nth-child(1) {
     top: 0.375rem;
@@ -157,10 +159,6 @@
     border: 0;
     border-radius: 0;
     box-shadow: none;
-  }
-  #header .inner .gnb-wrap > ul > li .depth2 ul {
-    padding: 0;
-    gap: 0.625rem;
   }
   #header .inner .gnb-wrap > ul > li .depth2 ul li a {
     position: relative;
@@ -377,6 +375,7 @@
   section .page-title-img .base-main-tit p {
     margin-top: 0.625rem;
     font-size: 0.875rem;
+    line-height: 1.3125rem;
   }
   .base-main-tit {
     font-size: 1.375rem;
@@ -448,6 +447,10 @@
     margin: 1.875rem 0 0;
     border: 0;
   }
+  #footer .inner .footer-left .flex-wrap .flex-row:last-child .copyright {
+    font-size: 0.8125rem;
+    color: #666;
+  }
   #footer .inner .footer-left .flex-wrap .flex-row .tit {
     max-width: 100%;
     font-size: 1rem;
@@ -513,9 +516,6 @@
   /* Vision */
   .vision-wrap {
     padding-bottom: 5rem;
-  }
-  .vision-video-wrap {
-    padding: 0;
   }
   .vision-video-wrap .inner {
     position: relative;
@@ -1291,7 +1291,13 @@
     width: 100%;
     height: 2.875rem;
   }
-  .apply-form-wrap .apply-form-cont .apply-form-box .apply-form-inner .form-row .cont .form-in .inpbox::placeholder {
+  .apply-form-wrap .apply-form-cont .apply-form-box .apply-form-inner .form-row .cont .form-in .inpbox::-webkit-input-placeholder {
+    color: #999;
+  }
+  .apply-form-wrap .apply-form-cont .apply-form-box .apply-form-inner .form-row .cont .form-in .inpbox:-moz-placeholder, .apply-form-wrap .apply-form-cont .apply-form-box .apply-form-inner .form-row .cont .form-in .inpbox::-moz-input-placeholder {
+    color: #999;
+  }
+  .apply-form-wrap .apply-form-cont .apply-form-box .apply-form-inner .form-row .cont .form-in .inpbox:-ms-input-placeholder {
     color: #999;
   }
   .apply-form-wrap .apply-form-cont .apply-form-box .apply-form-inner .form-row .cont .form-in .txtArea {

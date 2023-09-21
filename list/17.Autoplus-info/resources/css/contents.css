@@ -6,7 +6,6 @@
 }
 
 .vision-video-wrap .inner {
-  max-width: 1920px;
   width: 100%;
 }
 
@@ -226,7 +225,7 @@
 
 /* Business */
 .business-wrap {
-  padding: 12.5rem 0;
+  padding: 6.25rem 0;
   background-color: #f8f8f8;
 }
 .business-wrap .base-sub-tit {
@@ -296,7 +295,7 @@
 /* History */
 .history-wrap {
   min-height: 50vh;
-  padding: 12.5rem 0;
+  padding: 6.25rem 0;
   background-color: #f8f8f8;
 }
 .history-wrap .base-sub-tit {
@@ -406,7 +405,7 @@
 
 /* Contact */
 .contact-wrap {
-  padding: 12.5rem 0;
+  padding: 6.25rem 0;
   background-color: #f8f8f8;
 }
 .contact-wrap .base-sub-tit {
@@ -565,7 +564,7 @@
 
 /* News Room */
 .newsroom-wrap {
-  padding: 12.5rem 0;
+  padding: 6.25rem 0;
   background-color: #f8f8f8;
 }
 
@@ -668,7 +667,7 @@
 
 /* 리본카 TV */
 .reborntv-wrap {
-  padding: 12.5rem 0;
+  padding: 6.25rem 0;
   background-color: #f8f8f8;
 }
 
@@ -803,12 +802,12 @@
 
 /* 리본카 공모전 */
 .compe-wrap {
-  padding: 12.5rem 0;
+  padding: 6.25rem 0;
 }
 
 /* 채용정보 */
 .recruit-wrap {
-  padding: 12.5rem 0;
+  padding: 6.25rem 0;
   background-color: #f8f8f8;
 }
 
@@ -1426,7 +1425,7 @@
   position: fixed;
   left: 50%;
   top: 50%;
-  z-index: 101;
+  z-index: 100;
   display: none;
   width: calc(100% - 2.5rem);
   max-width: 23.75rem;

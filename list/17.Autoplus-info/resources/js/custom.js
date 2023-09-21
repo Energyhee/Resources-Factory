@@ -92,13 +92,14 @@ function moAllMenu(){
         var allBtn = $(e.currentTarget)
         ,   allMenu = $('.gnb-wrapper');
 
+        console.log(123, allBtn);
         allBtn.toggleClass('on');
         moScrollDisable();
 
         if(allBtn.hasClass('on')){
-            allMenu.addClass('active').fadeIn();
+            allMenu.addClass('active').stop().fadeIn();
         }else{
-            allMenu.removeClass('active').fadeOut();
+            allMenu.removeClass('active').stop().fadeOut();
         }
     });
 }

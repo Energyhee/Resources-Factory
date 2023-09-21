@@ -2,35 +2,24 @@
     @return calc(($pixels) / 16) + rem;
 }
 
-$set-prefix: '', '-moz-', '-webkit-';
-@mixin ProprtySetPrefix($name, $value) {
+$set-prefix: '', '-ms-', '-moz-', '-webkit-';
+@mixin baseSetPrefix($name, $value) {
 	@each $prefix in $set-prefix {
 		#{$prefix}#{$name}: $value;
 	}
 }
-@mixin ValueSetPrefix($name, $value) {
-	@each $prefix in $set-prefix {
-		#{$name}: #{$prefix}$value;
-	}
-}
 
-@mixin centerElm ($a: null, $j: null, $d: null){
-	display: flex;
-	@if $a != null {
-		align-items: $a;
-	}@else {
-		align-items: center;	
-	}
-	@if $j != null {
-		justify-content: $j;
-	}@else {
-		justify-content: center;
-	}
-	@if $d != null {
-		flex-direction: $d;
-	}@else {
-		flex-direction: row;
-	}
+@mixin placeSetPrefix($name, $value){
+	&::-webkit-input-placeholder {
+		#{$name}: $value;
+    }    
+    &:-moz-placeholder,
+    &::-moz-input-placeholder {
+        #{$name}: $value;
+    }
+    &:-ms-input-placeholder {
+        #{$name}: $value;
+    }
 }
 
 @mixin fontHide(){
@@ -49,43 +38,6 @@ $set-prefix: '', '-moz-', '-webkit-';
 	color: $c;
 	letter-spacing: $t;
 	text-align: $a;
-}
-
-@mixin dot($w: null, $h: null, $t: null, $l: null, $c: null) {
-	position: relative;
-	&:before {
-		content: "";
-		position: absolute;
-		top: $t; 
-		left: $l;
-		@if $t == 50% {
-			margin-top: calc(-1 * (#{$h} / 2))
-		}
-		width: $w; 
-		height: $h;
-		border-radius: $w;
-		background: $c;
-	}
-}
-
-@mixin par($w: null, $h: null, $t: null, $r: null, $b: null, $l: null, $c: null) {
-	position: relative;
-	&:before {
-		content: "";
-		position: absolute;
-		top: $t; 
-		right: $r;
-		bottom: $b;
-		left: $l;
-		@if $t == 50% {
-            margin-top: calc(-1 * (#{$h} / 2));
-		} @else if $b == 50% {
-			margin-bottom: calc(-1 * (#{$h} / 2))
-		}
-		width: $w; 
-		height: $h;
-		background: $c;
-	}
 }
 
 @mixin pos($p: null,$l: null,$r: null,$t: null,$b: null,$z: null) {
