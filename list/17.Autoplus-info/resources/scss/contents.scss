@@ -426,19 +426,25 @@
                     &#btnAllBranch{
                         width: auto;
                         flex: 1;
-                    }
-                    &#btnRoadmap {
-                        background: #425470;
-                        background: linear-gradient(#425470, #5b6d8a);
-                        color: #fff;
+                        &.selected_btn {
+                            background: #002299;
+                            background: linear-gradient(#002299, #005895);
+                            color: #fff;
+                        }
                     }
                     &.active {
                         background:#e6e6e6;
                         background: linear-gradient(#e6e6e6, #fff);
                     }
                     &:hover {
+                        color: #000;
                         background: #f5f5f5;
                         background: linear-gradient(#f5f5f5,#e3e3e3);
+                    }
+                    &.selected_btn {
+                        background: #425470;
+                        background: linear-gradient(#425470, #5b6d8a);
+                        color: #fff;
                     }
                 }
             }
@@ -463,6 +469,31 @@
                     }
                     ~ span {
                         border-top: px(1) solid #bfbfbf;
+                    }
+                }
+            }
+            .overlay-info-box {
+                min-width: px(200);
+                padding: px(5) px(10) px(5) px(5);
+                .title-row {
+                    padding-bottom: px(6);
+                    border-bottom: px(1) solid #ddd;
+                    .name {
+                        font-size: px(14);
+                        font-weight: 700;
+                        line-height: px(18);
+                    }
+                }
+                .info-row {
+                    padding-top: px(6);
+                    p {
+                        font-size: px(14);
+                        font-weight: 500;
+                        line-height: px(16);
+                        letter-spacing: px(-.5);
+                        br {
+                            display: none;
+                        }
                     }
                 }
             }

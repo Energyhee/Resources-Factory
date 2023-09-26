@@ -521,9 +521,9 @@
   width: auto;
   flex: 1;
 }
-.contact-cont-map .map .con-map .custom-type-control span#btnRoadmap {
-  background: #425470;
-  background: linear-gradient(#425470, #5b6d8a);
+.contact-cont-map .map .con-map .custom-type-control span#btnAllBranch.selected_btn {
+  background: #002299;
+  background: linear-gradient(#002299, #005895);
   color: #fff;
 }
 .contact-cont-map .map .con-map .custom-type-control span.active {
@@ -531,8 +531,14 @@
   background: linear-gradient(#e6e6e6, #fff);
 }
 .contact-cont-map .map .con-map .custom-type-control span:hover {
+  color: #000;
   background: #f5f5f5;
   background: linear-gradient(#f5f5f5, #e3e3e3);
+}
+.contact-cont-map .map .con-map .custom-type-control span.selected_btn {
+  background: #425470;
+  background: linear-gradient(#425470, #5b6d8a);
+  color: #fff;
 }
 .contact-cont-map .map .con-map .custom-zoom-control {
   position: absolute;
@@ -560,6 +566,31 @@
 }
 .contact-cont-map .map .con-map .custom-zoom-control span ~ span {
   border-top: 0.0625rem solid #bfbfbf;
+}
+.contact-cont-map .map .con-map .overlay-info-box {
+  min-width: 12.5rem;
+  padding: 0.3125rem 0.625rem 0.3125rem 0.3125rem;
+}
+.contact-cont-map .map .con-map .overlay-info-box .title-row {
+  padding-bottom: 0.375rem;
+  border-bottom: 0.0625rem solid #ddd;
+}
+.contact-cont-map .map .con-map .overlay-info-box .title-row .name {
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.125rem;
+}
+.contact-cont-map .map .con-map .overlay-info-box .info-row {
+  padding-top: 0.375rem;
+}
+.contact-cont-map .map .con-map .overlay-info-box .info-row p {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1rem;
+  letter-spacing: -0.03125rem;
+}
+.contact-cont-map .map .con-map .overlay-info-box .info-row p br {
+  display: none;
 }
 
 /* News Room */
