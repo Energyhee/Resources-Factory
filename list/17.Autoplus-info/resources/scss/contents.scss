@@ -471,10 +471,23 @@
                         border-top: px(1) solid #bfbfbf;
                     }
                 }
+                & + div > div > div:last-child > div {
+                    width: px(300) !important;
+                    height: auto !important;
+                    > img {
+                        top: px(10) !important;
+                    }
+                    > div {
+                        top: 100% !important;
+                        & + div {
+                            position: static !important;
+                        }
+                    } 
+                }
             }
             .overlay-info-box {
                 min-width: px(200);
-                padding: px(5) px(10) px(5) px(5);
+                padding: px(10) px(20) px(10) px(10);
                 .title-row {
                     padding-bottom: px(6);
                     border-bottom: px(1) solid #ddd;
@@ -485,7 +498,7 @@
                     }
                 }
                 .info-row {
-                    padding-top: px(6);
+                    padding: px(6) 0 0;
                     p {
                         font-size: px(14);
                         font-weight: 500;
@@ -819,6 +832,12 @@
     .rule-cont-wrap .text-list-cont {
         max-width: px(960);
         margin: px(100) auto 0;
+    }
+    .page-title-img .base-main-tit {
+        color: #fff;
+        p {
+            color: #fff;
+        }
     }
 }
 .consult-wrap,

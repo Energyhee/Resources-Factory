@@ -852,6 +852,10 @@
   .contact-cont-map .map .con-map .custom-zoom-control {
     display: none;
   }
+  .contact-cont-map .map .con-map .custom-zoom-control + div > div > div:last-child > div {
+    width: 15.625rem !important;
+    height: auto !important;
+  }
   /* News Room */
   .newsroom-wrap {
     padding: 3.75rem 0;

@@ -81,10 +81,10 @@ section {
         flex-direction: column;
         width: 100%;
         height: 100%;
-        color: #fff;
+        @include font($s: px(38), $w: 600, $l: px(48), $t:px(-.3), $c: #000);
         p {
             margin-top: px(30);
-            color: #fff;
+            @include font($s: px(16), $w: 500, $l: px(28), $t:px(-.3), $c: #000);
         }
     }
 }
@@ -138,6 +138,13 @@ section {
         justify-content: flex-start;
         align-items: flex-start;
         gap: px(20);
+    }
+    .alert-txt {
+        display: block;
+        @include font($s: px(14), $w: 500, $l: px(16), $c: #ff3e3e);
+        &#esgTitle-error, &#esgUsers-error {
+            margin-top: px(20);
+        }
     }
     .checkbox {
         .lab {

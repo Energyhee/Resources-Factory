@@ -48,3 +48,23 @@ $set-prefix: '', '-ms-', '-moz-', '-webkit-';
     bottom: $b;
     z-index: $z;
 }
+
+@mixin par($w: null, $h: null, $t: null, $r: null, $b: null, $l: null, $c: null) {
+	position: relative;
+	&:before {
+		content: "";
+		position: absolute;
+		top: $t; 
+		right: $r;
+		bottom: $b;
+		left: $l;
+		@if $t == 50% {
+            margin-top: calc(-1 * (#{$h} / 2));
+		} @else if $b == 50% {
+			margin-bottom: calc(-1 * (#{$h} / 2))
+		}
+		width: $w; 
+		height: $h;
+		background: $c;
+	}
+}

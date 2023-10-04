@@ -949,6 +949,10 @@
                 .custom-zoom-control {
                     display: none;
                 }
+                .custom-zoom-control + div > div > div:last-child > div {
+                    width: px(250) !important;
+                    height: auto !important;
+                }
             }
         }
     }
