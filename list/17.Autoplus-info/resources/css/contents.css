@@ -854,72 +854,124 @@
   padding: 6.25rem 0;
   background-color: #f8f8f8;
 }
+.recruit-wrap .recruit-cont-wrap .base-main-tit p a {
+  text-decoration: underline;
+}
 
 .recruit-cont-inner {
-  margin-top: 4.375rem;
+  margin-top: 5.625rem;
+}
+.recruit-cont-inner .base-sub-tit {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #000;
+}
+.recruit-cont-inner.side-type {
+  display: flex;
+}
+.recruit-cont-inner.side-type .left {
+  width: 16.875rem;
+}
+.recruit-cont-inner.side-type .right {
+  width: calc(100% - 16.875rem);
+  margin-top: 0.625rem;
 }
 
 .recruit-cont-down {
   display: flex;
-  gap: 1rem;
+  gap: 0.75rem;
 }
 .recruit-cont-down a {
-  flex: 1;
   display: block;
-  height: 3.75rem;
+  width: 18.125rem;
+  height: 3.4375rem;
+  padding: 0 1.875rem;
   border: 0.0625rem solid #ddd;
-  text-align: center;
-  background-color: #fff;
+  border-radius: 0.25rem;
+  text-align: left;
+  background: url("../images/recr/ico_down_arr_gray.png") no-repeat right 1.875rem center/auto #fff;
 }
 .recruit-cont-down a span {
   position: relative;
   display: inline-block;
   height: 100%;
-  padding-right: 2.5rem;
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 3.625rem;
-  color: #666;
-  letter-spacing: -0.0125rem;
+  padding-right: 1.875rem;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 3.3125rem;
+  color: #292929;
+  letter-spacing: -0.03125rem;
   text-align: center;
-  background: url("../images/recr/ico_down_arr_gray.png") no-repeat right center/auto;
 }
 .recruit-cont-down a:hover {
   border-color: #002299;
   background-color: #002299;
+  background-image: url("../images/recr/ico_down_arr_white.png");
 }
 .recruit-cont-down a:hover span {
   color: #fff;
-  background-image: url("../images/recr/ico_down_arr_white.png");
 }
 
 .recruit-cont-step {
-  margin-top: 1.875rem;
-  padding: 3.125rem 0;
-  border-top: 0.125rem solid #666;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3.75rem;
+  margin-top: 0;
+  padding: 0;
   font-size: 0;
   text-align: center;
 }
 .recruit-cont-step li {
-  display: inline-block;
-  vertical-align: top;
+  width: 9.375rem;
 }
 .recruit-cont-step li ~ li {
   position: relative;
-  margin-left: 5rem;
 }
 .recruit-cont-step li ~ li:before {
   content: "";
   position: absolute;
-  left: -5rem;
-  top: 3.4375rem;
+  left: -2.375rem;
+  top: 50%;
   z-index: 1;
-  width: 5rem;
-  height: 1rem;
+  width: 0.9375rem;
+  height: 0.6875rem;
+  margin-top: -0.5rem;
   background: url("../images/recr/ico_step_arr.png") no-repeat center/auto 100%;
+}
+.recruit-cont-step li.active .img {
+  background-color: #0050EB;
+}
+.recruit-cont-step li.active .img img {
+  opacity: 0;
+}
+.recruit-cont-step li.active .img img.on {
+  opacity: 1;
+  z-index: 1;
+}
+.recruit-cont-step li strong {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1rem;
+  color: #0050EB;
+  letter-spacing: -0.0125rem;
+}
+.recruit-cont-step li .img {
+  position: relative;
+  margin: 0.625rem auto 0;
+  border-radius: 100%;
+  background-color: #fff;
+}
+.recruit-cont-step li .img img.on {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
 }
 .recruit-cont-step li p {
   margin-top: 1.25rem;
+  word-break: keep-all;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.25rem;
@@ -932,50 +984,53 @@
   padding: 2.1875rem 0;
   border-bottom: 0.0625rem solid #ddd;
 }
+.recruit-cont-how li:first-child {
+  margin-top: 2.8125rem;
+}
 .recruit-cont-how li strong {
   width: 10rem;
   font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.25rem;
-  color: #292929;
+  font-weight: 700;
+  line-height: 1.5rem;
+  color: #000;
 }
 .recruit-cont-how li p {
   flex: 1;
+  word-break: keep-all;
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.25rem;
+  line-height: 1.375rem;
   color: #666;
 }
 
 .recruit-cont-benefit {
   display: flex;
   margin-top: 1.875rem;
-  border: 0.0625rem solid #ddd;
-  background-color: #fff;
 }
 .recruit-cont-benefit li {
   flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 14.375rem;
+  border-radius: 0.625rem;
+  background-color: #F2F2F2;
 }
 .recruit-cont-benefit li ~ li {
-  border-left: 0.0625rem solid #ddd;
+  margin-left: 1.25rem;
 }
 .recruit-cont-benefit li .bene-box {
-  text-align: center;
-}
-.recruit-cont-benefit li .bene-box p {
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 3.25rem;
-  font-size: 1.125rem;
-  font-weight: 500;
-  line-height: 1.625rem;
-  color: #292929;
-  letter-spacing: -0.03125rem;
+  height: 100%;
+  padding: 1.25rem 1.875rem;
+}
+.recruit-cont-benefit li .bene-box .img {
+  width: 4rem;
+  margin-right: 0.625rem;
+}
+.recruit-cont-benefit li .bene-box p {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.375rem;
+  color: #000;
+  letter-spacing: -0.0125rem;
 }
 
 /* 기업 윤리 규범, 상담센터, 신고완료 */

@@ -725,60 +725,113 @@
 .recruit-wrap {
     padding: px(100) 0;
     background-color: #f8f8f8;
+    .recruit-cont-wrap .base-main-tit p a {
+        text-decoration: underline;
+    }
+
 }
 .recruit-cont-inner {
-    margin-top: px(70);
+    margin-top: px(90);
+    .base-sub-tit {
+        font-size: px(28);
+        font-weight: 700;
+        color: #000;
+    }
+    &.side-type {
+        display: flex;
+        .left {
+            width: px(270);
+        }
+        .right {
+            width: calc(100% - px(270));
+            margin-top: px(10);
+        }
+    }
 }
 .recruit-cont-down {
     display: flex;
-    gap: px(16);
+    gap: px(12);
     a {
-        flex: 1;
         display: block;
-        height: px(60);
+        width: px(290);
+        height: px(55);
+        padding: 0 px(30);
         border: px(1) solid #ddd;
-        text-align: center;
-        background-color: #fff;
+        border-radius: px(4);
+        text-align: left;
+        background: url('../images/recr/ico_down_arr_gray.png') no-repeat right px(30) center/auto #fff;
         span {
             position: relative;
             display: inline-block;
             height: 100%;
-            padding-right: px(40);
-            @include font($s: px(18), $w: 400, $l: px(58), $t: px(-.2), $c: #666, $a: center);
-            background: url('../images/recr/ico_down_arr_gray.png') no-repeat right center/auto;
+            padding-right: px(30);
+            @include font($s: px(16), $w: 600, $l: px(53), $t: px(-.5), $c: #292929, $a: center);
         }
         &:hover {
             border-color: #002299;
             background-color: #002299;
+            background-image: url('../images/recr/ico_down_arr_white.png');
             span {
                 color: #fff;
-                background-image: url('../images/recr/ico_down_arr_white.png');
             }
         }
     }
 }
 .recruit-cont-step {
-    margin-top: px(30);
-    padding: px(50) 0;
-    border-top: px(2) solid #666;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: px(60);
+    margin-top: 0;
+    padding: 0;
     font-size: 0;
     text-align: center;
     li {
-        display: inline-block;
-        vertical-align: top;
+        width: px(150);
         ~ li {
             position: relative;
-            margin-left: px(80);
             &:before {
                 content: '';
-                @include pos($p: absolute, $l: px(-80), $t: px(55), $z: 1);
-                width: px(80);
-                height: px(16);
+                @include pos($p: absolute, $l: px(-38), $t: 50%, $z: 1);
+                width: px(15);
+                height: px(11);
+                margin-top: px(-8);
                 background: url('../images/recr/ico_step_arr.png') no-repeat center/auto 100%;
+            }
+        }
+        &.active {
+            .img {
+                background-color: #0050EB;
+                img {
+                    opacity: 0;
+                    &.on {
+                        opacity: 1;
+                        z-index: 1;
+                    }
+                }
+            }    
+        }
+        strong {
+            display: block;
+            @include font($s: px(13), $w: 700, $l: px(16), $t: px(-.2), $c: #0050EB);      
+        }
+        .img {
+            position: relative;
+            margin: px(10) auto 0;
+            border-radius: 100%;
+            background-color: #fff;
+            img {
+                &.on {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    opacity: 0;
+                }
             }
         }
         p {
             margin-top: px(20);
+            word-break: keep-all;
             @include font($s: px(16), $w: 500, $l: px(20), $t: px(-.2), $c: #292929);
         }
     }
@@ -788,38 +841,41 @@
         display: flex;
         padding: px(35) 0;
         border-bottom: px(1) solid #ddd;
+        &:first-child {
+            margin-top: px(45);
+        }
         strong {
             width: px(160);
-            @include font($s: px(18), $w: 400, $l: px(20), $c: #292929);
+            @include font($s: px(18), $w: 700, $l: px(24), $c: #000);
         }
         p {
             flex: 1;
-            @include font($s: px(16), $w: 400, $l: px(20), $c: #666);
+            word-break: keep-all;
+            @include font($s: px(16), $w: 400, $l: px(22), $c: #666);
         }
     }
 }
 .recruit-cont-benefit {
     display: flex;    
     margin-top: px(30);
-    border: px(1) solid #ddd;
-    background-color: #fff;
     li {
         flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: px(230);
+        border-radius: px(10);
+        background-color: #F2F2F2;
         ~ li {
-            border-left: px(1) solid #ddd;
+            margin-left: px(20);
         }
         .bene-box {
-            text-align: center;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding: px(20) px(30);
+            .img {
+                width: px(64);
+                margin-right: px(10);
+            }
             p {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                height: px(52);
-                @include font($s: px(18), $w: 500, $l: px(26), $t: px(-.5), $c: #292929);
+                @include font($s: px(16), $w: 600, $l: px(22), $t: px(-.2), $c: #000);
             }
         }
     }

@@ -253,6 +253,21 @@
             }
         }
     }
+    .recruit-cont-inner.side-type {
+        display: block;
+        > div {
+            &.left {
+                width: 100%;
+            }
+            &.right {
+                width: 100%;
+                margin-top: px(40);
+            }
+        }
+        .recruit-cont-how li:first-child {
+            margin-top: px(20);
+        }
+    }
 }
 
 @media screen and (max-width: 900px) {
@@ -350,6 +365,15 @@
                 li {
                     padding: px(35) 0 px(35) px(120);
                 }
+            }
+        }
+    }
+    .recruit-cont-inner.side-type {
+        display: block;
+        > div {
+            width: 100% !important;
+            &.right {
+                margin-top: px(60);
             }
         }
     }
@@ -1105,38 +1129,37 @@
     .recruit-cont-inner {
         margin-top: px(40);
         .base-sub-tit {
-            font-weight: 700;
+            font-size: px(20);
+            line-height: px(26);
         }
-    }
-    .recruit-cont-down {
-        display: none;
-    }
-    .recruit-cont-step {
-        display: flex;
-        justify-content: center;
-        gap: px(20);
-        margin-top: px(5);
-        padding: px(20) 0;
-        border-top: px(1) solid #000;
-        li {
-            flex-basis: 33.33%;
-            max-width: px(120);
-            ~ li {
-                margin-left: 0;
-                &:before {
-                    display: none;
+        .recruit-cont-down {
+            display: none;
+        }
+        &.side-type {
+            > div.right {
+                margin-top: px(40);
+                .recruit-cont-step {
+                    gap: px(30);
+                    li {
+                        width: px(80);
+                        &:before {
+                            left: px(-24);
+                            margin-top: px(-22);
+                        }
+                        .img {
+                            width: px(80);
+                        }
+                    }
                 }
-            }
-            p {
-                margin-top: px(10);
-                font-size: px(14);
-                line-height: px(18);
             }
         }
     }
     .recruit-cont-how {
         li {
             padding: px(20) 0;
+            &:first-child {
+                margin-top: px(20);
+            }
             strong {
                 width: px(140);
                 word-break: keep-all;
@@ -1156,6 +1179,9 @@
             &:nth-child(3) strong:before {
                 content: '03';
             }
+            &:nth-child(4) strong:before {
+                content: '04';
+            }
             p {
                 font-size: px(13);
                 line-height: px(20);
@@ -1165,23 +1191,19 @@
     .recruit-cont-benefit {
         display: flex;
         flex-wrap: wrap;
+        gap: px(10);
         margin-top: px(20);
         li {
-            flex: 50%;
-            height: px(180);
+            margin: 0;
             ~ li {
-                border: initial;
-            }
-            &:nth-child(even) {
-                border-left: px(1) solid #ddd; 
-            }
-            &:nth-child(n+3){
-                border-top: px(1) solid #ddd;
+                margin: 0;   
             }
             .bene-box {
+                height: auto;
+                .img {
+                    width: px(60);
+                }
                 p {
-                    align-items: flex-start;
-                    height: px(36);
                     font-size: px(14);
                     line-height: px(18);
                 }
@@ -1570,6 +1592,27 @@
                 align-items: flex-start;
                 gap: px(5);
             }
+        }
+    }
+    .recruit-cont-inner.side-type > div.right .recruit-cont-step {
+        gap: px(40) px(20);
+        li {
+            width: calc((100% - px(20)) / 2);
+            &:before {
+                display: none;
+            }  
+            .img {
+                width: px(100);
+            }
+            p {
+                margin-top: px(10);
+            }
+        }
+    }
+    .recruit-cont-benefit li {
+        flex: 100%;
+        .bene-box .img {
+            width: px(64);
         }
     }
 }
