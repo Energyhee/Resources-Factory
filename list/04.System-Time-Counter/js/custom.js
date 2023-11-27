@@ -202,7 +202,7 @@ $(function(){
 		state : true,
 		type: 'D-H-M-S',
 		start : `${year}/${mont}/${days}/${hour}:${minu}`,
-		end : '2023/09/01/00:00',
+		end : '2023/12/31/00:00',
 		el : '.counter'
 	});
 

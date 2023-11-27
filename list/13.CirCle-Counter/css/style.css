@@ -58,9 +58,9 @@
   text-align: center;
 }
 .chart .countNum span {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 700;
-  color: #FF4715;
+  color: 96FF;
 }
 @media (max-width: 325px) {
   .chart .countNum span {
@@ -80,7 +80,7 @@
   stroke-linecap: round;
   stroke-width: 0.5rem;
   fill-opacity: 0.01;
-  stroke: #ff4715;
+  stroke: #0096FF;
 }
 .chart svg circle.action {
   animation: circleEffect 1s linear;

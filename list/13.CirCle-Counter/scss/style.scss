@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import '../../../common/scss/mixin';
+@import '../../common/scss/mixin';
 
 
 @keyframes circleEffect {
@@ -59,9 +59,9 @@
         height: 100%;
         text-align: center;
         span {
-            font-size: px(24);
+            font-size: px(16);
             font-weight: 700;
-            color: #FF4715;
+            color: 0096FF;
             @media (max-width: 325px) {
                 font-size: px(20);
             }
@@ -79,7 +79,7 @@
             stroke-linecap: round;
             stroke-width: px(8);
             fill-opacity: 0.01;
-            stroke: #ff4715;
+            stroke: #0096FF;
             &.action {
                 animation: circleEffect 1s linear;
             }

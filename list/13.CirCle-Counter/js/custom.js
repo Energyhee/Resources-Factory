@@ -17,9 +17,9 @@ function countCircle(){
         box.attr('data-time-count', num).find('span').text(num);
         count = num;
 
-        if ( count === 0 ){
+        if ( count === 1 ){
             clearInterval(time);
-            box.siblings('svg').find('circle').removeClass('action');
+            // box.siblings('svg').find('circle').removeClass('action');
             return;
         }
     };
@@ -29,6 +29,5 @@ function countCircle(){
 
 $(function(){
     console.log('Circle Counter');
-
     countCircle();
 });
