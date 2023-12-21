@@ -906,7 +906,7 @@
 .recruit-cont-down a:hover {
   border-color: #002299;
   background-color: #002299;
-  background-image: url("../images/recr/ico_down_arr_white.png");
+  background-image: url("../images/recr/ico_down_arr_white.png?cache=0");
 }
 .recruit-cont-down a:hover span {
   color: #fff;
@@ -1041,6 +1041,9 @@
 .rule-wrap .rule-cont-wrap .text-list-cont {
   max-width: 60rem;
   margin: 6.25rem auto 0;
+}
+.rule-wrap .rule-cont-wrap .text-list-cont + .btn-wrap {
+  margin-top: 5rem;
 }
 .rule-wrap .page-title-img .base-main-tit {
   color: #fff;

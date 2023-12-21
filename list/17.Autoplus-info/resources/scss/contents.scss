@@ -770,7 +770,7 @@
         &:hover {
             border-color: #002299;
             background-color: #002299;
-            background-image: url('../images/recr/ico_down_arr_white.png');
+            background-image: url('../images/recr/ico_down_arr_white.png?cache=0');
             span {
                 color: #fff;
             }
@@ -888,6 +888,9 @@
     .rule-cont-wrap .text-list-cont {
         max-width: px(960);
         margin: px(100) auto 0;
+        & + .btn-wrap {
+            margin-top: px(80);
+        }
     }
     .page-title-img .base-main-tit {
         color: #fff;
