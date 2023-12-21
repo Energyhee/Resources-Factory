@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Content-Language" content="ko-KR">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="stylesheet" href="../common/css/reset.css">
+    <link rel="stylesheet" href="../common/css/font.cdn.css">
+    <link rel="stylesheet" href="../common/css/swiper.css">
+    <link rel="stylesheet" href="../common/css/animation.css">
+    <link rel="stylesheet" href="./css/style.css"/>
+    <title>Circle Counter</title>
+</head>
+<body>
+    <!-- header -->
+    <header id="header"></header>
+    <!--// header -->
+
+    <!-- container -->
+    <div id="container">
+        <!-- # point css로 사이즈 조정 -->
+        <div class="point">
+            <div class="percent">
+                <div class="inner"><span class="num">0</span>%</div>
+            </div>
+            <!-- 
+                # data-duration : 시간 설정
+                # data-percent : 퍼센트 설정
+                # 외 건들지 말것
+            -->
+            <svg 
+                class="round" 
+                data-duration="1" 
+                data-percent="55"
+                width="100%" 
+                height="100%"
+                viewbox="0 0 100 100"
+                fill="none"
+                stroke="#000"
+                stroke-width="4";
+                stroke-linecap="round"
+                stroke-dasharray="0 999"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <circle cx="50" cy="50" r="45"/>
+            </svg>
+            <div class="bg"></div>
+        </div>
+    </div>
+    <!--// container -->
+
+    <!-- footer -->
+    <footer id="footer"></footer>
+    <!--// footer -->
+    
+    <script src="../common/js/jquery-3.3.1.min.js"></script>
+    <script src="../common/js/swiper.min.js"></script>
+    <script src="./js/custom.js"></script>
+</body>
+</html>
