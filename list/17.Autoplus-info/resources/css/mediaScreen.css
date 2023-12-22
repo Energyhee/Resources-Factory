@@ -1054,6 +1054,7 @@
   .recruit-cont-wrap .int-txt {
     font-size: 1.125rem;
     line-height: 1.5rem;
+    word-break: keep-all;
   }
   .recruit-cont-inner {
     margin-top: 2.5rem;
@@ -1099,6 +1100,15 @@
     line-height: 1.375rem;
     color: #8e8e8e;
     word-break: keep-all;
+  }
+  .recruit-cont-step .swiper-container .swiper-wrapper .swiper-slide .mo-txt .num {
+    display: block;
+    margin-bottom: 0.625rem;
+    text-align: center;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #0D59EC;
   }
   .recruit-cont-step .swiper-container .swiper-wrapper .swiper-slide::before {
     display: none;
@@ -1194,7 +1204,7 @@
     transform: translate(-50%, -50%);
   }
   .recruit-bene-wrap ul li:before {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.45);
     opacity: 1;
   }
   .recruit-bene-wrap ul li .box {

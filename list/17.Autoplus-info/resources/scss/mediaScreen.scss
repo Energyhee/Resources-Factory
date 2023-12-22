@@ -1179,6 +1179,7 @@
         .int-txt {
             font-size: px(18);
             line-height: px(24);
+            word-break: keep-all;
         }
     }
     .recruit-cont-inner {
@@ -1225,6 +1226,15 @@
                         line-height: px(22);
                         color: #8e8e8e;
                         word-break: keep-all;
+                        .num {
+                            display: block;
+                            margin-bottom: px(10);
+                            text-align: center;
+                            font-size: px(18);
+                            font-weight: 700;
+                            line-height: 1.2;
+                            color: #0D59EC; 
+                        }
                     }
                     &::before {
                         display: none;
@@ -1323,7 +1333,7 @@
                     transform: translate(-50%, -50%);
                 }
                 &:before {
-                    background-color: rgba(0, 0, 0 , .6);
+                    background-color: rgba(0, 0, 0 , .45);
                     opacity: 1;
                 }
                 .box {
