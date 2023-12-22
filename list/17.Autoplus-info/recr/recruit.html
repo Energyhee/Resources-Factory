@@ -391,8 +391,9 @@
                 $(obj).addClass('show').fadeIn();
 
                 $(obj).find('.cancel').on('click', function(){
-                    $(obj).removeClass('show').fadeOut();
-                    if($(obj).find('.state').is(':visible')) $(obj).find('.state').removeClass('show');
+                    $(obj).removeClass('show').fadeOut(function(){
+                        if($(obj).find('.state').hasClass('show')) $(obj).find('.state').removeClass('show');
+                    });
                 });
             }
         }
