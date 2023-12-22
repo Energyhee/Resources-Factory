@@ -9,6 +9,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="../resources/images/favicon.ico">
     <link rel="stylesheet" href="../resources/css/fonts.css">
     <link rel="stylesheet" href="../resources/css/reset.css">
+    <link rel="stylesheet" href="../resources/css/swiper.min.css">
     <link rel="stylesheet" href="../resources/css/common.css">
     <link rel="stylesheet" href="../resources/css/contents.css"/>
     <link rel="stylesheet" href="../resources/css/mediaScreen.css">
@@ -69,6 +70,7 @@
                             <div class="depth2">
                                 <ul>
                                     <li><a href="../recr/recruit.html">Recruit</a></li>
+                                    <li><a href="../recr/welfare.html">Welfare</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -88,108 +90,199 @@
     <!-- container -->
     <div id="container" class="recruit-wrap">
         <section class="recruit-cont-wrap">
+            <!-- # 23.12.21 : 퍼블 -->
             <div class="inner">
                 <h2 class="base-main-tit" data-motion="slide-up" data-duration="1" data-delay="0">
-                    리크루트
-                    <p>오토플러스와 함께 미래를 만들어 갈 오플人을 찾습니다.</p>
-                    <p>채용문의 : <a href="mailto:recruit@autoplus.co.kr">recruit@autoplus.co.kr</a></p>
-                </h2>
+					리크루트
+					<p>오토플러스와 함께 미래를 만들어 갈 오플人을 찾습니다.</p>
+				</h2>
                 <div class="recruit-cont-inner"  data-motion="slide-up" data-duration="1" data-delay=".4">
                     <div class="recruit-cont-down">
-                        <a href="#"><span>신입, 경력 지원서 양식 다운로드</span></a>
-                        <a href="#"><span>인턴지원서 양식 다운로드</span></a>
+                        <a href="#"><span>신입, 경력 지원서 양식</span></a>
+                        <a href="#"><span>인턴지원서 양식</span></a>
+                        <a href="javascript: layerPopOpen('#layer-inquiry');"><span>채용 관련 문의</span></a>
                     </div>
                 </div>
-                <div class="recruit-cont-inner side-type"  data-motion="slide-up" data-duration="1" data-delay=".4">
-                    <div class="left">
-                        <h3 class="base-sub-tit">지원방법 및 절차</h3>
+            </div>
+            <div class="recruit-cont-visual" data-motion="slide-up" data-duration="1" data-delay=".8"><img src="../resources/images/recr/img_recruit_visual.png"></div>
+            <div class="inner">
+                <div class="recruit-cont-inner" data-motion="slide-up" data-duration="1" data-delay=".4">
+                    <p class="int-txt">오토플러스 합류 여정을 알려드릴게요.<br>오토플러스와 함께 미래를 만들어 갈 과정을 함께해 주세요.</p>
+                    <div class="recruit-cont-step">
+                        <div class="swiper-container">
+                            <ul class="swiper-wrapper">
+                                <li class="step01 swiper-slide">
+                                    <div class="circle">
+                                        <div class="in">
+                                            <div class="img"><img src="../resources/images/recr/img_recruit_step01.png" alt=""></div>
+                                            <p class="txt">이력서 제출</p>
+                                        </div>
+                                    </div>
+                                    <p class="mo-txt">나는 어떤 사람인지 알려주세요. <br>오토플러스와 함께하기 위해 나를 알릴 수 있는 내용이라면 무엇이든 좋습니다. <br>(소중한 개인정보보호를 위해 이력과 무관한 개인정보는 기재하지 말아주세요.)</p>
+                                </li>
+                                <li class="step02 swiper-slide">
+                                    <div class="circle">
+                                        <div class="in">
+                                            <div class="img"><img src="../resources/images/recr/img_recruit_step02.png" alt=""></div>
+                                            <p class="txt">인적성 검사</p>
+                                        </div>
+                                    </div>
+                                    <p class="mo-txt">지원하신 분을 보다 다방면에서 판단하기 위해 인적성 검사를 진행해요.</p>
+                                </li>
+                                <li class="step03 swiper-slide">
+                                    <div class="circle">
+                                        <div class="in">
+                                            <div class="img"><img src="../resources/images/recr/img_recruit_step03.png" alt=""></div>
+                                            <p class="txt">1차 인터뷰</p>
+                                        </div>
+                                    </div>
+                                    <p class="mo-txt">지원하신 분의 역량을 심층적으로 평가하기 위해 실무진 및 임원 인터뷰를 진행해요.<br>(제출하신 지원서 검토 후 개별 연락을 드리며 포지션에 따라 인터뷰는 2차까지 진행 될 수 있어요.)</p>
+                                </li>
+                                <li class="step04 swiper-slide">
+                                    <div class="circle">
+                                        <div class="in">
+                                            <div class="img"><img src="../resources/images/recr/img_recruit_step04.png" alt=""></div>
+                                            <p class="txt">2차 인터뷰</p>
+                                        </div>
+                                    </div>
+                                    <p class="mo-txt">지원하신 분의 역량을 심층적으로 평가하기 위해 실무진 및 임원 인터뷰를 진행해요.<br>(제출하신 지원서 검토 후 개별 연락을 드리며 포지션에 따라 인터뷰는 2차까지 진행 될 수 있어요.)</p>
+                                </li>
+                                <li class="step05 swiper-slide">
+                                    <div class="circle">
+                                        <div class="in">
+                                            <div class="img"><img src="../resources/images/recr/img_recruit_step05.png" alt=""></div>
+                                            <p class="txt">최종 합격</p>
+                                        </div>
+                                    </div>
+                                    <p class="mo-txt">최종 합격 후 처우 협의를 거쳐 입사가 확정됩니다.</p>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="right">
-                        <ul class="recruit-cont-step">
-                            <li class="step01 active">
-                                <strong>STEP 01</strong>
-                                <div class="img">
-                                    <img src="../resources/images/recr/img_recruit_step01.png" alt="">
-                                    <img src="../resources/images/recr/img_recruit_step01_on.png" alt="" class="on">
-                                </div>
-                                <p>이력서 제출</p>
-                            </li>
-                            <li class="step02">
-                                <strong>STEP 02</strong>
-                                <div class="img">
-                                    <img src="../resources/images/recr/img_recruit_step02.png" alt="">
-                                    <img src="../resources/images/recr/img_recruit_step02_on.png" alt="" class="on">
-                                </div>
-                                <p>인적성 검사</p>
-                            </li>
-                            <li class="step03">
-                                <strong>STEP 03</strong>
-                                <div class="img">
-                                    <img src="../resources/images/recr/img_recruit_step03.png" alt="">
-                                    <img src="../resources/images/recr/img_recruit_step03_on.png" alt="" class="on">
-                                </div>
-                                <p>면접</p>
-                            </li>
-                            <li class="step04">
-                                <strong>STEP 04</strong>
-                                <div class="img">
-                                    <img src="../resources/images/recr/img_recruit_step04.png" alt="">
-                                    <img src="../resources/images/recr/img_recruit_step04_on.png" alt="" class="on">
-                                </div>
-                                <p>오토플러스 합류</p>
-                            </li>
-                        </ul>
-                        <ul class="recruit-cont-how">
-                            <li>
-                                <strong>이력서 제출</strong>
-                                <p>오토플러스는 이력서를 기반으로 지원자격을 검토합니다.<br>본인을 어필할 수 있는 서류는 무엇이든 좋습니다.<br>단, 이력서에 직무와 무관한 개인정보는 작성하지 않습니다.</p>
-                            </li>
-                            <li>
+                    <ul class="recruit-cont-how">
+                        <li>
+                            <div class="tit">
+                                <strong>지원서 제출</strong>
+                            </div>
+                            <div class="txt">
+                                <p>나는 어떤 사람인지 알려주세요. <br>오토플러스와 함께하기 위해 나를 알릴 수 있는 내용이라면 무엇이든 좋습니다. <br>(소중한 개인정보보호를 위해 이력과 무관한 개인정보는 기재하지 말아주세요.)</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tit">
                                 <strong>인적성 검사</strong>
-                                <p>인적성 검사는 지원자를 보다 종합적으로 판단하기 위한 수단으로 면접 전 검사가 진행됩니다.</p>
-                            </li>
-                            <li>
-                                <strong>면접</strong>
-                                <p>오토플러스 면접은 업무수행에 필요한 지원자 역량 평가로 진행됩니다.<br>이력서 검토 후 대상자 분들께 개별 연락 드립니다.</p>
-                            </li>
-                            <li>
-                                <strong>오토플러스 합류</strong>
-                                <p>최종 합격시 처우 협의 절차를 거쳐 입사가 확정됩니다.</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="recruit-cont-inner"  data-motion="slide-up" data-duration="1" data-delay="0">
-                    <h3 class="base-sub-tit">
-                        직원 복지
-                        <p>오토플러스만의 특별한 복지 혜택</p>
-                    </h3>
-                    <ul class="recruit-cont-benefit">
-                        <li>
-                            <div class="bene-box">
-                                <div class="img"><img src="../resources/images/recr/ico_recruit_bene01.png" alt=""></div>
-                                <p>당사 판매 전차량<br>임직원 할인가 적용</p>
+                            </div>
+                            <div class="txt">
+                                <p>지원하신 분을 보다 다방면에서 판단하기 위해 인적성 검사를 진행해요.</p>
                             </div>
                         </li>
                         <li>
-                            <div class="bene-box">
-                                <div class="img"><img src="../resources/images/recr/ico_recruit_bene02.png" alt=""></div>
-                                <p>각종 동호회 운영지원</p>
+                            <div class="tit">
+                                <strong>인터뷰</strong>
+                            </div>
+                            <div class="txt">
+                                <p>지원하신 분의 역량을 심층적으로 평가하기 위해 실무진 및 임원 인터뷰를 진행해요.<br>(제출하신 지원서 검토 후 개별 연락을 드리며 포지션에 따라 인터뷰는 2차까지 진행 될 수 있어요.)</p>
                             </div>
                         </li>
                         <li>
-                            <div class="bene-box">
-                                <div class="img"><img src="../resources/images/recr/ico_recruit_bene03.png" alt=""></div>
-                                <p>사내 마사지 서비스 제공</p>
+                            <div class="tit">
+                                <strong>최종 합격</strong>
                             </div>
-                        </li>
-                        <li>
-                            <div class="bene-box">
-                                <div class="img"><img src="../resources/images/recr/ico_recruit_bene04.png" alt=""></div>
-                                <p>임직원 복지포인트 지급</p>
+                            <div class="txt">
+                                <p>최종 합격 후 처우 협의를 거쳐 입사가 확정됩니다.</p>
                             </div>
                         </li>
                     </ul>
+                </div>
+            </div>
+            <div class="recruit-cont-board" data-motion="slide-up" data-duration="1" data-delay="0">
+                <div class="inner">
+                    <p class="int-txt">현재 진행 중인 채용정보를 알려드릴게요.</p>
+
+                    <div class="recruit-board-head">
+                        <p>총 4건</p>
+                        <div class="tab-sort">
+                            <a href="javascript: void(0);" class="btn active">진행중</a>
+                            <a href="javascript: void(0);" class="btn">종료됨</a>
+                        </div>
+                    </div>
+                    <div class="recruit-board-list">
+                        <div class="row">
+                            <div class="tit">
+                                <p>용인물류센터  PDI 및 사무총무 담당 신입/경력 모집</p>
+                                <span class="day">D-20</span>
+                            </div>
+                            <div class="infos">
+                                <span>2024.01.01 ~ 2024.01.21</span>
+                                <span>신입·경력</span>
+                                <span>정규직</span>
+                                <span>학력무관</span>
+                                <span>경기 용인시</span>
+                            </div>
+                            <button type="button" class="btn"><span>지원하기</span></button>
+                        </div>
+                        <div class="row">
+                            <div class="tit">
+                                <p>용인물류센터  PDI 및 사무총무 담당 신입/경력 모집</p>
+                                <span class="day">D-20</span>
+                            </div>
+                            <div class="infos">
+                                <span>2024.01.01 ~ 2024.01.21</span>
+                                <span>신입·경력</span>
+                                <span>정규직</span>
+                                <span>학력무관</span>
+                                <span>경기 용인시</span>
+                            </div>
+                            <button type="button" class="btn"><span>지원하기</span></button>
+                        </div>
+                        <div class="row">
+                            <div class="tit">
+                                <p>용인물류센터  PDI 및 사무총무 담당 신입/경력 모집</p>
+                                <span class="day">D-20</span>
+                            </div>
+                            <div class="infos">
+                                <span>2024.01.01 ~ 2024.01.21</span>
+                                <span>신입·경력</span>
+                                <span>정규직</span>
+                                <span>학력무관</span>
+                                <span>경기 용인시</span>
+                            </div>
+                            <button type="button" class="btn"><span>지원하기</span></button>
+                        </div>
+                        <div class="row">
+                            <div class="tit">
+                                <p>용인물류센터  PDI 및 사무총무 담당 신입/경력 모집</p>
+                                <span class="day">D-20</span>
+                            </div>
+                            <div class="infos">
+                                <span>2024.01.01 ~ 2024.01.21</span>
+                                <span>신입·경력</span>
+                                <span>정규직</span>
+                                <span>학력무관</span>
+                                <span>경기 용인시</span>
+                            </div>
+                            <button type="button" class="btn"><span>지원하기</span></button>
+                        </div>
+                        <!-- # 모집 종료 : end 클래스 추가 -->
+                        <div class="row end">
+                            <div class="tit">
+                                <p>용인물류센터  PDI 및 사무총무 담당 신입/경력 모집</p>
+                                <span class="day">D-20</span>
+                            </div>
+                            <div class="infos">
+                                <span>2024.01.01 ~ 2024.01.21</span>
+                                <span>신입·경력</span>
+                                <span>정규직</span>
+                                <span>학력무관</span>
+                                <span>경기 용인시</span>
+                            </div>
+                            <!-- # 모집 종료 : disabled 추가 -->
+                            <button type="button" class="btn" disabled><span>종료됨</span></button>
+                        </div>
+                    </div>
+                    <div class="recruit-board-more">
+                        <a href="javascript: void(0);" class="more">더보기</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -258,12 +351,81 @@
     </footer>
     <!--// -->
 
+    <section class="layer" id="layer-inquiry">
+        <div class="layer-inner">
+            <button type="button" class="layer-btn-close cancel"><span>닫기</span></button>
+            <p class="state"></p>
+            <div class="layer-cont">
+                <strong>채용 관련 문의</strong>
+                <p class="email">recruit@autoplus.co.kr</p>
+            </div>
+            <div class="layer-btn-group">
+                <a href="javascript: fn_ContentsShare('C');" class="btn">주소 복사 하기</a>
+                <a href="mailto:recruit@autoplus.co.kr" class="btn">이메일 열기</a>
+            </div>
+        </div>
+    </section>
+
     <script src="../resources/js/jquery-3.3.1.min.js"></script>
     <script src="../resources/js/swiper.min.js"></script>
     <script src="../resources/js/custom.js"></script>
     
     <script tpye="text/javascript">
+        function fn_ContentsShare(){
+            var url = window.location.href;
+            var tempElem = document.createElement('input');
+			try{
+				tempElem.value = url;
+				document.body.appendChild(tempElem);
+				tempElem.select();
+				if(document.execCommand('copy'))
+                $('#layer-inquiry .state').html('클립보드에 복사 되었습니다.<br>붙여넣기를 해주세요.').addClass('show');
+			} catch(e){
+				$('#layer-inquiry .state').html('복사 실패:'+e).addClass('show');
+			}
+			document.body.removeChild(tempElem);
+        }
+
+        function layerPopOpen(obj){
+            if($(obj).length && !$(obj).is(':visible')){
+                $(obj).addClass('show').fadeIn();
+
+                $(obj).find('.cancel').on('click', function(){
+                    $(obj).removeClass('show').fadeOut();
+                    if($(obj).find('.state').is(':visible')) $(obj).find('.state').removeClass('show');
+                });
+            }
+        }
+
+        function swiperMake(obj){
+            if(mediaCheck() === 'mobile'){
+                var _list = $(obj)
+                ,   _make = '';
+
+                _make += '<div class="swiper-button-prev"></div><div class="swiper-button-next"></div>';
+                _list.append(_make);
+
+                var circleSwiper = new Swiper('.recruit-cont-step .swiper-container', {
+                    speed: 400,
+                    loop: true,
+                    slidesPerView: 1,
+                    // spaceBetween: 20,
+                    autoplay: {
+                        delay: 1500,
+                        disableOnInteraction: false,
+                    },
+                    navigation: {
+                        nextEl: '.recruit-cont-step .swiper-button-next',
+                        prevEl: '.recruit-cont-step .swiper-button-prev',
+                    },
+                });
+            }
+        }
+
         $(document).ready(function(){
+            //
+            swiperMake('.recruit-cont-step');
+
             // animation
             var recruitMotion = new animationAction({
                 state : true,

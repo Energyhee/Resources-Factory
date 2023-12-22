@@ -508,3 +508,104 @@ section {
         }
     }
 }
+
+.layer {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 101;
+    .layer-inner {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        z-index: 100;
+        width: px(340);
+        height: auto; 
+        padding: px(40) px(20) px(20);
+        margin: 0 0 0 px(-170);
+        border: 1px solid #999;
+        box-shadow: 0 0 6px rgba(0, 0, 0, .15);
+        background-color: #fff;
+        transform: translateY(-50%);
+        .state {
+            display: none;;
+            width: 100%;
+            height: 100%;
+            @include pos($p: absolute, $l: 0, $t: 0, $z: 1);
+            @include font($a: center, $s: px(18), $w: 700, $l: px(20), $t: 0, $c: #058AFF);
+            background-color: #fff;
+            &.show {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        .layer-cont {
+            text-align: center;
+            strong {
+                display: block;
+                width: 100%;
+                @include font($s: px(18), $w: 700, $l: px(20), $t: 0, $c: #058AFF);
+            }
+            .email {
+                margin-top: 15px;
+                @include font($s: px(16), $w: 500, $l: px(18), $t: 0, $c: #000);
+            }
+        }
+        .layer-btn-close { 
+            position: absolute;
+            right: px(5);
+            top: px(5);
+            z-index: 2;
+            width: px(40);
+            height: px(40);
+            padding: 0;
+            background-color: #fff;
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: px(28);
+                height: 1px;
+                margin: -2px 0 0 px(-14);
+                transform:rotate(45deg);
+                background-color: #000;    
+            }
+            &:after {
+                transform:rotate(-45deg);
+            }
+            span {
+                @include fontHide();
+            }
+        }
+        .layer-btn-group {
+            display: flex;
+            align-items: center;
+            gap: px(10);
+            margin-top: 25px;
+            a {
+                flex: 1;
+                display: block;
+                height: px(38);
+                border: 1px solid #ddd;
+                background-color: #fff; 
+                @include font($s: px(16), $w: 500, $a: center, $l: px(38), $t: 0, $c: #000);
+            }
+        }
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, .08);
+        pointer-events: none;
+    }
+}
