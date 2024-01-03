@@ -1192,6 +1192,9 @@
   .recruit-cont-how {
     display: none;
   }
+  .recruit-bene-wrap {
+    padding-bottom: 3.75rem;
+  }
   .recruit-bene-wrap ul li {
     flex: 100%;
     pointer-events: none;
