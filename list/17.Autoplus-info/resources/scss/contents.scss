@@ -3,6 +3,7 @@
 
 /* Vision */
 .vision-wrap {
+    border: 1px solid blue;
     padding: 0 0 px(200);
     background-color: #f8f8f8;
 }
@@ -1613,3 +1614,95 @@
         }
     }
 }
+
+.company-wrap {
+    .title {
+        text-align: center;
+        h2 {
+            @include font($s: px(40), $w: 800, $l: 1.2, $t: 0, $c: #000);
+        }
+        p {
+            margin-top: px(30);
+            @include font($s: px(18), $w: 500, $l: 1.2, $t: 0, $c: #636363);
+            strong {
+                display: block;
+                margin-top: px(30);
+                font-weight: 600;
+                color: #000;
+            }
+        }
+    }
+    .cont-half {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1024px;
+        margin: 0 auto;
+        .col {
+            border: 1px solid red;
+            &.wide {
+                flex: 0 100%;
+                padding: px(100) 0;
+            }
+            &.tit {
+                flex: 0 px(300);
+                @include font($s: px(30), $w: 500, $l: 1.2, $t: 0, $c: #939393);
+                strong {
+                    font-weight: 700;
+                }
+            }
+            &.cont {
+                flex: 0 calc(100% - px(300));
+            }
+        }
+    }
+    .company-info {
+        padding-top: px(160);
+    }
+}
+.company-video-wrap {
+
+}
+.company-tab-wrap {
+    width: 100%;
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0 px(40);
+        width: 100%;
+        height: px(60);
+        background-color: #ededed;
+        li {
+            flex: 0 auto;
+            ~ li {
+                position: relative;
+                &:before {
+                    content: '';
+                    @include pos($p: absolute, $l: px(-20), $t: 50%);
+                    width: 1px;
+                    height: px(12);
+                    margin-top: px(-6);
+                    background-color: #aaa;
+                    pointer-events: none;
+                }
+            }
+            a {
+                display: block;
+                @include font($s: px(20), $w: 600, $l: px(24), $t: 0, $c: #333);
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

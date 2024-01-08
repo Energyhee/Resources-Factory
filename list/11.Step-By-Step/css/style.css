@@ -6,12 +6,28 @@
   }
 }
 /* keyframe */
+@-webkit-keyframes wd-typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 15.625rem;
+  }
+}
 @keyframes wd-typing {
   from {
     width: 0;
   }
   to {
     width: 15.625rem;
+  }
+}
+@-webkit-keyframes bk-caret {
+  from, to {
+    border-color: rgba(0, 0, 0, 0);
+  }
+  50% {
+    border-color: #a7a7a7;
   }
 }
 @keyframes bk-caret {
@@ -22,12 +38,28 @@
     border-color: #a7a7a7;
   }
 }
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes fade-in {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
+  }
+}
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 @keyframes fade-out {
@@ -60,7 +92,8 @@
   width: 100%;
   height: 1.5625rem;
   border-radius: 1.5625rem 1.5625rem 0 0;
-  box-shadow: 0 -0.1875rem 0.625rem rgba(80, 104, 172, 0.05);
+  -webkit-box-shadow: 0 -0.1875rem 0.625rem rgba(80, 104, 172, 0.05);
+          box-shadow: 0 -0.1875rem 0.625rem rgba(80, 104, 172, 0.05);
   background-color: #fff;
   overflow: hidden;
 }
@@ -78,7 +111,8 @@
   width: 100vw;
   border: 0;
   margin: 3.125rem 0;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 .apEasySell hr.space {
   height: 0.5rem;
@@ -90,6 +124,8 @@
 }
 .apEasySell .btnWrap {
   padding: 0 1.5625rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 .apEasySell .btnWrap.flexNone {
@@ -99,7 +135,9 @@
   margin-top: 0.9375rem;
 }
 .apEasySell .btnWrap .btn {
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   position: relative;
   display: block;
   height: 3.75rem;
@@ -127,14 +165,17 @@
   color: #fff;
 }
 .apEasySell .btnWrap .btn.prev {
-  flex: none;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
   width: 7.1875rem;
   margin-right: 0.625rem;
 }
 .apEasySell .btnWrap .btn.prev::after {
   left: 1.125rem;
   right: auto;
-  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 .apEasySell .btnWrap .btn.disabled {
   pointer-events: none;
@@ -224,8 +265,12 @@
   margin-top: 1rem;
 }
 .apEasySell .review .reviewWrap .cont .infoTop {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .apEasySell .review .reviewWrap .cont .grade-view {
   font-size: 0;
@@ -253,7 +298,9 @@
   color: #007FFD;
 }
 .apEasySell .review .reviewWrap .cont .name {
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   text-align: right;
   font-size: 0.75rem;
   font-weight: 400;
@@ -390,12 +437,18 @@
 }
 .apEasySell.intro .coupon .couponList > li .box {
   margin-top: 1.125rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: stretch;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   overflow: hidden;
 }
 .apEasySell.intro .coupon .couponList > li .box .txt {
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   padding: 1.25rem 0.625rem 1.25rem 1.25rem;
   border-radius: 0.75rem;
   background-color: #fff;
@@ -451,7 +504,8 @@
   font-weight: 700;
   line-height: 1.2;
   color: #fff;
-  transform: translate(-50%, -50%) rotate(90deg);
+  -webkit-transform: translate(-50%, -50%) rotate(90deg);
+          transform: translate(-50%, -50%) rotate(90deg);
 }
 .apEasySell.intro .coupon.type2 {
   padding-bottom: 3.125rem;
@@ -524,7 +578,8 @@
   width: calc(26.375rem / 2);
   padding-top: 78%;
   background: url("../images/easySell/img_beneEffect.png") no-repeat center/auto 100%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 .apEasySell.intro .coupon.type2 .couponList > li .txtList {
   margin-top: 1.5625rem;
@@ -620,12 +675,14 @@
   height: 1.375rem;
   margin-top: 0;
   background: url("../images/easySell/icon_swiperArr.png") no-repeat center/100% auto;
-  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
 }
 .apEasySell.intro .introduce .introduceWrap [class*=swiper-button].swiper-button-next {
   left: auto;
   right: 1.5625rem;
-  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 .apEasySell.intro .introduce .introduceWrap [class*=swiper-button].swiper-button-disabled {
   opacity: 0;
@@ -816,7 +873,8 @@
   margin-top: 1.875rem;
   padding: 3.125rem 1.5625rem;
   border-radius: 1.5625rem 1.5625rem 0 0;
-  box-shadow: 0 -0.1875rem 0.625rem rgba(80, 104, 172, 0.05);
+  -webkit-box-shadow: 0 -0.1875rem 0.625rem rgba(80, 104, 172, 0.05);
+          box-shadow: 0 -0.1875rem 0.625rem rgba(80, 104, 172, 0.05);
   background-color: #fff;
   overflow: hidden;
 }
@@ -1069,11 +1127,16 @@
   color: #000;
   opacity: 0;
   text-indent: 3.4375rem;
-  animation: fade-in 0s linear 1s forwards, wd-typing 1s steps(40, end) 1s forwards, bk-caret 0.75s step-end infinite;
+  -webkit-animation: fade-in 0s linear 1s forwards, wd-typing 1s steps(40, end) 1s forwards, bk-caret 0.75s step-end infinite;
+          animation: fade-in 0s linear 1s forwards, wd-typing 1s steps(40, end) 1s forwards, bk-caret 0.75s step-end infinite;
 }
 .apEasySell .carInfo li ~ li {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: left;
   margin-top: 1.25rem;
 }
@@ -1088,19 +1151,25 @@
   color: #666;
 }
 .apEasySell .carInfo li ~ li .opt {
-  flex: none;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
   width: 6.875rem;
 }
 .apEasySell .carInfo li ~ li .txt {
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 .apEasySell .carInfo li ~ li .txt p {
   position: relative;
   display: inline-block;
   font-weight: 600;
   color: #ccc;
-  transition-delay: 0.2s;
-  transition-duration: 0.4s;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
 }
 .apEasySell .carInfo li ~ li .txt p::before {
   content: "";
@@ -1111,8 +1180,10 @@
   height: 100%;
   background-color: #EBEBEB;
   opacity: 1;
-  transition-duration: 0.4s;
-  transition-delay: inherit;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+  -webkit-transition-delay: inherit;
+          transition-delay: inherit;
 }
 .apEasySell .carInfo li ~ li .txt p.show {
   color: #000;
@@ -1127,7 +1198,8 @@
   margin: 1rem auto 0;
   border: 0.125rem solid #0096ff;
   border-radius: 0.3125rem;
-  box-shadow: 0 0.1875rem 0.375rem rgba(0, 0, 0, 0.16);
+  -webkit-box-shadow: 0 0.1875rem 0.375rem rgba(0, 0, 0, 0.16);
+          box-shadow: 0 0.1875rem 0.375rem rgba(0, 0, 0, 0.16);
   background-color: #fff;
 }
 .apEasySell .styleInp::before, .apEasySell .styleInp::after {
@@ -1139,7 +1211,8 @@
   height: 0.5rem;
   margin-top: -0.25rem;
   border-radius: 100%;
-  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.16);
+  -webkit-box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.16);
+          box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.16);
   background-color: #fff;
 }
 .apEasySell .styleInp::after {
@@ -1165,12 +1238,21 @@
 .apEasySell .styleInp .inp:-ms-input-placeholder {
   color: #d9d9d9;
 }
+.apEasySell .styleInp .inp::-webkit-input-placeholder {
+  color: #d9d9d9;
+}
+.apEasySell .styleInp .inp::-ms-input-placeholder {
+  color: #d9d9d9;
+}
 .apEasySell .styleInp .inp::placeholder {
   color: #d9d9d9;
 }
 .apEasySell .picExam {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin-top: 1.875rem;
 }
 .apEasySell .picExam li {
@@ -1284,9 +1366,15 @@
   top: 0;
   width: 100%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .apEasySell .attatchPic .picCont li.addImg button .thumb {
   position: initial;
@@ -1351,21 +1439,30 @@
   top: 0;
   width: 100vw;
   border-top: 1px solid #e6e6e6;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 .apEasySell .formWrite .fCont .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .apEasySell .formWrite .fCont .row ~ .row {
   margin-top: 1.25rem;
 }
 .apEasySell .formWrite .fCont .row .col {
   position: relative;
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 .apEasySell .formWrite .fCont .row .col.title {
-  flex: 0 5.9375rem;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 5.9375rem;
+          flex: 0 5.9375rem;
 }
 .apEasySell .formWrite .fCont .group {
   position: relative;
@@ -1383,7 +1480,8 @@
   padding: 1.125rem 0.875rem;
   border-radius: 0.3125rem;
   background-color: #fff;
-  box-shadow: 0 0.1875rem 1.875rem rgba(80, 104, 172, 0.18);
+  -webkit-box-shadow: 0 0.1875rem 1.875rem rgba(80, 104, 172, 0.18);
+          box-shadow: 0 0.1875rem 1.875rem rgba(80, 104, 172, 0.18);
 }
 .apEasySell .formWrite .fCont .group.child [class*=depth]:after {
   content: "";
@@ -1395,12 +1493,14 @@
 }
 .apEasySell .formWrite .fCont .group.child [class*=depth]:nth-child(2)::after {
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 .apEasySell .formWrite .fCont .group.child [class*=depth]:nth-child(3)::after {
   left: auto;
   right: 1.875rem;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 .apEasySell .formWrite .fCont .group.child [class*=depth] .radioBtn {
   height: 4.0625rem;
@@ -1579,6 +1679,14 @@
   font-weight: 400;
   color: #c9c9c9;
 }
+.apEasySell .formWrite .inp::-webkit-input-placeholder {
+  font-weight: 400;
+  color: #c9c9c9;
+}
+.apEasySell .formWrite .inp::-ms-input-placeholder {
+  font-weight: 400;
+  color: #c9c9c9;
+}
 .apEasySell .formWrite .inp::placeholder {
   font-weight: 400;
   color: #c9c9c9;
@@ -1593,9 +1701,15 @@
 }
 .apEasySell .formWrite .radioBtn, .apEasySell .formWrite .checkBtn {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
   height: 3.4375rem;
   padding: 0 0.3125rem;
@@ -1608,7 +1722,8 @@
   line-height: 1.25rem;
   color: #999;
   white-space: nowrap;
-  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
   cursor: pointer;
 }
 .apEasySell .formWrite .radioOri, .apEasySell .formWrite .checkOri {
@@ -1619,7 +1734,8 @@
 }
 .apEasySell .formWrite .radioOri:checked + [class*=Btn], .apEasySell .formWrite .checkOri:checked + [class*=Btn] {
   border-color: #0096ff;
-  box-shadow: 0 0.25rem 0.625rem rgba(80, 104, 172, 0.15);
+  -webkit-box-shadow: 0 0.25rem 0.625rem rgba(80, 104, 172, 0.15);
+          box-shadow: 0 0.25rem 0.625rem rgba(80, 104, 172, 0.15);
   background-color: #fff;
   color: #0096ff;
   font-weight: 600;
@@ -1641,6 +1757,12 @@
   color: #999;
 }
 .apEasySell .formWrite .txtArea:-ms-input-placeholder {
+  color: #999;
+}
+.apEasySell .formWrite .txtArea::-webkit-input-placeholder {
+  color: #999;
+}
+.apEasySell .formWrite .txtArea::-ms-input-placeholder {
   color: #999;
 }
 .apEasySell .formWrite .txtArea::placeholder {
@@ -1672,10 +1794,12 @@
   background: #fff;
 }
 .apEasySell .btnDelete::before {
-  transform: translate(-50%, -50%) rotate(-45deg);
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
 }
 .apEasySell .btnDelete::after {
-  transform: translate(-50%, -50%) rotate(45deg);
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
 }
 .apEasySell .agreeWrap ul li ~ li {
   margin-top: 0.9375rem;
@@ -1719,7 +1843,8 @@
   border-radius: 0.125rem;
   border: 0.0625rem solid #ddd;
   background: url("../images/easySell/icon_chkbox.png") no-repeat center/0.9375rem auto;
-  transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
 }
 .apEasySell .agreeWrap .all-view {
   text-decoration: underline;
@@ -1756,16 +1881,20 @@
   height: 100%;
   border-radius: 0.3125rem;
   background-color: #0096ff;
-  transition-duration: 0.8s;
-  transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
 }
 .progressBar .bar .now.act::before {
   left: calc(100% - 2rem);
 }
 .progressBar .bar .now.act.last::before {
   left: calc(100% - (2rem + 2.5rem));
-  transition-delay: 0.5s;
-  transition-duration: 0.4s;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
 }
 .progressBar .bar .now::before {
   content: "";
@@ -1795,9 +1924,15 @@
   z-index: 1001;
   width: 100%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .loadingWrap::before {
   content: "";
@@ -1807,7 +1942,8 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 .loadingWrap .loadingInner {
   position: relative;
@@ -1869,12 +2005,19 @@
   background-color: #fff;
 }
 .promoFooter .inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  align-items: end;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
 }
 .promoFooter .inner > div:not(.bot) {
-  flex: 0 35%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 35%;
+          flex: 0 35%;
 }
 .promoFooter .inner > div:not(.bot) strong {
   display: block;
@@ -1899,11 +2042,14 @@
   color: #666;
 }
 .promoFooter .inner > div:not(.bot).right {
-  flex: 0 calc(65% - 0.625rem);
+  -webkit-box-flex: 0;
+      -ms-flex: 0 calc(65% - 0.625rem);
+          flex: 0 calc(65% - 0.625rem);
   position: relative;
   margin-left: 0.625rem;
   padding-left: 0.5rem;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .promoFooter .inner > div:not(.bot).right::before {
   content: "";
@@ -1916,7 +2062,9 @@
   background-color: #ededed;
 }
 .promoFooter .inner .bot {
-  flex: 0 100%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 100%;
+          flex: 0 100%;
   margin-top: 1.25rem;
   padding: 0;
 }
@@ -1976,12 +2124,18 @@
   line-height: 1.375rem;
 }
 .easySell.info-save .recom-box .btn-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 0 0.625rem;
 }
 .easySell.info-save .recom-box .btn-area button {
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   height: 2.5rem;
   border: 0.0625rem solid #bbb;
   font-size: 0.875rem;
