@@ -1,12 +1,15 @@
 @charset "utf-8";
 @import './mixin';
 
+// media 1920 start
 @media screen and (max-width: 1920px) {
     .page-title-img {
         width: 100%;
     }
 }
+// media 1920 end 
 
+// media 1200 start
 @media screen and (max-width: 1200px) {
     /* ccommon */
     body,html {
@@ -44,8 +47,31 @@
     .recruit-cont-visual {
         margin: px(60) px(-20);
     }
+    .company-wrapper {
+        .com-video-wrap {
+            width: 100%;
+        }
+    }
+    .com-cont-wrap {
+        .history {
+            .box {
+                .half {
+                    max-width: 100%;
+                    .col.wide {
+                        width: 100%;
+                    }
+                }
+                .his-swiper {
+                    max-width: calc(100% - px(40));
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
 }
+// media 1200 end
 
+// media 1024 start
 @media screen and (max-width: 1024px) {
     /* common */
     body,html {
@@ -271,8 +297,344 @@
             margin-top: px(20);
         }
     }
+    // 회사소개 신규 css 시작
+    .company-wrapper {
+        .com-tab-wrap {
+            width: 100%;
+            background-color: #fff;
+            .inner {
+                margin: 0 auto;
+                border-bottom: 1px solid #ccc;
+                text-align: center;
+                ul {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    li {
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        flex: 0 auto;
+                        height: px(70);
+                        padding: 0 px(25);
+                        a {
+                            display: block;
+                            @include font($s: px(17), $w: 500, $l: px(30), $t: px(-.5), $c: #000, $a: center);
+                        }
+                        &:before {
+                            content: '';
+                            @include pos($p: absolute, $l: 0, $b: 0, $z: 1);
+                            width: 0;
+                            height: px(2);
+                            background-color: #0D59EC;
+                            transition: all .4s ease-in-out;
+                        }
+                        &.active {
+                            &:before {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+            &.fixed {
+                height: px(70);
+                .inner {
+                    top: px(84);
+                    border-top: 1px solid #ccc;
+                }
+            }
+        }
+        .com-inquiry-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: px(300);
+            background: url('../images/info/company/img_in_visual.png') no-repeat center/cover;
+            .inner {
+                width: 100%;
+                margin: 0 auto;
+                padding: px(20);
+                p {
+                    font-size: px(30);
+                    line-height: px(40);
+                }
+                .submit {
+                    width: px(140); 
+                    height: px(50);
+                    font-size: px(16);
+                    line-height: px(50);
+                }
+            }
+        }
+    }
+    .com-cont-wrap {
+        .half {
+            display: block;
+            text-align: center;
+            .col {
+                width: 100%;
+                padding: 0;
+                margin: 0;
+                &.tit {
+                    padding: 0;
+                    strong {
+                        font-size: px(34);
+                        line-height: px(38);
+                    }
+                }
+                &.cont {
+                    padding-top: px(20);
+                }
+            }
+        }
+        .base-txt {
+            font-size: px(18);
+            line-height: px(24);
+            ~ .base-txt {
+                margin-top: px(14);
+            }
+        }
+    }
+    .com-cont-wrap {
+        .visual {
+            margin-top: px(80); 
+            border-radius: px(20);
+        }
+        // 오토플러스
+        .ap {
+            padding: px(80) px(20);
+            .box {
+                .logo {
+                    width: px(220);
+                    margin: 0 auto; 
+                }
+                .title {
+                    h2 {
+                        font-size: px(28);
+                        line-height: px(30);
+                    }
+                    p {
+                        padding-top: px(30);
+                        font-size: px(18);
+                        line-height: px(24);
+                        strong {
+                            padding-top: px(20);
+                        }
+                    }
+                }
+                .btn-wrap {
+                    display: none;
+                }
+                .half {
+                    padding-top: px(60);
+                }
+                .text-list {
+                    padding-top: px(60);
+                }
+            }
+        }
+        // 비전과 목표
+        .vision {
+            padding: px(80) px(20);
+            .box {
+                .half {
+                    .col.wide {
+                        padding-top: px(60);
+                        &:last-child {
+                            padding-top: px(40);
+                        }
+                    }
+                }
+                .circle {
+                    li {
+                        width: px(200);
+                        height: px(200);
+                        margin: 0 px(-10);
+                        p {
+                            font-size: px(20);
+                        }
+                    }
+                }
+                .txt-list {
+                    li {
+                        p {
+                            font-size: px(16);
+                            line-height: px(20);
+                            &.tit {
+                                font-size: px(20);
+                                line-height: px(26);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // 사업영역
+        .business {
+            padding: px(80) px(20);
+            .box {
+                padding: 0;
+                .ico-list {
+                    margin: 0 auto;
+                    text-align: center;
+                    .ico-in {
+                        display: inline-block;
+                        padding: 0;
+                        background-color: transparent;
+                        text-align: center;
+                    }
+                    ul {
+                        text-align: center;
+                        li {
+                            ~ li {
+                                margin-left: px(20);
+                            }
+                            .in {
+                                width: px(100);
+                                height: px(100);
+                                padding-top: px(12);
+                                .ico {
+                                    width: px(40);
+                                    height: px(40);
+                                }
+                                p {
+                                    margin-top: px(4);
+                                    font-size: px(14);
+                                    line-height: px(18);
+                                }
+                            }
+                        }
+                    }
+                }
+                .tab-wrap {
+                    display: block;
+                    width: px(767);
+                    margin: 0 auto;
+                    padding-top: px(80);
+                    .tab-btn {
+                        width: 100%;
+                        justify-content: center;
+                        padding: px(45);
+                        ul {
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: px(10) px(30);
+                            li {
+                                flex: 0 calc((100% - px(30)) / 2);
+                                text-align: left;
+                                ~ li {
+                                    margin-top: 0;
+                                }
+                            }
+                        }
+                    }
+                    .tab-swiper {
+                        width: 100%;
+                        padding-top: px(40);
+                        .swiper-slide {
+                            .sl-in {
+                                transition: all .4s ease-in-out;
+                                opacity: .5;
+                            }
+                            .info {
+                                margin-top: px(35);
+                                strong {
+                                    @include font($s: px(20), $w: 700, $l: px(24), $t: px(-.3), $c: #000);
+                                }
+                                p {
+                                    margin-top: px(14);
+                                    @include font($s: px(16), $w: 400, $l: px(20), $t: px(-.3), $c: #000);
+                                }
+                            }
+                            &[class*='active'] {
+                                .sl-in {
+                                    opacity: 1;   
+                                }
+                            }
+                        }
+                        .swiper-pagination {
+                            position: static;
+                            margin-top: px(40);
+                        }
+                    }
+                }
+            }
+        }
+        // 발자취
+        .history {
+            padding: px(80) px(20);
+            .box {
+                padding: 0;
+                .half {
+                    padding-top: px(60);
+                }
+                .his-swiper {
+                    width: px(767);
+                    margin: 0 auto;
+                    padding-top: px(40);
+                    .swiper-container {
+                        height: px(480);
+                    }
+                    .his-in {
+                        padding: px(20);
+                        border-radius: px(20);
+                        strong {
+                            display: block;
+                            font-size: px(22);
+                            line-height: px(28);
+                        }
+                        ul {
+                            margin-top: px(10);
+                            li {
+                                font-size: px(16);
+                                line-height: px(20);
+                                ~ li {
+                                    margin-top: px(10);
+                                }
+                            }
+                        }
+                    }
+                    .his-num {
+                        position: relative;
+                        padding-bottom: px(30);
+                        p {
+                            padding: 0 px(6);
+                            font-size: px(16);
+                            line-height: px(20);
+                        }
+                        .swiper-pagination {
+                            margin-top: px(20);
+                        }
+                    }
+                }
+            }
+        }
+        // 전국 지점 안내
+        .contact {
+            padding: px(80) px(20);
+            .box {
+                padding: 0;
+                .contact-cont-wrap {
+                    padding: px(40) 0 0;
+                    .menu {
+                        ul {
+                            li {
+                                text-align: left;
+                            }
+                        }
+                    }
+                }
+                .contact-cont-map {
+                    margin: 0;
+                }
+            }
+        }
+    }
 }
+// media 1024 end
 
+// media 900 start
 @media screen and (max-width: 900px) {
     /* common */
     body,html {
@@ -428,7 +790,9 @@
         }
     }
 }
+// media 900 end 
 
+// media 767 start
 @media screen and (max-width: 767px) {
     /* common */
     body,html {
@@ -436,6 +800,13 @@
     }
     body {
         padding-top: px(60);
+    }
+    .quick-top {
+        right: px(10); 
+        button {
+            width: px(40);
+            height: px(40);
+        }
     }
     .btn-wrap {
         a, button {
@@ -1719,8 +2090,319 @@
             line-height: px(24);
         }
     }
-}
 
+    .company-wrapper {
+        .com-video-wrap {
+            .inner {
+                a {
+                    padding: 0 px(12);
+                    height: px(40);
+                    font-size: px(14);
+                    line-height: px(40);
+                }
+            }
+        }
+        .com-tab-wrap {
+            border-top: 1px solid #ccc;
+            .inner {
+                ul {
+                    li {
+                        height: px(50);
+                        padding: 0 px(10);
+                        a {
+                            word-break: keep-all;
+                            font-size: px(14);
+                            line-height: px(20);
+                        }
+                    }
+                }
+            }
+            &.fixed {
+                height: px(50);
+                .inner {
+                    top: px(60);
+                }
+            }
+        }
+        .com-inquiry-wrap {
+            height: px(250);
+            .inner {
+                width: 100%;
+                text-align: center;
+                p {
+                    font-size: px(26);
+                    line-height: px(32);
+                }
+                .submit {
+                    width: px(140); 
+                    height: px(40);
+                    margin-top: px(20);
+                    font-size: px(16);
+                    line-height: px(40);
+                }
+            }
+        }
+    }
+    .com-cont-wrap {
+        .visual {
+            margin-top: px(60);
+            border-radius: px(10);
+            &:before {
+                padding-top: 40%;
+            }
+        }
+        .half {
+            .col {
+                &.tit {
+                    strong {
+                        font-size: px(26);
+                        line-height: px(32);
+                    }
+                }
+                &.cont {
+                    padding-top: px(16);
+                }
+            }
+        }
+        .base-txt {
+            font-size: px(16);
+            line-height: px(22);
+            ~ .base-txt {
+                margin-top: px(10);
+            }
+        }
+        .swiper-arr-btn {
+            left: px(-16);
+            width: px(32);
+            height: px(32);
+            margin-top: px(-16);
+            border-radius: px(32);
+            &:before {
+                background-size: auto px(14);
+            }
+            &[class*='next'] {
+                left: auto;
+                right: px(-16);
+            }
+        }
+        .swiper-pagination[class*='progressbar'] {
+            height: 3px;
+            border-radius: 3px;
+            span {
+                border-radius: 3px;
+            }
+            &:before {
+                height: 1px;
+            }
+        }
+        // 오토플러스
+        .ap {
+            padding: px(60) px(20);
+            .box {
+                .logo {
+                    width: px(200);
+                }
+                .title {
+                    h2 {
+                        font-size: px(24);
+                        line-height: px(28);
+                    }
+                    p {
+                        padding-top: px(20);
+                        font-size: px(16);
+                        line-height: px(22);
+                    }
+                }
+                .half {
+                    padding-top: px(60);
+                }
+                .text-list {
+                    display: block;
+                    padding-top: px(40);
+                    gap: px(20);
+                    .txt {
+                        padding: px(20);
+                        ~ .txt {
+                            margin-top: px(20);
+                        }
+                        strong {
+                            font-size: px(18);
+                            line-height: px(22);
+                        }
+                        p {
+                            font-size: px(14);
+                            line-height: px(20);
+                        }
+                    }
+                }
+            }
+        }
+        // 비전과 목표
+        .vision {
+            padding: px(60) px(20);
+            .box {
+                .half {
+                    .col.wide {
+                        padding-top: px(60);
+                    }
+                }
+                .circle {
+                    li {
+                        width: px(160);
+                        height: px(160);
+                        margin: 0 px(-10);
+                        p {
+                            font-size: px(18);
+                        }
+                    }
+                }
+                .txt-list {
+                    li {
+                        p {
+                            margin-top: px(10);
+                            font-size: px(14);
+                            line-height: px(18);
+                            &.tit {
+                                font-size: px(18);
+                                line-height: px(24);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // 사업영역
+        .business {
+            padding: px(60) px(20);
+            .box {
+                .ico-list {
+                    padding-top: px(60);
+                    ul {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: px(10) px(20);
+                        li {
+                            flex: 0 calc((100% - px(40)) / 3);
+                            ~ li {
+                                margin-left: 0;
+                            }
+                            .in {
+                                margin: 0 auto;
+                                padding-top: px(14);
+                                p {
+                                    margin-top: px(4);
+                                    font-size: px(14);
+                                    line-height: px(18);
+                                }
+                            }
+                        }
+                        &:before {
+                            display: none;
+                        }
+                    }
+                }
+                .tab-wrap {
+                    width: 100%;
+                    padding-top: px(60);
+                    .tab-btn {
+                        padding: px(20);
+                        ul {
+                            gap: px(10) px(20);
+                            li {
+                                flex: 0 calc((100% - px(20)) / 2);
+                                button {
+                                    width: 100%;
+                                    text-align: left;
+                                    font-size: px(16); 
+                                    line-height: px(20);
+                                }
+                            }
+                        }
+                    }
+                    .tab-swiper {
+                        width: 100%;
+                        padding-top: px(20);
+                        .swiper-slide {
+                            .info {
+                                margin-top: px(35);
+                                strong {
+                                    font-size: px(18);
+                                    line-height: px(22);
+                                }
+                                p {
+                                    margin-top: px(10);
+                                    font-size: px(14);
+                                    line-height: px(18); 
+                                }
+                            }
+                            &[class*='active'] {
+                                .sl-in {
+                                    opacity: 1;   
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // 발자취
+        .history {
+            padding: px(20) px(20) px(60);
+            .box {
+                .half {
+                    padding-top: px(60);
+                }
+                .his-swiper {
+                    padding-top: px(40);
+                    .swiper-container {
+                        height: px(410);
+                    }
+                    .his-in {
+                        ul {
+                            li {
+                                font-size: px(14);
+                                line-height: px(18);
+                                ~ li {
+                                    margin-top: px(6);
+                                }
+                            }
+                        }
+                    }
+                    .his-num {
+                        .swiper-pagination {
+                            &:before {
+                                height: 1px;
+                                margin: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // 전국 지점 안내
+        .contact {
+            padding: px(60) px(20);
+            .box {
+                .contact-cont-wrap {
+                    padding: px(40) 0 0;
+                    .menu {
+                        ul {
+                            li {
+                                text-align: left;
+                            }
+                        }
+                    }
+                }
+                .contact-cont-map {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+// media 767 end
+
+// media 520 start
 @media screen and (max-width: 520px) {
     section .page-title-img {
         height: px(300);
@@ -1773,8 +2455,185 @@
             width: px(64);
         }
     }
-}
+    .company-wrapper {
+        .com-tab-wrap {
+            .inner ul {
+                li {
+                    flex: 1;
+                    padding: 0 px(5);
+                    a {
+                        display: block;
+                        width: 100%;
+                        text-align: center;
+                        line-height: 1.2;
+                    }
+                }
+            }
+        }
+        .com-inquiry-wrap {
+            height: px(240);
+            .inner {
+                p {
+                    word-break: keep-all;
+                    font-size: px(22);
+                    line-height: px(28); 
+                }
+                .submit {
 
+                }
+            }
+        }
+    }
+    .com-cont-wrap {
+        .half {
+            .col {
+                &.tit {
+                    strong {
+                        font-size: px(24);
+                        line-height: px(30);
+                    }
+                }
+            }
+        }
+        .base-txt {
+            font-size: px(14);
+            line-height: px(20);
+        }
+        // 오토플러스
+        .ap {
+            .box {
+                .logo {
+                    width: px(180);
+                }
+                .title {
+                    h2 {
+                        font-size: px(22);
+                        line-height: px(26);
+                    }
+                    p {
+                        font-size: px(14);
+                        line-height: px(20);
+                    }
+                }
+                .text-list {
+                    display: block;
+                    padding-top: px(40);
+                    gap: px(20);
+                    .txt {
+                        padding: px(20);
+                        border-radius: px(10);
+                        ~ .txt {
+                            margin-top: px(20);
+                        }
+                        strong {
+                            font-size: px(18);
+                            line-height: px(22);
+                        }
+                        p {
+                            font-size: px(14);
+                            line-height: px(20);
+                        }
+                    }
+                }
+            }
+        }
+        // 비전과 목표
+        .vision {
+            .box {
+                .circle {
+                    li {
+                        width: px(100);
+                        height: px(100);
+                        margin: 0 px(-5);
+                        p {
+                            font-size: px(12);
+                            font-weight: 700;
+                        }
+                    }
+                }
+                .txt-list {
+                    display: block;
+                    li {
+                        ~ li {
+                            margin-top: px(30);
+                        }
+                        p {
+                            margin-top: px(8);
+                            font-size: px(14);
+                            line-height: px(18);
+                            &.tit {
+                                font-size: px(16);
+                                line-height: px(22);
+                                strong {
+                                    padding-bottom: px(4);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // 사업영역
+        .business {
+            .box {
+                .ico-list {
+                    ul {
+                        gap: px(10);
+                        li {
+                            flex: 0 calc((100% - px(20)) / 3);
+                            ~ li {
+                                margin-left: 0;
+                            }
+                            .in {
+                                width: px(88);
+                                height: px(88); 
+                                padding-top: px(12);
+                                .ico {
+                                    width: px(30);
+                                    height: px(30);
+                                }
+                                p {
+                                    margin-top: px(4);
+                                    font-size: px(12);
+                                    line-height: px(16);
+                                }
+                            }
+                        }
+                        &:before {
+                            display: none;
+                        }
+                    }
+                }
+                .tab-wrap {
+                    width: 100%;
+                    padding-top: px(60);
+                    .tab-btn {
+                        border-radius: px(10);
+                        ul {
+                            gap: px(10);
+                            li {
+                                flex: 0 calc((100% - px(10)) / 2);
+                                button {
+                                    padding-left: px(6);
+                                    word-break: keep-all;
+                                    font-size: px(14); 
+                                    line-height: px(18);
+                                    &:before {
+                                        top: px(8);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+// media 520 end
+
+// media 340 start
 @media screen and (max-width: 340px){
     body, html {
         font-size: 15px;
@@ -1789,3 +2648,4 @@
         height: px(200);
     }
 }
+// media 340 end

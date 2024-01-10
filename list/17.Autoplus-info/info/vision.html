@@ -88,66 +88,75 @@
     <!-- // -->
 
     <!-- container -->
-    <div id="container" class="company-wrap">
-        <section class="company-video-wrap">
+    <!-- # 회사소개 신규 영역 시작 -->
+    <div class="quick-top"><button type="button"><img src="../resources/images/info/company/ico_btn_top.png" alt="최상단으로 이동"></button></div>
+    <div id="container" class="company-wrapper">
+        <div class="com-video-wrap">
             <div class="inner">
-                <video src="https://cdn.autoplus.co.kr/adminimage/video_keyvisual02.mp4?v=20230719" poster="" autoplay="" muted="" class="key-video video02"></video>
+                <video src="https://cdn.autoplus.co.kr/adminimage/video_keyvisual03.mp4" poster="" autoplay="" muted="" class="key-video video02"></video>
+                <a href="https://www.youtube.com/watch?v=2hKI5gSI82w" target="_blank">영상 풀버전 보기 &gt;</a>
             </div>
-        </section>
-        <section class="company-tab-wrap">
+        </div>
+        <div class="com-tab-wrap">
             <div class="inner">
                 <ul>
-                    <li><a href="#">오토플러스</a></li>
-                    <li><a href="#">비전과 목표</a></li>
-                    <li><a href="#">사업영역</a></li>
-                    <li><a href="#">발자취</a></li>
-                    <li><a href="#">전국 지점 안내</a></li>
+                    <li class="active"><a href="javascript: void(0);">오토플러스</a></li>
+                    <li><a href="javascript: void(0);">비전과 목표</a></li>
+                    <li><a href="javascript: void(0);">사업영역</a></li>
+                    <li><a href="javascript: void(0);">발자취</a></li>
+                    <li><a href="javascript: void(0);">전국 지점 안내</a></li>
                 </ul>
             </div>
-        </section>
-        <div class="company-contents">
-            <!-- 오토플러스 -->
-            <section class="company-info">
-                <div class="inner">
-                    <div class="title">
-                        <div class="logo"><img src="../resources/images/common/logo_autoplus.png" alt="오토플러스"></div>
+        </div>
+        <div class="com-cont-wrap">
+            <!-- # 오토플러스 시작 -->
+            <section class="ap">
+                <div class="box">
+                    <div class="logo" data-motion="slide-down" data-duration="1"><img src="../resources/images/info/company/ico_com_logo.png" alt="오토플러스"></div>
+                    <div class="title" data-motion="slide-down" data-duration="1" data-delay=".4">
                         <h2>차에 가치를 더하다.</h2>
                         <p>
-                            새로운 정비 서비스로 안전의 가치를 <br>혁신적 시스템으로 중고차에 투명함의 가치를 <br>금융, 보증, 탁송, 사후관리 서비스로 고객만족의 가치를
+                            책임있는 점검과 정비 서비스로 고객 안전의 가치를 <br>혁신적 리컨디셔닝 시스템으로 투명함의 가치를 <br>자동차 금융, 보험, 물류, 사후관리 서비스로 고객만족의 가치를
                             <strong>오토플러스를 만나면 차에 새로운 가치가 더해집니다. <br>자동차 생활이 새로워집니다.</strong>
                         </p>
                     </div>
-                    <div class="cont-half">
-                        <div class="col wide"><img src=""></div>
-                        <div class="col tit">
+                    <div class="visual" data-motion="fade-in" data-duration="1">
+                        <div class="bg" style="background-image: url('../resources/images/info/company/img_ap_visual.png');"></div>
+                    </div>
+                    <div class="half">
+                        <div class="col tit" data-motion="slide-left" data-duration="1">
                             <strong>오토플러스</strong>
                         </div>
-                        <div class="col cont">
-                            <p class="cont-base-txt">
-                                오토플러스는 2000년 자동차 유통 관리 전문 기업으로 시작 하였으며
-                                2004년부터 중고차 판매 사업을 개시하였습니다.
-
-                                중고차 매입, 중고차 판매, 온라인 중고차 경매, 찾아가는 서비스(방문점검), 장기렌트/구독 사업 
-                                자차보험 서비스, 자동차 물류 서비스, 금융 서비스 등
-                                비즈니스 파트너들과 함께하는 자동차 전문 기업을 지향합니다.
-
-                                오토플러스는 혁신적인 시스템을 통해 중고차 시장을 바로잡고 
-                                고객 만족의 가치를 극대화하고 있습니다.  
+                        <div class="col cont" data-motion="slide-right" data-duration="1">
+                            <p class="base-txt">
+                                오토플러스는 2000년 자동차 유통 관리 전문 기업으로 출범하였으며<br>
+                                2004년부터 중고차 판매 사업을 본격적으로 개시하였습니다.
                             </p>
-                            <div class="cont-btn-wrap">
+                            <p class="base-txt">
+                                중고차 매입, 판매, 온라인 경매, 찾아가는 서비스(방문점검), 장기렌트/구독 사업, <br>
+                                자차보험, 자동차 물류, 금융 서비스 등 <br>
+                                비즈니스 파트너들과 함께하는 자동차 분야 전문가 그룹을 지향합니다.
+                            </p>
+                            <p class="base-txt">
+                                오토플러스는 혁신적인 시스템을 통해 중고차 시장을 바로잡고 <br>
+                                고객 만족의 가치 극대화를 위해 노력하고 있습니다.  
+                            </p>
+                            <!--
+                            <div class="btn-wrap">
                                 <button type="button" class="down info">오토플러스 소개</button>
                                 <button type="button" class="down ci">오토플러스 CI</button>
                             </div>
-                            <div class="cont-txt-wrap">
-                                <div class="txt-list">
-                                    <strong>AUTOPLUS’ 1ST</strong>
+                            -->
+                            <div class="text-list">
+                                <div class="txt">
+                                    <strong>오토플러스의 최초 기록</strong>
                                     <p>국내 최초 자동차 정비기술 벤처기업 인증</p>
                                     <p>국내 최초 자동차 품질 등급제 개발</p>
-                                    <p>중고차 업계 유일 자동차 상품화 공장 ATC</p>
-                                    <p>국내 최초 선택형 중고차 특허 취득</p>
+                                    <p>중고차 업계 유일 자동차 상품화 공장  ATC</p>
+                                    <p>국내 최초 선택형 자동차 특허 취득</p>
                                 </div>
-                                <div class="txt-list">
-                                    <strong>AUTOPLUS’ PARTNERS</strong>
+                                <div class="txt inline">
+                                    <strong>오토플러스의 PARTNERS</strong>
                                     <p>현대캐피탈</p>
                                     <p>하나캐피탈</p>
                                     <p>NH농협캐피탈</p>
@@ -158,6 +167,7 @@
                                     <p>메리츠캐피탈</p>
                                     <p>SK렌터카</p>
                                     <p>롯데렌탈</p>
+                                    <p>롯데캐피탈</p>
                                     <p>삼성카드</p>
                                 </div>
                             </div>
@@ -165,128 +175,490 @@
                     </div>
                 </div>
             </section>
-            <!-- // -->
-            
-            <!-- 비전과 목표 -->
-            <section class="company-vision">
-                <div class="inner">
-                    <div class="cont-half">
-                        <div class="col tit">
+            <!-- // # 오토플러스 끝 -->
+            <!-- # 비전과 목표 시작 -->
+            <section class="vision">
+                <div class="box">
+                    <div class="half">
+                        <div class="col tit" data-motion="slide-left" data-duration="1">
                             <strong>비전과 목표</strong>
                         </div>
-                        <div class="col cont">
-                            <p class="cont-base-txt">
-                                자동차의 가치를 극대화하는 역량과 고객 중심 마인드로 
-                                최고의 고객 만족을 위해 모든 여정을 함께하겠습니다.
+                        <div class="col cont" data-motion="slide-right" data-duration="1">
+                            <p class="base-txt">
+                                자동차의 가치를 극대화하는 역량과 고객 중심 마인드로 <br>
+                                최고의 고객 만족을 위해 카라이프 모든 여정을 함께합니다.
                             </p>
                         </div>
-                        <div class="col wide"><img src=""></div>
+                        <div class="col wide" data-motion="slide-down" data-duration="1">
+                            <ul class="circle">
+                                <li><p>Connectivity</p></li>
+                                <li><p>Innovation</p></li>
+                                <li><p>Value</p></li>
+                            </ul>
+                        </div>
+                        <div class="col wide" data-motion="slide-down" data-duration="1">
+                            <ul class="txt-list">
+                                <li>
+                                    <p class="tit"><strong>Connectivity</strong></p>
+                                    <p>고객의 삶에 가까이 <br>그리고 언제든 함께할 수 있도록</p>
+                                </li>
+                                <li>
+                                    <p class="tit"><strong>Innovation</strong></p>
+                                    <p>혁신적인 노력으로 믿을 수 있는 중고차와 <br>최고의 전문가들이 만들어가는 고객 만족을 </p>
+                                </li>
+                                <li>
+                                    <p class="tit"><strong>Value</strong></p>
+                                    <p>자동차 그 이상의 가치로 <br>고객과의 모든 여정에서 감동을 드리도록</p>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <ul class="vision-keyword">
-                        <li>Connectivity</li>
-                        <li>Innovation</li>
-                        <li>Value</li>
-                    </ul>
-                    <ul class="vision-txt">
-                        <li>고객의 삶에 가까이 <br>그리고 언제든 함께 할 수 있도록 </li>
-                        <li>혁신적인 노력으로 믿을 수 있는 중고차와 <br>최고의 전문가들이 만드는 고객 만족을 </li>
-                        <li>자동차 그 이상의 가치로 <br>고객과의 모든 여정에서 감동을 드리도록</li>
-                    </ul>
-                    <div class="vision-circle">
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                        <div class="circle"></div>
+                </div>
+            </section>
+            <!-- # 비전과 목표 끝 -->
+            <!-- # 사업영역 시작 -->
+            <section class="business">
+                <div class="box">
+                    <div class="half">
+                        <div class="col tit" data-motion="slide-left" data-duration="1">
+                            <strong>사업영역</strong>
+                        </div>
+                        <div class="col cont" data-motion="slide-right" data-duration="1">
+                            <p class="base-txt">
+                                구매, 이용, 판매까지 자체 서비스 운영으로 더욱 믿을 수 있습니다. <br>
+                                자동차와 함께하는 모든 순간을 오토플러스와 함께하세요.
+                            </p>
+                        </div>
+                        <div class="col wide" data-motion="slide-down" data-duration="1">
+                            <div class="ico-list">
+                                <div class="ico-in">
+                                    <ul>
+                                        <li>
+                                            <div class="in">
+                                                <div class="ico"><img src="../resources/images/info/company/ico_bus_01.png"></div>
+                                                <p>구매(처분)</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="in">
+                                                <div class="ico"><img src="../resources/images/info/company/ico_bus_02.png"></div>
+                                                <p>금융</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="in">
+                                                <div class="ico"><img src="../resources/images/info/company/ico_bus_03.png"></div>
+                                                <p>판매</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="in">
+                                                <div class="ico"><img src="../resources/images/info/company/ico_bus_04.png"></div>
+                                                <p>물류</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="in">
+                                                <div class="ico"><img src="../resources/images/info/company/ico_bus_05.png"></div>
+                                                <p>자차보험</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="in">
+                                                <div class="ico"><img src="../resources/images/info/company/ico_bus_06.png"></div>
+                                                <p>사후관리<br>서비스</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col wide" data-motion="slide-down" data-duration="1">
+                            <div class="tab-wrap">
+                                <div class="tab-btn">
+                                    <ul>
+                                        <li class="active"><button type="onclick">중고차 매매</button></li>
+                                        <li><button type="onclick">직영 리컨디셔닝센터</button></li>
+                                        <li><button type="onclick">찾아가는 서비스</button></li>
+                                        <li><button type="onclick">장기렌트/구독사업</button></li>
+                                        <li><button type="onclick">자차보험</button></li>
+                                        <li><button type="onclick">자동차 물류</button></li>
+                                        <li><button type="onclick">자동차 서비스 운영</button></li>
+                                        <li><button type="onclick">금융</button></li>
+                                        <li><button type="onclick">온라인 중고차 경매(차옥션)</button></li>
+                                    </ul>
+                                </div>
+                                <div class="tab-swiper">
+                                    <div class="swiper-container">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="sl-in">
+                                                    <div class="thumb"><img src="../resources/images/info/company/img_bus_01.png"></div>
+                                                    <div class="info">
+                                                        <strong>중고차 매매 </strong>
+                                                        <p>100% 직영관리로 더욱 믿을 수 있게 프리미엄 중고차 판매, 매입, 경매 서비스를 제공합니다.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="sl-in">
+                                                    <div class="thumb"><img src="../resources/images/info/company/img_bus_02.png"></div>
+                                                    <div class="info">
+                                                        <strong>직영 리컨디셔닝센터</strong>
+                                                        <p>직영 리컨디셔닝센터 ATC(Autoplus Trust Center)를 통해 리본카로 다시 태어납니다.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="sl-in">
+                                                    <div class="thumb"><img src="../resources/images/info/company/img_bus_03.png"></div>
+                                                    <div class="info">
+                                                        <strong>찾아가는 서비스</strong>
+                                                        <p>24년 정비노하우를 바탕으로 숙련된 전문가의 방문 차량점검 및 고급 엔진오일 교체 서비스를 제공합니다.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="sl-in">
+                                                    <div class="thumb"><img src="../resources/images/info/company/img_bus_04.png"></div>
+                                                    <div class="info">
+                                                        <strong>장기렌트/구독 사업</strong>
+                                                        <p>번거로운 신용심사나, 부담스러운 선납금 없이 가벼운 카라이프를 제공합니다.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="sl-in">
+                                                    <div class="thumb"><img src="../resources/images/info/company/img_bus_05.png"></div>
+                                                    <div class="info">
+                                                        <strong>자차보험</strong>
+                                                        <p>금융사 자산차량에 대해 기존 보험사 자차보험과 동일한 수준의 프리미엄 서비스를 제공합니다.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="sl-in">
+                                                    <div class="thumb"><img src="../resources/images/info/company/img_bus_06.png"></div>
+                                                    <div class="info">
+                                                        <strong>자동차 물류</strong>
+                                                        <p>금융사 리스, 렌트차량의 출고부터 고객 인도까지 세심하고 안전하게 관리합니다.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="sl-in">
+                                                    <div class="thumb"><img src="../resources/images/info/company/img_bus_07.png"></div>
+                                                    <div class="info">
+                                                        <strong>자동차 서비스 운영</strong>
+                                                        <p>자동차 보관 및 등록 대행, 번호판 제작 및 보조 번호판 장착, 대차 서비스를 제공합니다.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="sl-in">
+                                                    <div class="thumb"><img src="../resources/images/info/company/img_bus_08.png"></div>
+                                                    <div class="info">
+                                                        <strong>금융</strong>
+                                                        <p>일반 고객은 물론 법인 고객까지 쉽고 빠르게 이용할 수 있는 리스/할부 서비스를 제공합니다.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="sl-in">
+                                                    <div class="thumb"><img src="../resources/images/info/company/img_bus_09.png"></div>
+                                                    <div class="info">
+                                                        <strong>온라인 중고차 경매(차옥션)</strong>
+                                                        <p>자동차 경매장 운영 허가를 받은 자체 온라인 경매 시스템 ‘차옥션’을 운영합니다.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="swiper-scrollbar"></div> -->
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
-            <!-- // -->
-
-            <!-- 사업영역 -->
-            <section class="company-business">
-                <div class="inner">
-                    
+            <!-- # 사업영역 끝 -->
+            <!-- # 발자취 시작 -->
+            <section class="history">
+                <div class="box">
+                    <div class="visual" data-motion="fade-in" data-duration="1">
+                        <div class="bg" style="background-image: url('../resources/images/info/company/img_his_visual.png');"></div>
+                    </div>
+                    <div class="half">
+                        <div class="col tit" data-motion="slide-left" data-duration="1">  
+                            <strong>발자취</strong>
+                        </div>
+                        <div class="col cont" data-motion="slide-right" data-duration="1">
+                            <p class="base-txt">
+                                오토플러스는 고객의 신뢰를 바탕으로 함께 성장하고 있습니다. <br>
+                                자동차 생활 서비스를 통해 고객의 삶을 풍요로이 하기 위한 노력은 계속됩니다.
+                            </p>
+                        </div>
+                        <div class="col wide" data-motion="slide-down" data-duration="1">
+                            <div class="his-swiper">
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="his-in">
+                                                <strong>2023</strong>
+                                                <ul>
+                                                    <li>제17회 자동차진단평가 기능경진대회 대상, 장려상, 단체상 3관왕 수상</li>
+                                                    <li>용인복합물류센터 오픈</li>
+                                                    <li>리본카 ‘라이브 상담’ 서비스 런칭</li>
+                                                    <li>2023 대한민국 중고차산업 심포지움 개최 (국내최초)</li>
+                                                    <li>리본카 청라/부산 스튜디오 라이브 쇼핑 종일 방송 체제 도입</li>
+                                                    <li>국내 최대 ‘중고차 라이브 스튜디오’ 개관 (부산)</li>
+                                                    <li>리본카 청라 스튜디오 리뉴얼</li>
+                                                    <li>네이버 마이카 비대면 내차팔기 서비스 제휴</li>
+                                                    <li>중고차 ‘경매 출품 대행’ 서비스 런칭</li>
+                                                    <li>리본카 브랜드 통합 & 홈서비스 개편</li>
+                                                    <li>독일 TÜV SÜD Workshop부문 인증마크 4년 연속 획득</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="his-in">
+                                                <strong>2022</strong>
+                                                <ul>
+                                                    <li>모범납세자상 수상 (영등포세무서장상)</li>
+                                                    <li>제16회 자동차진단평가 기능경진대회 대상, 금상, 단체상 3관왕 수상</li>
+                                                    <li>리본카 공식 유튜브 채널 업계 최초 ‘실버 버튼’ 획득</li>
+                                                    <li>MBC 「나혼자 산다」 등 다수 미디어에 리본카 소개</li>
+                                                    <li>리본카 「CM송 챌린지」 영상 공모전 개최</li>
+                                                    <li>신한마이카 제휴</li>
+                                                    <li>리본카260/리본카118 브랜드 이원화</li>
+                                                    <li>하나캐피탈 파트너쉽 체결</li>
+                                                    <li>업계 최장 8일 책임 환불 보장제 실시</li>
+                                                    <li>독일 TÜV SÜD Workshop부문 인증마크 3년 연속 획득</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="his-in">
+                                                <strong>2021</strong>
+                                                <ul>
+                                                    <li>비대면 내차팔기 서비스 시작</li>
+                                                    <li>냄새케어 시스템 특허 취득</li>
+                                                    <li>테슬라 인증중고차 공식 판매 제휴</li>
+                                                    <li>ATC 스마트팩토리 기술 적용</li>
+                                                    <li>오토플러스 통합 사이트 리뉴얼개편</li>
+                                                    <li>라이브 커머스 '리본카 쇼핑 라이브' 런칭</li>
+                                                    <li>독일 TÜV SÜD Workshop부문 인증마크 2년 연속 획득</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="his-in">
+                                                <strong>2020</strong>
+                                                <ul>
+                                                    <li>리본카 옥션 마케팅 진행</li>
+                                                    <li>독일 TÜV SÜD 국내 최초 Workshop부문 인증마크 획득 : ATC</li>
+                                                    <li>오토플러스 통합 사이트 오픈</li>
+                                                    <li>선택형 리본카 특허 취득</li>
+                                                    <li>실시간 라이브 방송 리본쇼 시작</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="his-in">
+                                                <strong>2019</strong>
+                                                <ul>
+                                                    <li>비대면 내차사기 서비스 시작</li>
+                                                    <li>리본카 2.0 런칭</li>
+                                                    <li>에이카(A-Car) 브랜드 런칭</li>
+                                                    <li>차옥션 경매시스템 런칭</li>
+                                                    <li>대보렌터카㈜ 흡수 합병</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="his-in">
+                                                <strong>2018</strong>
+                                                <ul>
+                                                    <li>리본카 브랜드 런칭</li>
+                                                    <li>기술 역량 우수기업 T4 인증</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="his-in">
+                                                <strong>2017</strong>
+                                                <ul>
+                                                    <li>직영 상품화 공장 ATC(Autoplus Trust Center) 오픈</li>
+                                                    <li>VIG 파트너스 투자 유치</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="his-in">
+                                                <strong>2015</strong>
+                                                <ul>
+                                                    <li>중고차 품질 등급제 실시</li>
+                                                    <li>현대캐피탈 인증중고차 제휴 사업 실시</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="his-in">
+                                                <strong>2013</strong>
+                                                <ul>
+                                                    <li>렌터카 사업 개시 : 대보렌터카㈜</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="his-in">
+                                                <strong>2012</strong>
+                                                <ul>
+                                                    <li>ISO-14001 품질인증 획득</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="his-in">
+                                                <strong>2011</strong>
+                                                <ul>
+                                                    <li>민간 기업 최초 번호판제작 사업</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="his-in">
+                                                <strong>2005</strong>
+                                                <ul>
+                                                    <li>일반 정비 사업 개시</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="his-in">
+                                                <strong>2004</strong>
+                                                <ul>
+                                                    <li>중고차 판매 사업 개시</li>
+                                                    <li>국내 최초 자동차정비기술 분야 벤처기업 인증</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="his-in">
+                                                <strong>2000</strong>
+                                                <ul>
+                                                    <li>회사 설립</li>
+                                                    <li>자동차 방문점검 서비스 개시</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next swiper-arr-btn"></div>
+                                <div class="swiper-button-prev swiper-arr-btn"></div>
+                                <div class="his-num">
+                                    <p class="left">2024</p>
+                                    <div class="swiper-pagination"></div>
+                                    <p class="right">2005</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
-            <!-- // -->
-            
-            <!-- 발자취 -->
-            <section class="company-history">
-                <div class="inner">
-                    
+            <!-- // # 발자취 끝 -->
+            <!-- # 전국 지점 안내 시작 -->
+            <section class="contact contact-wrap">
+                <div class="box">
+                    <div class="half">
+                        <div class="col tit" data-motion="slide-left" data-duration="1"> 
+                            <strong>전국 지점 안내</strong>
+                        </div>
+                        <div class="col wide" data-motion="slide-down" data-duration="1">
+                            <div class="contact-cont-wrap">
+                                <div class="inner">
+                                    <!-- # 기존 소스 (퍼블 확인용) -->
+                                    <div class="contact-cont-map">
+                                        <div class="menu">
+                                            <ul>
+                                                <li data-brcd="HEAD" class="active"><a href="javascript: void(0);">본사</a></li>
+                                                <li data-brcd="00244"><a href="javascript: void(0);">일산지점</a></li>
+                                                <li data-brcd="00018"><a href="javascript: void(0);">청라지점</a></li>
+                                                <li data-brcd="00205"><a href="javascript: void(0);">중앙특판지점</a></li>
+                                                <li data-brcd="00149"><a href="javascript: void(0);">동대구지점</a></li>
+                                                <li data-brcd="00033"><a href="javascript: void(0);">부산지점</a></li>
+                                                <li data-brcd="00006"><a href="javascript: void(0);">광주지점</a></li>
+                                                <li data-brcd="00025"><a href="javascript: void(0);">제주지점</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="map">
+                                            <div class="con-map">
+                                                <div class="custom-type-control">
+                                                    <span id="btnAllBranch" class="svbtn">All</span>
+                                                    <span id="btnRoadmap" class="selected_btn">지도</span>
+                                                    <span id="btnSkyview" class="svbtn">스카이뷰</span>
+                                                </div>
+                                                <div class="custom-zoom-control"> 
+                                                    <span><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png" alt="확대"></span>  
+                                                    <span><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png" alt="축소"></span>
+                                                </div>
+                                            </div>
+                                            <div class="map-info">
+                                                <strong class="c-name">본사</strong>
+                                                <span class="c-tel">1544-2277</span>
+                                                <span class="c-address">서울시 영등포구 선유동2로 이레빌딩 신관 11층</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- # 기존 소스 (개발용) -->
+                                    <!--
+                                    <div class="contact-cont-map" data-motion="slide-up" data-duration="1" data-delay=".4">
+                                        <div class="menu">
+                                            <ul>
+                                                <li data-brcd="HEAD" class="mapTitle active"><a href="javascript: fnKakaoMap(0);">본사</a></li>
+                                                <li th:each="item : ${branchObj}" th:data-brcd="${item.brCd }" th:class="mapTitle">
+                                                    <a th:href="|javascript:fnKakaoMap(${itemStat.count });|" th:text="${item.analDeptName}">일산지점</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="map">
+                                            <div class="con-map" id="rbMap">
+                                                <div class="custom-type-control">
+                                                    <span id="btnAllBranch" class="svbtn" onclick="zoomAll()">All</span>
+                                                    <span id="btnRoadmap" class="selected_btn" onclick="setMapType('roadmap')">지도</span>
+                                                    <span id="btnSkyview" class="svbtn" onclick="setMapType('skyview')">스카이뷰</span>
+                                                </div>
+                                                <div class="custom-zoom-control"> 
+                                                    <span onclick="zoomInOut(-1)"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png" alt="확대"></span>  
+                                                    <span onclick="zoomInOut(1)"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png" alt="축소"></span>
+                                                </div>
+                                            </div>
+                                            <div class="map-info">
+                                                <strong class="c-name">일산지점</strong>
+                                                <span class="c-tel">☎ 031-811-0866</span>
+                                                <span>/</span>
+                                                <span class="c-address">경기도 고양시 일산동구 백마로 478, B1층 M16호</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
-            <!-- // -->
-
-            <!-- 전국 지점 안내 -->
-            <section class="company-contact">
-                <div class="inner">
-                    
-                </div>
-            </section>
-            <!-- // -->
+            <!-- // # 전국 지점 안내 끝 -->
         </div>
-
-        <!-- 
-        <section class="vision-video-wrap">
+        <div class="com-inquiry-wrap">
             <div class="inner">
-                <video src="https://cdn.autoplus.co.kr/adminimage/video_keyvisual02.mp4?v=20230719" poster="" autoplay="" muted="" class="key-video video02"></video>
+                <p>오토플러스와 함께 혁신을 이끌어갈 <br>비즈니스 파트너를 정중히 모십니다.</p>
+                <button type="button" class="submit" onclick="layerPopOpen('#layer-inquiry');">문의하기&ensp;&gt;</button>
             </div>
-        </section>
-        <section class="vision-dec-wrap" data-motion="slide-up" data-duration="1" data-delay="0">
-            <div class="inner">
-                <h2 class="vision-dec-tit">차에 가치를 더하다.</h2>
-                <p class="vision-dec-txt">새로운 정비 서비스로 안전의 가치를<br>혁신적 시스템으로 중고차에 투명함의 가치를<br>금융, 보증, 탁송, 사후관리 서비스로 고객만족의 가치를</p>
-                <p class="vision-dec-sub">오토플러스를 만나면<br>차에 새로운 가치가 더해집니다.<br>자동차 생활이 새로워집니다.</p>
-                <div class="logo"><img src="../resources/images/common/logo_autoplus.png" alt="오토플러스"></div>
-                <div class="vision-dec-list">
-                    <div class="txt-box">
-                        <strong>AUTOPLUS’ 1ST</strong>
-                        <p>국내 최초 자동차 정비기술 벤처기업 인증</p>
-                        <p>국내 최초 자동차 품질 등급제 개발</p>
-                        <p>중고차 업계 유일 자동차 상품화 공장 ATC</p>
-                        <p>국내 최초 선택형 중고차 특허 취득</p>
-                    </div>
-                    <div class="txt-box">
-                        <strong>AUTOPLUS’ PARTNERS</strong>
-                        <p>현대캐피탈 인증중고차</p>
-                        <p>테슬라 인증중고차</p>
-                        <p>하나캐피탈 인증중고차</p>
-                        <p>BNK캐피탈 인증중고차</p>
-                        <p>엠캐피탈 인증중고차</p>
-                        <p>신한 마이카</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="vision-cont-wrap" data-motion="slide-up" data-duration="1" data-delay="0">
-            <div class="inner">
-                <h2 class="base-main-tit">VISION</h2>
-                <div class="vision-cont-box">
-                    <div class="vision-cont-circle" data-motion="slide-left" data-duration="1" data-delay=".4">
-                        <div class="circle"><span>Why</span></div>
-                        <div class="circle"><span>What</span></div>
-                        <div class="circle"><span>How</span></div>
-                    </div>
-                    <ul class="vision-cont-txt" data-motion="slide-right" data-duration="1" data-delay=".4">
-                        <li>
-                            <strong><span>Why</span> We Do</strong>
-                            <p>카라이프의 혁신을 통해 삶에 도움을 준다는 신념</p>
-                        </li>
-                        <li>
-                            <strong><span>What</span> We Do</strong>
-                            <p>우리는 중고차의신뢰를 혁신한 리본카.<br>정비 서비스의 한계를 혁신한 ATC/AQI,차량 유통의<br>상식을 혁신한 카라이프 서비스를 제공한다</p>
-                        </li>
-                        <li>
-                            <strong><span>How</span> We Do</strong>
-                            <p>차의 가치를 관리하는 능력과 고객 중심적 태도로<br>모든 정보를 투명하게 제공하며 끝까지 책임을 다한다</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        -->
+        </div>
     </div>
-    <!--// -->
+    <!-- // # 회사소개 신규 영역 끝 -->
 
     <!-- footer -->
     <footer id="footer">
@@ -349,22 +721,319 @@
         </div>
     </footer>
     <!--// -->
-    
+
+    <!-- # 문의하기 레이어 팝업 시작 -->
+    <section class="layer" id="layer-inquiry">
+        <div class="layer-inner">
+            <button type="button" class="layer-btn-close cancel"><span>닫기</span></button>
+            <p class="state"></p>
+            <div class="layer-cont">
+                <strong>리본카 사업제휴 문의</strong>
+                <p class="email">biz@autoplus.co.kr</p>
+            </div>
+            <div class="layer-btn-group">
+                <a href="javascript: fn_ContentsShare('C');" class="btn">주소 복사 하기</a>
+                <a href="mailto:biz@autoplus.co.kr" class="btn">이메일 열기</a>
+            </div>
+        </div>
+    </section>
+    <!-- // # 문의하기 레이어 팝업 시작 -->
+
+    <!-- # 카카오 맵 API -->
+    <!-- script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9763d055442b77c8b5e032fc5e3406ff&libraries=drawing"></script -->
     <script src="../resources/js/jquery-3.3.1.min.js"></script>
     <script src="../resources/js/swiper.min.js"></script>
     <script src="../resources/js/custom.js"></script>
 
     <script type="text/javascript">
+        // 주소 복사
+        function fn_ContentsShare(){
+            var url = window.location.href;
+            var tempElem = document.createElement('input');
+			try{
+				tempElem.value = url;
+				document.body.appendChild(tempElem);
+				tempElem.select();
+				if(document.execCommand('copy'))
+                $('#layer-inquiry .state').html('클립보드에 복사 되었습니다.<br>붙여넣기를 해주세요.').addClass('show');
+			} catch(e){
+				$('#layer-inquiry .state').html('복사 실패:'+e).addClass('show');
+			}
+			document.body.removeChild(tempElem);
+        }
+
+        // 레이어 팝업
+        function layerPopOpen(obj){
+            if($(obj).length && !$(obj).is(':visible')){
+                $(obj).addClass('show').fadeIn();
+
+                $(obj).find('.cancel').on('click', function(){
+                    $(obj).removeClass('show').fadeOut(function(){
+                        if($(obj).find('.state').hasClass('show')) $(obj).find('.state').removeClass('show');
+                    });
+                });
+            }
+        }
+
+        // # 카카오 맵 script
+        function fnKakaoMap(idx){
+			try{
+				if(mapObj != null){
+					if($('#btnAllBranch').hasClass('selected_btn')){
+						$('#btnAllBranch').removeClass('selected_btn');
+						$('#btnAllBranch').addClass('svbtn');
+					}
+					if(idx != $('.contact-wrap .mapTitle').index($('.contact-wrap .mapTitle.active'))){
+						$('.contact-wrap .mapTitle.active').removeClass('active');
+						$('.contact-wrap .mapTitle:eq('+idx+')').addClass('active');
+					}
+					mapObj.setLevel(3);
+					mapObj.setCenter(branchObj[idx].latLng);
+					if(infowindow != null)
+						infowindow.close();
+					var content = '<div class="overlay-info-box">'
+						+'<div class="title-row">'
+						+'	<strong class="name">'+branchObj[idx].name+'</strong>'
+						+'</div>'
+						+'<div class="info-row">'
+						+'	<p class="address">'+branchObj[idx].address+'</p>'
+						+'	<p class="tel">☎ '+branchObj[idx].tel+'</p>'
+						+'</div>'
+						+'</div>';
+					infowindow = new kakao.maps.InfoWindow({
+						position: branchObj[idx].latLng,
+						removable: true,
+						content: content
+					});
+					infowindow.open(mapObj,branchObj[idx].marker);
+					var divObj = $('#rbMap div.overlay-info-box').parent().siblings('div');
+					var divTop = parseInt(divObj.css('top'));
+					divObj.css('top',(divTop-2)+'px');
+
+					$('.map-info .c-name').text(branchObj[idx].name);
+					$('.map-info .c-tel').text('☎ '+branchObj[idx].tel);
+					$('.map-info .c-address').text(branchObj[idx].address.replace('<br>',' '));
+				}
+			}catch(e){
+				console.log(e);
+			}
+		}
+
+        // # 카카오 맵 script
+		// 지도타입 컨트롤의 지도 또는 스카이뷰 버튼을 클릭하면 호출되어 지도타입을 바꾸는 함수입니다
+		function setMapType(maptype) { 
+			var roadmapControl = document.getElementById('btnRoadmap');
+			var skyviewControl = document.getElementById('btnSkyview');
+			if (maptype === 'roadmap') {
+				mapObj.setMapTypeId(kakao.maps.MapTypeId.ROADMAP);
+				roadmapControl.className = 'selected_btn';
+				skyviewControl.className = 'svbtn';
+			} else if (maptype === 'skyview') {
+				mapObj.setMapTypeId(kakao.maps.MapTypeId.HYBRID);
+				skyviewControl.className = 'selected_btn';
+				roadmapControl.className = 'svbtn';
+			}
+		}
+
+        // # 카카오 맵 script
+		// 지도 확대, 축소 컨트롤에서 확대 버튼을 누르면 호출되어 지도를 확대하는 함수입니다
+		function zoomInOut(level) {
+			if(mapObj != null)
+				mapObj.setLevel(mapObj.getLevel() + level);
+		}
+
+        // # 카카오 맵 script
+		function zoomAll() {
+			if(mapObj != null){
+				if($('#btnAllBranch').hasClass('svbtn')){
+					$('#btnAllBranch').removeClass('svbtn');
+					$('#btnAllBranch').addClass('selected_btn');
+					if(infowindow != null)
+						infowindow.close();
+					mapObj.setCenter(new kakao.maps.LatLng(35.6, 126.897166));
+					mapObj.setLevel(13);
+				} else {
+					$('#btnAllBranch').removeClass('selected_btn');
+					$('#btnAllBranch').addClass('svbtn');
+					fnKakaoMap($('.contact-wrap .mapTitle').index($('.contact-wrap .mapTitle.active')));
+				}
+			}
+		}
+
         $(document).ready(function(){
+            // 최상단 이동
+            $('.quick-top').on('click', function(){
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 500);
+            });
+
+            // mobile 영상교체
+            if(mediaCheck() === 'mobile'){
+                $('.com-video-wrap').find('video').attr('src', 'https://cdn.autoplus.co.kr/adminimage/video_keyvisual03_m.mp4');
+            }
+
             // animation
             var visionMotion = new animationAction({
                 state : true,
                 obj : 'motion'
             });
 
-            // mobile video
-            if (mediaCheck() === 'mobile'){
-                $('.vision-video-wrap video').attr('src', 'https://cdn.autoplus.co.kr/adminimage/video_keyvisual01_m.mp4?v=20230915_00');
+            // 탭 컨텐츠
+            var comTab = $('.com-tab-wrap')
+            ,   comTabHei = (mediaCheck() != 'desktop') ?  comTab.outerHeight() + $('#header').outerHeight() : comTab.outerHeight()
+            ,   comCont = $('.com-cont-wrap');
+
+            $(window).on('scroll', function(){
+                var _winTop = $(document).scrollTop()
+                ,	_tabTop = (mediaCheck() != 'desktop') ? comTab.offset().top - $('#header').outerHeight() : comTab.offset().top;
+                
+                comCont.find('section').each(function(){
+                    if(_winTop > $(this).offset().top - comTabHei && _winTop < $(this).offset().top - comTabHei + $(this).innerHeight()){
+                        if(!comTab.find('li').eq($(this).index()).hasClass('active')){
+                            comTab.find('li').not(comTab.find('li').eq($(this).index())).removeClass('active');
+                            comTab.find('li').eq($(this).index()).addClass('active');	
+                        }
+                    }else{
+                        comTab.find('li').eq($(this).index()).removeClass('active');
+                    }
+                });
+
+                if(_winTop >= _tabTop){
+                    comTab.addClass('fixed');
+                }else{
+                    comTab.removeClass('fixed');
+                }
+            }).trigger('scroll');
+            
+            // 탭 컨텐츠 이동
+            comTab.find('li').on('click', function(e){
+                var _this = $(e.currentTarget)
+                ,	_li = _this.parents('ul').find('li');
+                
+                // if(!_this.hasClass('active')){
+                $('html, body').animate({
+                    scrollTop: comCont.find('section').eq(_this.index()).offset().top - comTabHei + 1
+                }, 500);
+                // }
+            });
+
+            // 회사소개 - 사업영역
+            if($('.tab-swiper').length){
+                var businessSwiper = new Swiper('.tab-swiper .swiper-container', {
+                    observer: true,
+				    observeParents: true,
+                    allowTouchMove: true,
+                    loop: true,
+                    centeredSlides: false,
+                    slidesPerView: 2,
+                    slidesPerGroup: 1,
+                    spaceBetween: 30,
+                    autoHeight: false,
+                    pagination: {
+                        el: '.tab-swiper .swiper-pagination',
+                        type: "progressbar",
+                    },
+                    on: {
+                        slideChange : function() {
+                            $('.tab-btn li').removeClass('active');
+                            $('.tab-btn li').eq(this.realIndex).addClass('active');
+                        },
+                    },
+                    // scrollbar: {
+                    //     el: $('.tab-swiper .swiper-scrollbar'),
+                    // },
+                    breakpoints: {  
+                        767: {
+                            spaceBetween: 20,
+                        },
+                    },
+                });
+                $('.tab-btn button').on('click', function(e){
+                    e.preventDefault();
+                    if(!$(this).parent().hasClass('active')){
+                        var idx = $(this).parent().index();
+                        $('.tab-btn li').not($(this).parent()).removeClass('active');
+                        $(this).parent().addClass('active');
+                        businessSwiper.slideToLoop(idx, 0);
+                    }
+                });
+            }
+
+            // 회사소개 - 발자취
+            if($('.his-swiper').length){
+                var historySwiper = new Swiper('.his-swiper .swiper-container', {
+                    observer: true,
+				    observeParents: true,
+                    allowTouchMove: true,
+                    loop: false,
+                    slidesPerView: 2,
+                    slidesPerGroup: 1,
+                    spaceBetween: 40,
+                    pagination: {
+                        el: '.his-swiper .swiper-pagination',
+                        type: "progressbar",
+                    },
+                    navigation: {
+                        nextEl: '.his-swiper .swiper-button-next',
+                        prevEl: '.his-swiper .swiper-button-prev',
+                    },
+                    breakpoints: {  
+                        767: {
+                            spaceBetween: 20,
+                            slidesPerView: 1,
+                        },
+                    },
+                });
+            }
+
+            // 회사소개 - 전국 지점 안내
+            if($('.contact-wrap').length){
+                // 기존 소스
+                var mapObj,infowindow = null;
+		        var branchObj = [];
+                /*
+                try{
+                    var container = document.getElementById('rbMap');
+                    var options = { //지도를 생성할 때 필요한 기본 옵션
+                        center: new kakao.maps.LatLng(37.534225, 126.897166), //지도의 중심좌표.
+                        level: 3 //지도의 레벨(확대, 축소 정도)
+                    };
+                    mapObj = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+
+                    var markerImageB = new kakao.maps.MarkerImage(
+                            [[@{'/images/info/ico_location_blue.png'}]],new kakao.maps.Size(27, 38));
+                    var markerImageR = new kakao.maps.MarkerImage(
+                            [[@{'/images/info/ico_location_red.png'}]],new kakao.maps.Size(27, 38));
+                    var marker = new kakao.maps.Marker({
+                        map: mapObj,
+                        title: '본사',
+                        image: markerImageB,
+                        position: options.center
+                    });
+                    branchObj.push({name: marker.getTitle(), latLng: marker.getPosition(),
+                        address: '서울시 영등포구 선유동2로 57<br>이레빌딩 신관 11층', tel: '1544-2277', marker: marker});
+                    kakao.maps.event.addListener(marker, 'click', function() {
+                        fnKakaoMap(0);
+                    });
+                    [# th:each="item : ${branchObj}">]
+                    var marker[[${itemStat.count}]] = new kakao.maps.Marker({
+                        map: mapObj,
+                        title: [[${item.analDeptName}]],
+                        image: markerImageR,
+                        position: new kakao.maps.LatLng([[${item.latitude}]], [[${item.longitude}]])
+                    });
+                    branchObj.push({name: marker[[${itemStat.count}]].getTitle(), latLng: marker[[${itemStat.count}]].getPosition(),
+                        address: [[${item.address}]], tel: [[${item.tel}]], marker: marker[[${itemStat.count}]]});
+                    kakao.maps.event.addListener(marker[[${itemStat.count}]], 'click', function() {
+                        fnKakaoMap([[${itemStat.count}]]);
+                    });
+                    [/]
+                    fnKakaoMap(0);
+                }catch(e){
+                    console.log(e);
+                }
+                */
             }
         });
     </script>

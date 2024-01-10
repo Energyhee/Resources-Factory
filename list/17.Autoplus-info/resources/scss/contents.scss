@@ -3,7 +3,6 @@
 
 /* Vision */
 .vision-wrap {
-    border: 1px solid blue;
     padding: 0 0 px(200);
     background-color: #f8f8f8;
 }
@@ -373,37 +372,36 @@
         .map-info {
             display: flex;
             align-items: center;
-            gap: 5px;
-            height: px(24);
+            gap: px(20);
+            height: px(20);
+            margin-top: px(30);
+            padding-left: px(26); 
+            background: url('../images/info/company/ico_con_call.png') no-repeat left center/px(20) auto;
+            * {
+                @include font($s: px(18), $w: 600, $l: px(20), $t: px(-.2), $c: #000); 
+            }
             .c-name {
                 position: relative;
-                padding-left: px(15);
-                font-size: px(18);
-                font-weight: 600;
                 &::before {
                     content: '';
-                    @include pos($p: absolute, $l: 0, $t: 50%);
-                    width: px(3);
-                    height: px(24);
-                    margin-top: px(-12);
-                    background-color: #002299;
+                    @include pos($p: absolute, $r: px(-11), $t: 50%);
+                    width: px(2);
+                    height: px(16);
+                    margin-top: px(-8);
+                    background-color: #000;
                 }
             }
-            .c-tel {
-                margin-left: px(5);
-                font-weight: 600;
-            }
-            span {
-                font-size: px(15);
-                color: #222;
+            .c-address {
+                font-weight: 400;
             }
         }
         .con-map {
             position: relative;
             width: 100%; 
             height: px(540);
-            margin-top: px(20);
+            border-radius: px(20);
             background-color: #eee;
+            overflow: hidden;
             .custom-type-control {
                 @include pos($p: absolute, $l: px(10), $t: px(10), $z: 2);
                 display: flex;
@@ -1615,86 +1613,674 @@
     }
 }
 
-.company-wrap {
-    .title {
-        text-align: center;
-        h2 {
-            @include font($s: px(40), $w: 800, $l: 1.2, $t: 0, $c: #000);
-        }
-        p {
-            margin-top: px(30);
-            @include font($s: px(18), $w: 500, $l: 1.2, $t: 0, $c: #636363);
-            strong {
-                display: block;
-                margin-top: px(30);
-                font-weight: 600;
-                color: #000;
+// 회사소개 신규 css 시작
+.company-wrapper {
+    .com-video-wrap {
+        width: px(1200);
+        margin: 0 auto;
+        background-color: #fff;
+        .inner {
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+            line-height: 0;
+            &::before {
+                content: "";
+                // display: block;
+                // padding-top: 29%;
+            }
+            video {
+                // @include pos($p: absolute, $l: 50%, $t: 50%);
+                width: 100%;
+                max-width: none;
+                height: auto;
+                // transform: translate(-50%, -50%);
+            }
+            a {
+                @include pos($p: absolute, $r: 0, $b: 0, $z: 1);
+                width: auto;
+                height: px(45);
+                padding: 0 px(20);
+                background-color: rgba(0, 0, 0, .7);
+                @include font($s: px(16), $w: 400, $l: px(45), $t: px(-.3), $c: #fff, $a: center);
             }
         }
     }
-    .cont-half {
-        display: flex;
-        flex-wrap: wrap;
-        max-width: 1024px;
-        margin: 0 auto;
-        .col {
-            border: 1px solid red;
-            &.wide {
-                flex: 0 100%;
-                padding: px(100) 0;
-            }
-            &.tit {
-                flex: 0 px(300);
-                @include font($s: px(30), $w: 500, $l: 1.2, $t: 0, $c: #939393);
-                strong {
-                    font-weight: 700;
+    .com-tab-wrap {
+        width: 100%;
+        background-color: #fff;
+        .inner {
+            margin: 0 auto;
+            border-bottom: 1px solid #ccc;
+            text-align: center;
+            ul {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                li {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    flex: 0 auto;
+                    height: px(70);
+                    padding: 0 px(25);
+                    a {
+                        display: block;
+                        @include font($s: px(17), $w: 500, $l: px(30), $t: px(-.5), $c: #000, $a: center);
+                    }
+                    &:before {
+                        content: '';
+                        @include pos($p: absolute, $l: 0, $b: 0, $z: 1);
+                        width: 0;
+                        height: px(2);
+                        background-color: #0D59EC;
+                        transition: all .4s ease-in-out;
+                    }
+                    &.active {
+                        &:before {
+                            width: 100%;
+                        }
+                    }
                 }
             }
-            &.cont {
-                flex: 0 calc(100% - px(300));
+        }
+        &.fixed {
+            height: px(70);
+            .inner {
+                @include pos($p: fixed, $l: 0, $t: 0, $z: 101);
+                width: 100%;
+                background-color: #fff;
             }
         }
     }
-    .company-info {
-        padding-top: px(160);
-    }
-}
-.company-video-wrap {
-
-}
-.company-tab-wrap {
-    width: 100%;
-    ul {
+    .com-inquiry-wrap {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 0 px(40);
+        height: px(350);
+        background: url('../images/info/company/img_in_visual.png') no-repeat center/cover;
+        .inner {
+            width: px(1200);
+            margin: 0 auto;
+            p {
+                @include font($s: px(35), $w: 700, $l: px(46), $t: px(-.5), $c: #fff);
+            }
+            .submit {
+                margin-top: px(30);
+                width: px(160); 
+                height: px(60);
+                border-radius: px(50);
+                background-color: #0F4EFF;
+                @include font($s: px(18), $w: 700, $l: px(60), $t: px(-.5), $c: #fff, $a: center);
+            }
+        }
+    }
+}
+.com-cont-wrap {
+    .visual {
+        position: relative;
         width: 100%;
-        height: px(60);
-        background-color: #ededed;
-        li {
-            flex: 0 auto;
-            ~ li {
-                position: relative;
-                &:before {
-                    content: '';
-                    @include pos($p: absolute, $l: px(-20), $t: 50%);
-                    width: 1px;
-                    height: px(12);
-                    margin-top: px(-6);
-                    background-color: #aaa;
-                    pointer-events: none;
+        margin: px(128) auto 0;
+        overflow: hidden;
+        &:before {
+            content: '';
+            display: block;
+            padding-top: 22%;
+        }
+        .bg {
+            @include pos($p: absolute, $l: 0, $t: 0);
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            // background-attachment: fixed;
+        }
+    }
+    .half {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 0 px(120);
+        max-width: px(1200);
+        margin: 0 auto;
+        .col {
+            flex: 1;
+            &.wide {
+                flex: 0 100%;
+            }
+            &.tit {
+                flex: 0 px(290);
+                padding-left: px(38);
+                strong {
+                    word-break: keep-all;
+                    @include font($s: px(40), $w: 700, $l: px(50), $t: px(-.3), $c: #000);
                 }
             }
-            a {
-                display: block;
-                @include font($s: px(20), $w: 600, $l: px(24), $t: 0, $c: #333);
+            &.cont {
+                flex: 1;
+            }
+        }
+    }
+    .base-txt {
+        word-break: keep-all;
+        @include font($s: px(20), $w: 400, $l: px(30), $t: px(-.3), $c: #000);
+        ~ .base-txt {
+            margin-top: px(30);
+        }
+    }
+    .btn-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: px(20);
+        button {
+            position: relative;
+            width: px(230);
+            height: px(60);
+            padding: 0 px(28);
+            border: 1px solid #2C2C2C;
+            border-radius: px(30);
+            background: url('../images/info/company/ico_btn_down.png') no-repeat right px(25) center/auto #fff;
+            transition: all .4s ease-in-out;
+            @include font($s: px(16), $w: 600, $l: 1.2, $t: px(-.5), $c: #000, $a: left);
+            &.info {
+                background-image: url('../images/info/company/ico_btn_down_white.png');
+                background-color: #2c2c2c;
+                color: #fff;
+            }
+            &:hover {
+                border-color: #0261FF;
+                background-image: url('../images/info/company/ico_btn_down_white.png');
+                background-color: #0261FF;
+                color: #fff;
+            }
+        }
+    }
+    .swiper-arr-btn {
+        @include pos($p: absolute, $l: px(-25), $t: 50%);
+        width: px(50);
+        height: px(50);
+        margin-top: px(-25);
+        border-radius: px(50);
+        box-shadow: 0 px(3) px(6) rgba(0, 0, 0, .07);
+        background: #fff;
+        &:before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: url('../images/info/company/ico_swiper_prev.png') no-repeat center/auto px(20);
+        }
+        &:after {
+            display: none;
+        }
+        &[class*='next'] {
+            left: auto;
+            right: px(-25);
+            &::before {
+                transform: rotate(180deg);
+            }
+        }
+    }
+    .swiper-scrollbar {
+        @include pos($p: absolute, $l: 0, $b: px(40));
+        width: 100%;
+        height: 5px;
+        border-radius: 5px;
+        background-color: transparent;
+        overflow: hidden;
+        .swiper-scrollbar-drag {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            border-radius: 5px;
+            background-color: #2c2c2c;
+            overflow: hidden;
+        }
+        &:before {
+            content: '';
+            @include pos($p: absolute, $l: 0, $t: 50%, $z: 1);
+            width: 100%;
+            height: 1px;
+            background-color: #E0E0E0;
+        }
+    }
+    .swiper-pagination[class*='progressbar'] {
+        @include pos($p: absolute, $l: 0, $b: px(40));
+        width: 100%;
+        height: 5px;
+        border-radius: 5px;
+        background-color: transparent;
+        overflow: hidden;
+        span {
+            z-index: 2;
+            height: 100%;
+            border-radius: 5px;
+            background-color: #2c2c2c;
+            overflow: hidden;
+        }
+        &:before {
+            content: '';
+            @include pos($p: absolute, $l: 0, $t: 50%, $z: 1);
+            width: 100%;
+            height: 1px;
+            margin-top: -1px;
+            background-color: #E0E0E0;
+        }
+    }
+    // 오토플러스
+    .ap {
+        padding: px(130) 0 px(160);
+        .box {
+            .visual {
+                .bg {
+                    background-position: center top px(10);
+                }
+            }
+            .logo {
+                text-align: center;
+            }
+            .title {
+                h2 {
+                    display: block;
+                    padding-top: px(26);
+                    @include font($s: px(50), $w: 800, $l: px(62), $t: px(-.3), $c: #000, $a: center);
+                }
+                p {
+                    padding-top: px(45);
+                    word-break: keep-all;
+                    @include font($s: px(22), $w: 400, $l: px(30), $t: px(-.3), $c: #000, $a: center);
+                    strong {
+                        display: block;
+                        padding-top: px(30);
+                        font-weight: 700;
+                        line-height: inherit;
+                    }
+                }
+            }
+            .half {
+                padding-top: px(150); 
+            }
+            .btn-wrap {
+                padding-top: px(60);
+            }
+            .text-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: px(30);
+                padding-top: px(74);
+                .txt {
+                    flex: 1;
+                    padding: px(46) px(30);
+                    border-radius: px(20);
+                    background-color: #F8F8F8;
+                    strong {
+                        display: block;
+                        margin-bottom: px(15);
+                        word-break: keep-all;
+                        @include font($s: px(20), $w: 800, $l: px(25), $t: 0, $c: #000, $a: left);
+                    }
+                    p {
+                        word-break: keep-all;
+                        @include font($s: px(16), $w: 400, $l: px(24), $t: px(-.2), $c: #000, $a: left);
+                    }
+                    &.inline {
+                        display: flex;
+                        flex-wrap: wrap;
+                        strong {
+                            flex: 100%;
+                        }
+                        p {
+                            flex: 0 auto;
+                            position: relative;
+                            margin-right: px(6);
+                            padding-right: px(8);
+                            &:not(:last-child):before {
+                                content: '/';
+                                @include pos($p: absolute, $r: px(-2), $t: 0, $z: 1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // 비전과 목표
+    .vision {
+        padding: px(156) 0 px(150);
+        background-color: #F8F8F8;
+        .box {
+            .half {
+                .col.wide {
+                    padding-top: px(125);
+                    &:last-child {
+                        padding-top: px(90);
+                    }
+                }
+            }
+            .circle {
+                display: flex;
+                justify-content: center;
+                li {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: px(280);
+                    height: px(280);
+                    margin: 0 px(-20);
+                    border-radius: 100%;
+                    background-color: #fff;
+                    p {
+                        @include font($s: px(23), $w: 700, $l: 1.2, $t: 0, $c: #0261FF, $a: center);
+                    }
+                    &:nth-child(2) {
+                        background-color: rgba(0, 0, 0, .8);
+                        p {
+                            color: #fff;
+                        }
+                    }
+                    &:nth-child(3) {
+                        background-color: rgba(0, 71, 255, .8);
+                        p {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+            .txt-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: px(20);
+                padding: 0 px(20);
+                li {
+                    flex: 1;
+                    p {
+                        margin-top: px(14);
+                        word-break: keep-all;
+                        @include font($s: px(18), $w: 400, $l: px(24), $t: 0, $c: #000);
+                        &.tit {
+                            margin: 0;
+                            font-size: px(20);
+                            font-weight: 800;
+                            strong {
+                                display: inline-block;
+                                position: relative;
+                                padding-bottom: px(6);
+                                font-size: inherit;
+                                font-weight: inherit;
+                                &:after {
+                                    content: '';
+                                    @include pos($p: absolute, $l: 0, $b: 0);
+                                    width: 100%;
+                                    height: 1px;
+                                    background-color: #707070;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // 사업영역
+    .business {
+        .box {
+            padding: px(150) 0 px(160);
+            .ico-list {
+                padding-top: px(74);
+                .ico-in {
+                    padding: px(75) px(20);
+                    border-radius: px(30);
+                    background-color: #F8F8F8;
+                    text-align: center;
+                }
+                ul {
+                    position: relative;
+                    display: inline-block;
+                    font-size: 0;
+                    li {
+                        position: relative;
+                        z-index: 1;
+                        display: inline-block;
+                        ~ li {
+                            margin-left: px(26);
+                        }
+                        .in {
+                            display: flex;
+                            flex-direction: column;
+                            width: px(130);
+                            height: px(130);
+                            padding-top: px(22);
+                            border: 1px solid #0261FF;
+                            border-radius: 100%;
+                            background-color: #fff;
+                            overflow: hidden;
+                            .ico {
+                                width: px(50);
+                                height: px(50);
+                                margin: 0 auto;
+                            }
+                            p {
+                                margin-top: px(4);
+                                @include font($s: px(16), $w: 600, $l: px(20), $t: 0, $c: #0261FF, $a: center);
+                            }
+                        }
+                        &:nth-child(2) .in {
+                            border-color: #0261FF;
+                            background-color: #0261FF;
+                            p {
+                                color: #fff;
+                            }
+                        }
+                        &:nth-child(3) .in {
+                            border-color: #1D37C0;
+                            background-color: #1D37C0;
+                            p {
+                                color: #fff;
+                            }
+                        }
+                        &:nth-child(4) .in {
+                            border-color: #2335EC;
+                            background-color: #2335EC;
+                            p {
+                                color: #fff;
+                            }
+                        }
+                        &:nth-child(5) .in {
+                            border-color: #011C8A;
+                            background-color: #011C8A;
+                            p {
+                                color: #fff;
+                            }
+                        }
+                        &:nth-child(6) .in {
+                            border-color: #2c2c2c;
+                            background-color: #2C2C2C;
+                            p {
+                                color: #fff;
+                            }
+                        }
+                    }
+                    &:before {
+                        content: '';
+                        @include pos($p: absolute, $l: 0, $t: 50%);
+                        width: 100%;
+                        height: 1px;
+                        background-color: #0261FF;
+                    }
+                }
+            }
+            .tab-wrap {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0 px(30);
+                padding-top: px(70);
+                .tab-btn {
+                    flex: 1;
+                    padding: px(45) px(40);
+                    border-radius: px(20);
+                    background-color: #F8F8F8;
+                    ul {
+                        li {
+                            ~ li {
+                                margin-top: px(15);
+                            }
+                            button {
+                                position: relative;
+                                padding: 0 0 0 px(10);
+                                background: 0;
+                                @include font($s: px(18), $w: 400, $l: px(24), $t: px(-.2), $c: #000);
+                                &:before {
+                                    content: '';
+                                    @include pos($p: absolute, $l: 0, $t: 50%);
+                                    width: 2px;
+                                    height: 2px;
+                                    margin-top: -1px;
+                                    border-radius: 100%;
+                                    background-color: #000;
+                                }
+                            }
+                            &.active button {
+                                font-weight: 700;
+                                color: #2335EC;
+                                &::before {
+                                    background-color: #2335EC;
+                                }
+                            }
+                        }
+                    }
+                }
+                .tab-swiper {
+                    position: relative;
+                    width: calc(px(1200) - px(450));
+                    overflow: hidden;
+                    .swiper-slide {
+                        .sl-in {
+                            transition: all .4s ease-in-out;
+                            opacity: .5;
+                        }
+                        .info {
+                            margin-top: px(35);
+                            strong {
+                                @include font($s: px(20), $w: 700, $l: px(24), $t: px(-.3), $c: #000);
+                            }
+                            p {
+                                margin-top: px(14);
+                                @include font($s: px(16), $w: 400, $l: px(20), $t: px(-.3), $c: #000);
+                            }
+                        }
+                        &[class*='active'] {
+                            .sl-in {
+                                opacity: 1;   
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // 발자취
+    .history {
+        .box {
+            padding: 0 0 px(190);
+            .visual {
+                margin: 0;
+            }
+            .half {
+                padding-top: px(140);
+            }
+            .his-swiper {
+                position: relative;
+                max-width: px(1200);
+                padding-top: px(100);
+                .swiper-container {
+                    height: px(538);
+                }
+                .his-in {
+                    height: 100%;
+                    padding: px(60) px(40) px(40);
+                    border-radius: px(30);
+                    background-color: #F7F7F7;
+                    strong {
+                        display: block;
+                        @include font($s: px(28), $w: 600, $l: px(34), $t: px(-.5), $c: #000, $a: left);
+                    }
+                    ul {
+                        margin-top: px(20);
+                        li {
+                            word-break: keep-all;
+                            @include font($s: px(18), $w: 400, $l: px(24), $t: px(-.3), $c: #000, $a: left);
+                            ~ li {
+                                margin-top: px(12);
+                            }
+                        }
+                    }
+                }
+                .his-num {
+                    position: relative;
+                    padding-bottom: px(40);
+                    p {
+                        @include pos($p: absolute, $l: 0, $b: 0);
+                        padding: 0 px(10);
+                        @include font($s: px(20), $w: 600, $l: px(24), $t: px(-.5), $c: #000);
+                        &.right {
+                            left: auto;
+                            right: 0;
+                            color: #ccc;
+                        }
+                    }
+                    .swiper-pagination {
+                        position: static;
+                        margin-top: px(40);
+                        span {
+                            background-color: #2C2C2C;
+                        }
+                        &:before {
+                            height: 2px;
+                            background-color: #ccc;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // 전국 지점 안내
+    .contact {
+        padding: 0;
+        .box {
+            padding: px(150) 0 px(160);
+            .contact-wrap .overlay-info-box {padding:8px 15px 2px;white-space: nowrap}
+            .contact-wrap .overlay-info-box .title-row {padding-bottom:6px; border-bottom:1px solid #ddd;}
+            .contact-wrap .overlay-info-box .info-row {padding:8px 0;}
+            .contact-wrap .overlay-info-box .info-row .address {font-size:15px;}
+            .contact-wrap .overlay-info-box .info-row .tel {display:block; margin-top:2px; font-size:14px;}
+            .contact-cont-wrap {
+                padding: px(67) 0 0 px(38);
+            }
+            .contact-cont-map {
+                margin: 0;
             }
         }
     }
 }
 
-
+.quick-top {
+    @include pos($p: fixed, $r: px(40), $b: px(120), $z: 10);
+    button {
+        display: block;
+        width: px(55);
+        height: px(55);
+        padding: 0;
+        border-radius: 100%;
+        box-shadow: 0 px(3) px(6) rgba(0, 0, 0, .07);
+        overflow: hidden;
+        img {
+            width: 100%;
+        }
+    }
+}
+// 회사소개 신규 css 끝
 
 
 
