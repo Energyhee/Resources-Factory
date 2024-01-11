@@ -2193,6 +2193,9 @@
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     gap: 0.625rem 1.25rem;
   }
   .com-cont-wrap .business .box .ico-list ul li {
@@ -2442,7 +2445,7 @@
   .com-cont-wrap .business .box .ico-list ul li .in {
     width: 5.5rem;
     height: 5.5rem;
-    padding-top: 0.75rem;
+    padding-top: 0.875rem;
   }
   .com-cont-wrap .business .box .ico-list ul li .in .ico {
     width: 1.875rem;
@@ -2451,7 +2454,7 @@
   .com-cont-wrap .business .box .ico-list ul li .in p {
     margin-top: 0.25rem;
     font-size: 0.75rem;
-    line-height: 1rem;
+    line-height: 0.875rem;
   }
   .com-cont-wrap .business .box .ico-list ul:before {
     display: none;

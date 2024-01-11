@@ -2734,7 +2734,7 @@
   display: inline-block;
 }
 .com-cont-wrap .business .box .ico-list ul li ~ li {
-  margin-left: 1.625rem;
+  margin-left: 1.25rem;
 }
 .com-cont-wrap .business .box .ico-list ul li .in {
   display: -webkit-box;
@@ -2744,11 +2744,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 8.125rem;
-  height: 8.125rem;
-  padding-top: 1.375rem;
+  width: 7.8125rem;
+  height: 7.8125rem;
+  padding-top: 1.25rem;
   border: 1px solid #0261FF;
-  border-radius: 100%;
+  border-radius: 7.8125rem;
   background-color: #fff;
   overflow: hidden;
 }
@@ -2759,46 +2759,53 @@
 }
 .com-cont-wrap .business .box .ico-list ul li .in p {
   margin-top: 0.25rem;
-  font-size: 1rem;
+  font-size: 0.9375rem;
   font-weight: 600;
-  line-height: 1.25rem;
+  line-height: 1.125rem;
   color: #0261FF;
   letter-spacing: 0;
   text-align: center;
 }
 .com-cont-wrap .business .box .ico-list ul li:nth-child(2) .in {
-  border-color: #0261FF;
-  background-color: #0261FF;
+  border-color: #0096FF;
+  background-color: #0096FF;
 }
 .com-cont-wrap .business .box .ico-list ul li:nth-child(2) .in p {
   color: #fff;
 }
 .com-cont-wrap .business .box .ico-list ul li:nth-child(3) .in {
-  border-color: #1D37C0;
-  background-color: #1D37C0;
+  border-color: #0261FF;
+  background-color: #0261FF;
 }
 .com-cont-wrap .business .box .ico-list ul li:nth-child(3) .in p {
   color: #fff;
 }
 .com-cont-wrap .business .box .ico-list ul li:nth-child(4) .in {
-  border-color: #2335EC;
-  background-color: #2335EC;
+  border-color: #1D37C0;
+  background-color: #1D37C0;
 }
 .com-cont-wrap .business .box .ico-list ul li:nth-child(4) .in p {
   color: #fff;
 }
 .com-cont-wrap .business .box .ico-list ul li:nth-child(5) .in {
-  border-color: #011C8A;
-  background-color: #011C8A;
+  border-color: #2335EC;
+  background-color: #2335EC;
 }
 .com-cont-wrap .business .box .ico-list ul li:nth-child(5) .in p {
   color: #fff;
 }
 .com-cont-wrap .business .box .ico-list ul li:nth-child(6) .in {
+  border-color: #011C8A;
+  background-color: #011C8A;
+}
+.com-cont-wrap .business .box .ico-list ul li:nth-child(6) .in p {
+  color: #fff;
+}
+.com-cont-wrap .business .box .ico-list ul li:nth-child(7) .in {
   border-color: #2c2c2c;
   background-color: #2C2C2C;
 }
-.com-cont-wrap .business .box .ico-list ul li:nth-child(6) .in p {
+.com-cont-wrap .business .box .ico-list ul li:nth-child(7) .in p {
   color: #fff;
 }
 .com-cont-wrap .business .box .ico-list ul:before {

@@ -2062,16 +2062,16 @@
                         z-index: 1;
                         display: inline-block;
                         ~ li {
-                            margin-left: px(26);
+                            margin-left: px(20);
                         }
                         .in {
                             display: flex;
                             flex-direction: column;
-                            width: px(130);
-                            height: px(130);
-                            padding-top: px(22);
+                            width: px(125);
+                            height: px(125);
+                            padding-top: px(20);
                             border: 1px solid #0261FF;
-                            border-radius: 100%;
+                            border-radius: px(125);
                             background-color: #fff;
                             overflow: hidden;
                             .ico {
@@ -2081,38 +2081,45 @@
                             }
                             p {
                                 margin-top: px(4);
-                                @include font($s: px(16), $w: 600, $l: px(20), $t: 0, $c: #0261FF, $a: center);
+                                @include font($s: px(15), $w: 600, $l: px(18), $t: 0, $c: #0261FF, $a: center);
                             }
                         }
                         &:nth-child(2) .in {
+                            border-color: #0096FF;
+                            background-color: #0096FF;
+                            p {
+                                color: #fff;
+                            }
+                        }
+                        &:nth-child(3) .in {
                             border-color: #0261FF;
                             background-color: #0261FF;
                             p {
                                 color: #fff;
                             }
                         }
-                        &:nth-child(3) .in {
+                        &:nth-child(4) .in {
                             border-color: #1D37C0;
                             background-color: #1D37C0;
                             p {
                                 color: #fff;
                             }
                         }
-                        &:nth-child(4) .in {
+                        &:nth-child(5) .in {
                             border-color: #2335EC;
                             background-color: #2335EC;
                             p {
                                 color: #fff;
                             }
                         }
-                        &:nth-child(5) .in {
+                        &:nth-child(6) .in {
                             border-color: #011C8A;
                             background-color: #011C8A;
                             p {
                                 color: #fff;
                             }
                         }
-                        &:nth-child(6) .in {
+                        &:nth-child(7) .in {
                             border-color: #2c2c2c;
                             background-color: #2C2C2C;
                             p {

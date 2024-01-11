@@ -2277,6 +2277,7 @@
                     ul {
                         display: flex;
                         flex-wrap: wrap;
+                        justify-content: center;
                         gap: px(10) px(20);
                         li {
                             flex: 0 calc((100% - px(40)) / 3);
@@ -2583,7 +2584,7 @@
                             .in {
                                 width: px(88);
                                 height: px(88); 
-                                padding-top: px(12);
+                                padding-top: px(14);
                                 .ico {
                                     width: px(30);
                                     height: px(30);
@@ -2591,7 +2592,7 @@
                                 p {
                                     margin-top: px(4);
                                     font-size: px(12);
-                                    line-height: px(16);
+                                    line-height: px(14);
                                 }
                             }
                         }
