@@ -395,6 +395,9 @@ section {
                         }
                         .depth2 {
                             display: block;
+                            &.pc-hide {
+                                display: none;
+                            }
                         }
                     }
                 }

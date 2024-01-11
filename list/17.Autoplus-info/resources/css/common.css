@@ -590,6 +590,9 @@ section .inner {
 #header .inner .gnb-wrap > ul > li.on .depth2 {
   display: block;
 }
+#header .inner .gnb-wrap > ul > li.on .depth2.pc-hide {
+  display: none;
+}
 
 #footer {
   padding: 1.875rem 0 3.75rem;
