@@ -1615,6 +1615,19 @@
 
 // 회사소개 신규 css 시작
 .company-wrapper {
+    .ft-u {
+        position: relative;
+        @include font($s: inherit, $w: inherit, $l: inherit, $c: inherit);
+        &:before, &:after {
+            content: '.';
+            @include pos($p: absolute, $t: -4px, $l: 2px, $z: 1);
+            @include font($s: inherit, $w: inherit, $l: 0, $c: inherit);        
+        }
+        &:after {
+            left: auto;
+            right: 2px;
+        }
+    }
     .com-video-wrap {
         width: px(1200);
         margin: 0 auto;
@@ -1722,7 +1735,12 @@
         width: 100%;
         margin: px(128) auto 0;
         overflow: hidden;
-        &:before {
+        .img-box {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        &:not(.in-img):before {
             content: '';
             display: block;
             padding-top: 22%;
@@ -2194,8 +2212,8 @@
                 position: relative;
                 max-width: px(1200);
                 padding-top: px(100);
-                .swiper-container {
-                    height: px(538);
+                .swiper-container .swiper-slide {
+                    height: auto;
                 }
                 .his-in {
                     height: 100%;

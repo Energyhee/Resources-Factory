@@ -581,9 +581,6 @@
     margin: 0 auto;
     padding-top: 2.5rem;
   }
-  .com-cont-wrap .history .box .his-swiper .swiper-container {
-    height: 30rem;
-  }
   .com-cont-wrap .history .box .his-swiper .his-in {
     padding: 1.25rem;
     border-radius: 1.25rem;
@@ -2265,10 +2262,11 @@
     padding-top: 3.75rem;
   }
   .com-cont-wrap .history .box .his-swiper {
+    width: 100%;
     padding-top: 2.5rem;
   }
-  .com-cont-wrap .history .box .his-swiper .swiper-container {
-    height: 25.625rem;
+  .com-cont-wrap .history .box .his-swiper .his-in {
+    padding: 1.875rem;
   }
   .com-cont-wrap .history .box .his-swiper .his-in ul li {
     font-size: 0.875rem;

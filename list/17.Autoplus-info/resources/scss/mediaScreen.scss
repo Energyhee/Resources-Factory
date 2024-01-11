@@ -573,9 +573,6 @@
                     width: px(767);
                     margin: 0 auto;
                     padding-top: px(40);
-                    .swiper-container {
-                        height: px(480);
-                    }
                     .his-in {
                         padding: px(20);
                         border-radius: px(20);
@@ -2353,11 +2350,10 @@
                     padding-top: px(60);
                 }
                 .his-swiper {
+                    width: 100%;
                     padding-top: px(40);
-                    .swiper-container {
-                        height: px(410);
-                    }
                     .his-in {
+                        padding: px(30);
                         ul {
                             li {
                                 font-size: px(14);
