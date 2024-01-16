@@ -915,11 +915,12 @@
             // 탭 컨텐츠 이동
             comTab.find('li').on('click', function(e){
                 var _this = $(e.currentTarget)
-                ,	_li = _this.parents('ul').find('li');
+                ,	_li = _this.parents('ul').find('li')
+                ,   _scope = comCont.find('section').eq(_this.index());
                 
                 // if(!_this.hasClass('active')){
                 $('html, body').animate({
-                    scrollTop: comCont.find('section').eq(_this.index()).offset().top - comTabHei + 1
+                    scrollTop: (_this.index() === 3 && mediaCheck() === 'desktop') ? _scope.offset().top - comTabHei + _scope.find('.visual').outerHeight() : _scope.offset().top - comTabHei + 1
                 }, 500);
                 // }
             });
