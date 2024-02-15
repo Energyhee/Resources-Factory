@@ -1,0 +1,27 @@
+@charset "utf-8";
+@import './mixin';
+
+.form-container {
+    max-width: px(400);
+    margin: px(50) auto;
+}
+.form-page {
+    display: none;
+}
+.form-page:first-child {
+    display: block;
+}
+.input-field {
+    margin-bottom: px(10);
+}
+button {
+    padding: px(8) px(15);
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+button:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+}

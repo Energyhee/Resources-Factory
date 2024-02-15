@@ -1,0 +1,29 @@
+.form-container {
+  max-width: 25rem;
+  margin: 3.125rem auto;
+}
+
+.form-page {
+  display: none;
+}
+
+.form-page:first-child {
+  display: block;
+}
+
+.input-field {
+  margin-bottom: 0.625rem;
+}
+
+button {
+  padding: 0.5rem 0.9375rem;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
