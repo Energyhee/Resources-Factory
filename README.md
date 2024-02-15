@@ -55,7 +55,7 @@
 ## list
 
 * [X] [00.AnHxx](http://nergyhee.dothome.co.kr/myList/list/00.AnHxx)
-* [X] 01.Fixed Element
+* [X] [01.Fixed Element](http://nergyhee.dothome.co.kr/myList/list/01.Fixed-Element)
 * [X] [02.Fixed Element V2](http://nergyhee.dothome.co.kr/myList/list/02.Fixed-Element-V2)
 * [X] [03.Scroll Action Animation](http://nergyhee.dothome.co.kr/myList/list/03.Scroll-Action-Animation)
 * [X] [04.System Time Counter](http://nergyhee.dothome.co.kr/myList/list/04.System-Time-Counter)
@@ -71,6 +71,10 @@
 * [X] [14.Circle Loading](http://nergyhee.dothome.co.kr/myList/list/14.CirCle-Loading)
 * [X] [15.Service Area List Maker](http://nergyhee.dothome.co.kr/myList/list/15.Service-Area-List)
 * [X] [16.Virtual Gallery](http://nergyhee.dothome.co.kr/myList/list/16.Virtual-Gallery)
+* [X] [17.Autoplus Info](http://nergyhee.dothome.co.kr/myList/list/17.Autoplus-info/info/vision.html)
+* [X] [18.User Info Form](http://nergyhee.dothome.co.kr/myList/list/18.User-Info-Form)
+* [X] [19.Enforce Simulator](http://nergyhee.dothome.co.kr/myList/list/19.Enforce-Simulator)
+* [X] [20.Lotto Number Maker](http://nergyhee.dothome.co.kr/myList/list/20.Lotto-Number-Maker)
 
 <br>
 <br>
