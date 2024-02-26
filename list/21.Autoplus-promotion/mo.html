@@ -1,0 +1,72 @@
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Content-Language" content="ko-KR">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="stylesheet" href="../common/css/font.cdn.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/style.css"/>
+    <title>셀럽의 자동차</title>
+</head>
+<body>
+    <style>
+        @keyframes spark {
+            0% { -webkit-transform: scale(1); opacity: 1; }
+            25% { -webkit-transform: scale(.6); opacity: .2; }
+            50% { -webkit-transform: scale(1); opacity: 1; }
+            75% { -webkit-transform: scale(.6); opacity: .2; }
+            100% { -webkit-transform: scale(1); opacity: 1; }
+        }
+        .celeb-promo-wrap { position: relative; max-width: 720px; width: 100%; margin: 0 auto; text-align: center; }
+        .celeb-promo-wrap img { max-width: 100%; width: auto; height: auto; }
+        .celeb-promo-wrap .star { position: absolute; top: 10%; right: 10%; z-index: 1; width: 10%; animation: spark 2.4s ease-in-out 0s infinite normal; }
+        .celeb-promo-wrap .star.mid { top: 17.4%; right: auto; left: 10%; width: 8%; animation-duration: 3s; animation-delay: .2s; }
+
+        .celeb-promo-wrap .celeb-video-wrap { padding: 0 4.7%; background-color: #e0e4fb; }
+        .celeb-promo-wrap .celeb-video-wrap .video-frame { position: relative; border-radius: 25px; overflow: hidden; }
+        .celeb-promo-wrap .celeb-video-wrap .video-frame:before { content: ''; display: block; width: 100%; padding-top: 56.75%; }
+        .celeb-promo-wrap .celeb-video-wrap .video-frame iframe { position: absolute; left: 0; top: 0; z-index: 1; width: 100%; height: 100%; }
+
+        .celeb-promo-wrap .celeb-bot-wrap { position: relative; }
+        .celeb-promo-wrap .celeb-bot-wrap .before { display: block; }
+        .celeb-promo-wrap .celeb-bot-wrap .after { display: none; }
+        .celeb-promo-wrap .celeb-bot-wrap .celeb-btn { padding: 10% 4.7% 22.5%; background-color: #e0e4fb; }
+        .celeb-promo-wrap .celeb-bot-wrap .celeb-btn a { display: block; }
+        .celeb-promo-wrap .celeb-bot-wrap .celeb-btn a + a { margin-top: 3%; }
+
+        .celeb-promo-wrap .celeb-bot-wrap.soldout .before { display: none; }
+        .celeb-promo-wrap .celeb-bot-wrap.soldout .after { display: block; }
+        .celeb-promo-wrap .celeb-bot-wrap.soldout .celeb-btn { padding-top: 0; }
+        .celeb-promo-wrap .celeb-bot-wrap.soldout .celeb-btn .point { display: none; pointer-events: none; }
+        .celeb-promo-wrap .celeb-bot-wrap.soldout .celeb-btn a + a { margin: 0; }
+    </style>    
+
+    <div class="celeb-promo-wrap">
+        <!-- # 인트로 이미지 -->
+        <img src="./images/img_celeb_top.png">
+        <!-- # 영상 -->
+        <div class="celeb-video-wrap">
+            <div class="video-frame">
+                <iframe src="https://www.youtube.com/embed/EAHHx0yeHJY?&playlist=EAHHx0yeHJY&loop=1&autoplay=1&mute=1" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <!-- # 판매됐을 시 soldout 클래스 추가 예정 -->
+        <div class="celeb-bot-wrap">
+            <!-- # 정보 이미지 -->
+            <img src="./images/img_celeb_before.png" class="before">
+            <!-- # 솔드아웃 이미지 -->
+            <img src="./images/img_celeb_after.png" class="after">
+            <!-- # 버튼 -->
+            <div class="celeb-btn">
+                <a href="https://autoplus.co.kr/rent/RTVP020001?productId=C23051900006" class="ga-influ-rent point"><img src="./images/btn_submit.png"></a>
+                <a href="https://autoplus.co.kr/rent/RTLP010001" class="ga-ViewAllRent"><img src="./images/btn_base.png"></a>
+            </div>
+        </div>
+        <span class="star"><img src="./images/img_celeb_effect.png"></span>
+        <span class="star mid"><img src="./images/img_celeb_effect.png"></span>
+    </div>
+</body>
+</html>
