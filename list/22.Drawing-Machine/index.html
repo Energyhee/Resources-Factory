@@ -106,10 +106,7 @@
     <script src="./js/custom.js"></script>
     <script>
         var wrapper = $('.draw-promo-wrap');
-        var benefitOpt = {
-                rank : 4,
-                title : '스타벅스 아메리카노(Tall) 당첨'
-            };
+        var benefitOpt= {}
 
         function drawAction(sec){
             wrapper.find('#drawActBtn').attr('disabled', true);
@@ -118,23 +115,19 @@
 
             setTimeout(function(){
                 var randomNum = Math.floor(Math.random()*100+1);
-                var benefitIdx;
 
                 if(randomNum <= 5) {
-                    benefitOpt = {
-                        rank : 1,
-                        title : '‘1등! 페이백 30만원’ 당첨'
-                    };
+                    benefitOpt.rank = 1;
+                    benefitOpt.title = '‘1등! 페이백 30만원’ 당첨';
                 }else if(randomNum <= 10) {
-                    benefitOpt = {
-                        rank : 2,
-                        title : '‘2등! 페이백 10만원’ 당첨'
-                    };
+                    benefitOpt.rank = 2;
+                    benefitOpt.title = '‘2등! 페이백 10만원’ 당첨';
                 }else if(randomNum <= 15) {
-                    benefitOpt = {
-                        rank : 3,
-                        title : '‘3등! 페이백 5만원’ 당첨'
-                    };
+                    benefitOpt.rank = 3;
+                    benefitOpt.title = '‘3등! 페이백 5만원’ 당첨';
+                }else{
+                    benefitOpt.rank = 4;
+                    benefitOpt.title = '스타벅스 아메리카노(Tall) 당첨';
                 }
 
                 wrapper.find('.draw-result-wrap h2').prepend(benefitOpt.title);
@@ -154,11 +147,11 @@
 
         $(document).ready(function(){
             if(wrapper.length){
-                $(document).on('click', '#drawActBtn', function(e) {
+                $('#drawActBtn').on('click', function(e) {
                     e.preventDefault();
                     drawAction(5.4);
                 });
-                $(document).on('click', '#drawSendBtn', function(e) {
+                $('#drawSendBtn').on('click', function(e) {
                     e.preventDefault();
                     drawSend();
                 });
