@@ -255,6 +255,9 @@
 
         $(document).ready(function(){
             if(wrapper.length){
+                $('#phoneNum').on('input', function() {
+                    $(this).val($(this).val().replace(/[^0-9]/g,""));
+                });
                 $('#drawActBtn').on('click', function(e) {
                     e.preventDefault();
                     drawAction(5.4);
