@@ -1,0 +1,400 @@
+@charset "utf-8";
+@import './mixin';
+
+@keyframes craneLeft {
+    30% { transform: rotate(15deg); transform-origin: right top; }
+    50% { transform: rotate(18deg); }
+    100% { transform: rotate(0); }
+}
+@keyframes craneRight {
+    30% { transform: rotate(-15deg); transform-origin: left top; }
+    50% { transform: rotate(-18deg); }
+    100% { transform: rotate(0); }
+}
+@keyframes posX {
+    to { left: 50%; transform: translateX(-50%); }
+}
+@keyframes posY {
+    to { top: px(-50);}
+}
+@keyframes rollbak {
+    to { top: px(-120); }
+}
+@keyframes show {
+    to { opacity: 1; }
+} 
+@keyframes fall {
+    0% { transform: translateX(0) rotate(0deg); }
+    25% { transform: translateX(px(-20)) rotate(30deg); opacity: 1;  }
+    50% { transform: translateX(px(40)) rotate(-30deg); }
+    75% { transform: translateX(px(-10)) rotate(30deg); }
+    100% { transform: translateX(0) rotate(0deg); top: 90vh; opacity: 0;  }
+}
+@keyframes fall2 {
+    0% { transform: translateX(0) rotate(0deg); }
+    25% { transform: translateX(px(-10)) rotate(10deg); opacity: 1;  }
+    50% { transform: translateX(px(30)) rotate(-10deg); }
+    75% { transform: translateX(px(-10)) rotate(14deg); }
+    100% { transform: translateX(0) rotate(0deg); top: 50vh; opacity: 0;  }
+}
+@keyframes twinkle {
+    0% { transform: scale(.6); opacity: .2; }
+    50% { transform: scale(1); opacity: .8; }
+    100% { transform: scale(.6); opacity: .2; }
+}
+@keyframes upScale {
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+.draw-promo-wrap {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: px(30) px(30) px(40);
+    background: url('../images/bg_draw_promo.png') no-repeat center top/cover #aaa;
+    overflow: hidden;
+    * {
+        font-family: "GmarketSans";
+        line-height: 1.2;
+    }
+    &.bgChange {
+        background-image: url('../images/bg_draw_promo_send.png');
+    }
+    .draw-cont-btn {
+        position: relative;
+        z-index: 2;
+        .base-btn {
+            position: relative;
+            display: block;
+            max-width: px(280);
+            width: 100%;
+            height: px(60);
+            margin: px(20) auto 0;
+            border-radius: px(10);
+            background: url('../images/bg_draw_btn.png') no-repeat center/100%;
+            @include font($s: px(30), $w: 700, $l: px(65), $t: px(-1), $c: #fff, $a: center);
+            overflow: hidden;
+            transition-duration: .2s;
+            &.arr {
+                &:after {
+                    content: '';
+                    display: inline-block;
+                    vertical-align: top;
+                    width: px(14);
+                    height: px(24);
+                    margin: px(18) 0 0 px(12);
+                    background: url('../images/ico_btn_arr.png') no-repeat center/100% auto;
+                }
+            }
+            &:disabled {
+                box-shadow: px(1) 0 px(4) px(4) rgba(0, 0, 0, .08) inset;
+                background: #aaa;
+                pointer-events: none;
+                cursor: none;
+            }
+        }
+        p {
+            margin: px(10) auto 0;
+            @include font($s: px(16), $w: 500, $l: 1.2, $t: px(-2), $c: #000, $a: center);
+        }
+    }
+    .draw-promo-head {
+        word-break: keep-all;
+        @include font($s: px(30), $w: 700, $l: 1.2, $t: px(-3), $c: #ee1c7a, $a: center);
+        p {
+            @include font($s: px(20), $w: 500, $t: px(-1));
+            strong {
+                font-weight: 700;
+            }
+        }
+    }
+    .draw-cont-machine {
+        position: relative;
+        z-index: 1;
+        margin: px(28) px(-8) 0;
+        .obj {
+            @include pos($p: absolute, $l: px(10), $t: px(-40), $z: 1);
+            width: px(33);
+            height: px(25);
+            pointer-events: none;
+            opacity: .4;
+            animation: fall 6s infinite ease-in-out;
+            &.flower02 {
+                left: auto;
+                right: px(10);
+                top: px(240);
+                width: px(42);
+                height: px(30);
+            }
+            &.leaves01 {
+                left: auto;
+                right: 0;
+                top: px(160);
+                width: px(50);
+                height: px(40);
+                animation-name: fall2;
+                animation-duration: 8s;
+                animation-delay: .4s;
+            }
+        }
+        .machine-body {
+            position: relative;
+            max-width: px(232);
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            background: url('../images/bg_draw_body.png') no-repeat center/100% auto;
+            &:before {
+                content: '';
+                display: block;
+                padding-top: 137.5%;
+            }
+            &:after {
+                content: '';
+                @include pos($p: absolute, $l: 50%, $b: px(-20), $z: -1);
+                width: calc(100% + px(80));
+                height: 20%;
+                transform: translateX(-50%);
+                background: url('../images/bg_draw_body_shadow.png') no-repeat center/100% auto;
+            }
+            .machine-frame {
+                @include pos($p: absolute, $l: 50%, $t: px(22.5), $z: 1);
+                width: calc(100% - px(110 / 2));
+                height: 58.9%;
+                transform: translateX(-50%);
+                overflow: hidden;
+                &:after {
+                    content: '';
+                    @include pos($p: absolute, $l: 0, $b: 0, $z: 2);
+                    width: 100%;
+                    height: 50%;
+                    background: url('../images/bg_draw_body_dummy.png') no-repeat center bottom/100% auto;
+                }
+                .machine-crane {
+                    @include pos($p: absolute, $l: px(30), $t: px(-120), $z: 2);
+                    width: px(33);
+                    height: px(207);
+                    background: url('../images/img_crane_body.png') no-repeat center bottom/100% auto;
+                    pointer-events: none;
+                    .machine-crane-left {
+                        @include pos($p: absolute, $l: px(-18), $b: px(-6), $z: 1);
+                        width: px(30);
+                        height: px(48);
+                        background: url('../images/img_crane_left.png') no-repeat center/100% auto;
+                    }
+                    .machine-crane-right {
+                        @include pos($p: absolute, $r: px(-18), $b: px(-6), $z: 1);
+                        width: px(30);
+                        height: px(48);
+                        background: url('../images/img_crane_right.png') no-repeat center/100% auto;
+                    }
+                    &.active {
+                        animation: posX 1.4s ease-in forwards, posY 2s ease-out 1.4s forwards, rollbak 1.4s ease-in 4s forwards;
+                        &:after {
+                            content: '';
+                            @include pos($p: absolute, $l: 50%, $b: px(-28));
+                            width: px(54);
+                            height: px(54);
+                            margin-left: px(-27);
+                            background: url('../images/img_deal_ran.png') no-repeat center/100% auto;
+                            opacity: 0;
+                            animation: show .4s ease-in 4s forwards;
+                        }
+                        .machine-crane-left {
+                            animation: craneLeft 2s linear 1.6s forwards;
+                        }
+                        .machine-crane-right {
+                            animation: craneRight 2s linear 1.6s forwards;
+                        }
+                    }
+                }
+            }
+        }
+        .deal-machine-btn {
+            position: relative;
+            z-index: 2;
+            a {
+                display: block;
+                max-width: px(280);
+                width: 100%;
+                height: px(60);
+                margin: px(20) auto 0;
+                background: url('../images/img_deal_btn.png') no-repeat center/100%;
+                @include font($s: px(30), $w: 700, $l: px(68), $t: px(-1), $c: #fff, $a: center);
+            }
+            p {
+                margin: px(20) auto 0;
+                @include font($s: px(16), $w: 500, $l: 1.2, $t: px(-1), $c: #000, $a: center);
+            }
+        }
+    }
+    .draw-cont-benefit {
+        margin: px(-40) px(-25) 0;
+        .bene-img {
+            text-align: center;    
+        }
+    }
+    .draw-result-wrap {
+        display: none;
+        margin: px(25) auto 0;
+        h2 {
+            margin: 0 px(-20);
+            word-break: keep-all;
+            @include font($s: px(26), $w: 700, $l: 1.2, $t: px(-3), $c: #000, $a: center);
+            p {
+                margin-top: px(8);
+                @include font($s: px(16), $w: 500, $l: 1.2, $t: px(-2));
+            }
+        }
+        .inp-box {
+            margin: px(40) auto 0;
+            text-align: center;
+            p {
+                @include font($s: px(16), $w: 500, $l: 1.2, $t: px(-2), $c: #000);
+            }
+            input {
+                max-width: px(280);
+                width: 100%;
+                height: px(60);
+                margin: px(15) auto 0;
+                border: 1px solid #fff;
+                border-radius: px(10);
+                box-shadow: px(2) px(2) px(4) 0 rgba(0, 0, 0, 0.3) inset;
+                background-color: #fff;
+                @include font($s: px(30), $w: 500, $l: 1.2, $t: px(-2), $c: #000, $a: center);
+                &::placeholder {
+                    color: #ccc;
+                }
+            }
+        }
+        .result-box {
+            @include pos($p: absolute, $l: 50%, $t: 0, $z: 4);
+            width: 100%; 
+            height: 50vh;
+            margin-left: -50%;
+            &:after {
+                content: '';
+                @include pos($p: absolute, $l: 50%, $t: px(110), $z: 1);
+                width: px(208);
+                height: px(208);
+                margin-left: px(-104);
+                background: url('../images/img_rank_result_04.png') no-repeat center/100% auto;
+                opacity: 0;
+            }
+            &.rank1:after {
+                background-image: url('../images/img_rank_result_01.png');
+            }
+            &.rank2:after { 
+                background-image: url('../images/img_rank_result_02.png');
+            }
+            &.rank3:after {
+                background-image: url('../images/img_rank_result_03.png');
+            }
+        }
+        &.show {
+            .result-box::after {
+                animation: upScale .6s ease-in-out forwards;
+            }
+            .obj2 {
+                @include pos($p: absolute, $l: px(45), $t: px(90), $z: 5);
+                width: px(70);
+                height: px(80);
+                pointer-events: none;
+                opacity: .6;
+                animation: twinkle 1s infinite ease-in-out;
+                &.twinkle02 {
+                    left: px(35);
+                    top: px(215);
+                    width: px(78);
+                    height: px(78);
+                    animation-delay: .4s;
+                }
+                &.twinkle03 {
+                    left: auto;
+                    right: px(25);
+                    top: px(212);
+                    width: px(75);
+                    height: px(79);
+                    animation-delay: .8s;
+                }
+            }
+        }
+    }
+    .draw-send-wrap {
+        display: none;
+        margin: px(25) auto 0;
+        &.show {
+            .obj {
+                @include pos($p: absolute, $r: px(10), $t: px(160), $z: 1);
+                width: px(50);
+                height: px(40);
+                pointer-events: none;
+                opacity: .4;
+                animation: fall2 6s infinite ease-in-out;
+                &.leaves02 {
+                    top: auto;
+                    bottom: px(85);
+                    right: auto; 
+                    left: px(45);
+                    z-index: 3;
+                    width: px(32);
+                    height: px(36);
+                    animation: none;
+                    opacity: 1;
+                }
+            }
+        }
+        h2 {
+            margin: px(10) px(-15);
+            word-break: keep-all;
+            @include font($s: px(26), $w: 700, $l: 1.2, $t: px(-2), $c: #000, $a: center);
+            p {
+                margin-top: px(8);
+                word-break: keep-all;
+                @include font($s: px(16), $w: 500, $l: 1.2, $t: px(-2));
+            }
+        }
+        .send-img {
+            text-align: center;
+            img {
+                max-width: px(154);
+            }
+        }
+    }
+}
+.draw-promo-noti {
+    .tit {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: px(40);
+        background-color: #568b00;
+        @include font($s: px(12), $w: 500, $l: 1.2, $t: px(-.5), $c: #fff, $a: center);
+    }
+    .noti-list {
+        padding: px(40) px(30);
+        background-color: #6cae02;
+        strong {
+            display: block;
+            @include font($s: px(14), $w: 700, $l: 1.2, $t: px(-.5), $c: #fff, $a: left);
+        }
+        ul {
+            margin-top: px(14);
+            li {
+                position: relative;
+                padding-left: px(6);
+                word-break: keep-all;
+                @include font($s: px(12), $w: 400, $l: px(16), $t: px(-.5), $c: #fff, $a: left);
+                &:before {
+                    content: '';
+                    @include pos($p: absolute, $l: 0, $t: px(6));
+                    width: px(2);
+                    height: px(2);
+                    border-radius: 100%;
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+}
