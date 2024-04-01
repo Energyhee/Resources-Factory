@@ -368,19 +368,6 @@
   width: 2.625rem;
   height: 1.875rem;
 }
-.draw-promo-wrap .draw-cont-machine .obj.leaves01 {
-  left: auto;
-  right: 0;
-  top: 10rem;
-  width: 3.125rem;
-  height: 2.5rem;
-  -webkit-animation-name: fall2;
-          animation-name: fall2;
-  -webkit-animation-duration: 8s;
-          animation-duration: 8s;
-  -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s;
-}
 .draw-promo-wrap .draw-cont-machine .machine-body {
   position: relative;
   max-width: 14.5rem;
@@ -693,6 +680,10 @@
   max-width: 9.625rem;
 }
 
+.draw-promo-noti {
+  max-width: 720px;
+  margin: 0 auto;
+}
 .draw-promo-noti .tit {
   display: -webkit-box;
   display: -ms-flexbox;

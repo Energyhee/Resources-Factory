@@ -127,16 +127,6 @@
                 width: px(42);
                 height: px(30);
             }
-            &.leaves01 {
-                left: auto;
-                right: 0;
-                top: px(160);
-                width: px(50);
-                height: px(40);
-                animation-name: fall2;
-                animation-duration: 8s;
-                animation-delay: .4s;
-            }
         }
         .machine-body {
             position: relative;
@@ -364,6 +354,8 @@
     }
 }
 .draw-promo-noti {
+    max-width: 720px;
+    margin: 0 auto;
     .tit {
         display: flex;
         align-items: center;
