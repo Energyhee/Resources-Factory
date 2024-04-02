@@ -214,35 +214,38 @@
     <script src="./js/custom.js"></script>
     <script>
         var wrapper = $('.draw-promo-wrap');
-        var benefitOpt= {}
+        var benefitOpt = {}
+        var isAnimation = false; 
 
         function drawAction(sec){
-            wrapper.find('#drawActBtn').attr('disabled', true);
-            wrapper.find('.machine-crane').addClass('active');
-            $('html, body').animate({ scrollTop: 0 }, 500);
+            if(!isAnimation){
+                wrapper.find('#drawActBtn').attr('disabled', true);
+                wrapper.find('.machine-crane').addClass('active');
+                $('html, body').animate({ scrollTop: 0 }, 500);
+                
+                setTimeout(function(){
+                    var randomNum = Math.floor(Math.random()*100+1);
 
-            setTimeout(function(){
-                var randomNum = Math.floor(Math.random()*100+1);
+                    if(randomNum <= 5) {
+                        benefitOpt.rank = 1;
+                        benefitOpt.title = '‘1등! 페이백 30만원’ 당첨';
+                    }else if(randomNum <= 10) {
+                        benefitOpt.rank = 2;
+                        benefitOpt.title = '‘2등! 페이백 10만원’ 당첨';
+                    }else if(randomNum <= 15) {
+                        benefitOpt.rank = 3;
+                        benefitOpt.title = '‘3등! 페이백 5만원’ 당첨';
+                    }else{
+                        benefitOpt.rank = 4;
+                        benefitOpt.title = '스타벅스 아메리카노(Tall) 당첨';
+                    }
 
-                if(randomNum <= 5) {
-                    benefitOpt.rank = 1;
-                    benefitOpt.title = '‘1등! 페이백 30만원’ 당첨';
-                }else if(randomNum <= 10) {
-                    benefitOpt.rank = 2;
-                    benefitOpt.title = '‘2등! 페이백 10만원’ 당첨';
-                }else if(randomNum <= 15) {
-                    benefitOpt.rank = 3;
-                    benefitOpt.title = '‘3등! 페이백 5만원’ 당첨';
-                }else{
-                    benefitOpt.rank = 4;
-                    benefitOpt.title = '스타벅스 아메리카노(Tall) 당첨';
-                }
-
-                wrapper.find('.draw-result-wrap h2').prepend(benefitOpt.title);
-                wrapper.find('.draw-result-wrap .result-box').addClass('rank' + benefitOpt.rank);
-                wrapper.find('.draw-cont-benefit, .draw-cont-machine > .draw-cont-btn, [class*="flower"]').hide();
-                wrapper.find('.draw-result-wrap').addClass('show').show();
-            }, sec * 1000);
+                    wrapper.find('.draw-result-wrap h2').prepend(benefitOpt.title);
+                    wrapper.find('.draw-result-wrap .result-box').addClass('rank' + benefitOpt.rank);
+                    wrapper.find('.draw-cont-benefit, .draw-cont-machine > .draw-cont-btn, [class*="flower"]').hide();
+                    wrapper.find('.draw-result-wrap').addClass('show').show();
+                }, sec * 1000);
+            }
         }
 
         function drawSend(){
