@@ -13,16 +13,18 @@
 </head>
 <body onload="init()">
     <h3>강화 확률 시뮬레이터</h3>
-    <label for="stageSelect">강화 단계 선택:</label>
-    <select id="stageSelect">
-        <option value="1">2단계</option>
-        <option value="2">3단계</option>
-        <option value="3">4단계</option>
-        <option value="4">5단계</option>
-        <option value="5">6단계</option>
-        <option value="6">7단계</option>
-        <option value="7">8단계</option>
-    </select>
+    강화 단계 선택:
+    <div class="sel-box">
+        <select id="stageSelect">
+            <option value="1">2단계</option>
+            <option value="2">3단계</option>
+            <option value="3">4단계</option>
+            <option value="4">5단계</option>
+            <option value="5">6단계</option>
+            <option value="6">7단계</option>
+            <option value="7">8단계</option>
+        </select>
+    </div>
     <button onclick="reinforce()">강화 시도</button>
     <button onclick="reset()">초기화</button>
     <p id="result"></p>

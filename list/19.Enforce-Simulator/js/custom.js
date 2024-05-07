@@ -4,7 +4,8 @@ let failCount = 0;
 let currentSuccessRate = 0; // 내가 시도한 횟수 대비 성공한 확률
 let resultText = '';
 
-const successRates = [1.0, 0.9, 0.7, 0.5, 0.3, 0.18, 0.07];
+//                    2강  3강  4강  5강  6강  7강  8강
+const successRates = [1.0, 0.9, 0.7, 0.5, 0.3, 0.18, 0.07]; // 각 단계별 강화 확률
 
 function reinforce() {
     const selectedStage = document.getElementById("stageSelect").value;
@@ -18,12 +19,12 @@ function reinforce() {
         resultText = `<strong>${currentStage + 1}</strong> 강화에 성공하셨습니다.`;
     } else {
         failCount++; // 강화 실패 횟수 업데이트
-        // 강화 실패 시 현재 단계보다 작은 수 중 랜덤으로 떨어짐
+        // 강화 실패 시 현재 단계보다 작은 수 중 랜덤으로 등급하락
         if (currentStage > 1) {
             const revertedStage = Math.floor(Math.random() * (currentStage - 1)) + 1;
-            resultText = `<strong>${currentStage}</strong> 강화에 실패하여 <strong>${revertedStage}</strong> 강화로 복구됐습니다.`;
+            resultText = `<strong>${currentStage}</strong> 강화에 실패하여 <strong>${revertedStage}</strong> 강으로 복구됐습니다.`;
         } else {
-            resultText = `강화에 실패하여 <strong>1</strong> 강화로 떨어졌습니다.`;
+            resultText = `강화에 실패하여 <strong>1</strong> 강으로 떨어졌습니다.`;
         }
     }
     tryCount++; // 강화 시도 횟수 업데이트
