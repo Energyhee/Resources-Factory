@@ -8,7 +8,7 @@ let resultText = '';
 const successRates = [1.0, 0.9, 0.7, 0.5, 0.3, 0.18, 0.07]; // 각 단계별 강화 확률
 
 function reinforce() {
-    const selectedStage = document.getElementById("stageSelect").value;
+    const selectedStage = document.getElementById('stageSelect').value;
     const currentStage = parseInt(selectedStage);
     const randomChance = Math.random();
 
@@ -28,7 +28,7 @@ function reinforce() {
         }
     }
     tryCount++; // 강화 시도 횟수 업데이트
-    currentSuccessRate = ((successCount / tryCount) * 100).toFixed(2) + "%";
+    currentSuccessRate = ((successCount / tryCount) * 100).toFixed(2) + '%';
 
     updateStats();
 }
@@ -38,16 +38,16 @@ function reset() {
     tryCount = 0;
     successCount = 0;
     failCount = 0;
-    resultText = "";
+    resultText = '';
     updateStats();
 }
 
 function updateStats() {
-    document.getElementById("result").innerHTML = resultText;
-    document.getElementById("currentSuccessRate").innerText = currentSuccessRate;
-    document.getElementById("tryCount").innerText = tryCount;
-    document.getElementById("successCount").innerText = successCount;
-    document.getElementById("failCount").innerText = failCount;
+    document.getElementById('result').innerHTML = resultText;
+    document.getElementById('currentSuccessRate').innerText = currentSuccessRate;
+    document.getElementById('tryCount').innerText = tryCount;
+    document.getElementById('successCount').innerText = successCount;
+    document.getElementById('failCount').innerText = failCount;
 }
 
 // 초기 화면 확률 노출
@@ -57,13 +57,13 @@ function init() {
 
 // 선택된 강화 단계의 확률 노출
 function baseStageCount() {
-    const selectedStage = document.getElementById("stageSelect").value;
-    const successRate = (successRates[parseInt(selectedStage) - 1] * 100).toFixed(2) + "%";
-    document.getElementById("successRate").innerText = successRate;
+    const selectedStage = document.getElementById('stageSelect').value;
+    const successRate = (successRates[parseInt(selectedStage) - 1] * 100).toFixed(2) + '%';
+    document.getElementById('successRate').innerText = successRate;
 }
 
 // 단계 변경 시 초기화
-document.getElementById("stageSelect").addEventListener("change", function() {
+document.getElementById('stageSelect').addEventListener('change', function() {
     baseStageCount();
     reset();
 });
