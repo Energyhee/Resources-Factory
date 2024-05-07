@@ -44,11 +44,7 @@
         ⚡️ 도입 할 때 이전 버전과 호환되지 않는 특징, @CHANGED주석 태그 사용
         💡 새로운 아이디어, @IDEA주석 태그
         🚀 배포 / 개발 작업 과 관련된 모든 것
-<br />    
-
-
-> 참고출처 [쓰리디핏공작소 - Git커밋할때사용하는개발컨벤션](https://3dpit.tistory.com/619)
-
+<br />
 
 <br />
 
@@ -75,6 +71,7 @@
 * [X] [18.User Info Form](http://nergyhee.dothome.co.kr/myList/list/18.User-Info-Form)
 * [X] [19.Enforce Simulator](http://nergyhee.dothome.co.kr/myList/list/19.Enforce-Simulator)
 * [X] [20.Lotto Number Maker](http://nergyhee.dothome.co.kr/myList/list/20.Lotto-Number-Maker)
+* [X] [21.Drawing-Machine](http://nergyhee.dothome.co.kr/myList/list/21.Drawing-Machine)
 
 <br>
 <br>
