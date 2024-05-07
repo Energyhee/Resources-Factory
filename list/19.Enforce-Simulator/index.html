@@ -13,27 +13,33 @@
 </head>
 <body onload="init()">
     <h3>강화 확률 시뮬레이터</h3>
-    강화 단계 선택:
-    <div class="sel-box">
-        <select id="stageSelect">
-            <option value="1">2단계</option>
-            <option value="2">3단계</option>
-            <option value="3">4단계</option>
-            <option value="4">5단계</option>
-            <option value="5">6단계</option>
-            <option value="6">7단계</option>
-            <option value="7">8단계</option>
-        </select>
+    <div class="flex-box">
+        <p>강화 단계 선택:</p>
+        <div class="sel-box">
+            <select id="stageSelect">
+                <option value="1">2단계</option>
+                <option value="2">3단계</option>
+                <option value="3">4단계</option>
+                <option value="4">5단계</option>
+                <option value="5">6단계</option>
+                <option value="6">7단계</option>
+                <option value="7">8단계</option>
+            </select>
+        </div>
     </div>
-    <button onclick="reinforce()">강화 시도</button>
-    <button onclick="reset()">초기화</button>
-    <p id="result"></p>
 
-    <p>강화 성공 확률: <span id="successRate">0.00%</span></p>
-    <p>나의 성공 확률: <span id="currentSuccessRate"></span></p>
-    <p>시도 횟수: <span id="tryCount">0</span></p>
-    <p>성공 횟수: <span id="successCount">0</span></p>
-    <p>실패 횟수: <span id="failCount">0</span></p>
+    <div class="dashboard">
+        <p id="result"></p>
+
+        <p><strong>현재 단계 강화 성공 확률 : </strong><span id="successRate">0.00%</span></p>
+        <p><strong>현재 나의 성공 확률 : </strong><span id="currentSuccessRate">0</span></p>
+        <p>총 시도 횟수: <span id="tryCount">0</span></p>
+        <p>성공 횟수: <span id="successCount">0</span></p>
+        <p>실패 횟수: <span id="failCount">0</span></p>
+
+        <button onclick="reinforce()">강화 시도</button>
+        <button onclick="reset()" class="gray">초기화</button>
+    </div>
     
     <script src="../common/js/jquery-3.3.1.min.js"></script>
     <script src="../common/js/swiper.min.js"></script>
