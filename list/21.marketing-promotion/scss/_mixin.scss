@@ -1,0 +1,32 @@
+$path: '../images/';
+
+@function px($pixels) {
+    @return calc(($pixels / 2) / 16) + rem;
+}
+
+@mixin fontHide(){
+	font-size: 0; 
+	line-height: 0;
+	letter-spacing: px(-999);
+	text-indent: px(-999);
+	color: var(--color-transparent);
+}
+
+@mixin font($f: null, $s: null, $w: null, $l: null, $c: null, $t : null, $a: null) {
+	font-family: $f;
+	font-size: $s;
+	font-weight: $w;
+	line-height: $l;
+	color: $c;
+	letter-spacing: $t;
+	text-align: $a;
+}
+
+@mixin pos($p: null,$l: null,$r: null,$t: null,$b: null,$z: null) {
+    position: $p;
+    left: $l;
+    right: $r;
+    top: $t;
+    bottom: $b;
+    z-index: $z;
+}

@@ -1,0 +1,871 @@
+@charset "utf-8";
+@import './mixin';
+
+@media screen and (max-width:320px) { body,html { font-size: 14px; } }
+@media screen and (min-width:390px) { body,html { font-size: 18px; } }
+@media screen and (min-width:512px) { body,html { font-size: 24px; } }
+@media screen and (min-width:720px) { body,html { font-size: 32px; } #new-header, #new-footer { font-size: 16px; } #wrap .layer.alert { font-size: 16px; } }
+
+@keyframes twinkle {
+    0% { opacity: 1; }
+    50% { opacity: .4; }
+    100% { opacity: 1; }
+}
+@keyframes talkbox {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(px(8)); }
+    100% { transform: translateY(0); }
+}
+
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+
+body {
+    &.noneScroll {
+        height: 100%;
+        overflow: hidden;
+    }
+}
+.ac-promo-wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding-bottom: px(74);
+    background-color: #f0faff;
+    * { font-family: "GmarketSans"; line-height: 1.2; }
+    .ac-tit {
+        margin-bottom: px(50);
+        @include font($s: px(54), $w: 500, $l: px(68), $t: px(-1), $c: #001a5d, $a: center);
+        strong {
+            @include font($w: 700, $c: inherit);
+            span {
+                color: #0145ff;
+            }
+        }
+    }
+    .ac-bg-txt {
+        padding: px(60) px(30) px(50);
+        margin: px(-60) px(-38) 0;
+        background-color: #013fff;
+        .car-name {
+            display: block;
+            word-break: keep-all;
+            @include font($s: px(54), $w: 700, $l: px(68), $t: px(-1), $c: #fff, $a: center);    
+        }
+        .car-etc {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: px(50);
+            margin-top: px(20);
+            span {
+                position: relative;
+                flex: 0 auto;
+                @include font($f: "SUIT", $s: px(30), $w: 400, $l: 1.2, $t: px(-1), $c: #fff, $a: center);
+                ~ span:before {
+                    content: '';
+                    @include pos($p: absolute, $t: 50%, $l: px(-26));
+                    width: px(6);
+                    height: px(6);
+                    margin-top: px(-4);
+                    border-radius: px(6);
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+    .ac-btn-base {
+        display: block;
+        height: px(108);
+        margin-top: px(64);
+        border-radius: px(14);
+        box-shadow: 0 0 px(8) px(14) rgba(35, 89, 255, 1) inset;
+        -webkit-box-shadow: 0 0 px(8) px(14) rgba(35, 89, 255, 1) inset;
+        -moz-box-shadow: 0 0 px(8) px(14) rgba(35, 89, 255, 1) inset;
+        background-color: #013fff;
+        @include font($s: px(46), $w: 700, $l: px(114), $t: px(-1), $c: #fff, $a: center);
+    }
+    > section {
+        padding: 0 px(30);
+        ~ section {
+            margin-top: px(74);
+        }
+        .ac-inner {
+            padding: px(60) px(38) px(40);
+            border-radius: px(40);
+            background-color: #fff;
+            overflow: hidden;
+        }
+    }
+    // 레이어 팝업
+    .ac-layer-wrap {
+        @include pos($p: fixed, $t: 0, $l: 0, $z: 10);
+        width: 100%;
+        height: 100%;
+        display: none;
+        .ac-layer-pop {
+            @include pos($p: absolute, $t: 50%, $l: 50%, $z: 1);
+            min-width: px(590);
+            max-width: px(720);
+            width: auto;
+            border-radius: px(40);
+            box-shadow: 0 px(10) px(40) px(20) rgba(0 ,5 ,69 , .2);
+            background-color: #fff;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+            .ac-layer-head {
+                position: relative;
+                width: 100%;
+                height: px(94);
+                padding: 0 px(54);
+                background-color: #004bff; 
+                @include font($s: px(36), $w: 700, $l: px(100), $t: px(-1), $c: #fff, $a: left);
+                .close {
+                    @include pos($p: absolute, $t: 50%, $r: px(50), $z: 1);
+                    width: px(34);
+                    height: px(34);
+                    margin-top: px(-18);
+                    background: url('../images/ico_close_btn.png') no-repeat center/100% auto;
+                    @include fontHide();
+                }
+            }
+            .ac-layer-body {
+                padding: px(40) px(50) px(50);
+                border: 2px solid #004bff;
+                border-top: 0;
+                border-radius: 0 0 px(40) px(40);
+                overflow: hidden;
+            }
+        }
+    }
+    #pop-price {
+        p {
+            word-break: keep-all;
+            @include font($s: px(26), $w: 500, $l: px(36), $t: px(-1), $c: #00135f, $a: center);
+        }
+        table {
+            width: 100%;
+            margin-top: px(24);
+            border-radius: px(20);
+            overflow: hidden;
+            border: 1px solid #004bff;
+            border-collapse: separate;
+            thead {
+                background-color: #004bff;
+                th {
+                    height: px(60);
+                    @include font($s: px(26), $w: 700, $l: 1.2, $t: px(-1), $c: #fff, $a: center);
+                    ~ th {
+                        border-left: 1px solid #fff;
+                    }
+                }
+            }
+            tbody {
+                background-color: #def1f9;
+                td {
+                    height: px(56);
+                    border-top: 1px solid #0044ff;
+                    @include font($s: px(26), $w: 500, $l: 1.2, $t: px(-1), $c: #00135f, $a: center);
+                    ~ td {
+                        border-left: 1px solid #0044ff;
+                    }
+                }
+            }
+        }
+    }
+    #pop-apply {
+        .ac-layer-body {
+            padding: px(30);
+            .apply-price {
+                padding: 0 px(20);
+                .apply-price-list {
+                    .price-tr {
+                        display: flex; 
+                        .col {
+                            flex: 1;
+                            max-width: 50%;
+                            @include font($s: px(26), $w: 500, $l: px(32), $t: px(-1), $c: #00135f, $a: left);
+                            &.num {
+                                text-align: right;
+                            }
+                            &.cnt {
+                                font-weight: 700;
+                                color: #005cfa;
+                            }
+                        }
+                        &.bold * {
+                            font-weight: 700;
+                        }
+                        &.result {
+                            padding-top: px(14);
+                            border-top: 1px solid #00135f;
+                        }
+                        ~ .price-tr {
+                            margin-top: px(14);
+                        }
+                    }
+                }
+                p {
+                    position: relative;
+                    padding-left: px(14);
+                    margin-top: px(30);
+                    word-break: keep-all;
+                    @include font($s: px(20), $w: 500, $l: 1.2, $t: px(-1), $c: #00135f, $a: left);
+                    &::before {
+                        content: '*';
+                        @include pos($p: absolute, $t: px(4), $l: 0, $z: 1);
+                    }
+                }
+            }
+            .ac-btn-base {
+                margin-top: px(28);
+            }
+        }
+    }
+    #pop-option {
+        .ac-layer-body {
+            padding: px(40) px(20);
+        }
+        .ac-layer-opt {
+            height: auto; 
+            max-height: px(600);
+            overflow: hidden;
+            overflow-y: auto;
+            .flex-box {
+                display: flex;
+                gap: px(10);
+                .option-list {
+                    flex: 1;
+                    p {
+                        @include font($s: px(26), $w: 700, $l: 1.2, $t: px(-1), $c: #000, $a: left);
+                        em {
+                            font-size: px(20);
+                            font-weight: 500;
+                            color: #0096ff;
+                        }
+                    }
+                    ul {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: px(10);
+                        margin-top: px(10);
+                        li {
+                            display: flex;
+                            align-items: center;
+                            width: 100%; 
+                            padding: px(18) px(12) px(12);
+                            border: 1px solid #333;
+                            border-radius: px(10);
+                            @include font($s: px(24), $w: 500, $l: 1.2, $t: px(-1), $c: #000, $a: left);
+                            &.disabled {
+                                border-color: #ddd;
+                                font-weight: 400;
+                                color: #999;
+                            }
+                        }
+                    }
+                }
+                ~ .flex-box {
+                    margin-top: px(40);
+                }
+            }
+        }
+    }
+
+    // 시간 css
+    .ac-time {
+        position: relative;
+        padding: px(90) px(20) px(80);
+        background: rgb(2,62,255); 
+        background: linear-gradient(0deg, rgba(2,62,255,1) 0%, rgba(96,19,254,1) 100%);
+        &:before {
+            content: '';
+            @include pos($p: absolute, $t: 0, $l: 0, $z: 1);
+            width: 100%;
+            height: 100%;
+            background: url('../images/img_bg_effect.png') no-repeat center top/100% auto;
+            pointer-events: none;
+            animation: twinkle 1.6s infinite ease-in-out;
+        }
+        h2 {
+            @include font($s: px(34), $w: 500, $l: px(42), $t: px(-1), $c: #dfdaff, $a: center);
+            strong {
+                font-size: inherit;
+                font-weight: 700;
+                color: inherit;
+            }
+        }
+        .tit-main {
+            position: relative;
+            margin-top: px(136);
+            @include font($s: px(60), $w: 500, $l: 1.2, $t: px(-1), $c: #f5f5f5, $a: center);
+            p {
+                @include font($s: px(130), $w: 500, $l: 1, $t: px(-1), $c: #fff, $a: center);
+                strong {
+                    font-size: inherit;
+                    font-weight: 700;
+                    color: inherit;
+                    &:last-child {
+                        display: block;
+                        margin-top: px(-20);
+                        text-indent: px(-10);
+                        text-shadow: px(2) px(2) px(6) #0d3191;
+                        color: #fff600;
+                        span {
+                            font-style: italic;
+                        }
+                    }
+                }
+            }
+            .talk-box {
+                @include pos($p: absolute, $t: px(-94), $l: 50%, $z: 1);
+                width: px(200);
+                height: px(60);
+                margin-left: px(-100);
+                border-radius: px(40);
+                background-color: #fff;
+                @include font($s: px(30), $w: 700, $l: px(68), $t: px(-1), $c: #5c18fe, $a: center);
+                animation: talkbox 2s infinite ease-in-out;
+                &:before {
+                    content: '';
+                    @include pos($p: absolute, $b: px(-20), $l: 50%, $z: 1);
+                    margin-left: px(-4);
+                    border: px(8) solid transparent;
+                    border-top-width: px(14);
+                    border-top-color: #fff;
+                }
+            }
+        }
+        .tit-date {
+            margin-top: px(56);
+            @include font($f: "SUIT", $s: px(38), $w: 500, $l: 1.2, $t: px(-1), $c: rgba(255, 255, 255, .8), $a: center);
+        }
+        .time-count {
+            width: 100%;
+            height: px(100);
+            margin-top: px(65);
+            .flip-promo-time {
+                height: px(110);
+                li {
+                    height: 100%;
+                    &::before {
+                        margin: 0 px(6) 0 px(10);
+                        @include font($s: px(40), $w: 700, $l: px(110), $t: 0, $c: #fff, $a: center);
+                    }
+                    .flip-digit {
+                        width: px(70);
+                        height: 100%;
+                        margin: 0 px(4);
+                        > span::before,
+                        > span::after {
+                            height: 50%;
+                            padding: 0;
+                            border-radius: px(10) px(10) 0 0;
+                            border-bottom: 0;
+                            background-color: #fff;
+                            @include font($s: px(40), $w: 700, $l: px(116), $t: 0, $c: #0b0b0b, $a: center);
+                        }
+                        > span::after {
+                            border-radius: 0 0 px(10) px(10);
+                            border-top: 0;
+                            line-height: px(8);
+                        }
+                    }
+                }
+            }
+        }
+        .visual {
+            margin-top: px(100);
+            .start {
+                @include font($s: px(42), $w: 500, $l: 1.2, $t: px(-1), $c: #fff, $a: center);
+                strong {
+                    font-weight: 700;
+                    line-height: inherit;
+                    color: #fff600;
+                }
+            }
+            .img {
+                position: relative;
+                margin-top: px(34);
+                text-align: center;
+                > div {
+                    pointer-events: none;
+                    opacity: 0;
+                    transform: scale(.95);
+                    transition-duration: .4s;
+                }
+                .label01 {
+                    @include pos($p: absolute, $t: px(40), $l: px(60), $z: 1);
+                    width: px(176);
+                }
+                .label02 {
+                    @include pos($p: absolute, $t: px(45), $r: px(20), $z: 1);
+                    width: px(294);
+                }
+                img {
+                    transform: scale(.9);
+                    transition-duration: .6s;
+                }
+                &.action {
+                    > div {
+                        transform: scale(1);
+                        opacity: 1;
+                    }
+                    img {
+                        transform: scale(1);
+                    }
+                }
+            }
+            .cont {
+                display: flex;
+                justify-content: space-between;
+                gap: px(10);
+                padding: 0 px(20);
+                margin: px(20) 0 0;
+                li {
+                    flex: 1;
+                    .ico {
+                        display: block;
+                        width: px(120);
+                        height: px(120);
+                        margin: 0 auto;
+                        border-radius: 100%;
+                        background: url('../images/ico_car_cont01.png') no-repeat center/auto 100% #fff;
+                        overflow: hidden;
+                    }
+                    .txt {
+                        margin-top: px(30);
+                        @include font($s: px(30), $w: 500, $l: px(45), $t: px(-1), $c: #fff, $a: center);
+                        strong {
+                            // display: block;
+                            position: relative;
+                            font-weight: 700;
+                            line-height: inherit;
+                            color: #fff600;
+                            span {
+                                @include pos($p: absolute, $t: 0, $l: 0, $z: 1);
+                            }
+                            b {
+                                font-size: inherit;
+                                font-weight: inherit;
+                                color: transparent;
+                            }
+                        }
+                    }
+                    &.check .ico {
+                        background-image: url('../images/ico_car_cont02.png');
+                    }
+                    &.gift .ico {
+                        background-image: url('../images/ico_car_cont03.png');
+                    }
+                }
+            }
+        }
+        .car-img {
+            margin-top: px(34);
+        }
+    }
+
+    // 차량 css
+    .ac-info {
+        .ac-inner {
+            padding: 0;
+        }
+        .ac-bg-txt {
+            margin: 0;
+        }
+        .car-detail {
+            img {
+                width: 100%;
+            }
+        }
+        .car-thumbnails {
+            margin-top: px(8);
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                font-size: 0;
+                line-height: 0;
+                li {
+                    position: relative;
+                    flex: 33.3333%;
+                    pointer-events: auto;
+                    cursor: pointer;
+                    overflow: hidden;
+                    img {
+                        @include pos($p: absolute, $t: 50%, $l: 50%, $z: 1);
+                        width: 100%;
+                        height: auto;
+                        transform: translate(-50%, -50%);
+                    }
+                    &:before {
+                        content: '';
+                        display: block;
+                        padding-top: 59%;
+                    }
+                    &.active:after {
+                        content: '';
+                        @include pos($p: absolute, $l: 0, $t: 0, $z: 1);
+                        width: 100%;
+                        height: 100%;
+                        border: px(8) solid #013fff;
+                        pointer-events: none;
+                    }
+                }
+            }
+        }
+        .car-summary {
+            padding: px(20) px(30) px(44);
+            ul {
+                display: flex;
+                justify-content: space-between;
+                li {
+                    div {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: px(124);
+                        height: px(124);
+                        margin: 0 auto;
+                        padding: px(10) 0 0;
+                        border-radius: 100%;
+                        background-color: #d8e9f6;
+                        word-break: keep-all;
+                        @include font($s: px(28), $w: 700, $l: 1.2, $t: px(-1), $c: #001a5d, $a: center);
+                    }
+                    p {
+                        margin-top: px(34);
+                        @include font($f: "SUIT", $s: px(24), $w: 700, $l: 1.2, $t: px(-.5), $c: #001a5d, $a: center);
+                        span {
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // 가격 css
+    .ac-price {
+        .ac-price-info {
+            padding: px(40) px(25) 0;
+            dl {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                ~ dl {
+                    margin-top: px(24);
+                    dt {
+                        font-weight: 700;
+                    }
+                    dd {
+                        font-weight: 700;
+                        color: #285cf6;
+                    }
+
+                }
+                dt, dd {
+                    flex: 1;
+                    word-break: keep-all;
+                    @include font($s: px(30), $w: 500, $l: px(36), $t: px(-.6), $c: #001a5d, $a: left);
+                }
+                .price-noti {
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: px(22);
+                    height: px(22);
+                    margin: px(-2) 0 0 px(6);
+                    background: url('../images/ico_noti_btn.png') no-repeat center/auto 100%;
+                }
+                dd {
+                    word-break: break-word;
+                    text-align: right;
+                }
+            }
+        }
+        .ac-btn-wrap {
+            padding-top: px(64);
+            position: relative;
+            overflow: hidden;
+            .ani-hand {
+                @include pos($p: absolute, $b: 0, $r: px(90), $z: 1);
+                width: px(87);
+                height: px(167);
+                background: url('../images/img_hand.png') no-repeat center/auto px(167);
+                pointer-events: none;
+                transform: translateY(px(30));
+                transition-duration: .6s;
+                opacity: 0;
+                span {
+                    width: px(22);
+                    height: px(6);
+                    border-radius: px(6);
+                    background-color: #131c35;
+                    overflow: hidden;
+                    animation: twinkle 1s infinite ease-in-out;
+                    &:nth-child(1) {
+                        @include pos($p: absolute, $t: px(14), $l: calc(100% + px(6)), $z: 2);
+                        transform: rotate(-34deg);
+                    }
+                    &:nth-child(2) {
+                        @include pos($p: absolute, $t: px(34), $l: calc(100% + px(10)), $z: 2);
+                        width: px(24);
+                    }
+                    &:nth-child(3) {
+                        @include pos($p: absolute, $t: px(54), $l: calc(100% + px(6)), $z: 2);
+                        transform: rotate(34deg);
+                    }
+                }
+            }
+            .bid {
+                margin-top: 0;
+            }
+            &.action {
+                .ani-hand {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    // 입찰 css
+    .ac-bid {
+        padding: 0;
+        .ac-tab-btn {
+            display: flex;
+            align-items: center;
+            .tab-btn {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: px(150);
+                background-color: #0141ff;
+                cursor: pointer;
+                ~ .tab-btn {
+                    background-color: #fff;
+                    p {
+                        color: #001a5d; 
+                    }
+                }
+                p {
+                    @include font($s: px(40), $w: 700, $l: px(42), $t: px(-1), $c: #fff, $a: center);
+
+                }
+            }
+        }
+        .ac-tab-cont {
+            .tab-cont {
+                position: relative;
+                display: none;
+                padding: px(75) px(30);
+                background-color: #fff;
+                &:first-child {
+                    background-color: #0141ff;
+                }
+                &.show {
+                    display: block;
+                }
+            }
+        }
+        .date-info {
+            @include pos($p: absolute, $b: px(40), $r: px(50));
+            @include font($s: px(20), $w: 400, $l: 1.2, $t: px(-.2), $c: #fff, $a: right);
+            &:before {
+                content: '*';
+                @include pos($p: absolute, $l: px(-12), $t: px(4));
+            }
+        }
+        .data-elm {
+            border-radius: px(40);
+            background-color: #fff;
+            overflow: hidden;
+            .data-head {
+                padding: 0 px(36);
+                background-color: #001a5d;
+            }
+            .data-body {
+                padding: px(38) px(36);
+                background-color: #fff;
+                .data-tr {
+                    height: px(60);
+                    border-radius: px(20);
+                    background-color: rgba(126, 183, 224, .1);
+                    ~ .data-tr {
+                        margin-top: px(14);
+                    }
+                    &[class*='rank'] {
+                        background-color: #d8e9f6;
+                        .num {
+                            height: 100%;
+                            background: url('../images/ico_rank01.png') no-repeat center/auto px(38);
+                            font-size: px(20);
+                            line-height: px(70);
+                        }
+                    }
+                    &.rank2 .num {
+                        background-image: url('../images/ico_rank02.png');
+                    }
+                    &.rank3 .num {
+                        background-image: url('../images/ico_rank03.png');
+                    }
+                }
+            }
+            .data-tr {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .data-th {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: px(76);
+                @include font($s: px(34), $w: 700, $l: 1.2, $t: px(-.2), $c: #fff, $a: center);
+                &:first-child,
+                &:last-child {
+                    flex: 0 px(140);
+                }
+            }
+            .data-td {
+                &.num,
+                &.nick {
+                    flex: 0 px(140);
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    @include font($s: px(26), $w: 700, $l: 1.2, $t: px(-1), $c: #001a5d, $a: center);
+                }
+                &.nick {
+                    font-weight: 500;
+                }
+                &.bid {
+                    flex: auto;
+                    @include font($s: px(20), $w: 500, $l: 1.2, $t: px(-1), $c: #001a5d, $a: center);
+                    strong {
+                        font-size: px(26);
+                        font-weight: 800;
+                    }
+                }
+            }
+            &.half {
+                .data-th {
+                    flex: 1;
+                }
+                .data-body {
+                    padding: px(38) px(36);
+                    background-color: #d8e9f6;
+                    .data-tr {
+                        .data-td {
+                            flex: 1;
+                            &.date {
+                                @include font($s: px(26), $a: center);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // 튜닝 css
+    .ac-tuning {
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: px(30);
+            counter-reset: count;
+            li {
+                position: relative;
+                flex: 0 calc((100% - px(30)) / 2);
+                border-radius: px(12);
+                overflow: hidden;
+                &:after {
+                    @include pos($p: absolute, $l: 0, $t: 0, $z: 2);
+                    counter-increment: count;
+                    content: counter(count);
+                    pointer-events: none;
+                    width: px(38);
+                    height: px(38); 
+                    background-color: #0145ff;
+                    @include font($s: px(26), $w: 700, $l: px(38), $t: px(-1), $c: #fff, $a: center);
+                }
+            }  
+        }
+    }
+    // 옵션 css
+    .ac-option {
+        .ac-inner {
+            padding-bottom: px(80);
+        }
+        ul {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: px(38) px(20);
+            li {
+                flex: 0 calc((100% - px(80)) / 4);
+                .ico {
+                    display: block;
+                    width: px(124);
+                    height: px(124);
+                    margin: 0 auto;
+                    border-radius: 100%;
+                    background: url('../images/ico_car_opt_01.png') no-repeat center/auto 100%;
+                    &.ico2 { background-image: url('../images/ico_car_opt_02.png'); }
+                    &.ico3 { background-image: url('../images/ico_car_opt_03.png'); }
+                    &.ico4 { background-image: url('../images/ico_car_opt_04.png'); }
+                    &.ico6 { background-image: url('../images/ico_car_opt_06.png'); }
+                    &.ico7 { background-image: url('../images/ico_car_opt_07.png'); }
+                    &.ico8 { background-image: url('../images/ico_car_opt_08.png'); }
+                    &.ico9 { background-image: url('../images/ico_car_opt_09.png'); }
+                    &.ico10 { background-image: url('../images/ico_car_opt_10.png'); }
+                    &.ico11 { background-image: url('../images/ico_car_opt_11.png'); }
+                    &.ico12 { background-image: url('../images/ico_car_opt_12.png'); }
+                    &.ico13 { background-image: url('../images/ico_car_opt_13.png'); }
+                }
+                p {
+                    margin: px(20) px(-16) 0;
+                    word-break: keep-all;
+                    @include font($f: "SUIT", $s: px(24), $w: 500, $l: px(32), $t: px(-1), $c: #001a5d, $a: center);
+                }
+            }
+        }
+    }
+}
+
+.ac-promo-noti {
+    max-width: 720px;
+    margin: 0 auto;
+    .noti-list {
+        padding: px(94) px(60) px(100);
+        background-color: #1d263c;
+        strong {
+            display: block;
+            @include font($s: px(30), $w: 700, $l: 1.2, $t: px(-1), $c: #fff, $a: left);
+        }
+        ul {
+            margin-top: px(20);
+            li {
+                position: relative;
+                word-break: keep-all;
+                @include font($s: px(24), $w: 400, $l: 1.2, $t: px(-1), $c: #9fa7b0, $a: left);
+                ~ li {
+                    margin-top: px(16);
+                }
+                &:before {
+                    content: '';
+                    @include pos($p: absolute, $l: px(-10), $t: px(12));
+                    width: px(4);
+                    height: px(4);
+                    border-radius: 100%;
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+}
