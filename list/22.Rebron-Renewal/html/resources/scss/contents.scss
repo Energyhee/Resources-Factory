@@ -1,0 +1,248 @@
+@import 'mixin';
+
+.section-partition {
+    &+ section {
+        margin-top: px(64);
+    }
+}
+
+.main-search-wrap {
+    padding: px(16) px(20);   
+}
+
+.main-menu-wrap {
+    padding: px(4) px(10) px(20);
+    .inner {
+        @include flexBox($a: center, $j: center);
+    }
+    .btn {
+        flex: 1;
+        a {
+            display: block;
+            .ico {
+                display: block;
+                width: px(40);
+                height: px(40);
+                margin: 0 auto;
+                background: url($mainPath + 'ico_main_service_btn01.png') no-repeat center/100% auto;
+                &.sell {
+                    background-image: url($mainPath + 'ico_main_service_btn02.png');
+                }
+                &.rent {
+                    background-image: url($mainPath + 'ico_main_service_btn03.png');
+                }
+                &.refund {
+                    background-image: url($mainPath + 'ico_main_service_btn04.png');
+                }
+                &.warran {
+                    background-image: url($mainPath + 'ico_main_service_btn05.png');
+                }
+            }
+            p {
+                margin-top: px(4);
+                @include font($s: px(12), $w: 600, $l: px(16), $t: px(-1), $c: var(--color-point-solid), $a: center);
+            }
+        }
+    }
+}
+
+.main-recom-wrap {
+    .recom-tab-wrap {
+        .recom-btn {
+            padding: 0 px(20);
+            text-align: center;
+            .btn {
+                width: 100%;
+                height: px(48);
+                border: 2px dashed var(--color-line-gray07);
+                @include font($s: px(16), $w: 400, $l: 1.2, $t: px(-1), $c: var(--color-cont-font03), $a: center);
+                p {
+                    @include inherit;
+                }
+            }
+        }
+    }
+}
+
+.main-rent-wrap {
+    padding-top: px(64);
+    background: url($mainPath + 'bg_main_rent.png') no-repeat center top/cover var(--color-bg-gray05);
+    .tit-base-wrap p strong {
+        color: var(--color-point-white);
+    }
+    .product-base-wrap {
+        margin-top: px(32);
+    }
+}
+
+.banner-base-wrap {
+    margin: 0 !important;
+    padding: px(64) 0 0;
+    background-color: var(--color-bg-gray04);
+    .inner {
+        @include flexBox($a: start, $j: center);
+        height: px(240);
+        margin-top: px(32);
+        a {
+            flex: 1;
+            height: 100%;
+            padding: px(24) px(20);
+            &:first-child {
+                background: url($mainPath + 'bg_service_ban01.png') no-repeat right px(6) bottom px(10)/px(145) auto #8EA1AF;
+            }
+            &:last-child {
+                background: url($mainPath + 'bg_service_ban02.png') no-repeat right px(5) bottom px(5)/px(135) auto #0E356F;
+            }
+        }
+        .box {
+            strong {
+                display: block;
+                @include font($s: px(20), $w: 700, $l: px(24), $t: px(-1), $c: var(--color-point-white), $a: left);
+            }
+            p {
+                margin-top: px(5);
+                @include font($s: px(12), $w: 400, $l: 1.2, $t: px(-1), $c: var(--color-point-white), $a: left);
+            }
+        }
+    }
+}
+
+.main-finance-wrap {
+    .finance-cont {
+        margin: 0;
+        .finance-info-txt {
+            @include flexBox($a: center, $j: center); 
+            height: px(64);
+            p {
+                position: relative;
+                display: inline-block;
+                padding-left: px(28);
+                @include font($s: px(14), $w: 400, $l: px(16), $t: px(-1), $c: inherit, $a: center);
+                img {
+                    @include pos($p: absolute, $l: 0, $t: 50%);
+                    width: px(20);
+                    height: px(20);
+                    margin-top: px(-10);
+                }
+            }
+        }
+    }
+}
+
+.main-review-wrap {
+    background-color: var(--color-bg-gray04);
+    .review-tab-wrap {
+        padding: px(64) 0 0;
+        margin: 0;
+        .review-tab {
+            margin: 0;
+        }
+        .cont-base-more a {
+            background-color: var(--color-transparent);
+        }
+    }
+}
+
+.main-notice-wrap {
+    height: px(56);
+    border-top: px(8) solid var(--color-bg-gray02);
+    .swiper-container {
+        height: 100%;
+        overflow: hidden;
+        a {
+            @include flexBox($a: center, $g: px(8));
+            position: relative;
+            height: 100%;
+            padding: 0 px(44) 0 px(20);
+            background: url($comPath + 'ico_notion_detail.png') no-repeat right px(20) center/px(16);
+            div {
+                flex: 1;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                @include font($s: px(14), $w: 400, $l: 1.2, $t: px(-1), $c: var(--color-cont-font03), $a: left);
+                &.cate {
+                    flex: 0 auto;
+                    font-weight: 700;
+                    color: var(--color-point-line);
+                }
+                &.date {
+                    flex: 0 auto;
+                    color: var(--color-cont-font05);
+                }
+            }
+        }
+    }
+}
+
+.main-brand-wrap {
+    padding-bottom: px(64);
+    .inner {
+        margin: px(32) 0 0;
+        padding: 0 px(20);
+        ul {
+            @include flexBox($a: center, $g: px(10), $w: wrap);
+            position: relative;
+            height: px(130);
+            overflow: hidden;
+            transition-duration: var(--trans-duration);
+            transition-timing-function: var(--ease-in-out-quad);
+            font-size: 0;
+            line-height: 0;
+            li {
+                display: inline-block;
+                vertical-align: top;
+                width: calc((100% - px(20)) / 3);
+                border: 1px solid var(--color-line-gray07);
+                .logo {
+    
+                }
+                p {
+                    width: 100%;
+                    height: px(24);
+                    background-color: var(--color-bg-gray04);
+                    @include font($s: px(12), $w: 500, $l: px(24), $t: px(-1), $c: var(--color-point-solid), $a: center);
+                }
+            }
+            &::before {
+                content: '';
+                @include pos($p: absolute, $l: 0, $b: 0, $z: 1);
+                width: 100%;
+                height: px(50);
+                background: rgb(255,255,255);
+                background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+            }
+        }
+        .brand-more-btn {
+            width: 100%;
+            height: px(60);
+            margin: px(10) auto 0;
+            border: 1px solid var(--color-line-gray07);
+            p {
+                position: relative;
+                display: inline-block;
+                padding-right: px(20);
+                @include font($s: px(16), $w: 500, $l: 1.2, $t: px(-1), $c: var(--color-cont-font03), $a: center);
+                &::before {
+                    content: '';
+                    @include pos($p: absolute, $r: 0, $t:50%, $z: 1);
+                    width: px(16);
+                    height: px(16);
+                    margin: px(-8) 0 0;
+                    background: url($mainPath + 'ico_brand_btn.png') no-repeat center/100% auto;
+                }
+            }
+        }
+    }
+    &.active {
+        ul {
+            &:before {
+                opacity: 0;
+                pointer-events: none;
+            }
+        }
+        .brand-more-btn p::before {
+            transform: rotate(180deg);
+        }
+    }
+}

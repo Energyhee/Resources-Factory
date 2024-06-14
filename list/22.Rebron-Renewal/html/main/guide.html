@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+    <title>리본카</title>
+
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="../resources/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/common.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/plugin/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/contents.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/live.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/lp.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/vip.css">
+</head>
+<body>
+    <div id="wrap">
+        <!-- header start -->
+        <header id="header-elm-wrap">
+            <!-- # defult -->
+            <div class="inner">
+                <div class="center">
+                    <div class="img"><img src="../resources/images/common/ico_gnb_logo.png" alt="리본카"></div>
+                    <div class="search"><button type="button">원하는 차량을 검색하세요.</button></div>
+                </div>
+                <button type="button" class="btn-menu"><span class="ft-blind">전체메뉴</span></button>
+                <button type="button" class="btn-wish"><span class="ft-blind">관심차량</span></button>
+            </div>
+        </header>
+        <!-- header end -->
+
+        <!-- contents start -->
+        <section class="guide-box-wrap">
+            <div class="row">
+                <div class="col head">토글버튼 가이드</div>
+                <div class="col cont">
+                    <!-- # 토글 기본 버튼 -->
+                    <div class="toggle-button">
+                        <input id="example-toggle01" type="checkbox" class="checkbox el-blind">
+                        <label for="example-toggle01" class="label">
+                            <i class="bg-track">
+                                <span class="ico-switch"></span>
+                            </i>
+                        </label>
+                    </div>
+                    <p>토글 버튼</p>
+                </div>
+                <div class="col cont">
+                    <!-- # 토글 비활성 버튼 -->
+                    <div class="toggle-button">
+                        <input id="example-toggle02" type="checkbox" class="checkbox el-blind" disabled>
+                        <label for="example-toggle02" class="label">
+                            <i class="bg-track">
+                                <span class="ico-switch"></span>
+                            </i>
+                        </label>
+                    </div>
+                    <p>토글 버튼 비활성</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col head">체크박스(기본) 가이드</div>
+                <div class="col cont">
+                    <!-- # 체크박스 기본 -->
+                    <div class="check-button">
+                        <input id="example-check01" type="checkbox" class="checkbox el-blind">
+                        <label for="example-check01" class="label">
+                            <i class="bg-arr"></i>
+                        </label>
+                    </div>
+                    <p>체크박스(기본)</p>
+                </div>
+                <div class="col cont">
+                    <!-- # 체크박스 비활성 -->
+                    <div class="check-button">
+                        <input id="example-check02" type="checkbox" class="checkbox el-blind" disabled>
+                        <label for="example-check02" class="label">
+                            <i class="bg-arr"></i>
+                        </label>
+                    </div>
+                    <p>체크박스(기본) 비활성</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col head">체크박스(원형) 가이드</div>
+                <div class="col cont">
+                    <!-- # 체크박스(원형) 기본 -->
+                    <div class="check-button round">
+                        <input id="example-check03" type="checkbox" class="checkbox el-blind">
+                        <label for="example-check03" class="label">
+                            <i class="bg-arr"></i>
+                        </label>
+                    </div>
+                    <p>체크박스(원형)</p>
+                </div>
+                <div class="col cont">
+                    <!-- # 체크박스(원형) 비활성 -->
+                    <div class="check-button round">
+                        <input id="example-check04" type="checkbox" class="checkbox el-blind" disabled>
+                        <label for="example-check04" class="label">
+                            <i class="bg-arr"></i>
+                        </label>
+                    </div>
+                    <p>체크박스(원형) 비활성</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col head">체크박스(원형) 가이드</div>
+                <div class="col cont">
+                    <!-- # 라디오 -->
+                    <div class="radio-button">
+                        <input id="example-radio01" type="radio" name="radio-group" class="radio el-blind" checked>
+                        <label for="example-radio01" class="label">
+                            <i class="bg-circle"></i>
+                        </label>
+                    </div>
+                    <div class="radio-button">
+                        <input id="example-radio02" type="radio" name="radio-group" class="radio el-blind">
+                        <label for="example-radio02" class="label">
+                            <i class="bg-circle"></i>
+                        </label>
+                    </div>
+                    <p>라디오</p>
+                </div>
+                <div class="col cont">
+                    <!-- # 라디오 비활성 -->
+                    <div class="radio-button">
+                        <input id="example-radio03" type="radio" class="radio el-blind" disabled>
+                        <label for="example-radio03" class="label">
+                            <i class="bg-circle"></i>
+                        </label>
+                    </div>
+                    <p>라디오 비활성</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col head">페이지네이션 가이드</div>
+                <div class="col cont">
+                    <!-- # 페이지네이션 기본 -->
+                    <div class="pagenation-base">
+                        <button type="button" class="paging-act first"><span class="ft-blind">처음</span></button>
+                        <button type="button" class="paging-act prev"><span class="ft-blind">이전</span></button>
+                        <div class="list"> 
+                            <button type="button" class="paging-btn select">1</button>
+                            <button type="button" class="paging-btn">2</button>
+                            <button type="button" class="paging-btn">3</button>
+                            <button type="button" class="paging-btn">4</button>
+                            <button type="button" class="paging-btn">5</button>
+                        </div>
+                        <button type="button" class="paging-act next"><span class="ft-blind">다음</span></button>
+                        <button type="button" class="paging-act last"><span class="ft-blind">마지막</span></button>
+                    </div>
+                    <p>페이지네이션</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col head">SNACK 가이드</div>
+                <div class="col cont">
+                    <div class="layer-snack-wrap show" style="position: static; transform: none; width: 100%;">
+                        <p>이메일 주소 복사가 완료 되었습니다.이메일 주소 복사가 완료 되었습니다.이메일 주소 복사가 완료 되었습니다.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col head">TOOLTIP 가이드</div>
+                <div class="col cont">
+                    <div class="layer-tooltip-wrap show" id="tooltip-target-name" style="position: relative; left: auto; top: auto; transform: none; width: 100%;">
+                        <button type="button" class="layer-tooltip-close"><span class="ft-blind">닫기</span></button>
+                        <div class="tip-box">
+                            <p>회원님의 맞춤 정보를 바탕으로<br>리본카가 추천해 드려요</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col head">Layer Popup 가이드</div>
+                <div class="col cont">
+                    <div class="layer-base-wrap show" id="layer-target-name" style="display: block; position: relative; left: auto; top: auto; transform: none; width: 100%; padding: 150px 0;">
+                        <div class="layer-box">
+                            <button type="button" class="layer-close"><span class="ft-blind">닫기</span></button>
+                            <div class="layer-cont">
+                                <strong>사업 제휴 문의</strong>
+                                <p>biz@autoplus.co.kr</p>
+                            </div>
+                            <div class="layer-btn">
+                                <button type="button" class="base-btn gray" onclick="copyUrlShare('biz@autoplus.co.kr', this);">주소 복사하기</button>
+                                <button type="button" class="base-btn blue" onclick="location.href='mailto:recruit@autoplus.co.kr'">이메일 열기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col head">Layer Popup 가이드</div>
+                <div class="col cont">
+                    <div class="layer-base-wrap bottom show" id="layer-target-name" style="display: block; position: relative; left: auto; top: auto; transform: none; width: 100%; padding: 200px 0;">
+                        <div class="layer-box" style="opacity: 1; transform: translate(-50%, 0px);">
+                            <div class="layer-cont">
+                                <img src="../resources/images/example/img_layer_bot_ex.png" alt="">
+                            </div>
+                            <div class="layer-btn">
+                                <a class="base-btn text layer-today" href="javascript: setCookie('event-layer-pop', 'done', 1);">오늘 하루 보지 않기</a>
+                                <a class="base-btn text layer-close" href="javascript: void(0);">닫기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- contents end -->
+
+        <!-- footer start -->
+        <footer id="footer-elm-wrap">
+            <div class="inner">
+                <div class="cs">
+                    <p>리본카 고객센터</p>
+                    <div class="cs-info">
+                        <div class="call"><a href="tel:1544-2277">1544-2277</a></div>
+                        <div class="info">
+                            <p>평일 09:00~18:00<br>토,일,공휴일 휴무</p>
+                        </div>
+                    </div>
+                    <ul>
+                        <li><a href="#"><i class="ico noti"></i>공지사항</a></li>
+                        <li><a href="#"><i class="ico que"></i>자주 묻는 질문</a></li>
+                        <li><a href="#"><i class="ico cus"></i>고객센터</a></li>
+                    </ul>
+                </div>
+                <div class="mail">
+                    <ul>
+                        <li>
+                            사업제휴 문의
+                            <a href="javascript: layerPopOpen('#layer-biz-inquiry');">biz@autoplus.co.kr</a>
+                        </li>
+                        <li>
+                            마케팅 문의
+                            <a href="javascript: layerPopOpen('#layer-mkt-inquiry');">mkt@autoplus.co.kr</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sns">
+                    <ul>
+                        <li><a href="#"><i class="ico blog"></i></a></li>
+                        <li><a href="#"><i class="ico facebook"></i></a></li>
+                        <li><a href="#"><i class="ico youtube"></i></a></li>
+                        <li><a href="#"><i class="ico instagram"></i></a></li>
+                        <li><a href="#"><i class="ico kakao"></i></a></li>
+                    </ul>
+                </div>
+                <div class="company">
+                    <ul>
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#">윤리경영</a></li>
+                    </ul>
+                    <p class="copyright">Copyrightⓒ2024 By AutoPlus.Co.Ltd. All right reserved.</p>
+                    <div class="toggle">
+                        <div class="toggle-btn">
+                            <button type="button" class="btn">사업자정보</button>
+                        </div>
+                        <div class="toggle-cont" style="display: none;">
+                            <strong>오토플러스(주)</strong>
+                            <p>대표자 : 송재성</p>
+                            <p>사업자등록번호 : 105-86-06429</p>
+                            <p>통신판매업 신고 : 2020-서울영등포-1338</p>
+                            <p>서울특별시 영등포구 선유동2로 57 이레빌딩 신관 11층</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="down">
+                    <p>APP 다운로드</p>
+                    <div class="app-down-link">
+                        <a href="#"><i class="ico aos"></i></a>
+                        <a href="#"><i class="ico ios"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer end -->
+
+        <!-- # bottom fix menu start -->
+        <div id="bottom-menu-wrap">
+            <ul>
+                <li class="on">
+                    <a href="#">
+                        <i class="ico home "></i>
+                        <p>Home</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="ico all"></i>
+                        <p>전체 차량</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="ico center"></i>
+                        <p>검색하기</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="ico sell"></i>
+                        <p>내차 팔기</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="ico recent"></i>
+                        <p>최근 본 차량</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- // # bottom fix menu end -->
+
+        <!-- # side all menu start -->
+        <div id="aside-menu-wrap">
+            <div class="flex-col-wrap">
+                <div class="top-cont">
+                    <div class="user-menu">
+                        <div class="top">
+                            <div class="txt-btn btn-login"><p>로그인해 주세요</p></div>
+                            <div class="gnb-btn-group">
+                                <!-- # 앱 설정 버튼 (앱 일때만 노출) -->
+                                <button type="button" class="gnb-btn setting" title="설정"></button>
+                                <!-- // -->
+                                <button type="button" class="gnb-btn close" title="닫기"></button>
+                            </div>
+                        </div>
+                        <ul class="ico-link">
+                            <li><a href="#"><i class="ico buy"></i><p>내차 사기</p></a></li>
+                            <li><a href="#"><i class="ico sell"></i><p>내차 팔기</p></a></li>
+                            <li><a href="#"><i class="ico rent"></i><p>렌트 / 구독</p></a></li>
+                        </ul>
+                        <ul class="my-link">
+                            <li><a href="#"><i class="ico recent"></i>마이페이지</a></li>
+                            <li><a href="#"><i class="ico cs"></i>상담하기</a></li>
+                            <li><a href="#"><i class="ico alram"></i>입고알림</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="flex-box">
+                    <!-- 대분류 -->
+                    <div class="left-cont">
+                        <div class="left-scroll">
+                            <ul>
+                                <li class="bk active"><a href="javascript: void(0);">내차사기</a></li>
+                                <li class="bk"><a href="javascript: void(0);">내차팔기</a></li>
+                                <li class="bk"><a href="javascript: void(0);">렌트/구독</a></li>
+                                <li><a href="javascript: void(0);">금융사 전용관</a></li>
+                                <li><a href="javascript: void(0);">리본카 라이브</a></li>
+                                <li><a href="javascript: void(0);">인증/특허</a></li>
+                                <li><a href="javascript: void(0);">이벤트</a></li>
+                                <li><a href="javascript: void(0);">커뮤니티</a></li>
+                                <li><a href="javascript: void(0);">고객센터</a></li>
+                                <li><a href="javascript: void(0);">리본카 시스템</a></li>
+                                <li><a href="javascript: void(0);">회사소개</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 전체메뉴 -->
+                    <div class="right-cont">
+                        <div class="right-scroll">
+                            <div class="menu-box">
+                                <h2>내차사기</h2>
+                                <ul class="depth1">
+                                    <li><a href="#">전체 차량 보기</a></li>
+                                    <li><a href="#">구매후기</a></li>
+                                </ul>
+                            </div>
+                            <div class="menu-box">
+                                <h2>내차팔기</h2>
+                                <ul class="depth1">
+                                    <li><a href="#">내차 팔기</a></li>
+                                    <li><a href="#">판매후기</a></li>
+                                </ul>
+                            </div>
+                            <div class="menu-box">
+                                <h2>렌트/구독</h2>
+                                <ul class="depth1">
+                                    <li><a href="#">렌트/구독 차량 보기</a></li>
+                                    <li><a href="#">렌트/구독 서비스 안내</a></li>
+                                    <li><a href="#">렌트/구독 이용후기</a></li>
+                                </ul>
+                            </div>
+                            <div class="menu-box">
+                                <h2>금융사 전용관</h2>
+                                <ul class="depth1">
+                                    <li><a href="#">금융사 전용관</a></li>
+                                </ul>
+                            </div>
+                            <div class="menu-box">
+                                <h2>리본카 라이브</h2>
+                                <ul class="depth1">
+                                    <li><a href="#">리본카 라이브</a></li>
+                                    <li><a href="#">라이브 상담 신청</a></li>
+                                </ul>
+                            </div>
+                            <div class="menu-box">
+                                <h2>인증/특허</h2>
+                                <ul class="depth1">
+                                    <li><a href="#">인증/특허</a></li>
+                                </ul>
+                            </div>
+                            <div class="menu-box">
+                                <h2>이벤트</h2>
+                                <ul class="depth1">
+                                    <li><a href="#">진행중 이벤트</a></li>
+                                    <li><a href="#">종료된 이벤트</a></li>
+                                    <li><a href="#">당첨자 발표</a></li>
+                                </ul>
+                            </div>
+                            <div class="menu-box">
+                                <h2>커뮤니티</h2>
+                                <ul class="depth1">
+                                    <li><a href="#">리본카TV</a></li>
+                                </ul>
+                            </div>
+                            <div class="menu-box">
+                                <h2>고객센터</h2>
+                                <ul class="depth1">
+                                    <li><a href="#">온라인 문의</a></li>
+                                    <li><a href="#">공지사항</a></li>
+                                    <li><a href="#">카톡상담</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                    <li><a href="#">금융상품 담당자 조회</a></li>
+                                </ul>
+                            </div>
+                            <div class="menu-box">
+                                <h2>리본카 시스템</h2>
+                                <ul class="depth1">
+                                    <li><a href="#">리본카 시스템</a></li>
+                                </ul>
+                            </div>
+                            <div class="menu-box">
+                                <h2>회사소개</h2>
+                                <ul class="depth1">
+                                    <li><a href="#">오토플러스 소개</a></li>
+                                    <li><a href="#">PR 센터</a></li>
+                                    <li><a href="#">윤리경영</a></li>
+                                    <li><a href="#">채용공고</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // # side all menu end -->
+    </div>
+
+    <!-- # 레이어 팝업 base type (사업제휴) -->
+    <div class="layer-base-wrap" id="layer-biz-inquiry">
+        <div class="layer-box">
+            <button type="button" class="layer-close"><span class="ft-blind">닫기</span></button>
+            <div class="layer-cont">
+                <strong>사업 제휴 문의</strong>
+                <p>biz@autoplus.co.kr</p>
+            </div>
+            <div class="layer-btn">
+                <a class="base-btn gray" href="javascript: copyUrlShare('biz@autoplus.co.kr');">주소 복사하기</a>
+                <a class="base-btn blue" href="mailto:recruit@autoplus.co.kr">이메일 열기</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- # 레이어 팝업 base type (마케팅제휴) -->
+    <div class="layer-base-wrap" id="layer-mkt-inquiry">
+        <div class="layer-box">
+            <button type="button" class="layer-close"><span class="ft-blind">닫기</span></button>
+            <div class="layer-cont">
+                <strong>마케팅 문의</strong>
+                <p>mkt@autoplus.co.kr</p>
+            </div>
+            <div class="layer-btn">
+                <a class="base-btn gray" href="javascript: copyUrlShare('mkt@autoplus.co.kr');">주소 복사하기</a>
+                <a class="base-btn blue" href="mailto:recruit@autoplus.co.kr">이메일 열기</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- # 레이어 팝업 bottom type (이벤트) -->
+    <div class="layer-base-wrap bottom" id="layer-event-pop">
+        <div class="layer-box">
+            <div class="layer-cont">
+                <img src="../resources/images/example/img_layer_bot_ex.png" alt="">
+            </div>
+            <div class="layer-btn">
+                <a class="base-btn text layer-today" href="javascript: setCookie('event-layer-pop', 'done', 1);">오늘 하루 보지 않기</a>
+                <a class="base-btn text layer-close" href="javascript: void(0);">닫기</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- # 레이어 팝업 snack type-->
+    <div class="layer-snack-wrap">
+        <p>이메일 주소 복사가 완료 되었습니다.이메일 주소 복사가 완료 되었습니다.이메일 주소 복사가 완료 되었습니다.</p>
+    </div>
+
+    <!-- # 퀵메뉴 최상단 이동 -->
+    <button class="quick-top-btn"><span class="ft-blind">최상단 이동</span></button>
+
+    <!-- # 퀵메뉴 상담 메뉴 -->
+    <div class="quick-base-wrap" id="quick-cs">
+        <button type="button" class="quick-btn"><span class="ft-blind">상담퀵메뉴</span></button>
+        <ul class="quick-list">
+            <li><p>챗봇상담</p><a href="#"><img src="../resources/images/common/ico_quick_cs_chat.png"></a></li>
+            <li><p>카톡상담</p><a href="#"><img src="../resources/images/common/ico_quick_cs_talk.png"></a></li>
+            <li><p>1:1문의</p><a href="#"><img src="../resources/images/common/ico_quick_cs_qna.png"></a></li>
+            <li><p>라이브상담</p><a href="#"><img src="../resources/images/common/ico_quick_cs_live.png"></a></li>
+        </ul>
+    </div>
+
+    <!-- # 퀵메뉴 유저 메뉴 -->
+    <div class="quick-base-wrap" id="quick-user">
+        <button type="button" class="quick-btn"><span class="ft-blind">유저퀵메뉴</span></button>
+        <ul class="quick-list">
+            <li>
+                <!-- # 로그인 전 -->
+                <p>로그인</p><a href="#"><img src="../resources/images/common/ico_quick_user_login.png"></a>
+                <!-- # 로그인 후 -->
+                <!-- <p>찜한차량</p><a href="#"><img src="../resources/images/common/ico_quick_user_wish.png"></a> -->
+            </li>
+            <li><p>열람내역</p><a href="#"><img src="../resources/images/common/ico_quick_user_his.png"></a></li>
+            <li class="on"><p>차량비교</p><a href="#"><img src="../resources/images/common/ico_quick_user_comp.png"></a></li>
+            <li><p>이벤트</p><a href="#"><img src="../resources/images/common/ico_quick_user_event.png"></a></li>
+        </ul>
+    </div>
+    
+    <!-- js -->
+    <script type="text/javascript" src="../resources/js/jquery-3.7.1.js"></script>
+    <script type="text/javascript" src="../resources/js/common.js"></script>
+    <script type="text/javascript" src="../resources/js/plugin/swiper.min.js"></script>
+</body>
+</html>

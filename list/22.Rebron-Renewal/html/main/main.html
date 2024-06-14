@@ -1,0 +1,1929 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+    <title>리본카</title>
+
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="../resources/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/common.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/plugin/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/contents.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/live.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/lp.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/vip.css">
+</head>
+<body>
+    <div id="wrap">
+        <!-- header start -->
+        <header id="header-elm-wrap">
+            <!-- # defult -->
+            <div class="inner">
+                <div class="center">
+                    <div class="img"><img src="../resources/images/common/ico_gnb_logo.png" alt="리본카"></div>
+                    <div class="search"><button type="button">원하는 차량을 검색하세요.</button></div>
+                </div>
+                <button type="button" class="btn-menu"><span class="ft-blind">전체메뉴</span></button>
+                <button type="button" class="btn-wish"><span class="ft-blind">관심차량</span></button>
+            </div>
+        </header>
+        <!-- header end -->
+
+        <!-- contents start -->
+        <div class="page-cont">
+            <!-- # 메인비주얼 -->
+            <section class="swiper-base-banner visual" id="main-event-banner">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="../resources/images/example/img_main_banner_ex.png"></div>
+                        <div class="swiper-slide"><img src="../resources/images/example/img_main_banner_ex.png"></div>
+                        <div class="swiper-slide"><img src="../resources/images/example/img_main_banner_ex.png"></div>
+                    </div>
+                </div>
+                <div class="swiper-control">
+                    <div class="swiper-pagination"></div>
+                    <button type="button" class="swiper-btn"></button>
+                </div>
+            </section>
+            <!-- # 메인검색 -->
+            <section class="main-search-wrap">
+                <div class="inner">
+                    <div class="inp-box">
+                        <input type="text" class="inp" placeholder="차종이나 모델명으로 검색할 수 있어요." autocomplete="off">
+                        <button type="button" class="search"><span class="ft-blind">검색</span></button>
+                    </div>
+                </div>
+            </section>
+            <!-- # 메인서비스 -->
+            <section class="main-menu-wrap">
+                <div class="inner">
+                    <div class="btn">
+                        <a href="#">
+                            <i class="ico buy"></i>
+                            <p>내차사기</p>
+                        </a>
+                    </div>
+                    <div class="btn">
+                        <a href="#">
+                            <i class="ico sell"></i>
+                            <p>내차팔기</p>
+                        </a>
+                    </div>
+                    <div class="btn">
+                        <a href="#">
+                            <i class="ico rent"></i>
+                            <p>렌트/구독</p>
+                        </a>
+                    </div>
+                    <div class="btn">
+                        <a href="#">
+                            <i class="ico refund"></i>
+                            <p>8일안심환불</p>
+                        </a>
+                    </div>
+                    <div class="btn">
+                        <a href="#">
+                            <i class="ico warran"></i>
+                            <p>연장보증</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!-- # 추천차량 -->
+            <section class="main-recom-wrap">
+                <div class="tit-base-wrap">
+                    <p>
+                        <strong>홍길동</strong> 님께 꼭 맞는 차를<br>추천해 드려요
+                        <button type="button" class="info-btn" onclick="layerTooltipPop('#user-recom-tooltip');"><span class="ft-blind">정보보기</span></button>
+                        <div class="layer-tooltip-wrap" id="user-recom-tooltip">
+                            <button type="button" class="layer-tooltip-close"><span class="ft-blind">닫기</span></button>
+                            <div class="tip-box">
+                                <p>회원님의 맞춤 정보를 바탕으로<br>리본카가 추천해 드려요</p>
+                            </div>
+                        </div>
+                    </p>
+                </div>
+                <div class="inner">
+                    <div class="recom-tab-wrap">
+                        <div class="recom-btn">
+                            <button type="button" class="btn"><p>+ 나만의 추천</p></button>
+                            <!-- <button type="button" class="btn"><p>+ 로그인 후 추천을 받아요</p></button> -->
+                        </div>
+                        <div class="recom-tab box">
+                            <button type="button" class="btn active"><p>최근 본 차량</p></button>
+                            <button type="button" class="btn"><p>나만의 추천</p></button>
+                            <button type="button" class="btn"><p>찜한 차량<!-- 리본카 추천 --></p></button>
+                        </div>
+                        <div class="recom-cont">
+                            <!-- # 최근 본 차량 -->
+                            <div class="cont show" style="display: block;">
+                                <div class="product-base-wrap swiper" id="main-recom-swiper">
+                                    <div class="swiper-container">
+                                        <ul class="swiper-wrapper">
+                                            <li class="swiper-slide">
+                                                <div class="car-thumb">
+                                                    <div class="car-state">
+                                                        <span class="soldout">판매완료</span>
+                                                    </div>
+                                                    <div class="car-logo">
+                                                        <i class="reborn"></i>
+                                                    </div>
+                                                    <div class="car-btn">
+                                                        <button type="button" class="favorite"><span class="ft-blind">찜하기</span></button>
+                                                    </div>
+                                                    <a href="javascript: void(0);">
+                                                        <img src="../resources/images/example/img_car_dummy.png" class="swiper-lazy swiper-lazy-loaded">
+                                                    </a>
+                                                </div>
+                                                <div class="car-info">
+                                                    <div class="car-in">
+                                                        <div class="car-sum">
+                                                            <div class="row">
+                                                                <span>2020년 01월</span>
+                                                                <span>115,312km</span>
+                                                            </div>
+                                                        </div>
+                                                        <a href="javascript:;">
+                                                            <p class="car-model">
+                                                                더 뉴그랜저IG
+                                                            </p>
+                                                            <p class="car-trim">
+                                                                가솔린 2.5 프리미엄 초이스
+                                                            </p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="car-pay">
+                                                        <div class="price">
+                                                            <p><strong>2,090</strong>만원</p>
+                                                            <del class="before"><strong>2,090</strong>만원</del>
+                                                        </div>
+                                                        <dl class="txt">
+                                                            <dt>월 할부금액</dt>
+                                                            <dd><span>41만원</span> / 48개월</dd>
+                                                        </dl>
+                                                    </div>
+                                                    <div class="car-badge">
+                                                        <span>신차급</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="swiper-slide">
+                                                <div class="car-thumb">
+                                                    <div class="car-state">
+                                                        <span class="contract">계약중</span>
+                                                    </div>
+                                                    <div class="car-logo">
+                                                        <i class="reborn"></i>
+                                                    </div>
+                                                    <div class="car-btn">
+                                                        <button type="button" class="favorite"><span class="ft-blind">찜하기</span></button>
+                                                    </div>
+                                                    <a href="javascript: void(0);">
+                                                        <img src="../resources/images/example/img_car_dummy.png" class="swiper-lazy swiper-lazy-loaded">
+                                                    </a>
+                                                </div>
+                                                <div class="car-info">
+                                                    <div class="car-in">
+                                                        <div class="car-sum">
+                                                            <div class="row">
+                                                                <span>2020년 01월</span>
+                                                                <span>115,312km</span>
+                                                            </div>
+                                                        </div>
+                                                        <a href="javascript:;">
+                                                            <p class="car-model">
+                                                                더 뉴그랜저IG
+                                                            </p>
+                                                            <p class="car-trim">
+                                                                가솔린 2.5 프리미엄 초이스
+                                                            </p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="car-pay">
+                                                        <div class="price">
+                                                            <p><strong>2,090</strong>만원</p>
+                                                        </div>
+                                                        <dl class="txt">
+                                                            <dt>월 할부금액</dt>
+                                                            <dd><span>41만원</span> / 48개월</dd>
+                                                        </dl>
+                                                    </div>
+                                                    <div class="car-badge">
+                                                        <span>신차급</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="swiper-slide">
+                                                <div class="car-thumb">
+                                                    <div class="car-logo">
+                                                        <i class="reborn"></i>
+                                                    </div>
+                                                    <div class="car-btn">
+                                                        <button type="button" class="favorite"><span class="ft-blind">찜하기</span></button>
+                                                    </div>
+                                                    <a href="javascript: void(0);">
+                                                        <img src="../resources/images/example/img_car_dummy.png" class="swiper-lazy swiper-lazy-loaded">
+                                                    </a>
+                                                </div>
+                                                <div class="car-info">
+                                                    <div class="car-in">
+                                                        <div class="car-sum">
+                                                            <div class="row">
+                                                                <span>2020년 01월</span>
+                                                                <span>115,312km</span>
+                                                            </div>
+                                                        </div>
+                                                        <a href="javascript:;">
+                                                            <p class="car-model">
+                                                                더 뉴그랜저IG
+                                                            </p>
+                                                            <p class="car-trim">
+                                                                가솔린 2.5 프리미엄 초이스
+                                                            </p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="car-pay">
+                                                        <div class="price">
+                                                            <p><strong>2,090</strong>만원</p>
+                                                        </div>
+                                                        <dl class="txt">
+                                                            <dt>월 할부금액</dt>
+                                                            <dd><span>41만원</span> / 48개월</dd>
+                                                        </dl>
+                                                    </div>
+                                                    <div class="car-badge">
+                                                        <span>신차급</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="swiper-slide">
+                                                <div class="car-thumb">
+                                                    <div class="car-logo">
+                                                        <i class="reborn"></i>
+                                                    </div>
+                                                    <div class="car-btn">
+                                                        <button type="button" class="favorite"><span class="ft-blind">찜하기</span></button>
+                                                    </div>
+                                                    <a href="javascript: void(0);">
+                                                        <img src="../resources/images/example/img_car_dummy.png" class="swiper-lazy swiper-lazy-loaded">
+                                                    </a>
+                                                </div>
+                                                <div class="car-info">
+                                                    <div class="car-in">
+                                                        <div class="car-sum">
+                                                            <div class="row">
+                                                                <span>2020년 01월</span>
+                                                                <span>115,312km</span>
+                                                            </div>
+                                                        </div>
+                                                        <a href="javascript:;">
+                                                            <p class="car-model">
+                                                                더 뉴그랜저IG
+                                                            </p>
+                                                            <p class="car-trim">
+                                                                가솔린 2.5 프리미엄 초이스
+                                                            </p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="car-pay">
+                                                        <div class="price">
+                                                            <p><strong>2,090</strong>만원</p>
+                                                        </div>
+                                                        <dl class="txt">
+                                                            <dt>월 할부금액</dt>
+                                                            <dd><span>41만원</span> / 48개월</dd>
+                                                        </dl>
+                                                    </div>
+                                                    <div class="car-badge">
+                                                        <span>신차급</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="swiper-control">
+                                        <div class="swiper-pagination"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- # 나만의 추천 -->
+                            <div class="cont"><p class="dummy">나만의 추천 목록</p></div>
+                            <!-- # 찜한 차량 -->
+                            <div class="cont"><p class="dummy">찜한 차량 목록</p></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- # SPACE -->
+            <hr class="section-partition">
+
+            <!-- # 기획전 -->
+            <section class="main-theme-wrap">
+                <div class="tit-base-wrap">
+                    <p><strong>리본카가 엄선한<br>기획전이에요</strong></p>
+                </div>
+                <div class="inner">
+                    <div class="theme-tab-wrap">
+                        <div class="theme-tab">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide btn active"><p>신차급 리본카</p></div>
+                                    <div class="swiper-slide btn"><p>최대 550만원 할인</p></div>
+                                    <div class="swiper-slide btn"><p>친환경 하이브리드</p></div>
+                                    <div class="swiper-slide btn"><p>친환경 test</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="theme-cont">
+                            <!-- # 기획전 01 -->
+                            <div class="cont show" style="display: block;">
+                                <div class="product-base-wrap swiper" id="main-theme-swiper">
+                                    <div class="swiper-container">
+                                        <ul class="swiper-wrapper">
+                                            <li class="swiper-slide">
+                                                <div class="car-thumb">
+                                                    <div class="car-state">
+                                                        <span class="soldout">판매완료</span>
+                                                    </div>
+                                                    <div class="car-logo">
+                                                        <i class="reborn"></i>
+                                                    </div>
+                                                    <div class="car-btn">
+                                                        <button type="button" class="favorite"><span class="ft-blind">찜하기</span></button>
+                                                    </div>
+                                                    <a href="javascript: void(0);">
+                                                        <img src="../resources/images/example/img_car_dummy.png" class="swiper-lazy swiper-lazy-loaded">
+                                                    </a>
+                                                </div>
+                                                <div class="car-info">
+                                                    <div class="car-in">
+                                                        <div class="car-sum">
+                                                            <div class="row">
+                                                                <span>2020년 01월</span>
+                                                                <span>115,312km</span>
+                                                            </div>
+                                                        </div>
+                                                        <a href="javascript:;">
+                                                            <p class="car-model">
+                                                                더 뉴그랜저IG
+                                                            </p>
+                                                            <p class="car-trim">
+                                                                가솔린 2.5 프리미엄 초이스
+                                                            </p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="car-pay">
+                                                        <div class="price">
+                                                            <p><strong>2,090</strong>만원</p>
+                                                            <del class="before"><strong>2,090</strong>만원</del>
+                                                        </div>
+                                                        <dl class="txt">
+                                                            <dt>월 할부금액</dt>
+                                                            <dd><span>41만원</span> / 48개월</dd>
+                                                        </dl>
+                                                    </div>
+                                                    <div class="car-badge">
+                                                        <span>신차급</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="swiper-slide">
+                                                <div class="car-thumb">
+                                                    <div class="car-state">
+                                                        <span class="contract">계약중</span>
+                                                    </div>
+                                                    <div class="car-logo">
+                                                        <i class="reborn"></i>
+                                                    </div>
+                                                    <div class="car-btn">
+                                                        <button type="button" class="favorite"><span class="ft-blind">찜하기</span></button>
+                                                    </div>
+                                                    <a href="javascript: void(0);">
+                                                        <img src="../resources/images/example/img_car_dummy.png" class="swiper-lazy swiper-lazy-loaded">
+                                                    </a>
+                                                </div>
+                                                <div class="car-info">
+                                                    <div class="car-in">
+                                                        <div class="car-sum">
+                                                            <div class="row">
+                                                                <span>2020년 01월</span>
+                                                                <span>115,312km</span>
+                                                            </div>
+                                                        </div>
+                                                        <a href="javascript:;">
+                                                            <p class="car-model">
+                                                                더 뉴그랜저IG
+                                                            </p>
+                                                            <p class="car-trim">
+                                                                가솔린 2.5 프리미엄 초이스
+                                                            </p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="car-pay">
+                                                        <div class="price">
+                                                            <p><strong>2,090</strong>만원</p>
+                                                        </div>
+                                                        <dl class="txt">
+                                                            <dt>월 할부금액</dt>
+                                                            <dd><span>41만원</span> / 48개월</dd>
+                                                        </dl>
+                                                    </div>
+                                                    <div class="car-badge">
+                                                        <span>신차급</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="swiper-slide">
+                                                <div class="car-thumb">
+                                                    <div class="car-logo">
+                                                        <i class="reborn"></i>
+                                                    </div>
+                                                    <div class="car-btn">
+                                                        <button type="button" class="favorite"><span class="ft-blind">찜하기</span></button>
+                                                    </div>
+                                                    <a href="javascript: void(0);">
+                                                        <img src="../resources/images/example/img_car_dummy.png" class="swiper-lazy swiper-lazy-loaded">
+                                                    </a>
+                                                </div>
+                                                <div class="car-info">
+                                                    <div class="car-in">
+                                                        <div class="car-sum">
+                                                            <div class="row">
+                                                                <span>2020년 01월</span>
+                                                                <span>115,312km</span>
+                                                            </div>
+                                                        </div>
+                                                        <a href="javascript:;">
+                                                            <p class="car-model">
+                                                                더 뉴그랜저IG
+                                                            </p>
+                                                            <p class="car-trim">
+                                                                가솔린 2.5 프리미엄 초이스
+                                                            </p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="car-pay">
+                                                        <div class="price">
+                                                            <p><strong>2,090</strong>만원</p>
+                                                            <del class="before"><strong>2,090</strong>만원</del>
+                                                        </div>
+                                                        <dl class="txt">
+                                                            <dt>월 할부금액</dt>
+                                                            <dd><span>41만원</span> / 48개월</dd>
+                                                        </dl>
+                                                    </div>
+                                                    <div class="car-badge">
+                                                        <span>신차급</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="swiper-slide">
+                                                <div class="car-thumb">
+                                                    <div class="car-logo">
+                                                        <i class="reborn"></i>
+                                                    </div>
+                                                    <div class="car-btn">
+                                                        <button type="button" class="favorite"><span class="ft-blind">찜하기</span></button>
+                                                    </div>
+                                                    <a href="javascript: void(0);">
+                                                        <img src="../resources/images/example/img_car_dummy.png" class="swiper-lazy swiper-lazy-loaded">
+                                                    </a>
+                                                </div>
+                                                <div class="car-info">
+                                                    <div class="car-in">
+                                                        <div class="car-sum">
+                                                            <div class="row">
+                                                                <span>2020년 01월</span>
+                                                                <span>115,312km</span>
+                                                            </div>
+                                                        </div>
+                                                        <a href="javascript:;">
+                                                            <p class="car-model">
+                                                                더 뉴그랜저IG
+                                                            </p>
+                                                            <p class="car-trim">
+                                                                가솔린 2.5 프리미엄 초이스
+                                                            </p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="car-pay">
+                                                        <div class="price">
+                                                            <p><strong>2,090</strong>만원</p>
+                                                        </div>
+                                                        <dl class="txt">
+                                                            <dt>월 할부금액</dt>
+                                                            <dd><span>41만원</span> / 48개월</dd>
+                                                        </dl>
+                                                    </div>
+                                                    <div class="car-badge">
+                                                        <span>신차급</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="swiper-slide">
+                                                <div class="car-thumb">
+                                                    <div class="car-logo">
+                                                        <i class="reborn"></i>
+                                                    </div>
+                                                    <div class="car-btn">
+                                                        <button type="button" class="favorite"><span class="ft-blind">찜하기</span></button>
+                                                    </div>
+                                                    <a href="javascript: void(0);">
+                                                        <img src="../resources/images/example/img_car_dummy.png" class="swiper-lazy swiper-lazy-loaded">
+                                                    </a>
+                                                </div>
+                                                <div class="car-info">
+                                                    <div class="car-in">
+                                                        <div class="car-sum">
+                                                            <div class="row">
+                                                                <span>2020년 01월</span>
+                                                                <span>115,312km</span>
+                                                            </div>
+                                                        </div>
+                                                        <a href="javascript:;">
+                                                            <p class="car-model">
+                                                                더 뉴그랜저IG
+                                                            </p>
+                                                            <p class="car-trim">
+                                                                가솔린 2.5 프리미엄 초이스
+                                                            </p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="car-pay">
+                                                        <div class="price">
+                                                            <p><strong>2,090</strong>만원</p>
+                                                        </div>
+                                                        <dl class="txt">
+                                                            <dt>월 할부금액</dt>
+                                                            <dd><span>41만원</span> / 48개월</dd>
+                                                        </dl>
+                                                    </div>
+                                                    <div class="car-badge">
+                                                        <span>신차급</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="swiper-slide more">
+                                                <a href="#">
+                                                    <i class="arr"></i>
+                                                    <p>더보기</p>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="swiper-control">
+                                        <div class="swiper-pagination"></div>
+                                    </div>
+                                    <div class="cont-base-more">
+                                        <a href="#"><strong>기획전 차량</strong> 더보기 &gt;</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- # 기획전 02 -->
+                            <div class="cont"><p class="dummy">최대 550만원 할인 목록</p></div>
+                            <!-- # 기획전 03 -->
+                            <div class="cont"><p class="dummy">친환경 하이브리드 목록</p></div>
+                            <!-- # 기획전 04 -->
+                            <div class="cont"><p class="dummy">친환경 test</p></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- # SPACE -->
+            <hr class="section-partition">
+
+            <!-- # 서비스배너 -->
+            <section class="banner-base-wrap">
+                <div class="tit-base-wrap">
+                    <p><strong>리본카여서<br>더욱 만족할 수 있어요</strong></p>
+                </div>
+                <div class="inner">
+                    <a href="#">
+                        <div class="box">
+                            <strong>국내 최장!<br>8일 안심환불 &gt;</strong>
+                            <p>이제 충분히 타보고 결정하세요</p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="box">
+                            <strong>연장보증<br>서비스 &gt;</strong>
+                            <p>합리적 가격, 제한 없는 주행거리</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- # 리뷰 -->
+            <section class="main-review-wrap">
+                <div class="inner">
+                    <div class="review-tab-wrap">
+                        <div class="review-tab box">
+                            <button type="button" class="btn active"><p>구매 후기</p></button>
+                            <button type="button" class="btn"><p>판매 후기</p></button>
+                            <button type="button" class="btn"><p>렌트/구독 후기</p></button>
+                        </div>
+                        <div class="review-cont">
+                            <!-- # 구매후기 -->
+                            <div class="cont show" style="display: block;">
+                                <div class="review-base-wrap swiper" id="main-review-swiper">
+                                    <div class="swiper-container">
+                                        <ul class="swiper-wrapper">
+                                            <li class="swiper-slide">
+                                                <a href="#">
+                                                    <div class="box">
+                                                        <strong class="car-model">그랜저IG</strong>
+                                                        <div class="rating">
+                                                            <span class="on"></span>
+                                                            <span class="on"></span>
+                                                            <span class="on"></span>
+                                                            <span class="on"></span>
+                                                            <span></span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="subject">그랜저 IG 라이브 구매 후기</p>
+                                                    <p class="summary">차량 구매 필요하여 네이버, 유튜브를 통해 중고차에 대해 알아보다가 리본카를 알게 되었습니다. 엔카 / 리본카 등 차량 검색하면서 마음에 드는 차량을 발견하였고, 해당 차량이 리본...</p>
+                                                    <div class="box">
+                                                        <p class="name"><b>김동*</b> 고객님</p>
+                                                        <p class="date">2024-05-10</p>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="swiper-slide">
+                                                <a href="#">
+                                                    <div class="box">
+                                                        <strong class="car-model">그랜저IG</strong>
+                                                        <div class="rating">
+                                                            <span class="on"></span>
+                                                            <span class="on"></span>
+                                                            <span class="on"></span>
+                                                            <span class="on"></span>
+                                                            <span class="on"></span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="subject">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                                                    <p class="summary">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                                                    <div class="box">
+                                                        <p class="name"><b>김동*</b> 고객님</p>
+                                                        <p class="date">2024-05-10</p>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="swiper-slide">
+                                                <a href="#">
+                                                    <div class="box">
+                                                        <strong class="car-model">그랜저IG</strong>
+                                                        <div class="rating">
+                                                            <span class="on"></span>
+                                                            <span class="on"></span>
+                                                            <span class="on"></span>
+                                                            <span class="on"></span>
+                                                            <span class="on"></span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="subject">bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</p>
+                                                    <p class="summary">bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</p>
+                                                    <div class="box">
+                                                        <p class="name"><b>김동*</b> 고객님</p>
+                                                        <p class="date">2024-05-10</p>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="swiper-slide">
+                                                <a href="#">
+                                                    <div class="box">
+                                                        <strong class="car-model">그랜저IG</strong>
+                                                        <div class="rating">
+                                                            <span class="on"></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="subject">cccccccccccccccccccccccccccccccccc</p>
+                                                    <p class="summary">cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc</p>
+                                                    <div class="box">
+                                                        <p class="name"><b>김동*</b> 고객님</p>
+                                                        <p class="date">2024-05-10</p>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="swiper-control">
+                                        <div class="swiper-pagination"></div>
+                                    </div>
+                                </div>
+                                <div class="cont-base-more">
+                                    <a href="#"><strong>구매 후기</strong> 더보기 &gt;</a>
+                                </div>
+                            </div>
+                            <!-- # 판매후기 -->
+                            <div class="cont"><p class="dummy">판매 후기</p></div>
+                            <!-- # 렌트/구독후기 -->
+                            <div class="cont"><p class="dummy">렌트/구독 후기</p></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- # 렌트/구독 -->
+            <section class="main-rent-wrap">
+                <div class="tit-base-wrap">
+                    <p><strong>심사, 추가비용 없는<br>렌트/구독 서비스를 만나보세요</strong></p>
+                </div>
+                <div class="inner">
+                    <div class="product-base-wrap focus" id="main-rent-swiper">
+                        <div class="swiper-container">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide">
+                                    <div class="car-thumb">
+                                        <div class="car-btn">
+                                            <button type="button" class="favorite"><span class="ft-blind">찜하기</span></button>
+                                        </div>
+                                        <a href="javascript: void(0);">
+                                            <img src="../resources/images/example/img_car_dummy.png" class="swiper-lazy swiper-lazy-loaded">
+                                        </a>
+                                    </div>
+                                    <div class="car-info show">
+                                        <div class="car-in">
+                                            <div class="car-sum">
+                                                <div class="row">
+                                                    <span>2020년 01월</span>
+                                                    <span>115,312km</span>
+                                                </div>
+                                                <div class="car-rent">
+                                                    <span>구독</span>
+                                                </div>
+                                            </div>
+                                            <a href="javascript:;">
+                                                <p class="car-model">
+                                                    더 뉴그랜저IG
+                                                </p>
+                                                <p class="car-trim">
+                                                    가솔린 2.5 프리미엄 초이스
+                                                </p>
+                                            </a>
+                                        </div>
+                                        <div class="car-pay">
+                                            <div class="price">
+                                                <del class="before"><strong>220</strong>만원</del>
+                                                <p><strong>월 146</strong>만원 / <strong>24개월</strong></p>
+                                            </div>
+                                            <p class="etc">(VAT, 취등록세, 자동차세, 보험료 포함)</p>
+                                        </div>
+                                        <div class="car-badge">
+                                            <span>특가상품</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <div class="car-thumb">
+                                        <div class="car-btn">
+                                            <button type="button" class="favorite"><span class="ft-blind">찜하기</span></button>
+                                        </div>
+                                        <a href="javascript: void(0);">
+                                            <img src="../resources/images/example/img_car_dummy.png" class="swiper-lazy swiper-lazy-loaded">
+                                        </a>
+                                    </div>
+                                    <div class="car-info">
+                                        <div class="car-in">
+                                            <div class="car-sum">
+                                                <div class="row">
+                                                    <span>asdasd</span>
+                                                    <span>dd</span>
+                                                </div>
+                                                <div class="car-rent">
+                                                    <span>구독</span>
+                                                </div>
+                                            </div>
+                                            <a href="javascript:;">
+                                                <p class="car-model">
+                                                    bbsafdasfaf
+                                                </p>
+                                                <p class="car-trim">
+                                                    가솔린 2.5 프리미엄 초이스
+                                                </p>
+                                            </a>
+                                        </div>
+                                        <div class="car-pay">
+                                            <div class="price">
+                                                <del class="before"><strong>220</strong>만원</del>
+                                                <p><strong>월 146</strong>만원 / <strong>24개월</strong></p>
+                                            </div>
+                                            <p class="etc">(VAT, 취등록세, 자동차세, 보험료 포함)</p>
+                                        </div>
+                                        <div class="car-badge">
+                                            <span>특가상품</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <div class="car-thumb">
+                                        <div class="car-btn">
+                                            <button type="button" class="favorite"><span class="ft-blind">찜하기</span></button>
+                                        </div>
+                                        <a href="javascript: void(0);">
+                                            <img src="../resources/images/example/img_car_dummy.png" class="swiper-lazy swiper-lazy-loaded">
+                                        </a>
+                                    </div>
+                                    <div class="car-info">
+                                        <div class="car-in">
+                                            <div class="car-sum">
+                                                <div class="row">
+                                                    <span>cccccc</span>
+                                                    <span>115,312km</span>
+                                                </div>
+                                                <div class="car-rent">
+                                                    <span>구독</span>
+                                                </div>
+                                            </div>
+                                            <a href="javascript:;">
+                                                <p class="car-model">
+                                                    cccccccccccc
+                                                </p>
+                                                <p class="car-trim">
+                                                    가솔린 2.5 프리미엄 초이스
+                                                </p>
+                                            </a>
+                                        </div>
+                                        <div class="car-pay">
+                                            <div class="price">
+                                                <del class="before"><strong>220</strong>만원</del>
+                                                <p><strong>월 146</strong>만원 / <strong>24개월</strong></p>
+                                            </div>
+                                            <p class="etc">(VAT, 취등록세, 자동차세, 보험료 포함)</p>
+                                        </div>
+                                        <div class="car-badge">
+                                            <span>특가상품</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <div class="car-thumb">
+                                        <div class="car-btn">
+                                            <button type="button" class="favorite"><span class="ft-blind">찜하기</span></button>
+                                        </div>
+                                        <a href="javascript: void(0);">
+                                            <img src="../resources/images/example/img_car_dummy.png" class="swiper-lazy swiper-lazy-loaded">
+                                        </a>
+                                    </div>
+                                    <div class="car-info">
+                                        <div class="car-in">
+                                            <div class="car-sum">
+                                                <div class="row">
+                                                    <span>cccccc</span>
+                                                    <span>115,312km</span>
+                                                </div>
+                                                <div class="car-rent">
+                                                    <span>구독</span>
+                                                </div>
+                                            </div>
+                                            <a href="javascript:;">
+                                                <p class="car-model">
+                                                    cccccccccccc
+                                                </p>
+                                                <p class="car-trim">
+                                                    가솔린 2.5 프리미엄 초이스
+                                                </p>
+                                            </a>
+                                        </div>
+                                        <div class="car-pay">
+                                            <div class="price">
+                                                <del class="before"><strong>220</strong>만원</del>
+                                                <p><strong>월 146</strong>만원 / <strong>24개월</strong></p>
+                                            </div>
+                                            <p class="etc">(VAT, 취등록세, 자동차세, 보험료 포함)</p>
+                                        </div>
+                                        <div class="car-badge">
+                                            <span>특가상품</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="swiper-control">
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                    <div class="cont-base-more">
+                        <a href="#" class="gray"><strong>전체 차량 보기 &gt;</strong></a>
+                        <a href="#" class="blue"><strong>특가 차량 보기 &gt;</strong></a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- # SPACE -->
+            <hr class="section-partition">
+            
+            <!-- # 금융사 -->
+            <section class="main-finance-wrap">
+                <div class="tit-base-wrap">
+                    <p><strong>리본카와 함께하는<br>금융사 전용관이에요</strong></p>
+                </div>
+                <div class="inner">
+                    <div class="finance-tab-wrap">
+                        <div class="finance-tab">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide btn active"><p>현대캐피탈</p></div>
+                                    <div class="swiper-slide btn"><p>SK렌터카</p></div>
+                                    <div class="swiper-slide btn"><p>우리금융캐피탈</p></div>
+                                    <div class="swiper-slide btn"><p>M캐피탈</p></div>
+                                    <div class="swiper-slide btn"><p>하나캐피탈</p></div>
+                                    <div class="swiper-slide btn"><p>BNK캐피탈</p></div>
+                                    <div class="swiper-slide btn"><p>DGB캐피탈</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="finance-cont">
+                            <!-- # 현대캐피탈 -->
+                            <div class="cont show" style="display: block;">
+                                <div class="finance-info-txt">
+                                    <p style="color: #2575D5;"><img src="../resources/images/common/lp/ico_prd_finance_hyun.png">현대자동차 · 기아와 함께하는 중고차금융</p>
+                                </div>
+                                <div class="product-base-wrap swiper" id="main-finance-swiper">
+                                    <div class="swiper-container">
+                                        <ul class="swiper-wrapper">
+                                            <li class="swiper-slide">
+                                                <div class="car-thumb">
+                                                    <div class="car-state">
+                                                        <span class="soldout">판매완료</span>
+                                                    </div>
+                                                    <div class="car-logo">
+                                                        <i class="reborn"></i>
+                                                    </div>
+                                                    <div class="car-btn">
+                                                        <button type="button" class="favorite"><span class="ft-blind">찜하기</span></button>
+                                                    </div>
+                                                    <a href="javascript: void(0);">
+                                                        <img src="../resources/images/example/img_car_dummy.png" class="swiper-lazy swiper-lazy-loaded">
+                                                    </a>
+                                                </div>
+                                                <div class="car-info">
+                                                    <div class="car-in">
+                                                        <div class="car-sum">
+                                                            <div class="row">
+                                                                <span>2020년 01월</span>
+                                                                <span>115,312km</span>
+                                                            </div>
+                                                        </div>
+                                                        <a href="javascript:;">
+                                                            <p class="car-model">
+                                                                더 뉴그랜저IG
+                                                            </p>
+                                                            <p class="car-trim">
+                                                                가솔린 2.5 프리미엄 초이스
+                                                            </p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="car-pay">
+                                                        <div class="price">
+                                                            <p><strong>2,090</strong>만원</p>
+                                                        </div>
+                                                        <dl class="txt">
+                                                            <dt>월 할부금액</dt>
+                                                            <dd><span>41만원</span> / 48개월</dd>
+                                                        </dl>
+                                                    </div>
+                                                    <div class="car-badge">
+                                                        <span>신차급</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="swiper-slide">
+                                                <div class="car-thumb">
+                                                    <div class="car-state">
+                                                        <span class="contract">계약중</span>
+                                                    </div>
+                                                    <div class="car-logo">
+                                                        <i class="reborn"></i>
+                                                    </div>
+                                                    <div class="car-btn">
+                                                        <button type="button" class="favorite"><span class="ft-blind">찜하기</span></button>
+                                                    </div>
+                                                    <a href="javascript: void(0);">
+                                                        <img src="../resources/images/example/img_car_dummy.png" class="swiper-lazy swiper-lazy-loaded">
+                                                    </a>
+                                                </div>
+                                                <div class="car-info">
+                                                    <div class="car-in">
+                                                        <div class="car-sum">
+                                                            <div class="row">
+                                                                <span>2020년 01월</span>
+                                                                <span>115,312km</span>
+                                                            </div>
+                                                        </div>
+                                                        <a href="javascript:;">
+                                                            <p class="car-model">
+                                                                더 뉴그랜저IG
+                                                            </p>
+                                                            <p class="car-trim">
+                                                                가솔린 2.5 프리미엄 초이스
+                                                            </p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="car-pay">
+                                                        <div class="price">
+                                                            <p><strong>2,090</strong>만원</p>
+                                                        </div>
+                                                        <dl class="txt">
+                                                            <dt>월 할부금액</dt>
+                                                            <dd><span>41만원</span> / 48개월</dd>
+                                                        </dl>
+                                                    </div>
+                                                    <div class="car-badge">
+                                                        <span>신차급</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="swiper-slide">
+                                                <div class="car-thumb">
+                                                    <div class="car-logo">
+                                                        <i class="reborn"></i>
+                                                    </div>
+                                                    <div class="car-btn">
+                                                        <button type="button" class="favorite"><span class="ft-blind">찜하기</span></button>
+                                                    </div>
+                                                    <a href="javascript: void(0);">
+                                                        <img src="../resources/images/example/img_car_dummy.png" class="swiper-lazy swiper-lazy-loaded">
+                                                    </a>
+                                                </div>
+                                                <div class="car-info">
+                                                    <div class="car-in">
+                                                        <div class="car-sum">
+                                                            <div class="row">
+                                                                <span>2020년 01월</span>
+                                                                <span>115,312km</span>
+                                                            </div>
+                                                        </div>
+                                                        <a href="javascript:;">
+                                                            <p class="car-model">
+                                                                더 뉴그랜저IG
+                                                            </p>
+                                                            <p class="car-trim">
+                                                                가솔린 2.5 프리미엄 초이스
+                                                            </p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="car-pay">
+                                                        <div class="price">
+                                                            <p><strong>2,090</strong>만원</p>
+                                                        </div>
+                                                        <dl class="txt">
+                                                            <dt>월 할부금액</dt>
+                                                            <dd><span>41만원</span> / 48개월</dd>
+                                                        </dl>
+                                                    </div>
+                                                    <div class="car-badge">
+                                                        <span>신차급</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="swiper-slide">
+                                                <div class="car-thumb">
+                                                    <div class="car-logo">
+                                                        <i class="reborn"></i>
+                                                    </div>
+                                                    <div class="car-btn">
+                                                        <button type="button" class="favorite"><span class="ft-blind">찜하기</span></button>
+                                                    </div>
+                                                    <a href="javascript: void(0);">
+                                                        <img src="../resources/images/example/img_car_dummy.png" class="swiper-lazy swiper-lazy-loaded">
+                                                    </a>
+                                                </div>
+                                                <div class="car-info">
+                                                    <div class="car-in">
+                                                        <div class="car-sum">
+                                                            <div class="row">
+                                                                <span>2020년 01월</span>
+                                                                <span>115,312km</span>
+                                                            </div>
+                                                        </div>
+                                                        <a href="javascript:;">
+                                                            <p class="car-model">
+                                                                더 뉴그랜저IG
+                                                            </p>
+                                                            <p class="car-trim">
+                                                                가솔린 2.5 프리미엄 초이스
+                                                            </p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="car-pay">
+                                                        <div class="price">
+                                                            <p><strong>2,090</strong>만원</p>
+                                                        </div>
+                                                        <dl class="txt">
+                                                            <dt>월 할부금액</dt>
+                                                            <dd><span>41만원</span> / 48개월</dd>
+                                                        </dl>
+                                                    </div>
+                                                    <div class="car-badge">
+                                                        <span>신차급</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="swiper-slide">
+                                                <div class="car-thumb">
+                                                    <div class="car-logo">
+                                                        <i class="reborn"></i>
+                                                    </div>
+                                                    <div class="car-btn">
+                                                        <button type="button" class="favorite"><span class="ft-blind">찜하기</span></button>
+                                                    </div>
+                                                    <a href="javascript: void(0);">
+                                                        <img src="../resources/images/example/img_car_dummy.png" class="swiper-lazy swiper-lazy-loaded">
+                                                    </a>
+                                                </div>
+                                                <div class="car-info">
+                                                    <div class="car-in">
+                                                        <div class="car-sum">
+                                                            <div class="row">
+                                                                <span>2020년 01월</span>
+                                                                <span>115,312km</span>
+                                                            </div>
+                                                        </div>
+                                                        <a href="javascript:;">
+                                                            <p class="car-model">
+                                                                더 뉴그랜저IG
+                                                            </p>
+                                                            <p class="car-trim">
+                                                                가솔린 2.5 프리미엄 초이스
+                                                            </p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="car-pay">
+                                                        <div class="price">
+                                                            <p><strong>2,090</strong>만원</p>
+                                                        </div>
+                                                        <dl class="txt">
+                                                            <dt>월 할부금액</dt>
+                                                            <dd><span>41만원</span> / 48개월</dd>
+                                                        </dl>
+                                                    </div>
+                                                    <div class="car-badge">
+                                                        <span>신차급</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="swiper-slide more">
+                                                <a href="#">
+                                                    <i class="arr"></i>
+                                                    <p>더보기</p>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="swiper-control">
+                                        <div class="swiper-pagination"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- # SK렌터카 -->
+                            <div class="cont">
+                                <div class="finance-info-txt">
+                                    <p style="color: #BC3248;"><img src="../resources/images/common/lp/ico_prd_finance_sk.png">믿고 사는 중고차 SK렌터카 인증중고차</p>
+                                </div>
+                                <p class="dummy">SK렌터카</p>
+                            </div>
+                            <!-- # 우리금융캐피탈 -->
+                            <div class="cont">
+                                <div class="finance-info-txt">
+                                    <p style="color: #0082C9;"><img src="../resources/images/common/lp/ico_prd_finance_woori.png">우리가 WON하는 혁신적인 자동차금융</p>
+                                </div>
+                                <p class="dummy">우리금융캐피탈</p>
+                            </div>
+                            <!-- # M캐피탈 -->
+                            <div class="cont">
+                                <div class="finance-info-txt">
+                                    <p style="color: #23408F;"><img src="../resources/images/common/lp/ico_prd_finance_m.png">중고차를 구매하는 합리적인 방법</p>
+                                </div>
+                                <p class="dummy">M캐피탈</p>
+                            </div>
+                            <!-- #하나캐피탈 -->
+                            <div class="cont">
+                                <div class="finance-info-txt">
+                                    <p style="color: #00857E;"><img src="../resources/images/common/lp/ico_prd_finance_hana.png">중고차를 살 때 똑똑한 ‘하나’의 방법</p>
+                                </div>
+                                <p class="dummy">#하나캐피탈</p>
+                            </div>
+                            <!-- #BNK캐피탈 -->
+                            <div class="cont">
+                                <div class="finance-info-txt">
+                                    <p style="color: #645C4F;"><img src="../resources/images/common/lp/ico_prd_finance_bnk.png">중고차를 구매하는 합리적인 방법</p>
+                                </div>
+                                <p class="dummy">#BNK캐피탈</p>
+                            </div>
+                            <!-- #DGB캐피탈 -->
+                            <div class="cont">
+                                <div class="finance-info-txt">
+                                    <p style="color: #00427D;"><img src="../resources/images/common/lp/ico_prd_finance_dgb.png">중고차를 구매하는 합리적인 방법</p>
+                                </div>
+                                <p class="dummy">#DGB캐피탈</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cont-base-more">
+                        <a href="#"><strong>전용관 차량</strong> 더보기 &gt;</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- # SPACE -->
+            <hr class="section-partition">
+            
+            <!-- # 추천영상 -->
+            <section class="main-video-wrap">
+                <div class="tit-base-wrap">
+                    <p><strong>리본카 오늘의 추천 영상을 <br>확인해 보세요</strong></p>
+                </div>
+                <div class="inner">
+                    <div class="video-base-wrap">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <div class="pic">
+                                        <img src="../resources/images/example/img_main_video_ex01.png">
+                                    </div>
+                                    <div class="sum">
+                                        <p class="tit">1억 미만 최고의 미니밴 알파드 하이브리드 장거리 시승기 | 연비 실화?</p>
+                                        <p class="write">리본카 LIVE (중고차 쇼핑도 라이브로)</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="pic">
+                                        <img src="../resources/images/example/img_main_video_ex02.png">
+                                    </div>
+                                    <div class="sum">
+                                        <p class="tit">아이오닉5 페이스리프트 장거리 시승기 | 진작에 이렇게 만들지..</p>
+                                        <p class="write">리본카</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="pic">
+                                        <img src="../resources/images/example/img_main_video_ex03.png">
+                                    </div>
+                                    <div class="sum">
+                                        <p class="tit">렉스턴 써밋 시승기! - 실내가 정말로 화려하네요! 승차감도 훨신 승차감도 훨신승차감도 훨신</p>
+                                        <p class="write">홍시car</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="pic">
+                                        <img src="../resources/images/example/img_main_video_ex04.png">
+                                    </div>
+                                    <div class="sum">
+                                        <p class="tit">1억 미만 최고의 미니밴 알파드 하이브리드 장거리 시승기 | 연비 실화????</p>
+                                        <p class="write">리본카리본카리본카리본카리본카리본카리본카리본카</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="cont-base-more">
+                        <a href="#"><strong>영상</strong> 더보기 &gt;</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- # SPACE -->
+            <hr class="section-partition">
+            
+            <!-- # 제조사 -->
+            <section class="main-brand-wrap">
+                <div class="tit-base-wrap">
+                    <p><strong>제조사별 차량을<br>모아보세요</strong></p>
+                </div>
+                <div class="inner">
+                    <ul>
+                        <li><a href="#"><div class="logo"><img src="../resources/images/main/logo_brand_hyundai.png"></div><p>현대</p></a></li>
+                        <li><a href="#"><div class="logo"><img src="../resources/images/main/logo_brand_kia.png"></div><p>기아</p></a></li>
+                        <li><a href="#"><div class="logo"><img src="../resources/images/main/logo_brand_genesis.png"></div><p>제네시스</p></a></li>
+                        <li><a href="#"><div class="logo"><img src="../resources/images/main/logo_brand_renault.png"></div><p>르노</p></a></li>
+                        <li><a href="#"><div class="logo"><img src="../resources/images/main/logo_brand_kgm.png"></div><p>KG모빌리티(쌍용)</p></a></li>
+                        <li><a href="#"><div class="logo"><img src="../resources/images/main/logo_brand_chevrolet.png"></div><p>쉐보레(대우)</p></a></li>
+                        <li><a href="#"><div class="logo"><img src="../resources/images/main/logo_brand_benz.png"></div><p>벤츠</p></a></li>
+                        <li><a href="#"><div class="logo"><img src="../resources/images/main/logo_brand_bmw.png"></div><p>BMW</p></a></li>
+                        <li><a href="#"><div class="logo"><img src="../resources/images/main/logo_brand_nissan.png"></div><p>닛산</p></a></li>
+                        <li><a href="#"><div class="logo"><img src="../resources/images/main/logo_brand_landrover.png"></div><p>랜드로버</p></a></li>
+                        <li><a href="#"><div class="logo"><img src="../resources/images/main/logo_brand_lexus.png"></div><p>렉서스</p></a></li>
+                        <li><a href="#"><div class="logo"><img src="../resources/images/main/logo_brand_mini.png"></div><p>미니</p></a></li>
+                        <li><a href="#"><div class="logo"><img src="../resources/images/main/logo_brand_cadillac.png"></div><p>캐딜락</p></a></li>
+                        <li><a href="#"><div class="logo"><img src="../resources/images/main/logo_brand_audi.png"></div><p>아우디</p></a></li>
+                        <li><a href="#"><div class="logo"><img src="../resources/images/main/logo_brand_jeep.png"></div><p>지프</p></a></li>
+                        <li><a href="#"><div class="logo"><img src="../resources/images/main/logo_brand_ford.png"></div><p>포트</p></a></li>
+                        <li><a href="#"><div class="logo"><img src="../resources/images/main/logo_brand_porsche.png"></div><p>포르쉐</p></a></li>
+                        <li><a href="#"><div class="logo"><img src="../resources/images/main/logo_brand_volks.png"></div><p>폭스바겐</p></a></li>
+                        <li><a href="#"><div class="logo"><img src="../resources/images/main/logo_brand_peugeot.png"></div><p>푸조</p></a></li>
+                        <li><a href="#"><div class="logo"><img src="../resources/images/main/logo_brand_honda.png"></div><p>혼다</p></a></li>
+                    </ul>
+                    <button type="button" class="brand-more-btn"><p>펼쳐서 더보기</p></button>
+                </div>
+            </section>
+
+            <!-- # 메인이벤트 -->
+            <section class="swiper-base-banner visual" id="main-event-banner02">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="../resources/images/example/img_main_banner_ex02.png"></div>
+                        <div class="swiper-slide"><img src="../resources/images/example/img_main_banner_ex02.png"></div>
+                        <div class="swiper-slide"><img src="../resources/images/example/img_main_banner_ex02.png"></div>
+                    </div>
+                </div>
+                <div class="swiper-control">
+                    <div class="swiper-pagination"></div>
+                    <button type="button" class="swiper-btn"></button>
+                </div>
+            </section>
+
+            <!-- # 공지사항 -->
+            <section class="main-notice-wrap">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <div class="cate">공지</div>
+                                <div class="subject">리본카 연장보증 서비스 약관 변경 안내</div>
+                                <div class="date">2024-02-08</div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <div class="cate">공지</div>
+                                <div class="subject">리본카 고객센터 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구</div>
+                                <div class="date">2099-09-09</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- contents end -->
+
+        <!-- footer start -->
+        <footer id="footer-elm-wrap">
+            <div class="inner">
+                <div class="cs">
+                    <p>리본카 고객센터</p>
+                    <div class="cs-info">
+                        <div class="call"><a href="tel:1544-2277">1544-2277</a></div>
+                        <div class="info">
+                            <p>평일 09:00~18:00<br>토,일,공휴일 휴무</p>
+                        </div>
+                    </div>
+                    <ul>
+                        <li><a href="#"><i class="ico noti"></i>공지사항</a></li>
+                        <li><a href="#"><i class="ico que"></i>자주 묻는 질문</a></li>
+                        <li><a href="#"><i class="ico cus"></i>고객센터</a></li>
+                    </ul>
+                </div>
+                <div class="mail">
+                    <ul>
+                        <li>
+                            사업제휴 문의
+                            <a href="javascript: layerPopOpen('#layer-biz-inquiry');">biz@autoplus.co.kr</a>
+                        </li>
+                        <li>
+                            마케팅 문의
+                            <a href="javascript: layerPopOpen('#layer-mkt-inquiry');">mkt@autoplus.co.kr</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sns">
+                    <ul>
+                        <li><a href="#"><i class="ico blog"></i></a></li>
+                        <li><a href="#"><i class="ico facebook"></i></a></li>
+                        <li><a href="#"><i class="ico youtube"></i></a></li>
+                        <li><a href="#"><i class="ico instagram"></i></a></li>
+                        <li><a href="#"><i class="ico kakao"></i></a></li>
+                    </ul>
+                </div>
+                <div class="company">
+                    <ul>
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#">윤리경영</a></li>
+                    </ul>
+                    <p class="copyright">Copyrightⓒ2024 By AutoPlus.Co.Ltd. All right reserved.</p>
+                    <div class="toggle">
+                        <div class="toggle-btn">
+                            <button type="button" class="btn">사업자정보</button>
+                        </div>
+                        <div class="toggle-cont" style="display: none;">
+                            <strong>오토플러스(주)</strong>
+                            <p>대표자 : 송재성</p>
+                            <p>사업자등록번호 : 105-86-06429</p>
+                            <p>통신판매업 신고 : 2020-서울영등포-1338</p>
+                            <p>서울특별시 영등포구 선유동2로 57 이레빌딩 신관 11층</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="down">
+                    <p>APP 다운로드</p>
+                    <div class="app-down-link">
+                        <a href="#"><i class="ico aos"></i></a>
+                        <a href="#"><i class="ico ios"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer end -->
+
+        <!-- # bottom fix menu start -->
+        <div id="bottom-menu-wrap">
+            <ul>
+                <li class="on">
+                    <a href="#">
+                        <i class="ico home "></i>
+                        <p>Home</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="ico all"></i>
+                        <p>전체 차량</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="ico center"></i>
+                        <p>검색하기</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="ico sell"></i>
+                        <p>내차 팔기</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="ico recent"></i>
+                        <p>최근 본 차량</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- // # bottom fix menu end -->
+
+        <!-- # side all menu start -->
+        <div id="aside-menu-wrap">
+            <div class="flex-col-wrap">
+                <div class="top-cont">
+                    <div class="user-menu">
+                        <div class="top">
+                            <div class="txt-btn btn-login"><p>로그인해 주세요</p></div>
+                            <div class="gnb-btn-group">
+                                <!-- # 앱 설정 버튼 (앱 일때만 노출) -->
+                                <button type="button" class="gnb-btn setting" title="설정"></button>
+                                <!-- // -->
+                                <button type="button" class="gnb-btn close" title="닫기"></button>
+                            </div>
+                        </div>
+                        <ul class="ico-link">
+                            <li><a href="#"><i class="ico buy"></i><p>내차 사기</p></a></li>
+                            <li><a href="#"><i class="ico sell"></i><p>내차 팔기</p></a></li>
+                            <li><a href="#"><i class="ico rent"></i><p>렌트 / 구독</p></a></li>
+                        </ul>
+                        <ul class="my-link">
+                            <li><a href="#"><i class="ico recent"></i>마이페이지</a></li>
+                            <li><a href="#"><i class="ico cs"></i>상담하기</a></li>
+                            <li><a href="#"><i class="ico alram"></i>입고알림</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="flex-box">
+                    <!-- 대분류 -->
+                    <div class="left-cont">
+                        <div class="left-scroll">
+                            <ul>
+                                <li class="bk active"><a href="javascript: void(0);">내차사기</a></li>
+                                <li class="bk"><a href="javascript: void(0);">내차팔기</a></li>
+                                <li class="bk"><a href="javascript: void(0);">렌트/구독</a></li>
+                                <li><a href="javascript: void(0);">금융사 전용관</a></li>
+                                <li><a href="javascript: void(0);">리본카 라이브</a></li>
+                                <li><a href="javascript: void(0);">인증/특허</a></li>
+                                <li><a href="javascript: void(0);">이벤트</a></li>
+                                <li><a href="javascript: void(0);">커뮤니티</a></li>
+                                <li><a href="javascript: void(0);">고객센터</a></li>
+                                <li><a href="javascript: void(0);">리본카 시스템</a></li>
+                                <li><a href="javascript: void(0);">회사소개</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 전체메뉴 -->
+                    <div class="right-cont">
+                        <div class="right-scroll">
+                            <div class="menu-box">
+                                <h2>내차사기</h2>
+                                <ul class="depth1">
+                                    <li><a href="#">전체 차량 보기</a></li>
+                                    <li><a href="#">구매후기</a></li>
+                                </ul>
+                            </div>
+                            <div class="menu-box">
+                                <h2>내차팔기</h2>
+                                <ul class="depth1">
+                                    <li><a href="#">내차 팔기</a></li>
+                                    <li><a href="#">판매후기</a></li>
+                                </ul>
+                            </div>
+                            <div class="menu-box">
+                                <h2>렌트/구독</h2>
+                                <ul class="depth1">
+                                    <li><a href="#">렌트/구독 차량 보기</a></li>
+                                    <li><a href="#">렌트/구독 서비스 안내</a></li>
+                                    <li><a href="#">렌트/구독 이용후기</a></li>
+                                </ul>
+                            </div>
+                            <div class="menu-box">
+                                <h2>금융사 전용관</h2>
+                                <ul class="depth1">
+                                    <li><a href="#">금융사 전용관</a></li>
+                                </ul>
+                            </div>
+                            <div class="menu-box">
+                                <h2>리본카 라이브</h2>
+                                <ul class="depth1">
+                                    <li><a href="#">리본카 라이브</a></li>
+                                    <li><a href="#">라이브 상담 신청</a></li>
+                                </ul>
+                            </div>
+                            <div class="menu-box">
+                                <h2>인증/특허</h2>
+                                <ul class="depth1">
+                                    <li><a href="#">인증/특허</a></li>
+                                </ul>
+                            </div>
+                            <div class="menu-box">
+                                <h2>이벤트</h2>
+                                <ul class="depth1">
+                                    <li><a href="#">진행중 이벤트</a></li>
+                                    <li><a href="#">종료된 이벤트</a></li>
+                                    <li><a href="#">당첨자 발표</a></li>
+                                </ul>
+                            </div>
+                            <div class="menu-box">
+                                <h2>커뮤니티</h2>
+                                <ul class="depth1">
+                                    <li><a href="#">리본카TV</a></li>
+                                </ul>
+                            </div>
+                            <div class="menu-box">
+                                <h2>고객센터</h2>
+                                <ul class="depth1">
+                                    <li><a href="#">온라인 문의</a></li>
+                                    <li><a href="#">공지사항</a></li>
+                                    <li><a href="#">카톡상담</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                    <li><a href="#">금융상품 담당자 조회</a></li>
+                                </ul>
+                            </div>
+                            <div class="menu-box">
+                                <h2>리본카 시스템</h2>
+                                <ul class="depth1">
+                                    <li><a href="#">리본카 시스템</a></li>
+                                </ul>
+                            </div>
+                            <div class="menu-box">
+                                <h2>회사소개</h2>
+                                <ul class="depth1">
+                                    <li><a href="#">오토플러스 소개</a></li>
+                                    <li><a href="#">PR 센터</a></li>
+                                    <li><a href="#">윤리경영</a></li>
+                                    <li><a href="#">채용공고</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // # side all menu end -->
+    </div>
+    
+    <!-- # 레이어 팝업 base type (사업제휴) -->
+    <div class="layer-base-wrap" id="layer-biz-inquiry">
+        <div class="layer-box">
+            <button type="button" class="layer-close"><span class="ft-blind">닫기</span></button>
+            <div class="layer-cont">
+                <strong>사업 제휴 문의</strong>
+                <p>biz@autoplus.co.kr</p>
+            </div>
+            <div class="layer-btn">
+                <button type="button" class="base-btn gray" onclick="copyUrlShare('biz@autoplus.co.kr', this);">주소 복사하기</button>
+                <button type="button" class="base-btn blue" onclick="location.href='mailto:recruit@autoplus.co.kr'">이메일 열기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- # 레이어 팝업 base type (마케팅제휴) -->
+    <div class="layer-base-wrap" id="layer-mkt-inquiry">
+        <div class="layer-box">
+            <button type="button" class="layer-close"><span class="ft-blind">닫기</span></button>
+            <div class="layer-cont">
+                <strong>마케팅 문의</strong>
+                <p>mkt@autoplus.co.kr</p>
+            </div>
+            <div class="layer-btn">
+                <button type="button" class="base-btn gray" onclick="copyUrlShare('mkt@autoplus.co.kr', this);">주소 복사하기</button>
+                <button type="button" class="base-btn blue" onclick="location.href='mailto:recruit@autoplus.co.kr'">이메일 열기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- # 레이어 팝업 bottom type (이벤트) -->
+    <div class="layer-base-wrap bottom" id="layer-event-pop">
+        <div class="layer-box">
+            <div class="layer-cont">
+                <img src="../resources/images/example/img_layer_bot_ex.png" alt="">
+            </div>
+            <div class="layer-btn">
+                <a class="base-btn text layer-today" href="javascript: setCookie('EVENT-POPUP-STATE', 'done', 1);">오늘 하루 보지 않기</a>
+                <a class="base-btn text layer-close" href="javascript: void(0);">닫기</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- # 퀵메뉴 최상단 이동 -->
+    <button class="quick-top-btn"><span class="ft-blind">최상단 이동</span></button>
+
+    <!-- # 퀵메뉴 상담 메뉴 -->
+    <div class="quick-base-wrap" id="quick-cs">
+        <div class="talk-box">상담이 필요하신가요?<a href="javascript: void(0);" class="talk-box-close"><span class="ft-blind">닫기</span></a></div>
+        <button type="button" class="quick-btn"><span class="ft-blind">상담퀵메뉴</span></button>
+        <ul class="quick-list">
+            <li><p>챗봇상담</p><a href="#"><img src="../resources/images/common/ico_quick_cs_chat.png"></a></li>
+            <li><p>카톡상담</p><a href="#"><img src="../resources/images/common/ico_quick_cs_talk.png"></a></li>
+            <li><p>1:1문의</p><a href="#"><img src="../resources/images/common/ico_quick_cs_qna.png"></a></li>
+            <li><p>라이브상담</p><a href="#"><img src="../resources/images/common/ico_quick_cs_live.png"></a></li>
+        </ul>
+    </div>
+
+    <!-- # 레이어 팝업 snack type-->
+    <div class="layer-snack-wrap">
+        <p>이메일 주소 복사가 완료 되었습니다.이메일 주소 복사가 완료 되었습니다.이메일 주소 복사가 완료 되었습니다.</p>
+    </div>
+
+    <!-- # 퀵메뉴 유저 메뉴 -->
+    <div class="quick-base-wrap" id="quick-user">
+        <button type="button" class="quick-btn"><span class="ft-blind">유저퀵메뉴</span></button>
+        <ul class="quick-list">
+            <li>
+                <!-- # 로그인 전 -->
+                <p>로그인</p><a href="#"><img src="../resources/images/common/ico_quick_user_login.png"></a>
+                <!-- # 로그인 후 -->
+                <!-- <p>찜한차량</p><a href="#"><img src="../resources/images/common/ico_quick_user_wish.png"></a> -->
+            </li>
+            <li><p>열람내역</p><a href="#"><img src="../resources/images/common/ico_quick_user_his.png"></a></li>
+            <li class="on"><p>차량비교</p><a href="#"><img src="../resources/images/common/ico_quick_user_comp.png"></a></li>
+            <li><p>이벤트</p><a href="#"><img src="../resources/images/common/ico_quick_user_event.png"></a></li>
+        </ul>
+    </div>
+    
+    <!-- js -->
+    <script type="text/javascript" src="../resources/js/jquery-3.7.1.js"></script>
+    <script type="text/javascript" src="../resources/js/common.js"></script>
+    <script type="text/javascript" src="../resources/js/plugin/swiper.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            if(chkCookie('EVENT-POPUP-STATE') != 'done') layerPopOpen('#layer-event-pop');
+
+            // # 메인배너
+            if ($('#main-event-banner').length > 0) {
+                var sel = '#main-event-banner';
+                var mainSwiper = new Swiper(`${sel} .swiper-container`, {
+                    loop: true,
+                    observer: true,
+                    observeParents: true,
+                    slidesPerGroup: 1,
+                    slidesPerView: 1,
+                    autoplay: {
+                        delay: 3000,
+                        disableOnInteraction: false
+                    },
+                    pagination: {
+                        el: `${sel} .swiper-pagination`,
+                        clickable: true,
+                        renderBullet: function(index, className) {
+                            return (
+                                `<span class="${className}" data-swiper-index="${index}">'<i class="bar"></i>'</span>`
+                            );
+                        },
+                    },
+                });
+                $(`${sel} .swiper-control .swiper-btn`).on('click', function() {
+                    if (!$(this).hasClass('pause')) {
+                        $(this).addClass('pause');
+                        $(`${sel} .swiper-control [class*="active"]`).addClass('stop');
+                        mainSwiper.autoplay.stop();
+                    } else {
+                        $(this).removeClass('pause');
+                        $(`${sel} .swiper-control [class*="active"]`).removeClass('stop');
+                        mainSwiper.autoplay.start();	
+                    };
+                });
+            };
+
+            // # 이벤트배너
+            if ($('#main-event-banner02').length > 0) {
+                var sel = '#main-event-banner02';
+                var mainSwiper = new Swiper(`${sel} .swiper-container`, {
+                    loop: true,
+                    observer: true,
+                    observeParents: true,
+                    slidesPerGroup: 1,
+                    slidesPerView: 1,
+                    autoplay: {
+                        delay: 3000,
+                        disableOnInteraction: false
+                    },
+                    pagination: {
+                        el: `${sel} .swiper-pagination`,
+                        clickable: true,
+                        renderBullet: function(index, className) {
+                            return (
+                                `<span class="${className}" data-swiper-index="${index}">'<i class="bar"></i>'</span>`
+                            );
+                        },
+                    },
+                });
+                $(`${sel} .swiper-control .swiper-btn`).on('click', function() {
+                    if (!$(this).hasClass('pause')) {
+                        $(this).addClass('pause');
+                        $(`${sel} .swiper-control [class*="active"]`).addClass('stop');
+                        mainSwiper.autoplay.stop();
+                    } else {
+                        $(this).removeClass('pause');
+                        $(`${sel} .swiper-control [class*="active"]`).removeClass('stop');
+                        mainSwiper.autoplay.start();	
+                    };
+                });
+            };
+
+            // # 공지사항
+            if($('.main-notice-wrap').length){
+                var noticeSwiper = new Swiper('.main-notice-wrap .swiper-container', {
+                    loop: true,
+                    observer: true,
+                    observeParents: true,
+                    direction: 'vertical',
+                    autoplay: {
+                        delay: 3000,
+                        disableOnInteraction: false
+                    },
+                });
+            }
+
+            // # 추천차량
+            if($('.recom-tab-wrap').length){
+                var recomPrd = new TabContent('.recom-tab-wrap', {
+                    setClass: 'active',
+                    setBtn: '.recom-tab .btn',
+                    setCont: '.recom-cont .cont',
+                });
+
+                var recomSwiper01 = new Swiper('#main-recom-swiper .swiper-container', {
+                    loop: true,
+                    observer: true,
+                    observeParents: true,
+                    slidesPerGroup: 2,
+                    slidesPerView: 2,
+                    pagination: {
+                        el: '#main-recom-swiper .swiper-pagination',
+                        clickable: true,
+                    },
+                });
+            };
+
+            // # 리뷰
+            if($('.review-tab-wrap').length){
+                var recomPrd = new TabContent('.review-tab-wrap', {
+                    setClass: 'active',
+                    setBtn: '.review-tab .btn',
+                    setCont: '.review-cont .cont',
+                });
+
+                var recomSwiper01 = new Swiper('#main-review-swiper .swiper-container', {
+                    loop: true,
+                    observer: true,
+                    observeParents: true,
+                    slidesPerView: 'auto',
+                    spaceBetween: 10,
+                    pagination: {
+                        el: '#main-review-swiper .swiper-pagination',
+                        clickable: true,
+                    },
+                });
+            };
+
+            // # 기획전차량
+            if($('.theme-tab-wrap').length){
+                var themePrd = new TabContent('.theme-tab-wrap', {
+                    setClass: 'active',
+                    setBtn: '.theme-tab .btn',
+                    setCont: '.theme-cont .cont',
+                });
+
+                var themeBtnSwiper = new Swiper('.theme-tab .swiper-container', {
+                    loop: false,
+                    observer: true,
+                    observeParents: true,
+                    spaceBetween: 16,
+                    slidesPerView: 'auto',
+                    slideToClickedSlide: true,
+                });
+
+                var themeTabSwiper = new Swiper('#main-theme-swiper .swiper-container', {
+                    loop: true,
+                    observer: true,
+                    observeParents: true,
+                    slidesPerGroup: 2,
+                    slidesPerView: 2,
+                    pagination: {
+                        el: '#main-theme-swiper .swiper-pagination',
+                        clickable: true,
+                    },
+                });
+            };
+
+            // # 렌트/구독
+            if($('.main-rent-wrap').length){
+                var themeTabSwiper = new Swiper('#main-rent-swiper .swiper-container', {
+                    loop: true,
+                    observer: true,
+                    observeParents: true,
+                    slidesPerView: 'auto',
+                    centeredSlides: true,
+                    pagination: {
+                        el: '#main-rent-swiper .swiper-pagination',
+                        clickable: true,
+                    },
+                    on: {
+                        slideChangeTransitionEnd : function() {
+                            $('#main-rent-swiper ul li .car-info').removeClass('show');
+                            $(`#main-rent-swiper ul li[data-swiper-slide-index=${this.realIndex}]`).find('.car-info').addClass('show');
+                        },
+                    },
+                });
+            };
+
+            // # 금융사차량
+            if($('.finance-tab-wrap').length){
+                var themePrd = new TabContent('.finance-tab-wrap', {
+                    setClass: 'active',
+                    setBtn: '.finance-tab .btn',
+                    setCont: '.finance-cont .cont',
+                });
+
+                var themeBtnSwiper = new Swiper('.finance-tab .swiper-container', {
+                    loop: false,
+                    observer: true,
+                    observeParents: true,
+                    spaceBetween: 16,
+                    slidesPerView: 'auto',
+                    slideToClickedSlide: true,
+                });
+
+                var themeTabSwiper = new Swiper('#main-finance-swiper .swiper-container', {
+                    loop: true,
+                    observer: true,
+                    observeParents: true,
+                    slidesPerGroup: 2,
+                    slidesPerView: 2,
+                    pagination: {
+                        el: '#main-finance-swiper .swiper-pagination',
+                        clickable: true,
+                    },
+                });
+            };
+
+            // # 브랜드 목록
+            if($('.main-brand-wrap').length){
+                var _ul = $('.main-brand-wrap').find('ul');
+                var _height = _ul.outerHeight();
+                
+                $('.brand-more-btn').on('click', function(){
+                    if(!$('.main-brand-wrap').hasClass('active')){
+                        $(this).parents('.main-brand-wrap').addClass('active').find('.brand-more-btn p').text('접기');
+                        _ul.css('height', _ul[0].scrollHeight);
+                    }else{
+                        $(this).parents('.main-brand-wrap').removeClass('active').find('.brand-more-btn p').text('펼쳐서 더보기');
+                        _ul.css('height', _height + 'px');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

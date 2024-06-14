@@ -1,0 +1,1744 @@
+@import 'var';
+@import 'mixin';
+
+@media screen and (max-width: 320px) {
+    html,body { font-size: 14px; }
+}
+@media screen and (min-width: 550px) {
+    body,html { font-size: 18px; }
+}
+
+@keyframes progress {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+@keyframes rotateBound {
+    0% { transform: rotate(0); }
+    50% { transform: rotate(-15deg); }
+    100% { transform: rotate(0); }
+}
+@keyframes talkBox {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(px(8)); }
+    100% { transform: translateY(0); }
+}
+
+.example {
+    @include pos($p: relative, $l: 0, $t: 0, $z: 1);
+    @include font($s: px(12), $w: 600, $l: px(16), $t: px(-.5), $c: var(--color-point-solid));
+    @include flexBox($a: center, $j: center, $g: px(10));
+    @include dot($w: px(4), $h: px(4), $t: 50%, $l: 0, $c: var(--color-point-black));
+    background: url($comPath + '00_ico_example.png') no-repeat left px(10) center/auto 80% var(--color-transparent);
+}
+.guide-box-wrap {
+    margin: px(10);
+    padding: px(10);
+    border-radius: px(10);
+    border: 1px solid var(--color-line-gray07);
+    .row {
+        @include flexBox($w: wrap, $g: px(5));
+        .col {
+            flex: 1;
+            padding: px(10);
+            &.head {
+                flex: 100%;
+                @include font($s: px(14), $w: 700, $l: 1.2, $t: px(-.5), $a: center, $c: var(--color-point-black));
+            }
+            &.cont {
+                border: 1px solid var(--color-line-gray07);
+                border-radius: px(6);
+                text-align: center;
+                p { 
+                    margin-top: px(10);
+                    @include font($s: px(12), $w: 500, $l: 1.2, $t: px(-.5), $a: center, $c: var(--color-point-solid));
+                }
+            }
+        }
+        ~ .row {
+            margin-top: px(15);
+        }
+    }
+}
+
+/*
+    [Rule]
+    @ comPath : common images url
+    @ contPath : contents images url
+    @ line 1 px => don't do px()
+*/
+#wrap {
+    max-width: 720px;
+    margin: 0 auto;
+}
+.scroll-disable {
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden !important;
+    touch-action: none;
+}
+.ft-gm {
+    font-family: 'Gmarket' !important;
+}
+.inherit {
+    @include inherit();
+}
+.ft-blind {
+    @include fontBlind();
+}
+.el-blind {
+    @include elmBlind();
+}
+.section-partition {
+    display: block;
+    width: 100%;
+    height: px(10);
+    border: 0;
+    background-color: var(--color-bg-gray02);
+}
+
+.base-btn {
+    display: block;
+    width: auto;
+    height: px(52);
+    padding: 0 px(14);
+    background-color: var(--color-point-white);
+    @include font($s: px(16), $w: 500, $l: px(52), $t: px(-.1), $a: center, $c: var(--color-point-black));
+    &.gray {
+        background-color: var(--color-line-gray08);
+        color: var(--color-point-line);
+    }
+    &.blue {
+        background-color: var(--color-point-bi);
+        color: var(--color-point-white);
+    }
+    &.text {
+        color: var(--color-point-line);
+    }
+}
+
+.info-btn {
+    display: inline-block;
+    vertical-align: middle;
+    width: px(16);
+    height: px(16);
+    margin: px(-6) px(4) 0;
+    border-radius: 100%;
+    background: url($comPath + 'ico_info_btn.png') no-repeat center/100% var(--color-bg-gray01);
+}
+
+/*  */
+.toggle-button {
+    position: relative;
+    display: inline-block;
+    .label {
+        display: inline-block;
+        line-height: 0;
+        cursor: pointer;
+    }
+    .bg-track {
+        display: inline-block;
+        position: relative;
+        width: px(40);
+        height: px(24);
+        border-radius: px(50);
+        background-color: var(--color-bg-gray01);
+        outline: none;
+        overflow: hidden;
+        .ico-switch {
+            @include pos($p: absolute, $t: 2px, $l: 2px, $z: 1);
+            width: px(20);
+            height: px(20);
+            border-radius: 100%;
+            box-sizing: border-box;
+            background-color: var(--color-point-white);
+            transition: left .2s ease;
+        }
+    }
+    .checkbox:checked + .label {
+        .bg-track {
+            background-color: var(--color-point-bi);
+        }
+        .ico-switch {
+            left: px(18);
+        }
+    }
+    .checkbox:disabled + .label {
+        .bg-track {
+            background-color: var(--color-bg-gray02);
+        }
+    }
+}
+.check-button {
+    position: relative;
+    display: inline-block;
+    .label {
+        display: inline-block;
+        line-height: 0;
+        cursor: pointer;
+    }
+    .bg-arr {
+        display: inline-block;
+        position: relative;
+        width: px(24);
+        height: px(24);
+        border: 1px solid var(--color-line-gray07);
+        border-radius: px(2);
+        background-color: var(--color-point-white);
+        outline: none;
+        overflow: hidden;
+        &:before {
+            content: '';
+            @include pos($p: absolute, $l: 0, $t: 0);
+            width: 100%;
+            height: 100%;
+            background: url($comPath + 'ico_checkbox.png') no-repeat center/px(13) auto;
+        }
+    }
+    .checkbox:checked + .label {
+        .bg-arr {
+            border-color: var(--color-point-bi);
+            background-color: var(--color-point-bi);
+            &:before {
+                background-image: url($comPath + 'ico_checkbox_on.png');
+            }
+        }
+    }
+    .checkbox:disabled + .label {
+        .bg-arr {
+            border-color: var(--color-disabled);
+            background-color: var(--color-disabled);
+            &:before {
+                background-image: url($comPath + 'ico_checkbox_disa.png');
+            }
+        }
+    }
+    &.round .bg-arr {
+        border-radius: px(24);
+    }
+}
+.radio-button {
+    position: relative;
+    display: inline-block;
+    .label {
+        display: inline-block;
+        line-height: 0;
+        cursor: pointer;
+    }
+    .bg-circle {
+        display: inline-block;
+        position: relative;
+        width: px(24);
+        height: px(24);
+        border: 2px solid var(--color-line-gray07);
+        border-radius: px(24);
+        background-color: var(--color-point-white);
+        &:before {
+            content: '';
+            @include pos($p: absolute, $l: 50%, $t: 50%, $z: 1);
+            display: none;
+            width: px(16);
+            height: px(16);
+            border-radius: px(16);
+            background-color: var(--color-point-bi);
+            transform: translate(-50%, -50%);
+        }
+    }
+    .radio:checked + .label {
+        .bg-circle {
+            border-color: var(--color-point-bi);
+            &:before {
+                display: block;
+            }
+        }
+    }
+    .radio:disabled + .label {
+        .bg-circle {
+            border: 0;
+            background-color: var(--color-disabled);
+            &:before {
+                display: block;
+                background-color: var(--color-line-gray06);
+            }
+        }
+    }
+}
+.inp-box {
+    position: relative;
+    width: 100%;
+    height: px(50);
+    padding: 0 px(50) 0 0;
+    border: 1px solid var(--color-line-gray07);
+    background-color: var(--color-point-white);
+    .inp {
+        width: 100%;
+        height: 100%;
+        padding: 0 px(16);
+        @include font($s: px(16), $w: 400, $l: 1, $t: 0, $c: var(--color-point-line), $a: left);
+        ::placeholder {
+            color: var(--color-cont-font05);
+        }
+    }
+    .search {
+        @include pos($p: absolute, $r: 0, $t: 0, $z: 1);
+        width: px(50);
+        height: 100%; 
+        background: url($comPath + 'ico_inp_search_btn.png') no-repeat center/px(24);
+    }
+}
+
+/* 페이지네이션 */
+.pagenation-base {
+    @include flexBox($a: center, $j: center, $g: px(10));
+    padding: px(20) 0;
+    [class*="paging"] {
+        width: px(30);
+        height: px(30);
+        border-radius: px(2);
+        background-color: var(--color-point-white);
+        @include font($s: px(14), $w: 400, $l: px(30), $t: 0, $c: var(--color-cont-font03), $a: center);
+        &:not([class*='-act']).select {
+            background-color: var(--color-point-bi);
+            font-weight: 700;
+            color: #fff;
+        }
+    }
+    [class*="-act"] {
+        background: url($comPath + 'ico_paging_first.png') no-repeat center/100% auto;
+        &.prev {
+            background-image: url($comPath + 'ico_paging_prev.png');
+        }
+        &.next {
+            background-image: url($comPath + 'ico_paging_next.png');
+        }
+        &.last {
+            background-image: url($comPath + 'ico_paging_last.png');
+        }
+    }
+}
+
+/* 헤더 */
+#header-elm-wrap {
+    position: relative;
+    width: 100%;
+    z-index: 11;
+    .inner {
+        position: relative;
+        width: 100%;
+        height: px(58);
+        border-bottom: 1px solid var(--color-line-gray08);
+        background-color: #fff;
+        @include flexBox($a: center, $j: center);
+        [class*='btn'] {
+            @include pos($p: absolute, $l: px(12), $t: 50%, $z: 1);
+            width: px(24);
+            height: px(24); 
+            margin-top: px(-12);
+            background: url($comPath + 'ico_gnb_menu.png') no-repeat center/auto 100% var(--color-transparent);
+        }
+        .btn-wish {
+            left: auto;
+            right: px(12);
+            background-image: url($comPath + 'ico_gnb_wish.png');
+        }
+        .center {
+            width: calc(100% - px(100));
+            height: px(48);
+            overflow: hidden;
+            > div {
+                @include flexBox($a: center, $j: center);
+                height: px(48);
+                text-align: center;
+                transition-duration: .4s;
+                transition-timing-function: var(--ease-in-out-quad);
+                button {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    padding: 0 px(16);
+                    background-color: var(--color-bg-gray04);
+                    @include font($s: px(16), $w: 400, $l: px(48), $t: 0, $c: var(--color-cont-font05), $a: left);
+                    &:before {
+                        content: '';
+                        @include pos($p: absolute, $r: px(16), $t: 50%, $z: 1);
+                        width: px(24);
+                        height: px(24);
+                        margin-top: px(-12);
+                        background: url($comPath + 'ico_gnb_search.png') no-repeat center/auto 100%;
+                    }
+                }
+            }
+            &.ruller {
+                > div {
+                    transform: translateY(-100%);
+                }
+            }
+        }
+    }
+    &.fixed {
+        border-bottom: 1px solid transparent;
+        .inner {
+            @include pos($p: fixed, $l: 50%, $t: 0, $z: 10);
+            width: 100%;
+            max-width: 720px;
+            transform: translateX(-50%);
+        }
+    }
+    &.search {
+        .center > div {
+            transform: translateY(-100%);
+        }
+    }
+}
+
+/* 푸터 */
+#footer-elm-wrap {
+    padding-bottom: px(80);
+    background-color: var(--color-point-white);
+    .cs {
+        padding: px(32) px(20);
+        background-color: var(--color-bg-gray05);
+        p {
+            @include font($s: px(14), $w: 500, $l: auto, $t: px(-.5), $c: var(--color-point-line), $a: left);
+        }
+        .cs-info {
+            @include flexBox($j: space-between, $g: px(10));
+            margin-top: px(18);
+            .call {
+                a {
+                    position: relative;
+                    padding: px(6) 0 0 px(40);
+                    background: url($comPath + 'ico_cs_call.png') no-repeat left center/px(32);
+                    @include font($f: "Gmarket", $s: px(30), $w: 700, $l: 1, $t: 0, $c: var(--color-point-solid), $a: left);
+                }
+            }
+            .info {
+                p {
+                    @include font($s: px(12), $w: 500, $l: 1.2, $t: 0, $c: var(--color-cont-font03), $a: left);
+                }
+            }
+        }
+        ul {
+            @include flexBox($j: space-between);
+            margin: px(20) px(-20) 0;
+            li {
+                flex: auto;
+                a {
+                    display: block;
+                    @include font($s: px(14), $w: 600, $l: px(20), $t: px(-.5), $c: var(--color-point-solid), $a: center);
+                    .ico {
+                        display: inline-block;
+                        vertical-align: top;
+                        width: px(20);
+                        height: px(20);
+                        margin-right: px(4);
+                        background: url($comPath + 'ico_cs_btn01.png') no-repeat center/auto 100%;
+                        &.que {
+                            background-image: url($comPath + 'ico_cs_btn02.png');
+                        }
+                        &.cus {
+                            background-image: url($comPath + 'ico_cs_btn03.png');
+                        }
+                    }
+                }
+                ~ li {
+                    @include par($w: 1px, $h: px(10), $t: 50%, $l: 0, $c: var(--color-line-gray08));
+                }
+            }
+        }
+    }
+    .mail {
+        padding: px(20) px(10);
+        border-bottom: 1px solid var(--color-bg-gray02);
+        ul {
+            @include flexBox($a: center, $j: center, $g: px(8));
+            li {
+                flex: 0 auto;
+                word-break: keep-all;
+                @include font($s: px(12), $w: 400, $l: px(22), $t: px(-.5), $c: var(--color-cont-font01), $a: center);
+                a {
+                    display: inline-block;
+                    margin-left: px(4);
+                    @include inherit($c: var(--color-cont-font03));
+                }
+            }
+        }
+    }
+    .sns {
+        padding: px(20) px(10);
+        border-bottom: 1px solid var(--color-bg-gray02);
+        ul {
+            @include flexBox($a: center, $j: center, $g: px(16));
+            li {
+                flex: 0 auto;
+                a {
+                    .ico {
+                        display: block;
+                        width: px(32);
+                        height: px(32);
+                        margin: 0 auto;
+                        border-radius: px(32);
+                        background: url($comPath + 'ico_footer_blog.png') no-repeat center/auto 100%;
+                        &.facebook {
+                            background-image: url($comPath + 'ico_footer_facebook.png')
+                        }
+                        &.youtube {
+                            background-image: url($comPath + 'ico_footer_youtube.png')
+                        }
+                        &.instagram {
+                            background-image: url($comPath + 'ico_footer_instagram.png')
+                        }
+                        &.kakao {
+                            background-image: url($comPath + 'ico_footer_kakao.png')
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .company {
+        padding: px(20) 0;
+        ul {
+            @include flexBox($a: center, $j: center);
+            li {
+                flex: 0 auto;
+                padding: 0 px(10);
+                a {
+                    @include font($s: px(14), $w: 500, $l: px(22), $t: px(-.5), $c: var(--color-point-black), $a: center);
+                }
+                ~ li {
+                    @include par($w: 1px, $h: px(10), $t: 50%, $l: 0, $c: var(--color-point-black));
+                }
+            }
+        }
+        .copyright {
+            margin-top: px(8);
+            @include font($s: px(12), $w: 400, $l: px(22), $t: px(-.5), $c: var(--color-cont-font04), $a: center);
+        }
+        .toggle {
+            margin-top: px(20);
+            padding: 0 px(20);
+            .toggle-btn {
+                padding: 0 px(20) px(16);
+                text-align: center;
+                .btn {
+                    position: relative;
+                    display: inline-block;
+                    padding-right: px(22);
+                    @include font($s: px(14), $w: 400, $l: px(16), $t: px(-.5), $c: var(--color-point-black), $a: center);
+                    &:before {
+                        content: '';
+                        @include pos($p: absolute, $r: 0, $t: 0, $z: 1);
+                        width: px(16);
+                        height: px(16);
+                        background: url($comPath + 'ico_toggle_arr.png') no-repeat center/100% auto;
+                        transition-duration: var(--trans-duration);
+                    }
+                    &.active:before {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+            .toggle-cont {
+                padding: px(16) px(20);
+                background-color: var(--color-bg-gray04);
+                @include font($s: px(14), $w: 400, $l: px(16), $t: px(-.5), $c: var(--color-point-solid), $a: center);
+                strong {
+                    display: block;
+                    @include inherit($w: 700);
+                }
+                p {
+                    margin-top: px(8);
+                    @include inherit();
+                }
+            }
+        }
+    }
+    .down {
+        padding: px(20);
+        border-top: px(10) solid var(--color-bg-gray02);
+        p {
+            @include font($s: px(14), $w: 400, $l: 1.2, $t: px(-.5), $c: var(--color-point-line), $a: center);
+        }
+        .app-down-link {
+            margin-top: px(16);
+            text-align: center;
+            a {
+                display: inline-block;
+                .ico {
+                    display: block;
+                    width: px(112);
+                    height: px(32);
+                    background: url($comPath + 'ico_down_aos.png') no-repeat center/auto 100%;
+                    &.ios {
+                        background-image: url($comPath + 'ico_down_ios.png');
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* 하단 고정 메뉴 */
+#bottom-menu-wrap {
+    @include pos($p: fixed, $l: 50%, $b: 0, $z: 11);
+    width: 100%;
+    max-width: 720px;
+    height: px(56);
+    border-top: 1px solid var(--color-line-gray08);
+    background-color: var(--color-point-white);
+    transform: translateX(-50%);
+    ul {
+        @include flexBox($a: center);
+        height: 100%;
+        li {
+            flex: 1;
+            .ico {
+                display: block;
+                width: px(24);
+                height: px(24);
+                margin: 0 auto;
+                background: url($comPath + 'ico_fix_home.png') no-repeat center/auto 100%;
+                &.all {
+                    background-image: url($comPath + 'ico_fix_all.png');
+                }
+                &.sell {
+                    background-image: url($comPath + 'ico_fix_sell.png');
+                }
+                &.recent {
+                    background-image: url($comPath + 'ico_fix_recent.png');
+                }
+                &.center {
+                    display: block;
+                    width: px(44);
+                    height: px(44);
+                    margin: px(-20) auto 0;
+                    border-radius: px(44);
+                    background-image: url($comPath + 'ico_fix_search.png');
+                    background-color: var(--color-point-bi);
+                    background-size: px(24);
+                }
+            }
+            &.on {
+                .ico {
+                    background-image: url($comPath + 'ico_fix_home_on.png');
+                    &.all {
+                        background-image: url($comPath + 'ico_fix_all_on.png');
+                    }
+                    &.sell {
+                        background-image: url($comPath + 'ico_fix_sell_on.png');
+                    }
+                    &.recent {
+                        background-image: url($comPath + 'ico_fix_recent_on.png');
+                    }
+                }
+            } 
+            p {
+                margin-top: px(2);
+                @include font($s: px(10), $w: 500, $l: px(14), $t: px(-.5), $c: var(--color-line-gray01), $a: center);
+            }
+        }
+    }
+}
+
+/* 최상단 이동 버튼 */
+.quick-top-btn {
+    @include pos($p: fixed, $r: px(20), $b: px(208), $z: 10);
+    width: px(56);
+    height: px(56);
+    box-shadow: px(4) px(4) px(4) rgba(0, 0, 0, .1);
+    border: 1px solid var(--color-line-gray07);
+    border-radius: 100%;
+    background: url($comPath + 'ico_quick_top.png') no-repeat center/100% auto #fff;
+    overflow: hidden;
+    transition-duration: var(--trans-duration);
+    &:disabled {
+        background-color: var(--color-bg-gray05);
+    }
+    &.move {
+        bottom: px(464);
+    }
+}
+
+/* 퀵메뉴 */
+.quick-base-wrap {
+    @include pos($p: fixed, $r: 0, $z: 10);
+    pointer-events: none;
+    .talk-box {
+        @include pos($p: absolute, $r: px(96), $b: px(12), $z: 2);
+        width: px(165);
+        padding: px(10) px(36) px(10) px(16);
+        border-radius: px(50);
+        background-color: var(--color-point-solid);
+        animation: talkBox 2s infinite var(--ease-in-out-quad);
+        pointer-events: auto;
+        @include font($s: px(14), $w: 400, $l: px(22), $t: px(-1), $c: var(--color-point-white), $a: left);
+        &:after {
+            content: '';
+            @include pos($p: absolute, $r: px(-14), $t: 50%, $z: 1);
+            border: px(8) solid var(--color-transparent);
+            border-left-color: var(--color-point-solid);
+            margin: px(-8) 0 0;
+        }
+        .talk-box-close {
+            @include pos($p: absolute, $r: px(12), $t: 50%, $z: 1);
+            width: px(20);
+            height: px(20);
+            margin: px(-10) 0 0;
+            background: url($comPath + 'ico_talk_close.png') no-repeat center/px(12);
+        }
+    }
+    .quick-btn {
+        @include pos($p: absolute, $r: px(20), $b: 0, $z: 3);
+        width: px(56);
+        height: px(56);
+        box-shadow: px(4) px(4) px(4) rgba(0, 0, 0, .1);
+        border-radius: 100%;
+        overflow: hidden;
+        pointer-events: auto;
+    }
+    .quick-list {
+        position: relative;
+        z-index: 2;
+        font-size: 0;
+        visibility: hidden;
+        li {
+            position: relative;
+            right: 0;
+            width: px(56);
+            height: px(56);
+            opacity: 0;
+            p {
+                @include font($s: px(14), $w: 500, $l: px(22), $t: px(-1), $c: var(--color-point-white), $a: center);
+            }
+            a {
+                display: block;
+                box-shadow: px(4) px(4) px(4) rgba(0, 0, 0, .1);
+                border-radius: 100%;
+                overflow: hidden;
+            }
+            &.on {
+                &::after {
+                    content: '';
+                    @include pos($p: absolute, $t: px(12), $r: px(12), $z: 1);
+                    width: px(6);
+                    height: px(6);
+                    border-radius: 100%;
+                    background-color: var(--color-point-bi);
+                }
+            }
+        }
+    }
+    &::before {
+        content: '';
+        @include pos($p: fixed, $l: 0, $t: 0, $z: 1);
+        visibility: hidden;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .6);
+        transition-duration: var(--trans-duration);
+        opacity: 0;
+    }
+    &#quick-cs {
+        bottom: px(80);
+        .quick-btn {
+            border: 1px solid var(--color-point-bi);
+            background: url($comPath + 'ico_quick_cs_open.png') no-repeat center/100% auto #fff;
+        }
+        .quick-list {
+            right: px(84);
+            li {
+                display: inline-block;
+                vertical-align: bottom;
+                transform: translateX(px(30));
+                p {
+                    @include pos($p: absolute, $l: px(-4), $t: px(-26));
+                    width: calc(100% + px(8));
+                }
+                a {
+                    border: 1px solid var(--color-point-bi);
+                    background-color: var(--color-point-white);
+                }
+                ~ li {
+                    margin-left: px(8);
+                }
+            }
+        }
+    }
+    &#quick-user {
+        bottom: px(144);
+        .quick-btn {
+            border: 1px solid var(--color-line-gray07);
+            background: url($comPath + 'ico_quick_user_open.png') no-repeat center/100% auto #fff;
+        }
+        .quick-list {
+            right: px(20);
+            bottom: px(64);
+            li {
+                display: block;
+                width: px(120);
+                font-size: 0;
+                transform: translateY(px(30));
+                p {
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: calc(px(120) - px(56));
+                    padding-right: px(10);
+                    line-height: px(56);
+                    text-align: right;
+                }
+                a {
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: px(56);
+                    border: 1px solid var(--color-line-gray06);
+                    background-color: var(--color-point-white);
+                }
+                ~ li {
+                    margin-top: px(8);
+                }
+            }
+        }
+    }
+    &.active {
+        z-index: 12;
+        pointer-events: auto;
+        .quick-btn {
+            animation: rotateBound var(--trans-duration) var(--ease-in-out-quad);
+        }
+        .quick-list li {
+            visibility: visible;
+            transition-duration: var(--trans-duration);
+            transition-delay: .4s;
+            opacity: 1;
+            &:nth-child(2){
+                transition-delay: .3s;
+            }
+            &:nth-child(3){
+                transition-delay: .2s;
+            }
+            &:nth-child(4){
+                transition-delay: .1s;
+            }
+        }
+        &#quick-cs {
+            .quick-btn {
+                background-image: url($comPath + 'ico_quick_cs_close.png');
+            }
+            .quick-list {
+                li {   
+                    transform: translateX(0);
+                }
+            }
+        }
+        &#quick-user {
+            .quick-btn {
+                background-image: url($comPath + 'ico_quick_user_close.png');
+            }
+            .quick-list {
+                li {   
+                    transform: translateY(0);
+                }
+            }
+        }
+        &::before {
+            content: '';
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+/* 전체메뉴 */
+#aside-menu-wrap {
+    @include pos($p: fixed, $l: -100%, $t: 0, $z: 20);
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-point-white);
+    transition: var(--trans-duration) var(--ease-in-out-quad);
+    overflow: hidden;
+    overflow-y: auto;
+    .flex-col-wrap {
+        @include flexBox($d: column);
+        height: 100vh;
+        .top-cont {
+            border-bottom: 1px solid var(--color-line-gray07);
+            .user-menu {
+                padding: px(18) px(20) px(20);
+                .top {
+                    position: relative;
+                    .txt-btn {
+                        p {
+                            display: inline-block;
+                            padding-right: px(25);
+                            background: url($comPath + 'ico_aside_arr.png') no-repeat center right/auto px(20);
+                            @include font($s: px(22), $w: 500, $l: px(28), $t: px(-.5), $c: var(--color-point-black));
+                        }
+                    }
+                    .gnb-btn-group {
+                        @include pos($p: absolute, $r: 0, $t: px(-1), $z: 1);
+                        @include flexBox($a: center, $g: px(14));
+                        .gnb-btn {
+                            width: px(30);
+                            height: px(30);
+                            background: url($comPath + 'ico_aside_close.png') no-repeat center/auto 100%;
+                            &.setting {
+                                background-image: url($comPath + 'ico_aside_setting.png');
+                            }
+                        }
+                    }
+                }
+                .ico-link {
+                    @include flexBox();
+                    margin-top: px(20);
+                    li {
+                        position: relative;
+                        flex: 1;
+                        a {
+                            display: block;
+                            .ico {
+                                display: block;
+                                width: px(34);
+                                height: px(34);
+                                margin: 0 auto;
+                                background: url($comPath + 'ico_aside_buy.png') no-repeat center/auto 100%;
+                                &.sell {
+                                    background-image: url($comPath + 'ico_aside_sell.png');
+                                }
+                                &.rent {
+                                    background-image: url($comPath + 'ico_aside_rent.png');
+                                }
+                            }
+                            p {
+                                margin-top: px(2);
+                                @include font($s: px(14), $w: 600, $l: 1.2, $t: px(-.5), $c: var(--color-point-black), $a: center);
+                            }
+                        }
+                        ~ li {
+                            @include par($w: 1px, $h: px(42), $t: 50%, $l: 0, $c: var(--color-line-gray08));
+                        }
+                    }
+                }
+                .my-link {
+                    @include flexBox($a: center, $j: center);
+                    width: 100%;
+                    padding: px(16) 0;
+                    margin-top: px(20);
+                    border-radius: px(5);
+                    background-color: var(--color-bg-gray05);
+                    li {
+                        position: relative;
+                        flex: 1;
+                        a {
+                            display: block;
+                            @include font($s: px(13), $w: 600, $l: px(18), $t: px(-.5), $c: var(--color-point-solid), $a: center);
+                            .ico {
+                                display: inline-block;
+                                vertical-align: top;
+                                width: px(18);
+                                height: px(18);
+                                margin: 0 px(2) 0 0;
+                                background: url($comPath + 'ico_aside_mypage.png') no-repeat center/auto 100%;
+                                &.cs {
+                                    background-image: url($comPath + 'ico_aside_cs.png');
+                                }
+                                &.alram {
+                                    background-image: url($comPath + 'ico_aside_alram.png');
+                                }
+                            }
+                        }
+                        ~ li {
+                            @include par($w: 1px, $h: px(14), $t: 50%, $l: 0, $c: var(--color-bg-gray01));
+                        }   
+                    }
+                }
+            }
+        }
+        .flex-box {
+            @include flexBox();
+            flex: auto;
+            position: relative;
+            overflow: hidden;
+            .left-cont {
+                width: 140px;
+                box-shadow: inset 1px 0 px(4) px(4) rgba(0, 0, 0, .05);
+                background-color: #F4F5F6;
+                overflow: hidden;
+                .left-scroll {
+                    height: 100%;
+                    overflow: hidden;
+                    overflow-y: auto;
+                }
+                li {
+                    a {
+                        display: block;
+                        width: 100%;
+                        height: px(60);
+                        padding: 0 px(10) 0 px(20);
+                        @include font($s: px(18), $w: 400, $l: px(60), $t: px(-.5), $c: var(--color-cont-font04), $a: left);
+                    }
+                    &.bk a {
+                        font-weight: 700;
+                        color: var(--color-point-black);
+                    }
+                    &.active {
+                        box-shadow: 0 px(3) px(3) rgba(0, 0, 0, .05);
+                        a {
+                            background-color: var(--color-point-white);
+                            font-weight: 700;
+                            color: var(--color-point-bi);
+                        }
+                    }
+                }
+            }
+            .right-cont {
+                flex: 1;
+                background-color: var(--color-point-white);
+                .right-scroll {
+                    height: 100%;
+                    padding: 0 px(20);
+                    overflow: hidden;
+                    overflow-y: auto;
+                }
+                .menu-box {
+                    position: relative;
+                    h2 {
+                        @include pos($p: sticky, $l: 0, $t: 0, $z: 1);
+                        display: block;
+                        width: 100%;
+                        height: px(55);
+                        border-bottom: 1px solid var(--color-line-gray08);
+                        background-color: var(--color-point-white);
+                        @include font($s: px(16), $w: 700, $l: px(55), $t: px(-.5), $c: var(--color-point-black), $a: left);
+                    }
+                    .depth1 {
+                        padding: px(20) 0 px(60);
+                        li {
+                            a {
+                                display: block;
+                                word-break: keep-all;
+                                @include font($s: px(18), $w: 400, $l: px(24), $t: px(-.5), $c: #333, $a: left);
+                            }
+                            ~ li {
+                                margin-top: px(18);
+                            }
+                        }
+                    }
+                    ~ .menu-box h2 {
+                        border-top: 1px solid var(--color-line-gray06);
+                    }
+                    &:last-child {
+                        min-height: calc(100% + 1px);
+                    }
+                }
+            }
+        }
+    }
+    &.active { 
+        left: 0;
+    }
+}
+
+/*  */
+#wrap .layer-tooltip-wrap {
+    @include pos($p: absolute, $l: 50%, $t: 100%, $z: 2);
+    visibility: hidden;
+    width: calc(100vw - px(40));
+    height: auto;
+    padding: px(12) px(38) px(12) px(12);
+    border-radius: px(4);
+    background-color: #2e3546;
+    transition-duration: var(--trans-duration);
+    transition-timing-function: var(--ease-in-out-quad);
+    transform: translateX(-50%);
+    opacity: 0;
+    .tip-box{
+        height: auto;
+        max-height: px(136);
+        overflow: hidden;
+        overflow-y: auto;
+        p {
+            margin: 0;
+            word-break: keep-all;
+            @include font($s: px(14), $w: 500, $l: px(22), $t: px(-1), $c: var(--color-point-white), $a: left);
+        }
+    }
+    [class*='close'] {
+        @include pos($p: absolute, $r: px(8), $t: px(8), $z: 1);
+        width: px(24);
+        height: px(24);
+        background: url($comPath + 'ico_tip_close.png') no-repeat center/100% auto;
+    }
+    &.show {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+/*  */
+#wrap .layer-snack-wrap {
+    @include pos($p: fixed, $l: px(18), $b: px(80), $z: 12);
+    visibility: hidden;
+    width: calc(100% - px(36));
+    height: auto;
+    padding: px(12);
+    border-radius: px(4);
+    background-color: #2e3546;
+    transition-duration: var(--trans-duration);
+    transition-timing-function: var(--ease-in-out-quad);
+    opacity: 0;
+    p {
+        margin: 0;
+        word-break: keep-all;
+        @include font($s: px(14), $w: 500, $l: px(22), $t: px(-1), $c: var(--color-point-white), $a: left);
+    }
+    &.show {
+        visibility: visible;
+        bottom: px(100);
+        opacity: 1;
+    }
+}
+
+/*  */
+.layer-base-wrap {
+    @include pos($p: fixed, $l: 0, $t: 0, $z: 11);
+    width: 100%;
+    height: 100%;
+    display: none;
+    .layer-box {
+        @include pos($p: absolute, $l: 50%, $t: 50%, $z: 2);
+        width: calc(100% - px(40));
+        max-width: 720px;
+        height: auto;
+        background-color: var(--color-point-white);
+        transform: translate(-50%, -50%);
+        .layer-close {
+            @include pos($p: absolute, $r: 0, $t: px(-48), $z: 1);
+            width: px(48);
+            height: px(48);
+            background: url($comPath + 'ico_layer_close.png') no-repeat center/100% auto;
+        }
+        .layer-cont {
+            @include flexBox($a: center, $j: center, $d: column, $g: px(4));
+            min-height: px(160);
+        }
+        .layer-btn {
+            @include flexBox($a: center, $j: center);
+            .base-btn {
+                flex: 1;
+            }
+        }
+    }
+    &::before {
+        content: '';
+        @include pos($p: absolute, $l: 0, $t: 0, $z: 1);
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .6);
+    }
+    &.bottom {
+        .layer-box {
+            top: auto;
+            left: 50%; 
+            bottom: 0;
+            width: 100%;
+            height: auto;
+            border-radius: px(24) px(24) 0 0;
+            overflow: hidden;
+            opacity: 0;
+            transform: translate(-50%, 20%);
+            transition-duration: var(--trans-duration);
+            .layer-cont {
+                // max-height: px(300);
+                overflow: hidden;
+                // overflow-y: auto;
+                img {
+                    width: auto;
+                    max-width: 100%;
+                }
+            }
+            .layer-btn {
+                justify-content: space-between;
+                height: px(52);
+                padding: 0 px(20);
+                .base-btn {
+                    flex: 0 auto;
+                    height: auto;
+                    padding: 0;
+                    line-height: px(20);
+                    &.layer-today {
+                        color: var(--color-line-gray02);
+                    }
+                    &.layer-close {
+                        position: static;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* 배너 */
+.swiper-base-banner {
+    position: relative;
+    .swiper-container {
+        width: 100%;
+        overflow: hidden;
+    }
+    &.visual {
+        &::after {
+            content: '';
+            @include pos($p: absolute, $l: 0, $b: 0, $z: 1);
+            width: 100%;
+            height: px(100);
+            background: linear-gradient(0deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 100%);
+            pointer-events: none;
+        }
+        .swiper-control {
+            @include pos($p: absolute, $l: 50%, $b: px(15), $z: 2);
+            width: auto;
+            font-size: 0;
+            line-height: 0;
+            text-align: center;
+            transform: translateX(-50%);
+            .swiper-pagination {
+                position: static;
+                display: inline-block;
+                width: auto;
+                font-size: 0;
+                span {
+                    position: relative;
+                    width: px(34);
+                    height: px(2);
+                    margin: 0;
+                    border-radius: px(2);
+                    background-color: rgba(255, 255, 255, .5);
+                    opacity: 1;
+                    overflow: hidden;
+                    .bar {
+                        content: '';
+                        @include pos($p: absolute, $l: 0, $t: 0, $z: 1);
+                        width: 0%;
+                        height: 100%;
+                        background-color: var(--color-point-white);
+                    }
+                    ~ span {
+                        margin-left: px(4);
+                    }
+                    &.swiper-pagination-bullet-active {
+                        .bar {
+                            animation: progress 3s var(--ease-in-out-quad) alternate forwards;
+                        }
+                        &.stop .bar {
+                            animation-play-state: paused;
+                        }
+                    }
+                }
+            }
+            .swiper-btn {
+                @include pos($p: absolute, $r: px(-20), $t: 50%, $z: 1);
+                width: px(12);
+                height: px(12);
+                margin: px(-6) 0 0; 
+                background: url($comPath + 'ico_swiper_stop.png') no-repeat center/100% auto;
+                &.pause {
+                    background-image: url($comPath + 'ico_swiper_play.png');
+                }
+            }
+        }
+    }
+}
+
+/* 상품 */
+.product-base-wrap {
+    overflow: hidden;
+    li {
+        .car-thumb {
+            position: relative;
+            > a {
+                position: relative;
+                z-index: 1;
+                display: block;
+                font-size: 0;
+                line-height: 0;
+                overflow: hidden;
+                &::before {
+                    content: '';
+                    display: block;
+                    width: 100%;
+                    padding-top: 74%;
+                }
+                img {
+                    @include pos($p: absolute, $l: 50%, $t: 50%, $z: 1);
+                    transform: translate(-50%, -50%);
+                }
+            }
+            .car-state {
+                @include pos($p: absolute, $l: 0, $t: 0, $z: 2);
+                text-align: left;
+                span {
+                    display: inline-block;
+                    width: auto;
+                    height: px(24);
+                    padding: 0 px(6);
+                    @include font($s: px(12), $w: 400, $l: px(24), $t: px(-1), $a: center, $c: var(--color-point-white));
+                    &.soldout {
+                        background-color: var(--color-point-solid);
+                    }
+                    &.contract {
+                        background-color: var(--color-point-bi);
+                    }
+                }
+            }
+            .car-logo {
+                @include pos($p: absolute, $r: px(4), $t: px(4), $z: 2);
+                @include flexBox($a: center, $j: center);
+                i {
+                    width: px(20);
+                    height: px(20);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 100%;
+                    &.reborn {
+                        background-image: url($comPath + '/lp/ico_prd_reborn.png');
+                    }
+                }
+            }
+            .car-btn {
+                @include pos($p: absolute, $r: px(4), $b: px(4), $z: 2);
+                button {
+                    width: px(32);
+                    height: px(32);
+                    border-radius: 100%;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 100%;
+                    background-color: rgba(0, 0, 0, .2);
+                    overflow: hidden;
+                    &.favorite {
+                        background-image: url($comPath + '/lp/ico_prd_wish.png');
+                    }
+                }
+            }
+        }
+        .car-info {
+            margin-top: px(16);
+            padding: 0 px(16);
+            .car-sum {
+                position: relative;
+                padding-right: px(32);
+                .row {
+                    @include flexBox($g: px(8));
+                    span {
+                        @include font($s: px(10), $w: 400, $l: px(20), $t: px(-1), $a: center, $c: var(--color-cont-font05));
+                    }
+                }
+                .car-rent {
+                    @include pos($p: absolute, $r: 0, $t: 0, $z: 1);
+                    span {
+                        display: inline-block;
+                        width: px(32);
+                        height: px(20);
+                        background-color: var(--color-point-bi);
+                        @include font($s: px(12), $w: 400, $l: px(20), $t: px(-1), $a: center, $c: var(--color-point-white));
+                    }
+                }
+                & + a {
+                    display: block;
+                    margin-top: px(2);
+                }
+            }
+            .car-model, .car-trim {
+                word-break: keep-all;
+                @include font($s: px(16), $w: 400, $l: px(22), $t: px(-1), $a: left, $c: var(--color-point-black));
+            }
+            .car-pay {
+                margin-top: px(8);
+                .price {
+                    @include flexBox($a: end, $g: px(2));
+                    p {
+                        @include font($s: px(14), $w: 400, $l: px(18), $t: px(-1), $a: left, $c: var(--color-point-black));
+                        strong {
+                            @include inherit($w: 700);
+                        }
+                    }
+                    del {
+                        @include font($s: px(10), $w: 400, $l: px(14), $t: px(-1), $a: left, $c: var(--color-cont-font05));
+                        strong {
+                            @include inherit();
+                        }
+                    }
+                }
+                .txt {
+                    @include flexBox($w: wrap, $g: px(6));
+                    margin-top: px(4);
+                    dt, dd {
+                        @include font($s: px(12), $w: 400, $l: px(16), $t: px(-1), $a: left, $c: var(--color-point-black));
+                    }
+                    dd {
+                        color: var(--color-cont-font05);
+                        span {
+                            @include inherit($w: 700, $c: var(--color-point-bi));
+                        }
+                    }
+                }
+                .etc {
+                    margin-top: px(4);
+                    @include font($s: px(10), $w: 400, $l: px(14), $t: px(-1), $a: left, $c: var(--color-point-solid));
+                }
+            }
+            .car-badge {
+                @include flexBox($a: center, $w: wrap, $g: px(4) px(2));
+                margin-top: px(8);
+                span {
+                    display: inline-block;
+                    vertical-align: top;
+                    padding: 0 px(6);
+                    border-radius: px(2);
+                    background-color: var(--color-bg-gray02);
+                    @include font($s: px(12), $w: 500, $l: px(20), $t: px(-1), $a: center, $c: var(--color-cont-font03));
+                }
+            }
+        }
+        &.more {
+            padding: 0 px(10);
+            a {
+                @include flexBox($a: center, $j: center, $g: px(14), $d: column);
+                width: 100%;
+                height: px(258);
+                border-radius: px(4);
+                background-color: var(--color-bg-gray05);
+                .arr {
+                    display: block;
+                    width: px(80);
+                    height: px(80);
+                    margin: 0 auto;
+                    border-radius: 100%;
+                    background: url($comPath + '/lp/ico_prd_more.png') no-repeat center/auto 100% var(--color-point-white);
+                    overflow: hidden;
+                }
+                p {
+                    @include font($s: px(14), $w: 500, $l: px(16), $t: px(-1), $a: center, $c: var(--color-cont-font03));
+                }
+            }
+        }
+    }
+    &.focus {
+        ul {
+            li {
+                width: 65%;
+                .car-thumb {
+                    transform: scale(.8);
+                    transform-origin: center;
+                    transition-duration: var(--trans-duration);
+                }
+                .car-info {
+                    opacity: 0;
+                    .car-sum .row span {
+                        color: var(--color-cont-font05);
+                    }
+                    .car-model, .car-trim {
+                        color: var(--color-point-white);
+                    }
+                    .car-pay {
+                        .price p {
+                            color: var(--color-point-bi);
+                        }
+                        .etc {
+                            color: var(--color-cont-font05);
+                        }
+                    } 
+                    .car-badge span {
+                        background-color: rgba(255, 255, 255, .2);
+                        color: var(--color-point-white);
+                    }
+                }
+                &[class*='active'] {
+                    .car-thumb {
+                        transform: scale(1);
+                    }
+                    .car-info.show {
+                        opacity: 1;
+                        transition-duration: var(--trans-duration);
+                    }
+                }
+            }
+        }
+        .swiper-control .swiper-pagination {
+            background-color: rgba(255, 255, 255, .3);
+            span {
+                width: px(30);
+                background-color: var(--color-transparent);
+                &[class*='active'] {
+                    background-color: var(--color-point-white);
+                }
+            }
+        }
+    }
+}
+
+.product-base-wrap, .review-base-wrap {
+    .swiper-control {
+        padding: px(56) px(20) px(40);
+        text-align: center;
+        font-size: 0;
+        line-height: 0;
+        .swiper-pagination {
+            display: inline-block;
+            position: static;
+            width: auto;
+            height: px(3);
+            border-radius: px(4);
+            background-color: var(--color-line-gray08);
+            font-size: 0;
+            line-height: 0;
+            overflow: hidden;
+            span {
+                vertical-align: top;
+                position: static;
+                width: px(14);
+                height: 100%;
+                margin: 0 !important;
+                border-radius: px(4);
+                background-color: var(--color-line-gray08);
+                transform: scaleX(0);
+                transform-origin: left center;
+                transition-duration: var(--trans-duration);
+                overflow: hidden;
+                &.swiper-pagination-bullet-active {
+                    transform: scaleX(1);
+                    background-color: var(--color-point-line);
+                }
+            }
+        }
+    }
+}
+
+/* 리뷰 */
+.review-base-wrap {
+    .swiper-container {
+        padding: 0 px(20);
+    }
+    li {
+        width: 70%;
+        a {
+            display: block;
+            padding: px(24);
+            background-color: var(--color-point-white);
+        }
+        .box {
+            @include flexBox($a: center, $j: space-between);
+            .rating {
+                @include flexBox($a: center, $g: px(2));
+                width: px(88);
+                height: px(16);
+                span {
+                    width: px(16);
+                    height: px(16);
+                    background: url($comPath + 'ico_rating.png') no-repeat center/100% auto;
+                    &.on {
+                        background-image: url($comPath + 'ico_rating_on.png');
+                    }
+                }
+            }
+            .car-model {
+                @include font($s: px(14), $w: 700, $l: px(16), $t: px(-1), $c: var(--color-point-line), $a: left);
+            }
+            .name, .date {
+                @include font($s: px(12), $w: 400, $l: px(16), $t: px(-1), $c: var(--color-cont-font05), $a: left);
+                b {
+                    @include inherit($c: var(--color-point-line));
+                }
+            }
+        }
+        .subject {
+            margin-top: px(16);
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            @include font($s: px(16), $w: 400, $l: px(26), $t: px(-1), $c: var(--color-point-line), $a: left);
+        }
+        .summary {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
+            white-space: normal;
+            word-wrap: break-word;
+            overflow: hidden;
+            margin-top: px(8);
+            @include font($s: px(14), $w: 400, $l: px(18), $t: px(-1), $c: var(--color-point-line), $a: left);
+            & + .box {
+                margin-top: px(16);
+            }
+        }
+    }
+}
+
+/* 영상 */
+.video-base-wrap {
+    padding-bottom: px(40);
+    ul {
+        @include flexBox($a: start, $j: center, $w: wrap, $d: column, $g: px(16));
+        padding: 0 px(20);
+        margin: px(32) 0 0;
+        li {
+            a {
+                @include flexBox($a: center, $g: px(16));
+                .pic {
+                    flex: 1;
+                    position: relative;
+                    max-width: px(130);
+                    overflow: hidden;
+                    &::before {
+                        content: '';
+                        display: block;
+                        width: 100%;
+                        padding-top: 56.2%;
+                    }
+                    img {
+                        @include pos($p: absolute, $l: 50%, $t: 50%, $z: 1);
+                        transform: translate(-50%, -50%);
+                    }
+                }
+                .sum {
+                    flex: 0 auto;
+                    max-width: calc(100% - px(146));
+                    .tit {
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        text-overflow: ellipsis;
+                        white-space: normal;
+                        overflow: hidden;
+                        @include font($s: px(16), $w: 400, $l: px(24), $t: px(-1), $c: var(--color-point-black), $a: left);
+                    }
+                    .write {
+                        padding-left: px(20);
+                        margin-top: px(8);
+                        background: url($comPath + 'ico_video_yt.png') no-repeat left center/px(16) auto;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        @include font($s: px(12), $w: 400, $l: px(16), $t: px(-1), $c: var(--color-cont-font03), $a: left);
+                    }
+                }
+            }
+        }
+    }
+}
+
+[class*='-tab-wrap'] {
+    margin-top: px(16);
+    > [class*='-tab'] {
+        padding: 0 px(20);
+        border-bottom: 1px solid var(--color-line-gray08);
+        overflow: hidden;
+        .btn {
+            position: relative;
+            width: auto;
+            padding: px(17) 0;
+            @include font($s: px(16), $w: 400, $l: 1.2, $t: px(-1), $c: var(--color-cont-font03), $a: center);
+            p {
+                @include inherit;
+            }
+            &::after {
+                content: '';
+                @include pos($p: absolute, $l: 0, $b: 0, $z: 1);
+                width: 0;
+                height: px(2);
+                background-color: var(--color-point-line);
+                transition-duration: var(--trans-duration);
+            }
+            ~ .btn {
+                border-left: 0;
+            }
+            &.active {
+                font-weight: 700;
+                color: var(--color-point-black);
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+        &.box {
+            @include flexBox($a: center, $j: center);
+            padding: 0 px(20);
+            margin-top: px(10);
+            border: 0;
+            .btn {
+                flex: 1;
+                height: px(48);
+                padding: 0;
+                border: 1px solid var(--color-line-gray07);
+                background-color: var(--color-bg-gray04);
+                @include font($s: px(16), $w: 400, $l: 1.2, $t: px(-1), $c: var(--color-cont-font03), $a: center);
+                p {
+                    @include inherit;
+                }
+                ~ .btn {
+                    border-left: 0;
+                }
+                &::after {
+                    display: none;
+                }
+                &.active {
+                    border: 1px solid var(--color-point-line);
+                    box-shadow:  0 px(5) px(10) rgba(0, 3, 7, .1);
+                    background-color: var(--color-point-white);
+                    color: var(--color-point-line);
+                }
+            }
+        }
+    }
+    > [class*='-cont'] {
+        margin-top: px(16);
+        .cont {
+            display: none;
+            .dummy {
+                @include flexBox($a: center, $j: center);
+                width: 100%;
+                height: px(300);
+                background-color: var(--color-bg-gray01);
+            }
+        }
+    }
+}
+
+.cont-base-more {
+    @include flexBox($a: center, $j: center);
+    a {
+        flex: 1;
+        display: block;
+        border-top: 1px solid var(--color-line-gray07);
+        border-bottom: 1px solid var(--color-line-gray07);
+        background-color: var(--color-point-white);
+        @include font($s: px(16), $w: 500, $l: px(60), $t: px(-1), $c: var(--color-cont-font03), $a: center);
+        strong {
+            @include inherit($w: 700, $c: var(--color-point-line));
+        }
+        & ~ a {
+            border-left: 1px solid var(--color-line-gray07);
+        }
+        &.gray {
+            strong {
+                color: var(--color-cont-font03);
+            }
+        }
+        &.blue {
+            strong {
+                color: var(--color-point-bi);
+            }
+        }
+    }
+}
+
+.tit-base-wrap {
+    position: relative;
+    padding: 0 px(20);
+    p {        
+        @include font($s: px(24), $w: 700, $l: px(30), $t: px(-1), $c: var(--color-cont-font03), $a: left);
+        strong {
+            @include inherit($c: var(--color-point-line));
+        }
+    }
+}

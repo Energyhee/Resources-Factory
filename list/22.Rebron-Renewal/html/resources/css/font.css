@@ -1,0 +1,85 @@
+
+/* SUIT */
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 100;
+	src: url('fonts/suit/SUIT-Thin.woff2') format('woff2'),
+		 url('fonts/suit/SUIT-Thin.ttf') format('truetype'),
+		 url('fonts/suit/SUIT-Thin.otf') format('opentype');
+}
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 200;
+	src: url('fonts/suit/SUIT-ExtraLight.woff2') format('woff2'),
+		 url('fonts/suit/SUIT-ExtraLight.ttf') format('truetype'),
+		 url('fonts/suit/SUIT-ExtraLight.otf') format('opentype');
+}
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 300;
+	src: url('fonts/suit/SUIT-Light.woff2') format('woff2'),
+		 url('fonts/suit/SUIT-Light.ttf') format('truetype'),
+		 url('fonts/suit/SUIT-Light.otf') format('opentype');
+}
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 400;
+	src: url('fonts/suit/SUIT-Regular.woff2') format('woff2'),
+		 url('fonts/suit/SUIT-Regular.ttf') format('truetype'),
+		 url('fonts/suit/SUIT-Regular.otf') format('opentype');
+}
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 500;
+	src: url('fonts/suit/SUIT-Medium.woff2') format('woff2'),
+		 url('fonts/suit/SUIT-Medium.ttf') format('truetype'),
+		 url('fonts/suit/SUIT-Medium.otf') format('opentype');
+}
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 600;
+	src: url('fonts/suit/SUIT-SemiBold.woff2') format('woff2'),
+		 url('fonts/suit/SUIT-SemiBold.ttf') format('truetype'),
+		 url('fonts/suit/SUIT-SemiBold.otf') format('opentype');
+}
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 700;
+	src: url('fonts/suit/SUIT-Bold.woff2') format('woff2'),
+		 url('fonts/suit/SUIT-Bold.ttf') format('truetype'),
+		 url('fonts/suit/SUIT-Bold.otf') format('opentype');
+}
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 800;
+	src: url('fonts/suit/SUIT-ExtraBold.woff2') format('woff2'),
+		 url('fonts/suit/SUIT-ExtraBold.ttf') format('truetype'),
+		 url('fonts/suit/SUIT-ExtraBold.otf') format('opentype');
+}
+@font-face {
+	font-family: 'SUIT';
+	font-weight: 900;
+	src: url('fonts/suit/SUIT-Heavy.woff2') format('woff2'),
+		 url('fonts/suit/SUIT-Heavy.ttf') format('truetype'),
+		 url('fonts/suit/SUIT-Heavy.otf') format('opentype');
+}
+
+/* Gmarket */
+@font-face {
+	font-family: 'Gmarket';
+	font-weight: 300;
+	src: url('fonts/gmarket/GmarketSansTTFLight.ttf') format('truetype'),
+		 url('fonts/gmarket/GmarketSansLight.otf') format('opentype');
+}
+@font-face {
+	font-family: 'Gmarket';
+	font-weight: 500;
+	src: url('fonts/gmarket/GmarketSansTTFMedium.ttf') format('truetype'),
+		 url('fonts/gmarket/GmarketSansMedium.otf') format('opentype');
+}
+@font-face {
+	font-family: 'Gmarket';
+	font-weight: 700;
+	src: url('fonts/gmarket/GmarketSansTTFBold.ttf') format('truetype'),
+		 url('fonts/gmarket/GmarketSansBold.otf') format('opentype');
+}
